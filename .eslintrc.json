@@ -6,8 +6,12 @@
     "node": true
   },
   "rules": {
-    "prettier/prettier": ["error", { "singleQuote": true }],
+    "prettier/prettier": [
+      "error",
+      { "singleQuote": true, "spaceBeforeFunctionParen": true }
+    ],
     "no-console": "warn",
-    "func-names": "off"
+    "func-names": "off",
+    "space-before-function-paren": ["error", "always"]
   }
 }

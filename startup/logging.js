@@ -1,3 +1,5 @@
+// Setup Winston Logger
+
 const winston = require('winston');
 const config = require('config');
 require('express-async-errors');
@@ -19,18 +21,18 @@ module.exports = () => {
       winston.format.colorize(),
       winston.format.splat(),
       label({
-        label: 'Logging...'
+        label: 'Logging...',
       }),
       timestamp(),
-      myFormat
+      myFormat,
     ),
     defaultMeta: {
-      service: 'user-service'
+      service: 'user-service',
     },
     transports: [
-      // new winston.transports.Console({
-      //   level: 'silly'
-      // }),
+      new winston.transports.Console({
+        level: 'silly',
+      }),
       // new winston.transports.File({
       //   filename: 'logfile.log',
       //   level: 'error'
@@ -43,16 +45,18 @@ module.exports = () => {
       //   level: 'error',
       //   collection: 'errorLog'
       // })
-    ]
+    ],
   });
 
   winston.exceptions.handle(
-    new winston.transports.File({
-      filename: 'uncaughtExceptions.log'
-    }),
+    // new winston.transports.File({
+    //   filename: 'uncaughtExceptions.log',
+    // }),
     new winston.transports.Console({
       colorize: true,
-      prettyPrint: true
-    })
+      prettyPrint: true,
+    }),
   );
+
+  winston.info('3/6 Setup loggers');
 };
