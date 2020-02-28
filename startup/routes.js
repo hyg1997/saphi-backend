@@ -11,6 +11,7 @@ const error = require('../api/middleware/error');
 // Routers for applications
 const indexRouter = require('../routes/index');
 const usersRouter = require('../routes/users');
+const menuRouter = require('../api/menu/menuRouter');
 
 module.exports = app => {
   app.options('*', cors()); // Update according to project
@@ -33,6 +34,7 @@ module.exports = app => {
 
   app.use('/', indexRouter);
   app.use('/users', usersRouter);
+  app.use('/menus', menuRouter);
 
   app.use(celebrateError);
   app.use(error);
