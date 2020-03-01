@@ -1,5 +1,5 @@
 const { Menu } = require('./menuModel');
-const { setResponse } = require('../utils');
+const { setResponse } = require('../../utils');
 
 const listMenu = async reqQuery => {
   const menus = await Menu.find();
