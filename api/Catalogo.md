@@ -52,7 +52,6 @@ GET /menus?startdate=2020-01-01&limit=30
 
 POST /deliveryorder
 
-  - Recibe el token de la tarjeta de culqi y el plan elegido, así como los datos 
-    de contacto llenados en el formulario 
+  - Recibe el token de la tarjeta de culqi y el plan elegido, así como los datos de contacto llenados en el formulario 
   - Primero procesa el cargo en culqi, en caso sea exitoso se procede a crear el pedido
   - Al confirmar el pedido se envía un email con el resumen del pedido al correo del proveedor. 
