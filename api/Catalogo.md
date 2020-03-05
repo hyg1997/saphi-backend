@@ -48,7 +48,7 @@ Zeplin por definir
 
 GET /menus?startdate=2020-01-01&limit=30
 
-  - Recibe la lista de menus disponibles a partir de la fecha indicada y tantos menus como se indican. Los valores por defecto deben ser el dia actual y el limite 30
+  - Retorno la lista de menus disponibles a partir de la fecha indicada y tantos menus como se indican. Los valores por defecto deben ser el dia actual y el limite 30
 
 POST /deliveryorder
 
