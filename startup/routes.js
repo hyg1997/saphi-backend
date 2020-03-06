@@ -4,6 +4,7 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 const winston = require('winston');
+const passport = require('passport');
 
 const celebrateError = require('../api/middleware/celebrateError');
 const error = require('../api/middleware/error');
@@ -11,6 +12,8 @@ const error = require('../api/middleware/error');
 // Routers for applications
 const menuRouter = require('../api/nutrition/menu/menuRouter');
 const alimentRouter = require('../api/nutrition/aliment/alimentRouter');
+const authRouter = require('../api/auth/authRouter');
+const { initialiseAuthentication } = require('../api/auth/authRouter');
 
 module.exports = app => {
   app.options('*', cors()); // Update according to project
@@ -30,9 +33,11 @@ module.exports = app => {
       },
     }),
   );
+  app.use(passport.initialize());
 
   app.use('/menus', menuRouter);
   app.use('/aliments', alimentRouter);
+  app.use('/auth', authRouter);
 
   app.use(celebrateError);
   app.use(error);

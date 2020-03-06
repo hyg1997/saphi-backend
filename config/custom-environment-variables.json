@@ -1,4 +1,5 @@
 {
   "dbConfig": "ENV_MONGO_URL",
+  "jwtSecret": "JWT_SECRET",
   "hostname": "ENV_HOSTNAME"
 }
