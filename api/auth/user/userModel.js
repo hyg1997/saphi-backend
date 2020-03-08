@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const jwt = require('jsonwebtoken');
 const config = require('config');
 const _ = require('lodash');
+const bcrypt = require('bcrypt');
 
 const { Schema } = mongoose;
 const userSchema = new Schema({
@@ -44,6 +45,18 @@ const userSchema = new Schema({
     type: [{ type: Schema.Types.Mixed }],
   },
 });
+
+userSchema.pre('save', async function(next) {
+  const salt = await bcrypt.genSalt(config.get('saltPow'));
+  const hash = await bcrypt.hash(this.password, salt);
+  this.password = hash;
+  next();
+});
+
+userSchema.methods.isValidPassword = async function(password) {
+  const compare = await bcrypt.compare(password, this.password);
+  return compare;
+};
 
 userSchema.methods.generateAuthToken = function() {
   const payload = _.omit(this.toObject(), ['password']);

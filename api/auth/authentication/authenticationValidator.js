@@ -1,12 +1,5 @@
 const { Joi } = require('celebrate');
 
-const custom = {
-  receiptSeries: Joi.array().items(Joi.string()),
-  invoiceSeries: Joi.array().items(Joi.string()),
-  secondReceiptSerie: Joi.string().default('-'),
-  secondInvoiceSerie: Joi.string().default('-'),
-};
-
 const Register = {
   body: {
     email: Joi.string()

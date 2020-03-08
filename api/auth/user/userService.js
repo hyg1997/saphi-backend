@@ -15,6 +15,19 @@ const readUser = async reqParams => {
   return setResponse(200, 'User found.', user);
 };
 
+const readUserByFieldIds = async reqBody => {
+  const user = await User.findOne({
+    $or: [
+      _.pick(reqBody, ['email']),
+      // _.pick(reqBody, ['idDocumentType', 'idDocumentNumber']),
+    ],
+  });
+
+  if (!user) return setResponse(404, 'User not found.');
+
+  return setResponse(200, 'User found.', user);
+};
+
 const createUser = async reqBody => {
   let user = await User.findOne({
     $or: [
@@ -36,5 +49,6 @@ const createUser = async reqBody => {
 module.exports = {
   listUser,
   readUser,
+  readUserByFieldIds,
   createUser,
 };

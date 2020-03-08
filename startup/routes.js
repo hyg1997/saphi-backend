@@ -10,10 +10,11 @@ const celebrateError = require('../api/middleware/celebrateError');
 const error = require('../api/middleware/error');
 
 // Routers for applications
-const menuRouter = require('../api/nutrition/menu/menuRouter');
-const alimentRouter = require('../api/nutrition/aliment/alimentRouter');
+// const menuRouter = require('../api/nutrition/menu/menuRouter');
+// const alimentRouter = require('../api/nutrition/aliment/alimentRouter');
+const nutritionRouter = require('../api/nutrition/nutritionRouter');
 const authRouter = require('../api/auth/authRouter');
-const { initialiseAuthentication } = require('../api/auth/authRouter');
+const { initialiseAuthentication } = require('../api/middleware/auth');
 
 module.exports = app => {
   app.options('*', cors()); // Update according to project
@@ -33,10 +34,14 @@ module.exports = app => {
       },
     }),
   );
-  app.use(passport.initialize());
 
-  app.use('/menus', menuRouter);
-  app.use('/aliments', alimentRouter);
+  app.use(passport.initialize());
+  initialiseAuthentication(app);
+
+  // app.use('/menus', menuRouter);
+  // app.use('/aliments', alimentRouter);
+
+  app.use('/', nutritionRouter);
   app.use('/auth', authRouter);
 
   app.use(celebrateError);
