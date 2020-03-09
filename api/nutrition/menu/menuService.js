@@ -1,8 +1,17 @@
+const moment = require('moment-timezone');
+
 const { Menu } = require('./menuModel');
-const { setResponse } = require('../../utils');
+const { setResponse, addBussinesDays } = require('../../utils');
 
 const listMenu = async reqQuery => {
-  const menus = await Menu.find();
+  const menus = await Menu.find({
+    date: {
+      $gte: moment(reqQuery.startdate).toDate(),
+      $lt: moment(addBussinesDays(reqQuery.startdate, reqQuery.businessdays))
+        .add()
+        .toDate(),
+    },
+  }).sort({ date: 1 });
   return setResponse(200, 'Menus found.', menus);
 };
 

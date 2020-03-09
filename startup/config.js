@@ -3,7 +3,6 @@
 
 const path = require('path');
 const winston = require('winston');
-
 require('dotenv').config({
   path: path.resolve(
     process.cwd(),
@@ -11,7 +10,6 @@ require('dotenv').config({
     `.${process.env.NODE_ENV || 'development'}.env`,
   ),
 });
-
 const config = require('config');
 const fs = require('fs');
 

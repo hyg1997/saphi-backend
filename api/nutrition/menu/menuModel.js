@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 
+const { MENUTYPE } = require('../../utils/constants');
+
 const menuSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -10,8 +12,7 @@ const menuSchema = new mongoose.Schema({
   type: {
     type: String,
     require: true,
-    enum: ['lunch', 'dinner'],
-    default: 'lunch',
+    enum: [MENUTYPE.lunch, MENUTYPE.dinner],
   },
   date: {
     type: Date,

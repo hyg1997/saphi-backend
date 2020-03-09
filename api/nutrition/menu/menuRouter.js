@@ -1,11 +1,12 @@
 const express = require('express');
-const passport = require('passport');
+const { celebrate } = require('celebrate');
 
 const router = express.Router();
 const Controller = require('./menuController');
+const Validator = require('./menuValidator');
 
-router.get('/', Controller.listMenu);
-router.get('/:id', Controller.getMenu);
-router.post('/', Controller.postMenu);
+router.get('/', celebrate(Validator.List), Controller.listMenu);
+router.get('/:id', celebrate(Validator.Get), Controller.getMenu);
+router.post('/', celebrate(Validator.Post), Controller.postMenu);
 
 module.exports = router;
