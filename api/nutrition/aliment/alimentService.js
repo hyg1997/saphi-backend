@@ -1,5 +1,5 @@
 const { Aliment } = require('./alimentModel');
-// const { User } = require('../'); // TODO
+const { User } = require('../../auth/user/userModel');
 const { setResponse } = require('../../utils');
 
 const formatAliment = async (diet, aliment) => {
@@ -25,7 +25,13 @@ const getAliment = async reqParams => {
   return setResponse(200, 'Aliments Found.', alimentData);
 };
 
+const listAliment = async reqQuery => {
+  const aliments = await Aliment.findById(reqQuery);
+  return setResponse(200, 'Aliments Found.', aliments);
+};
+
 module.exports = {
   listAlimentUser,
+  listAliment,
   getAliment,
 };

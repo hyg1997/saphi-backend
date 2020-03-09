@@ -12,7 +12,14 @@ const getAliment = async (req, res) => {
   return res.status(aliment.status).send(aliment);
 };
 
+const listAliment = async (req, res) => {
+  const aliments = await Service.listAliment(req.query);
+
+  return res.status(aliments.status).send(aliments);
+};
+
 module.exports = {
   listAlimentUser,
+  listAliment,
   getAliment,
 };
