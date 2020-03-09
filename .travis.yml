@@ -1,0 +1,16 @@
+language: generic
+sudo: required
+services:
+  - docker
+
+deploy:
+- provider: elasticbeanstalk
+  region: us-east-1
+  app: Saphi-dev
+  env: Saphi-backend
+  bucket_name: elasticbeanstalk-us-east-1-047468546016
+  bucket_path: Saphi-dev
+  on:
+    branch: dev
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
