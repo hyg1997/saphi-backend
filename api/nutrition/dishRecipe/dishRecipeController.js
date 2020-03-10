@@ -12,7 +12,14 @@ const getDishRecipe = async (req, res) => {
   return res.status(dishRecipe.status).send(dishRecipe);
 };
 
+const createDishRecipe = async (req, res) => {
+  const dishRecipe = await Service.createDishRecipe(req.body);
+
+  return res.status(dishRecipe.status).send(dishRecipe);
+};
+
 module.exports = {
   listDishRecipe,
   getDishRecipe,
+  createDishRecipe,
 };

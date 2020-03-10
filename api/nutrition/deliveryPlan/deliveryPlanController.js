@@ -6,6 +6,20 @@ const listDeliveryPlan = async (req, res) => {
   return res.status(deliveryPlans.status).send(deliveryPlans);
 };
 
+const getDeliveryPlan = async (req, res) => {
+  const deliveryPlan = await Service.getDeliveryPlan(req.params);
+
+  return res.status(deliveryPlan.status).send(deliveryPlan);
+};
+
+const createDeliveryPlan = async (req, res) => {
+  const deliveryPlan = await Service.createDeliveryPlan(req.body);
+
+  return res.status(deliveryPlan.status).send(deliveryPlan);
+};
+
 module.exports = {
   listDeliveryPlan,
+  getDeliveryPlan,
+  createDeliveryPlan,
 };

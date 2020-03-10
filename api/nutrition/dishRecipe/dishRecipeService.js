@@ -11,7 +11,14 @@ const getDishRecipe = async reqParams => {
   return setResponse(200, 'DishRecipe Found.', dishRecipe);
 };
 
+const createDishRecipe = async reqBody => {
+  const dishRecipe = new DishRecipe(reqBody);
+  await dishRecipe.save();
+  return setResponse(201, 'DishRecipe Created.', dishRecipe);
+};
+
 module.exports = {
   listDishRecipe,
   getDishRecipe,
+  createDishRecipe,
 };

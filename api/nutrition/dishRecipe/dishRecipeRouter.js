@@ -3,7 +3,8 @@ const express = require('express');
 const router = express.Router();
 const Controller = require('./dishRecipeController');
 
-router.get('/dishrecipes/:id', Controller.getDishRecipe);
-router.get('/dishrecipes', Controller.listDishRecipe);
+router.get('/:id', Controller.getDishRecipe);
+router.get('/', Controller.listDishRecipe);
+router.post('/', Controller.createDishRecipe);
 
 module.exports = router;

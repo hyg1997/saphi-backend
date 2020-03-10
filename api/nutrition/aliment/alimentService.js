@@ -28,7 +28,7 @@ const getAliment = async reqParams => {
 const createAliment = async reqBody => {
   const aliment = new Aliment(reqBody);
   await aliment.save();
-  return setResponse(200, 'Aliment Created.', aliment);
+  return setResponse(201, 'Aliment Created.', aliment);
 };
 
 const listAliment = async reqQuery => {
