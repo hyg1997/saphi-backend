@@ -44,7 +44,7 @@ mongoose
     useNewUrlParser: true,
   })
   .then(async () => {
-    await seedModelOneByOne(Menu, 'menu.json');
+    await seedModel(Menu, 'menu.json');
     mongoose.connection.close();
   })
   .catch(err => console.log('Failed to connect to MongoDB...'));

@@ -41,8 +41,8 @@ module.exports = app => {
   // app.use('/menus', menuRouter);
   // app.use('/aliments', alimentRouter);
 
-  app.use('/', nutritionRouter);
   app.use('/auth', authRouter);
+  app.use('/', nutritionRouter);
 
   app.use(celebrateError);
   app.use(error);
