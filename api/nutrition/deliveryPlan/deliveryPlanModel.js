@@ -10,8 +10,17 @@ const deliveryPlanSchema = new Schema({
     type: String,
     required: true,
   },
+  planDuration: {
+    type: Number,
+    required: true,
+  },
   option: [
     {
+      planType: {
+        type: String,
+        required: true,
+        enum: ['almuerzo', 'cena', 'completo'],
+      },
       description: {
         type: String,
         required: true,

@@ -25,6 +25,12 @@ const getAliment = async reqParams => {
   return setResponse(200, 'Aliments Found.', alimentData);
 };
 
+const createAliment = async reqBody => {
+  const aliment = new Aliment(reqBody);
+  await aliment.save();
+  return setResponse(200, 'Aliment Created.', aliment);
+};
+
 const listAliment = async reqQuery => {
   const aliments = await Aliment.findById(reqQuery);
   return setResponse(200, 'Aliments Found.', aliments);
@@ -34,4 +40,5 @@ module.exports = {
   listAlimentUser,
   listAliment,
   getAliment,
+  createAliment,
 };
