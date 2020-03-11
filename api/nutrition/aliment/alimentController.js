@@ -18,8 +18,15 @@ const listAliment = async (req, res) => {
   return res.status(aliments.status).send(aliments);
 };
 
+const createAliment = async (req, res) => {
+  const aliment = await Service.createAliment(req.body);
+
+  return res.status(aliment.status).send(aliment);
+};
+
 module.exports = {
   listAlimentUser,
   listAliment,
   getAliment,
+  createAliment,
 };
