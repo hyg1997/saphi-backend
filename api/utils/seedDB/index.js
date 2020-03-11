@@ -9,6 +9,10 @@ require('../../../startup/logging')();
 
 const config = require('config');
 const { Menu } = require('../../nutrition/menu/menuModel');
+const { DishRecipe } = require('../../nutrition/dishRecipe/dishRecipeModel');
+const {
+  DeliveryPlan,
+} = require('../../nutrition/deliveryPlan/deliveryPlanModel');
 
 const { asyncForEach } = require('../../utils');
 
@@ -44,7 +48,7 @@ mongoose
     useNewUrlParser: true,
   })
   .then(async () => {
-    await seedModel(Menu, 'menu.json');
+    await seedModel(DeliveryPlan, 'deliveryPlan.json');
     mongoose.connection.close();
   })
-  .catch(err => console.log('Failed to connect to MongoDB...'));
+  .catch(err => console.log(`Failed to connect to MongoDB...${String(err)}`));

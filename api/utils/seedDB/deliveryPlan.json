@@ -1,0 +1,56 @@
+[
+  {
+    "name": "Plan 10 dias",
+    "periodTime": "10 dias",
+    "discountText": "",
+    "planDuration": 10,
+    "option": [
+      {
+        "planType": "almuerzo",
+        "description": "Almuerzo",
+        "price": 30
+      },
+      {
+        "planType": "completo",
+        "description": "Almuerzo + Cena",
+        "price": 50
+      }
+    ]
+  },
+  {
+    "name": "Plan 20 dias",
+    "periodTime": "20 dias",
+    "discountText": "7% Dscto",
+    "planDuration": 20,
+    "option": [
+      {
+        "planType": "almuerzo",
+        "description": "Almuerzo",
+        "price": 25
+      },
+      {
+        "planType": "completo",
+        "description": "Almuerzo + Cena",
+        "price": 45
+      }
+    ]
+  },
+  {
+    "name": "Plan 30 dias",
+    "periodTime": "30 dias",
+    "discountText": "10% Dscto",
+    "planDuration": 30,
+    "option": [
+      {
+        "planType": "almuerzo",
+        "description": "Almuerzo",
+        "price": 20
+      },
+      {
+        "planType": "completo",
+        "description": "Almuerzo + Cena",
+        "price": 40
+      }
+    ]
+  }
+]  

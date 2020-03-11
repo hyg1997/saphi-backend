@@ -10,6 +10,10 @@ const deliveryPlanSchema = new Schema({
     type: String,
     required: true,
   },
+  discountText: {
+    type: String,
+    required: false,
+  },
   planDuration: {
     type: Number,
     required: true,

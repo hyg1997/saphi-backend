@@ -18,9 +18,7 @@ const List = {
 
 const Get = {
   params: {
-    id: Joi.number()
-      .integer()
-      .required(),
+    id: Joi.string().required(),
   },
 };
 
