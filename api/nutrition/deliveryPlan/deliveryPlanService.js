@@ -3,7 +3,7 @@ const { setResponse } = require('../../utils');
 
 const listDeliveryPlan = async reqQuery => {
   const deliveryPlans = await DeliveryPlan.find(reqQuery);
-  return setResponse(200, 'DeliveryPlan found.', deliveryPlans);
+  return setResponse(200, 'DeliveryPlans found.', deliveryPlans);
 };
 
 const getDeliveryPlan = async reqParams => {

@@ -1,7 +1,7 @@
 const { Joi } = require('celebrate');
 const moment = require('moment-timezone');
 
-const { MENUTYPE } = require('../../utils/constants');
+const { MENU_TYPE } = require('../../utils/constants');
 
 const List = {
   query: {
@@ -29,7 +29,7 @@ const Post = {
       .max(255)
       .required(),
     type: Joi.string()
-      .valid(MENUTYPE.lunch, MENUTYPE.dinner)
+      .valid(MENU_TYPE.lunch, MENU_TYPE.dinner)
       .required(),
     date: Joi.date()
       .iso()

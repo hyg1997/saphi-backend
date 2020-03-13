@@ -22,7 +22,7 @@ const getAliment = async reqParams => {
   // TODO: Get Diet
   const diet = {};
   const alimentData = formatAliment(diet, aliment);
-  return setResponse(200, 'Aliments Found.', alimentData);
+  return setResponse(200, 'Aliment Found.', alimentData);
 };
 
 const createAliment = async reqBody => {
@@ -32,7 +32,9 @@ const createAliment = async reqBody => {
 };
 
 const listAliment = async reqQuery => {
-  const aliments = await Aliment.findById(reqQuery);
+  // ! La busqueda por listado es con la funcion find, con findById
+  // const aliments = await Aliment.findById(reqQuery);
+  const aliments = await Aliment.find(reqQuery);
   return setResponse(200, 'Aliments Found.', aliments);
 };
 

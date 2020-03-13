@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const { addBussinesDays } = require('../../utils');
 
 const { Schema } = mongoose;
 const deliveryOrderSchema = new Schema({
@@ -7,23 +8,41 @@ const deliveryOrderSchema = new Schema({
     required: true,
     ref: 'user',
   },
-  orderDate: {
-    type: Date,
-    required: true,
-  },
   startDate: {
     type: Date,
     required: true,
   },
-  planDuration: {
-    type: Number,
+  endDate: {
+    type: Date,
     required: true,
   },
-  planType: {
+  contactName: {
     type: String,
     required: true,
-    enum: ['almuerzo', 'cena', 'completo'],
   },
+  contactPhone: {
+    type: String,
+    required: true,
+  },
+  deliveryAddress: {
+    type: String,
+    required: true,
+  },
+  deliveryInstruction: {
+    type: String,
+    default: '',
+  },
+  deliveryPlan: {
+    type: Schema.Types.Mixed,
+    required: true,
+  },
+});
+
+deliveryOrderSchema.pre('validate', function() {
+  this.endDate = addBussinesDays(
+    this.startDate,
+    this.deliveryPlan.planDuration - 1,
+  );
 });
 
 const DeliveryOrder = mongoose.model('DeliveryOrder', deliveryOrderSchema);

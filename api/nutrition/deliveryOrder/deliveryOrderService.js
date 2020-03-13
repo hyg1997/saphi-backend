@@ -1,12 +1,42 @@
-const { DeliveryPlan } = require('./deliveryOrderModel');
+/* eslint-disable no-param-reassign */
+const { DeliveryOrder } = require('./deliveryOrderModel');
+const { DeliveryPlan } = require('../deliveryPlan/deliveryPlanModel');
 const { setResponse } = require('../../utils');
 
-const listDeliveryOrder = async user => {
-  const deliveryOrders = await DeliveryPlan.find({ user: user.id });
+const validateDeliveryOrder = async (reqBody, reqUser) => {
+  const deliveryPlan = await DeliveryPlan.findById(reqBody.deliveryPlan);
+  if (!deliveryPlan) return setResponse(404, 'DeliveryPlan not found.');
 
-  return setResponse(200, 'DeliveryOrders found.', deliveryOrders);
+  reqBody.deliveryPlan = deliveryPlan.toObject();
+
+  reqBody.deliveryPlan.selectedOption = reqBody.deliveryPlan.option.find(
+    obj => obj.planType === reqBody.deliveryPlanType,
+  );
+  return setResponse(200, 'DeliveryPlan found.', deliveryPlan);
+};
+
+const createDeliveryOrder = async (reqBody, reqUser) => {
+  const deliveryOrder = await DeliveryOrder.create({
+    user: reqUser.id,
+    ...reqBody,
+  });
+
+  return setResponse(200, 'DeliveryOrder created.', deliveryOrder);
+};
+
+const getUserDeliveryOrder = async (reqBody, reqUser) => {
+  const deliveryOrder = await DeliveryOrder.find({
+    user: reqUser.id,
+  })
+    .sort({ createAt: 1 })
+    .limit(1);
+
+  return setResponse(200, 'DeliveryOrder created.', deliveryOrder[0]);
 };
 
 module.exports = {
-  listDeliveryOrder,
+  createDeliveryOrder,
+  getUserDeliveryOrder,
+  // * Other
+  validateDeliveryOrder,
 };

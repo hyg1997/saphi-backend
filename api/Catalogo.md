@@ -10,10 +10,10 @@ Se debe implementar servicios para crear, leer por id y listar los siguiente rec
 
 Algunos de estos servicios ya cubren otros especificados más adelante
 
-- aliments
-- deliveryPlans
-- dishRecipes
-- menus
+- [x] aliments
+- [x] deliveryPlans
+- [x] dishRecipes
+- [x] menus
 
 ## Pantalla Mi Plan - **Pendiente de confirmar**
 
@@ -45,7 +45,7 @@ GET /aliments/:id
 
 [Zeplin2](https://zpl.io/2Z130lE)
 
-GET /dishrecipes?category=salsa
+- [x] GET /dishrecipes?type=salsa
 
 - Retorna el listado de recetas de la categoria solicitada
 - category es salsa o aliño
@@ -54,7 +54,7 @@ GET /dishrecipes?category=salsa
 
 [Zeplin](https://zpl.io/awedLjg)
 
-GET/dishrecipes:id
+- [x] GET/dishrecipes/:id
 
 - Retorna una receta segun id
 
@@ -63,11 +63,11 @@ GET/dishrecipes:id
 [Zeplin Caso sin plan](https://zpl.io/aR8wMxg)
 [Zeplin Caso con plan](https://zpl.io/b6EwOqK)
 
-GET /mydeliveryorder
+- [ ] GET /mydeliveryorder
 
 - Retorna el plan de delivery actual del paciente, si no esta retorna la estructura vacía
 
-GET /deliveryplans
+- [x] GET /deliveryplans
 
 - Retorna la lista de planes
 
@@ -76,7 +76,7 @@ GET /deliveryplans
 Zeplin por definir
 [UX](https://www.figma.com/file/6d878V4JEcURRrpRv7FoPa/Compra-nutricion?node-id=0%3A1)
 
-GET /menus?startdate=2020-01-01&businessdays=30
+- [x] GET /menus?startdate=2020-01-01&businessdays=30
 
 - Retorno la lista de menus disponibles a partir de la fecha indicada y para tantos dias de semana se requiera. Los valores por defecto deben ser el dia actual y el limite 30
 

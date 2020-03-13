@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 
+const { DELIVERY_ORDER_PLAN_TYPE } = require('../../utils/constants');
+
 const { Schema } = mongoose;
 const deliveryPlanSchema = new Schema({
   name: {
@@ -23,7 +25,10 @@ const deliveryPlanSchema = new Schema({
       planType: {
         type: String,
         required: true,
-        enum: ['almuerzo', 'cena', 'completo'],
+        enum: [
+          DELIVERY_ORDER_PLAN_TYPE.lunch,
+          DELIVERY_ORDER_PLAN_TYPE.complete,
+        ],
       },
       description: {
         type: String,

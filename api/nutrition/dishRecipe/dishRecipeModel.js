@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const { DISH_RECIPE_TYPE } = require('../../utils/constants');
 
 const { Schema } = mongoose;
 const dishRecipeSchema = new Schema({
@@ -9,7 +10,7 @@ const dishRecipeSchema = new Schema({
   type: {
     type: String,
     required: true,
-    enum: ['salsa', 'aliño'],
+    enum: [DISH_RECIPE_TYPE.sauce, DISH_RECIPE_TYPE.dressing],
   },
   thumbnail: {
     type: String,
@@ -20,6 +21,11 @@ const dishRecipeSchema = new Schema({
   },
   baseImagePath: {
     type: String,
+  },
+  hasDetails: {
+    type: Boolean,
+    required: true,
+    default: false, // TODO: Remove
   },
   detail: {
     difficulty: {
