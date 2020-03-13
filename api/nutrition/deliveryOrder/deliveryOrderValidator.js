@@ -18,6 +18,7 @@ const Post = {
       .allow('')
       .default(''),
     payment: Joi.object({
+      savedCard: Joi.boolean().default(false),
       culqiToken: Joi.string().required(),
     }).required(),
   },
