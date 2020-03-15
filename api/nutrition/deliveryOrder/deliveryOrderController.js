@@ -1,5 +1,5 @@
 const Service = require('./deliveryOrderService');
-// TODO const PaymentService = require('..')
+const PaymentService = require('../../payment/culqiPayment/culqiPaymentService');
 
 const createDeliveryOrder = async (req, res) => {
   // * Step 0. Validar que el input genera una orden correcta
@@ -8,8 +8,7 @@ const createDeliveryOrder = async (req, res) => {
   if (validate.status !== 200)
     return res.status(validate.status).send(validate);
   // * Step 1. Procesar el pago
-  // TODO: const culqiPayment = await PaymentService.makePayment(req.body, req.user)
-  const culqiPayment = { status: 201, message: 'Succesful Payment', data: {} };
+  const culqiPayment = await PaymentService.makePayment(req.body, req.user);
 
   if (culqiPayment.status !== 201)
     return res.status(culqiPayment.status).send(culqiPayment);

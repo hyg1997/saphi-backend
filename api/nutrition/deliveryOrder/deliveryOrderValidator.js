@@ -17,7 +17,13 @@ const Post = {
     deliveryInstruction: Joi.string()
       .allow('')
       .default(''),
+    email: Joi.string()
+      .email()
+      .required(),
     payment: Joi.object({
+      clientToken: Joi.string()
+        .allow('')
+        .default(''),
       savedCard: Joi.boolean().default(false),
       culqiToken: Joi.string().required(),
     }).required(),

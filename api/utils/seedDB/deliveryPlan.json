@@ -8,12 +8,16 @@
       {
         "planType": "almuerzo",
         "description": "Almuerzo",
-        "price": 30
+        "price": 30,
+        "amount": 3000,
+        "currency_code": "PEN"
       },
       {
         "planType": "completo",
         "description": "Almuerzo + Cena",
-        "price": 50
+        "price": 50,
+        "amount": 5000,
+        "currency_code": "PEN"
       }
     ]
   },
@@ -26,12 +30,16 @@
       {
         "planType": "almuerzo",
         "description": "Almuerzo",
-        "price": 25
+        "price": 25,
+        "amount": 2500,
+        "currency_code": "PEN"
       },
       {
         "planType": "completo",
         "description": "Almuerzo + Cena",
-        "price": 45
+        "price": 45,
+        "amount": 4500,
+        "currency_code": "PEN"
       }
     ]
   },
@@ -44,12 +52,16 @@
       {
         "planType": "almuerzo",
         "description": "Almuerzo",
-        "price": 20
+        "price": 20,
+        "amount": 2000,
+        "currency_code": "PEN"
       },
       {
         "planType": "completo",
         "description": "Almuerzo + Cena",
-        "price": 40
+        "price": 40,
+        "amount": 4000,
+        "currency_code": "PEN"
       }
     ]
   }

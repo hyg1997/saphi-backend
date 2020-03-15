@@ -38,6 +38,14 @@ const deliveryPlanSchema = new Schema({
         type: Number,
         required: true,
       },
+      amount: {
+        type: Number,
+        required: true,
+      },
+      currency_code: {
+        type: String,
+        required: true,
+      },
     },
   ],
 });
