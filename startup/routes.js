@@ -13,6 +13,7 @@ const error = require('../api/middleware/error');
 // const menuRouter = require('../api/nutrition/menu/menuRouter');
 // const alimentRouter = require('../api/nutrition/aliment/alimentRouter');
 const nutritionRouter = require('../api/nutrition/nutritionRouter');
+const paymentRouter = require('../api/payment/PaymentRouter');
 const authRouter = require('../api/auth/authRouter');
 const { initialiseAuthentication } = require('../api/middleware/auth');
 
@@ -29,7 +30,7 @@ module.exports = app => {
 
   app.use(
     express.json({
-      verify(req, res, buf, encoding) {
+      verify (req, res, buf, encoding) {
         req.rawBody = buf.toString();
       },
     }),
@@ -43,6 +44,7 @@ module.exports = app => {
 
   app.use('/auth', authRouter);
   app.use('/', nutritionRouter);
+  app.use('/payment', paymentRouter);
 
   app.use(celebrateError);
   app.use(error);

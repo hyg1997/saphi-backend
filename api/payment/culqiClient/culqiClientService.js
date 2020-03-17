@@ -15,13 +15,47 @@ const getClientByToken = async recBody => {
   return client;
 };
 
-const createCustomer = async recBody => {
-  const respCustomer = await axios.post(
+const createCulqiClient = async (recBody, recUser) => {
+  const respClient = await axios.post(
     'https://api.culqi.com/v2/customers',
     recBody,
     headers,
   );
-  return respCustomer;
+
+  if (respClient !== 201) {
+    return setResponse(respClient.status, 'Error', respClient.data);
+  }
+
+  const clientData = {
+    user: recUser.id,
+    token: respClient.data.id,
+    culqiInfo: respClient.data,
+    cards: [],
+  };
+
+  const culqiClient = new CulqiClient(clientData);
+  await culqiClient.save();
+
+  return setResponse(respClient.status, 'Client created.', culqiClient);
+};
+
+const formatCard = async card => {
+  return {
+    token: card.token,
+    card_number: card.culqiInfo.token.card_number,
+    card_brand: card.culqiInfo.token.iin.card_brand,
+  };
+};
+
+const listCulqiClient = async recUser => {
+  const clients = await CulqiClient.find({ user: recUser.id });
+  const cards = [];
+  clients.forEach(function(client) {
+    client.cards.forEach(function(card) {
+      cards.push(formatCard(card));
+    });
+  });
+  return setResponse(200, 'Cards found.', cards);
 };
 
 const createCard = async recBody => {
@@ -44,10 +78,12 @@ const createCard = async recBody => {
   culqiClient.cards.push(cardData);
   culqiClient.save();
 
-  return setResponse(respCard.status, 'Exito', cardData);
+  return setResponse(respCard.status, 'Card created.', cardData);
 };
 
 exports = {
   getClientByToken,
   createCard,
+  listCulqiClient,
+  createCulqiClient,
 };
