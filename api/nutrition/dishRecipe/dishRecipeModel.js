@@ -12,10 +12,6 @@ const dishRecipeSchema = new Schema({
     required: true,
     enum: [DISH_RECIPE_TYPE.sauce, DISH_RECIPE_TYPE.dressing],
   },
-  thumbnail: {
-    type: String,
-    required: true,
-  },
   thumbnailImagePath: {
     type: String,
   },
