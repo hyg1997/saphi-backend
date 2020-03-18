@@ -30,7 +30,7 @@ const culqiClientSchema = new Schema({
   ],
 });
 
-const CulqiClient = mongoose.model('CulqiPayment', culqiClientSchema);
+const CulqiClient = mongoose.model('CulqiClient', culqiClientSchema);
 
 module.exports = {
   culqiClientSchema,

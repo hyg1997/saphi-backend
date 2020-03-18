@@ -6,7 +6,7 @@ const { setResponse } = require('../../utils');
 
 const headers = {
   headers: {
-    Authorization: `Bearer ${config.get('pkCulqi')}`,
+    Authorization: `Bearer ${config.get('skCulqi')}`,
   },
 };
 
@@ -16,14 +16,16 @@ const getClientByToken = async recBody => {
 };
 
 const createCulqiClient = async (recBody, recUser) => {
-  const respClient = await axios.post(
-    'https://api.culqi.com/v2/customers',
-    recBody,
-    headers,
-  );
-
-  if (respClient !== 201) {
-    return setResponse(respClient.status, 'Error', respClient.data);
+  let respClient;
+  try {
+    respClient = await axios.post(
+      'https://api.culqi.com/v2/customers',
+      recBody,
+      headers,
+    );
+  } catch (error) {
+    respClient = error.response;
+    return setResponse(respClient.status, 'Error', {});
   }
 
   const clientData = {
@@ -81,7 +83,7 @@ const createCard = async recBody => {
   return setResponse(respCard.status, 'Card created.', cardData);
 };
 
-exports = {
+module.exports = {
   getClientByToken,
   createCard,
   listCulqiClient,

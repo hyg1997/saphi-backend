@@ -9,16 +9,22 @@ const { setResponse } = require('../../utils');
 
 const headers = {
   headers: {
-    Authorization: `Bearer ${config.get('pkCulqi')}`,
+    Authorization: `Bearer ${config.get('skCulqi')}`,
   },
 };
 
 const createCharge = async (recBody, recUser) => {
-  const chargeResp = await axios.post(
-    'https://api.culqi.com/v2/charges',
-    recBody,
-    headers,
-  );
+  let chargeResp;
+  try {
+    chargeResp = await axios.post(
+      'https://api.culqi.com/v2/charges',
+      recBody,
+      headers,
+    );
+  } catch (error) {
+    chargeResp = error.response;
+    return setResponse(chargeResp.status, chargeResp.data.user_message, {});
+  }
 
   const chargeData = {
     culqiInfo: chargeResp.data,
@@ -28,7 +34,11 @@ const createCharge = async (recBody, recUser) => {
   const charge = new CulqiPayment(chargeData);
   await charge.save();
 
-  return setResponse(chargeResp.status, chargeData.user_message, chargeData);
+  return setResponse(
+    chargeResp.status,
+    chargeResp.data.user_message,
+    chargeData,
+  );
 };
 
 const makePayment = async (recBody, recUser) => {

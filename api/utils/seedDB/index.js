@@ -18,6 +18,7 @@ const { asyncForEach } = require('../../utils');
 
 const seedModel = async (model, filename) => {
   const rawdata = fs.readFileSync(path.join(__dirname, filename));
+  // await model.deleteMany({});
   await model.insertMany(JSON.parse(rawdata));
   winston.info(`${model.collection.collectionName} seeded!`);
   return 1;

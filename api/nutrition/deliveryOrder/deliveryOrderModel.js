@@ -36,6 +36,10 @@ const deliveryOrderSchema = new Schema({
     type: Schema.Types.Mixed,
     required: true,
   },
+  culqiPayment: {
+    type: Schema.Types.Mixed,
+    required: true,
+  },
 });
 
 deliveryOrderSchema.pre('validate', function() {
