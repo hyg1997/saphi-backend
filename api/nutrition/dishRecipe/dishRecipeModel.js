@@ -18,6 +18,9 @@ const dishRecipeSchema = new Schema({
   detailImagePath: {
     type: String,
   },
+  summary: {
+    type: String,
+  },
   hasDetails: {
     type: Boolean,
     required: true,

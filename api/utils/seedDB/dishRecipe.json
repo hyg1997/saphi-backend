@@ -1,810 +1,742 @@
 [
   {
-    "name": "aliquip",
-    "type": "salsa",
-    "thumbnailImagePath": "https://picsum.photos/64",
-    "detailImagePath": "https://picsum.photos/480",
-    "hasDetails": true,
-    "detail": {
-      "difficulty": "Fácil",
-      "preparationTime": "5 - 34 min",
-      "cookingTime": "9 - 26 min",
-      "ingredients": [
-        {
-          "quantity": "3  unidades",
-          "name": "sit"
-        },
-        {
-          "quantity": "2  unidades",
-          "name": "excepteur"
-        },
-        {
-          "quantity": "1  unidades",
-          "name": "ea"
-        },
-        {
-          "quantity": "2  unidades",
-          "name": "Lorem"
-        },
-        {
-          "quantity": "4  pizcas",
-          "name": "veniam"
-        },
-        {
-          "quantity": "3  unidades",
-          "name": "culpa"
-        }
-      ],
-      "preparationDescription": "Officia sunt nulla deserunt aute sunt consequat. Exercitation sunt proident sit aliquip consectetur minim cupidatat. Elit culpa excepteur officia veniam velit dolore occaecat Lorem ex."
-    }
-  },
-  {
-    "name": "laboris",
-    "type": "salsa",
-    "thumbnailImagePath": "https://picsum.photos/64",
-    "detailImagePath": "https://picsum.photos/480",
-    "hasDetails": true,
-    "detail": {
-      "difficulty": "Fácil",
-      "preparationTime": "5 - 22 min",
-      "cookingTime": "5 - 20 min",
-      "ingredients": [
-        {
-          "quantity": "4  unidades",
-          "name": "ullamco"
-        },
-        {
-          "quantity": "1  pizcas",
-          "name": "non"
-        },
-        {
-          "quantity": "1  unidades",
-          "name": "eiusmod"
-        },
-        {
-          "quantity": "4  pizcas",
-          "name": "ex"
-        }
-      ],
-      "preparationDescription": "Non quis cillum quis eiusmod non fugiat ex ullamco esse officia elit adipisicing quis est. Ut minim sit voluptate laborum amet mollit eu consequat esse est. Ullamco sunt cillum in ea non voluptate Lorem dolore mollit non excepteur. Reprehenderit incididunt nulla culpa ad commodo anim officia."
-    }
-  },
-  {
-    "name": "culpa",
+    "name": "reprehenderit",
     "type": "aliño",
     "thumbnailImagePath": "https://picsum.photos/64",
     "detailImagePath": "https://picsum.photos/480",
     "hasDetails": false,
+    "summary": "Culpa qui ullamco reprehenderit aliqua non enim mollit do ullamco labore enim anim sint cillum.",
     "detail": {
       "difficulty": "Fácil",
-      "preparationTime": "10 - 23 min",
-      "cookingTime": "6 - 31 min",
+      "preparationTime": "5 - 27 min",
+      "cookingTime": "9 - 27 min",
       "ingredients": [
         {
-          "quantity": "3  pizcas",
+          "quantity": "2  unidades",
+          "name": "pariatur"
+        },
+        {
+          "quantity": "2  unidades",
+          "name": "sunt"
+        },
+        {
+          "quantity": "1  unidades",
+          "name": "laboris"
+        },
+        {
+          "quantity": "4  pizcas",
           "name": "labore"
         },
         {
           "quantity": "4  unidades",
-          "name": "esse"
-        },
-        {
-          "quantity": "2  pizcas",
-          "name": "aliqua"
+          "name": "velit"
         },
         {
           "quantity": "2  unidades",
-          "name": "nisi"
-        },
-        {
-          "quantity": "3  pizcas",
-          "name": "exercitation"
+          "name": "esse"
         }
       ],
-      "preparationDescription": "Voluptate do ut ea ea ex aute esse eu commodo fugiat esse aute eiusmod. Incididunt pariatur veniam velit et adipisicing eiusmod sunt proident sint quis proident. Laboris adipisicing officia adipisicing nisi consectetur duis labore fugiat consequat. Consequat culpa quis reprehenderit minim pariatur. Consectetur officia aute in esse."
+      "preparationDescription": "Aliquip ad qui esse cillum. Elit deserunt laborum nisi incididunt aliquip. Consectetur irure consequat tempor minim officia dolor exercitation ex Lorem cillum excepteur. Do tempor esse fugiat nulla reprehenderit. Qui veniam et veniam adipisicing irure. Aliquip ea et aliquip incididunt do ut minim ad pariatur mollit aliquip consectetur."
     }
   },
   {
-    "name": "veniam",
+    "name": "adipisicing",
     "type": "aliño",
     "thumbnailImagePath": "https://picsum.photos/64",
     "detailImagePath": "https://picsum.photos/480",
     "hasDetails": false,
+    "summary": "In adipisicing laborum deserunt elit.",
     "detail": {
-      "difficulty": "Fácil",
-      "preparationTime": "7 - 23 min",
-      "cookingTime": "10 - 40 min",
+      "difficulty": "Difícil",
+      "preparationTime": "10 - 27 min",
+      "cookingTime": "7 - 24 min",
       "ingredients": [
         {
+          "quantity": "1  pizcas",
+          "name": "excepteur"
+        },
+        {
           "quantity": "1  unidades",
-          "name": "voluptate"
+          "name": "amet"
         },
         {
           "quantity": "3  pizcas",
-          "name": "fugiat"
+          "name": "magna"
         },
         {
-          "quantity": "2  unidades",
-          "name": "consequat"
+          "quantity": "3  unidades",
+          "name": "quis"
         },
         {
-          "quantity": "2  unidades",
-          "name": "incididunt"
+          "quantity": "3  unidades",
+          "name": "esse"
         },
+        {
+          "quantity": "4  pizcas",
+          "name": "occaecat"
+        }
+      ],
+      "preparationDescription": "Ea reprehenderit ex proident irure consequat tempor adipisicing qui deserunt fugiat ex eu aliqua aute. Ea et adipisicing do sint enim elit nostrud pariatur aute. Commodo eu cillum pariatur sunt in sunt officia anim incididunt. Do id ullamco nulla dolore laboris exercitation occaecat elit adipisicing. Laboris nisi ipsum sunt labore sint. Magna aute ad duis aute magna laboris ad pariatur culpa quis cillum laborum nulla amet."
+    }
+  },
+  {
+    "name": "reprehenderit",
+    "type": "aliño",
+    "thumbnailImagePath": "https://picsum.photos/64",
+    "detailImagePath": "https://picsum.photos/480",
+    "hasDetails": false,
+    "summary": "Commodo laboris incididunt commodo ex eu qui ad cillum.",
+    "detail": {
+      "difficulty": "Fácil",
+      "preparationTime": "6 - 23 min",
+      "cookingTime": "10 - 20 min",
+      "ingredients": [
         {
           "quantity": "3  unidades",
           "name": "ex"
         },
         {
-          "quantity": "3  unidades",
-          "name": "dolor"
-        },
-        {
-          "quantity": "2  pizcas",
-          "name": "et"
-        }
-      ],
-      "preparationDescription": "Ad adipisicing consectetur ullamco eu commodo elit deserunt. Nostrud occaecat minim mollit velit consectetur magna proident minim anim ea cupidatat. Ipsum et aute velit in esse irure deserunt sunt anim excepteur."
-    }
-  },
-  {
-    "name": "adipisicing",
-    "type": "aliño",
-    "thumbnailImagePath": "https://picsum.photos/64",
-    "detailImagePath": "https://picsum.photos/480",
-    "hasDetails": false,
-    "detail": {
-      "difficulty": "Fácil",
-      "preparationTime": "9 - 37 min",
-      "cookingTime": "5 - 34 min",
-      "ingredients": [
-        {
-          "quantity": "1  unidades",
-          "name": "exercitation"
-        },
-        {
-          "quantity": "1  pizcas",
-          "name": "magna"
-        },
-        {
-          "quantity": "2  unidades",
-          "name": "sint"
-        },
-        {
-          "quantity": "2  unidades",
+          "quantity": "4  unidades",
           "name": "reprehenderit"
-        },
-        {
-          "quantity": "1  unidades",
-          "name": "non"
-        },
-        {
-          "quantity": "2  unidades",
-          "name": "sint"
-        },
-        {
-          "quantity": "4  pizcas",
-          "name": "consequat"
-        }
-      ],
-      "preparationDescription": "Laborum reprehenderit sit commodo esse dolor exercitation occaecat ad laborum sunt elit veniam. Irure culpa amet enim eiusmod dolore nostrud minim consequat sit dolore duis reprehenderit esse eiusmod. Dolor adipisicing Lorem excepteur ut culpa adipisicing Lorem pariatur sint velit excepteur. Aliqua consequat excepteur fugiat esse aute culpa voluptate incididunt."
-    }
-  },
-  {
-    "name": "velit",
-    "type": "aliño",
-    "thumbnailImagePath": "https://picsum.photos/64",
-    "detailImagePath": "https://picsum.photos/480",
-    "hasDetails": false,
-    "detail": {
-      "difficulty": "Difícil",
-      "preparationTime": "8 - 38 min",
-      "cookingTime": "6 - 40 min",
-      "ingredients": [
-        {
-          "quantity": "1  pizcas",
-          "name": "anim"
-        },
-        {
-          "quantity": "4  pizcas",
-          "name": "pariatur"
-        },
-        {
-          "quantity": "3  pizcas",
-          "name": "culpa"
-        },
-        {
-          "quantity": "1  unidades",
-          "name": "incididunt"
-        },
-        {
-          "quantity": "2  pizcas",
-          "name": "elit"
-        },
-        {
-          "quantity": "2  unidades",
-          "name": "sunt"
-        },
-        {
-          "quantity": "3  pizcas",
-          "name": "proident"
-        }
-      ],
-      "preparationDescription": "Officia in ullamco cupidatat ut anim cupidatat dolore non et reprehenderit magna. Nisi nisi culpa anim incididunt. Ut tempor ipsum ut proident minim. Do aliquip occaecat aliquip tempor magna non voluptate cupidatat ipsum labore et sit. Sint quis aliquip eiusmod duis dolor ut irure laborum nulla magna occaecat. Sint mollit anim ad officia occaecat amet duis officia. Cillum ipsum irure pariatur amet."
-    }
-  },
-  {
-    "name": "aliqua",
-    "type": "aliño",
-    "thumbnailImagePath": "https://picsum.photos/64",
-    "detailImagePath": "https://picsum.photos/480",
-    "hasDetails": false,
-    "detail": {
-      "difficulty": "Fácil",
-      "preparationTime": "7 - 34 min",
-      "cookingTime": "9 - 22 min",
-      "ingredients": [
-        {
-          "quantity": "1  pizcas",
-          "name": "deserunt"
-        },
-        {
-          "quantity": "1  unidades",
-          "name": "id"
-        },
-        {
-          "quantity": "3  pizcas",
-          "name": "veniam"
-        },
-        {
-          "quantity": "4  pizcas",
-          "name": "ipsum"
-        },
-        {
-          "quantity": "3  pizcas",
-          "name": "enim"
-        },
-        {
-          "quantity": "3  unidades",
-          "name": "fugiat"
-        },
-        {
-          "quantity": "4  unidades",
-          "name": "sit"
-        },
-        {
-          "quantity": "3  unidades",
-          "name": "commodo"
-        }
-      ],
-      "preparationDescription": "Do est pariatur fugiat laboris ut sunt nulla ea commodo. Minim labore pariatur exercitation quis fugiat aliquip culpa ad anim ad. Qui laborum nulla dolore aute. Excepteur tempor minim deserunt dolore esse occaecat. Consequat elit elit pariatur cillum sunt proident. Adipisicing ullamco culpa sit dolor ad. Proident et laborum mollit cillum laborum."
-    }
-  },
-  {
-    "name": "aute",
-    "type": "aliño",
-    "thumbnailImagePath": "https://picsum.photos/64",
-    "detailImagePath": "https://picsum.photos/480",
-    "hasDetails": false,
-    "detail": {
-      "difficulty": "Difícil",
-      "preparationTime": "8 - 40 min",
-      "cookingTime": "6 - 38 min",
-      "ingredients": [
-        {
-          "quantity": "1  unidades",
-          "name": "nulla"
-        },
-        {
-          "quantity": "1  pizcas",
-          "name": "consectetur"
-        },
-        {
-          "quantity": "4  pizcas",
-          "name": "sunt"
-        },
-        {
-          "quantity": "2  pizcas",
-          "name": "nisi"
-        },
-        {
-          "quantity": "1  unidades",
-          "name": "proident"
-        },
-        {
-          "quantity": "3  unidades",
-          "name": "fugiat"
-        },
-        {
-          "quantity": "1  pizcas",
-          "name": "et"
-        },
-        {
-          "quantity": "4  unidades",
-          "name": "commodo"
-        }
-      ],
-      "preparationDescription": "In eu cillum veniam sint enim Lorem. Et fugiat cupidatat Lorem consectetur aliquip occaecat commodo esse culpa. Voluptate nulla in ut excepteur aliquip ipsum ut excepteur. Do ipsum et Lorem et minim incididunt nostrud incididunt occaecat Lorem minim. Eu duis consectetur id mollit dolore anim qui qui dolore ad ut excepteur. Mollit Lorem aliqua exercitation eu esse velit elit commodo magna proident adipisicing ad. Irure do ad nulla sunt est ut dolore."
-    }
-  },
-  {
-    "name": "laborum",
-    "type": "aliño",
-    "thumbnailImagePath": "https://picsum.photos/64",
-    "detailImagePath": "https://picsum.photos/480",
-    "hasDetails": false,
-    "detail": {
-      "difficulty": "Fácil",
-      "preparationTime": "5 - 39 min",
-      "cookingTime": "9 - 20 min",
-      "ingredients": [
-        {
-          "quantity": "3  unidades",
-          "name": "ipsum"
-        },
-        {
-          "quantity": "4  unidades",
-          "name": "adipisicing"
-        },
-        {
-          "quantity": "2  pizcas",
-          "name": "reprehenderit"
-        },
-        {
-          "quantity": "2  unidades",
-          "name": "eu"
-        }
-      ],
-      "preparationDescription": "Adipisicing anim ex non aliqua aliquip. Est eu quis excepteur do quis magna anim velit aliquip deserunt est labore. Voluptate esse aliqua proident ut nisi elit sint commodo quis. Dolor voluptate ut aliquip minim eu est aliqua incididunt non consequat duis voluptate officia in. Amet dolor eu eiusmod cupidatat amet sunt nisi deserunt ut aliquip voluptate in esse."
-    }
-  },
-  {
-    "name": "cupidatat",
-    "type": "aliño",
-    "thumbnailImagePath": "https://picsum.photos/64",
-    "detailImagePath": "https://picsum.photos/480",
-    "hasDetails": false,
-    "detail": {
-      "difficulty": "Difícil",
-      "preparationTime": "7 - 21 min",
-      "cookingTime": "9 - 24 min",
-      "ingredients": [
-        {
-          "quantity": "3  pizcas",
-          "name": "deserunt"
-        },
-        {
-          "quantity": "2  unidades",
-          "name": "nisi"
-        },
-        {
-          "quantity": "1  unidades",
-          "name": "ullamco"
-        },
-        {
-          "quantity": "3  pizcas",
-          "name": "nulla"
-        },
-        {
-          "quantity": "3  unidades",
-          "name": "anim"
-        },
-        {
-          "quantity": "3  unidades",
-          "name": "fugiat"
-        },
-        {
-          "quantity": "1  unidades",
-          "name": "ad"
-        }
-      ],
-      "preparationDescription": "Do amet id amet et. Cupidatat veniam id amet qui mollit. Nisi duis quis et irure Lorem velit qui amet anim. Reprehenderit dolore proident dolore consectetur incididunt et pariatur cupidatat do dolore culpa cillum. Nulla commodo laborum adipisicing nostrud incididunt anim non non ea ipsum. Ullamco dolor qui voluptate proident. Qui magna sunt amet adipisicing officia dolor in excepteur est ad minim sint ex."
-    }
-  },
-  {
-    "name": "exercitation",
-    "type": "salsa",
-    "thumbnailImagePath": "https://picsum.photos/64",
-    "detailImagePath": "https://picsum.photos/480",
-    "hasDetails": true,
-    "detail": {
-      "difficulty": "Difícil",
-      "preparationTime": "5 - 22 min",
-      "cookingTime": "7 - 40 min",
-      "ingredients": [
-        {
-          "quantity": "2  unidades",
-          "name": "eiusmod"
-        },
-        {
-          "quantity": "1  unidades",
-          "name": "eu"
-        },
-        {
-          "quantity": "4  unidades",
-          "name": "nostrud"
-        },
-        {
-          "quantity": "4  unidades",
-          "name": "eiusmod"
-        },
-        {
-          "quantity": "1  unidades",
-          "name": "ullamco"
-        },
-        {
-          "quantity": "2  pizcas",
-          "name": "aute"
-        },
-        {
-          "quantity": "4  pizcas",
-          "name": "culpa"
-        }
-      ],
-      "preparationDescription": "Deserunt dolore ullamco do pariatur amet esse quis exercitation consequat consectetur commodo. Mollit ea in deserunt incididunt sunt voluptate voluptate sit occaecat ad consequat occaecat eu. Ex consectetur enim irure et magna tempor ex. Pariatur aliqua sint sit do exercitation nulla irure magna magna. Exercitation amet sit adipisicing elit fugiat culpa laboris. Sunt ut in deserunt quis proident cupidatat qui deserunt aliquip consectetur."
-    }
-  },
-  {
-    "name": "adipisicing",
-    "type": "salsa",
-    "thumbnailImagePath": "https://picsum.photos/64",
-    "detailImagePath": "https://picsum.photos/480",
-    "hasDetails": true,
-    "detail": {
-      "difficulty": "Fácil",
-      "preparationTime": "6 - 22 min",
-      "cookingTime": "5 - 38 min",
-      "ingredients": [
-        {
-          "quantity": "4  pizcas",
-          "name": "consequat"
-        },
-        {
-          "quantity": "2  unidades",
-          "name": "commodo"
-        },
-        {
-          "quantity": "2  pizcas",
-          "name": "minim"
-        },
-        {
-          "quantity": "3  pizcas",
-          "name": "sunt"
         },
         {
           "quantity": "4  pizcas",
           "name": "irure"
         },
         {
-          "quantity": "3  unidades",
-          "name": "elit"
-        }
-      ],
-      "preparationDescription": "Ipsum labore in nostrud dolor sit proident culpa et ea quis anim incididunt ea quis. Incididunt ut fugiat qui sunt enim reprehenderit reprehenderit proident occaecat ad sit cupidatat qui. Culpa excepteur amet incididunt nulla elit nulla tempor voluptate ullamco est eu sint. In cillum pariatur ullamco consectetur sint fugiat. Incididunt nostrud aute commodo nisi."
-    }
-  },
-  {
-    "name": "nisi",
-    "type": "aliño",
-    "thumbnailImagePath": "https://picsum.photos/64",
-    "detailImagePath": "https://picsum.photos/480",
-    "hasDetails": false,
-    "detail": {
-      "difficulty": "Fácil",
-      "preparationTime": "9 - 39 min",
-      "cookingTime": "9 - 36 min",
-      "ingredients": [
-        {
-          "quantity": "4  unidades",
+          "quantity": "1  unidades",
           "name": "duis"
         },
         {
           "quantity": "1  unidades",
-          "name": "reprehenderit"
-        },
-        {
-          "quantity": "3  unidades",
-          "name": "eiusmod"
-        },
-        {
-          "quantity": "1  unidades",
-          "name": "dolore"
-        },
-        {
-          "quantity": "4  unidades",
-          "name": "sit"
-        },
-        {
-          "quantity": "2  unidades",
-          "name": "quis"
-        },
-        {
-          "quantity": "2  pizcas",
-          "name": "incididunt"
-        }
-      ],
-      "preparationDescription": "Dolore ullamco velit dolor non elit minim duis reprehenderit laborum labore incididunt sit. Nulla incididunt commodo qui ea. Mollit deserunt sit nostrud aute occaecat. Proident aute occaecat mollit dolor velit commodo aliqua consectetur irure quis magna voluptate. Sunt voluptate ut ad elit nulla nulla aute pariatur."
-    }
-  },
-  {
-    "name": "sunt",
-    "type": "salsa",
-    "thumbnailImagePath": "https://picsum.photos/64",
-    "detailImagePath": "https://picsum.photos/480",
-    "hasDetails": true,
-    "detail": {
-      "difficulty": "Fácil",
-      "preparationTime": "6 - 30 min",
-      "cookingTime": "5 - 29 min",
-      "ingredients": [
-        {
-          "quantity": "1  unidades",
-          "name": "exercitation"
-        },
-        {
-          "quantity": "4  unidades",
-          "name": "occaecat"
-        },
-        {
-          "quantity": "4  unidades",
-          "name": "fugiat"
-        },
-        {
-          "quantity": "2  unidades",
-          "name": "eu"
-        },
-        {
-          "quantity": "3  unidades",
-          "name": "nulla"
-        },
-        {
-          "quantity": "3  pizcas",
-          "name": "aliquip"
-        },
-        {
-          "quantity": "1  pizcas",
-          "name": "id"
-        },
-        {
-          "quantity": "2  unidades",
-          "name": "cupidatat"
-        }
-      ],
-      "preparationDescription": "Quis elit sunt culpa nostrud dolor minim. Laborum ut occaecat Lorem nulla. Incididunt do consectetur velit aliquip excepteur quis voluptate dolore anim. Ut eiusmod magna ex qui culpa et et qui elit sunt voluptate aliqua reprehenderit consectetur."
-    }
-  },
-  {
-    "name": "non",
-    "type": "aliño",
-    "thumbnailImagePath": "https://picsum.photos/64",
-    "detailImagePath": "https://picsum.photos/480",
-    "hasDetails": false,
-    "detail": {
-      "difficulty": "Difícil",
-      "preparationTime": "9 - 21 min",
-      "cookingTime": "8 - 40 min",
-      "ingredients": [
-        {
-          "quantity": "2  unidades",
-          "name": "consequat"
-        },
-        {
-          "quantity": "4  pizcas",
-          "name": "ullamco"
-        },
-        {
-          "quantity": "3  pizcas",
-          "name": "consequat"
-        },
-        {
-          "quantity": "2  unidades",
-          "name": "occaecat"
-        },
-        {
-          "quantity": "4  unidades",
-          "name": "amet"
-        },
-        {
-          "quantity": "3  unidades",
-          "name": "qui"
-        }
-      ],
-      "preparationDescription": "Enim pariatur dolore do veniam ea non amet ullamco ut officia do deserunt. Enim dolore laborum sint amet nisi consequat enim in nostrud quis. Labore exercitation amet esse in fugiat cupidatat est qui qui deserunt sint id officia. Minim id cillum incididunt veniam in quis consectetur amet elit consequat duis. Adipisicing incididunt incididunt aliquip irure sunt. Occaecat deserunt laborum consectetur esse. Laboris nisi enim fugiat elit culpa sit."
-    }
-  },
-  {
-    "name": "eiusmod",
-    "type": "salsa",
-    "thumbnailImagePath": "https://picsum.photos/64",
-    "detailImagePath": "https://picsum.photos/480",
-    "hasDetails": true,
-    "detail": {
-      "difficulty": "Fácil",
-      "preparationTime": "10 - 23 min",
-      "cookingTime": "5 - 29 min",
-      "ingredients": [
-        {
-          "quantity": "3  unidades",
-          "name": "enim"
-        },
-        {
-          "quantity": "3  pizcas",
-          "name": "reprehenderit"
-        },
-        {
-          "quantity": "2  unidades",
-          "name": "cupidatat"
-        },
-        {
-          "quantity": "1  unidades",
-          "name": "est"
-        },
-        {
-          "quantity": "2  pizcas",
-          "name": "est"
-        },
-        {
-          "quantity": "3  unidades",
-          "name": "minim"
-        },
-        {
-          "quantity": "4  pizcas",
-          "name": "velit"
-        },
-        {
-          "quantity": "2  unidades",
-          "name": "cillum"
-        }
-      ],
-      "preparationDescription": "Sit id sint ipsum aute eu tempor. Qui proident nisi aliquip Lorem excepteur consectetur elit non dolor consequat. Do sit reprehenderit sint sint id est minim esse in."
-    }
-  },
-  {
-    "name": "consequat",
-    "type": "salsa",
-    "thumbnailImagePath": "https://picsum.photos/64",
-    "detailImagePath": "https://picsum.photos/480",
-    "hasDetails": true,
-    "detail": {
-      "difficulty": "Fácil",
-      "preparationTime": "5 - 39 min",
-      "cookingTime": "10 - 34 min",
-      "ingredients": [
-        {
-          "quantity": "2  unidades",
-          "name": "ut"
-        },
-        {
-          "quantity": "2  unidades",
-          "name": "dolore"
-        },
-        {
-          "quantity": "1  pizcas",
-          "name": "ullamco"
-        },
-        {
-          "quantity": "1  unidades",
-          "name": "sint"
-        },
-        {
-          "quantity": "3  pizcas",
-          "name": "exercitation"
-        },
-        {
-          "quantity": "3  pizcas",
-          "name": "commodo"
-        }
-      ],
-      "preparationDescription": "In consectetur mollit velit quis. Duis magna dolor consectetur aliquip nostrud in veniam nisi aliqua ipsum elit deserunt consectetur. Est cupidatat et culpa laborum ut et est qui cupidatat. Ipsum eiusmod quis deserunt ullamco sunt quis. Occaecat nulla exercitation id laborum non ea eiusmod quis."
-    }
-  },
-  {
-    "name": "sint",
-    "type": "salsa",
-    "thumbnailImagePath": "https://picsum.photos/64",
-    "detailImagePath": "https://picsum.photos/480",
-    "hasDetails": true,
-    "detail": {
-      "difficulty": "Difícil",
-      "preparationTime": "5 - 34 min",
-      "cookingTime": "7 - 32 min",
-      "ingredients": [
-        {
-          "quantity": "4  pizcas",
-          "name": "duis"
-        },
-        {
-          "quantity": "2  pizcas",
-          "name": "sit"
-        },
-        {
-          "quantity": "4  unidades",
-          "name": "veniam"
-        },
-        {
-          "quantity": "3  pizcas",
-          "name": "est"
-        }
-      ],
-      "preparationDescription": "Tempor non eu pariatur et aliqua occaecat et eu adipisicing laborum laborum Lorem voluptate sit. Et incididunt commodo ex laborum laboris reprehenderit dolore tempor reprehenderit excepteur ipsum. Sunt labore deserunt ipsum esse reprehenderit. Minim officia nisi sit anim quis ipsum nisi labore minim sint ipsum dolore officia. Anim dolor et veniam dolore nulla anim adipisicing et ea adipisicing eu consectetur. Irure qui aliqua est non aute ad enim sunt. Dolore qui anim dolor veniam incididunt elit pariatur consectetur labore."
-    }
-  },
-  {
-    "name": "qui",
-    "type": "salsa",
-    "thumbnailImagePath": "https://picsum.photos/64",
-    "detailImagePath": "https://picsum.photos/480",
-    "hasDetails": true,
-    "detail": {
-      "difficulty": "Difícil",
-      "preparationTime": "7 - 39 min",
-      "cookingTime": "9 - 23 min",
-      "ingredients": [
-        {
-          "quantity": "3  unidades",
-          "name": "eiusmod"
-        },
-        {
-          "quantity": "3  unidades",
-          "name": "occaecat"
-        },
-        {
-          "quantity": "1  unidades",
-          "name": "qui"
-        },
-        {
-          "quantity": "1  unidades",
-          "name": "voluptate"
-        },
-        {
-          "quantity": "3  pizcas",
-          "name": "pariatur"
-        },
-        {
-          "quantity": "3  unidades",
-          "name": "consectetur"
-        },
-        {
-          "quantity": "2  unidades",
-          "name": "est"
-        }
-      ],
-      "preparationDescription": "Cupidatat dolore enim sunt elit in deserunt nisi laborum. Cillum reprehenderit voluptate ullamco laborum aute esse minim ex enim laboris. Pariatur labore exercitation dolore tempor dolor aliquip eiusmod adipisicing aliquip id cupidatat ad irure. Amet nostrud ullamco excepteur labore nulla mollit proident ut ad fugiat qui aute do. Anim do irure aute incididunt veniam reprehenderit deserunt nulla incididunt ea pariatur enim sit. Et eu reprehenderit ad eiusmod elit ut anim reprehenderit deserunt mollit tempor cillum labore. Excepteur eiusmod velit Lorem tempor do laboris cupidatat consectetur amet aliquip non."
-    }
-  },
-  {
-    "name": "Lorem",
-    "type": "salsa",
-    "thumbnailImagePath": "https://picsum.photos/64",
-    "detailImagePath": "https://picsum.photos/480",
-    "hasDetails": true,
-    "detail": {
-      "difficulty": "Fácil",
-      "preparationTime": "7 - 26 min",
-      "cookingTime": "8 - 26 min",
-      "ingredients": [
-        {
-          "quantity": "2  pizcas",
           "name": "Lorem"
         },
         {
           "quantity": "4  pizcas",
-          "name": "tempor"
-        },
-        {
-          "quantity": "3  pizcas",
-          "name": "duis"
+          "name": "esse"
         },
         {
           "quantity": "1  pizcas",
-          "name": "anim"
+          "name": "eu"
+        }
+      ],
+      "preparationDescription": "Lorem excepteur pariatur do pariatur consequat consequat aute officia voluptate. Ut magna dolor proident incididunt incididunt ipsum eu voluptate. Excepteur nulla dolor irure ea cupidatat labore proident do incididunt aliquip reprehenderit. Nostrud deserunt fugiat dolore anim ad amet pariatur laborum quis cupidatat aute enim. Sit excepteur velit do aute tempor duis consectetur."
+    }
+  },
+  {
+    "name": "est",
+    "type": "aliño",
+    "thumbnailImagePath": "https://picsum.photos/64",
+    "detailImagePath": "https://picsum.photos/480",
+    "hasDetails": false,
+    "summary": "Nisi et exercitation incididunt incididunt elit aute amet consequat adipisicing exercitation.",
+    "detail": {
+      "difficulty": "Fácil",
+      "preparationTime": "7 - 21 min",
+      "cookingTime": "7 - 33 min",
+      "ingredients": [
+        {
+          "quantity": "4  pizcas",
+          "name": "Lorem"
+        },
+        {
+          "quantity": "4  unidades",
+          "name": "duis"
         },
         {
           "quantity": "2  unidades",
-          "name": "esse"
+          "name": "amet"
+        },
+        {
+          "quantity": "2  pizcas",
+          "name": "id"
         }
       ],
-      "preparationDescription": "Et non veniam pariatur anim ea nisi. Et labore excepteur amet minim. Sit laboris nulla reprehenderit reprehenderit dolor mollit magna eu commodo. Aute Lorem exercitation non Lorem mollit officia ad velit cillum consequat esse voluptate mollit. Amet deserunt commodo ad aliqua ex reprehenderit deserunt commodo laboris exercitation proident. Eu ut deserunt sunt in et qui duis velit consectetur tempor est ea amet dolor."
+      "preparationDescription": "Deserunt velit tempor aute ut eu culpa laboris laborum. Dolore elit adipisicing ut labore anim laborum ullamco esse laboris ipsum voluptate officia culpa commodo. Mollit sit ea Lorem veniam proident. Ullamco et et veniam sunt ea labore ipsum tempor consequat id aute nostrud officia."
+    }
+  },
+  {
+    "name": "fugiat",
+    "type": "salsa",
+    "thumbnailImagePath": "https://picsum.photos/64",
+    "detailImagePath": "https://picsum.photos/480",
+    "hasDetails": true,
+    "summary": "Magna eu sit reprehenderit labore cupidatat aliquip reprehenderit esse ex.",
+    "detail": {
+      "difficulty": "Difícil",
+      "preparationTime": "6 - 26 min",
+      "cookingTime": "6 - 27 min",
+      "ingredients": [
+        {
+          "quantity": "4  unidades",
+          "name": "occaecat"
+        },
+        {
+          "quantity": "1  pizcas",
+          "name": "minim"
+        },
+        {
+          "quantity": "3  pizcas",
+          "name": "anim"
+        },
+        {
+          "quantity": "4  unidades",
+          "name": "dolor"
+        }
+      ],
+      "preparationDescription": "Id ipsum nisi anim consequat nulla do voluptate ad duis culpa ex eiusmod adipisicing quis. Adipisicing qui ea officia est aliqua cillum eiusmod culpa nostrud excepteur. Tempor deserunt sint mollit irure excepteur cillum ad ex excepteur culpa non irure cillum. Proident laborum velit sint irure sit."
+    }
+  },
+  {
+    "name": "id",
+    "type": "aliño",
+    "thumbnailImagePath": "https://picsum.photos/64",
+    "detailImagePath": "https://picsum.photos/480",
+    "hasDetails": false,
+    "summary": "Nisi commodo nulla id dolor tempor cillum.",
+    "detail": {
+      "difficulty": "Difícil",
+      "preparationTime": "5 - 21 min",
+      "cookingTime": "8 - 29 min",
+      "ingredients": [
+        {
+          "quantity": "3  unidades",
+          "name": "est"
+        },
+        {
+          "quantity": "4  pizcas",
+          "name": "culpa"
+        },
+        {
+          "quantity": "3  pizcas",
+          "name": "minim"
+        },
+        {
+          "quantity": "2  pizcas",
+          "name": "exercitation"
+        },
+        {
+          "quantity": "2  pizcas",
+          "name": "enim"
+        }
+      ],
+      "preparationDescription": "Esse do tempor ea reprehenderit cupidatat dolore exercitation est velit reprehenderit. Sit do cupidatat est aliquip aliquip laboris excepteur ut laborum. Ut anim consectetur in ipsum aute elit exercitation nisi. Nostrud dolore labore sunt qui ut consequat aliqua cupidatat officia esse. Reprehenderit Lorem in anim ipsum. Laborum eiusmod qui incididunt eiusmod aliqua cillum minim eu consectetur enim voluptate nisi. Eiusmod Lorem minim commodo tempor."
+    }
+  },
+  {
+    "name": "duis",
+    "type": "aliño",
+    "thumbnailImagePath": "https://picsum.photos/64",
+    "detailImagePath": "https://picsum.photos/480",
+    "hasDetails": false,
+    "summary": "Non proident in fugiat id adipisicing anim pariatur magna adipisicing velit aute non aliquip.",
+    "detail": {
+      "difficulty": "Difícil",
+      "preparationTime": "10 - 39 min",
+      "cookingTime": "8 - 24 min",
+      "ingredients": [
+        {
+          "quantity": "2  pizcas",
+          "name": "proident"
+        },
+        {
+          "quantity": "4  pizcas",
+          "name": "in"
+        },
+        {
+          "quantity": "2  pizcas",
+          "name": "qui"
+        },
+        {
+          "quantity": "4  unidades",
+          "name": "fugiat"
+        }
+      ],
+      "preparationDescription": "Ex enim ut aliquip aliquip quis excepteur excepteur occaecat. Pariatur ut proident sit ex esse aliqua incididunt ex occaecat ad nostrud esse. Officia non fugiat culpa irure ea enim nulla. Sint fugiat non cupidatat consequat aliqua sunt magna duis qui reprehenderit. Reprehenderit voluptate enim enim consequat ex eiusmod reprehenderit veniam culpa sit. Ipsum aliquip do mollit aliquip culpa aute aliquip consectetur. Quis consectetur do quis quis minim ut."
+    }
+  },
+  {
+    "name": "dolor",
+    "type": "salsa",
+    "thumbnailImagePath": "https://picsum.photos/64",
+    "detailImagePath": "https://picsum.photos/480",
+    "hasDetails": true,
+    "summary": "Laborum id pariatur consequat anim eiusmod ipsum nostrud sint quis labore nostrud qui exercitation.",
+    "detail": {
+      "difficulty": "Difícil",
+      "preparationTime": "5 - 38 min",
+      "cookingTime": "6 - 36 min",
+      "ingredients": [
+        {
+          "quantity": "1  unidades",
+          "name": "esse"
+        },
+        {
+          "quantity": "4  unidades",
+          "name": "laborum"
+        },
+        {
+          "quantity": "1  pizcas",
+          "name": "amet"
+        },
+        {
+          "quantity": "2  unidades",
+          "name": "excepteur"
+        }
+      ],
+      "preparationDescription": "Nulla laboris sint proident anim magna sint occaecat est proident enim sunt. Reprehenderit consequat magna aliqua proident aliquip laborum cupidatat nostrud occaecat ea. Nostrud ad proident quis voluptate deserunt culpa minim do incididunt excepteur est. Laborum occaecat cupidatat est do dolore ut fugiat. Irure reprehenderit anim officia non id non consectetur. Adipisicing elit excepteur fugiat mollit sunt sunt culpa magna sint exercitation in."
+    }
+  },
+  {
+    "name": "officia",
+    "type": "salsa",
+    "thumbnailImagePath": "https://picsum.photos/64",
+    "detailImagePath": "https://picsum.photos/480",
+    "hasDetails": true,
+    "summary": "Reprehenderit non velit aute dolore duis magna nulla ullamco fugiat non ut esse sunt.",
+    "detail": {
+      "difficulty": "Fácil",
+      "preparationTime": "5 - 32 min",
+      "cookingTime": "5 - 29 min",
+      "ingredients": [
+        {
+          "quantity": "2  pizcas",
+          "name": "ut"
+        },
+        {
+          "quantity": "2  unidades",
+          "name": "nisi"
+        },
+        {
+          "quantity": "1  pizcas",
+          "name": "voluptate"
+        },
+        {
+          "quantity": "2  unidades",
+          "name": "id"
+        },
+        {
+          "quantity": "2  unidades",
+          "name": "elit"
+        }
+      ],
+      "preparationDescription": "Occaecat in nisi dolor ea et adipisicing est sit aliqua. Duis cupidatat proident mollit consectetur cillum sunt et. Ut ad ut irure id do consectetur aute laborum aute."
+    }
+  },
+  {
+    "name": "dolore",
+    "type": "salsa",
+    "thumbnailImagePath": "https://picsum.photos/64",
+    "detailImagePath": "https://picsum.photos/480",
+    "hasDetails": true,
+    "summary": "Non dolore consequat do occaecat.",
+    "detail": {
+      "difficulty": "Difícil",
+      "preparationTime": "5 - 23 min",
+      "cookingTime": "10 - 23 min",
+      "ingredients": [
+        {
+          "quantity": "2  pizcas",
+          "name": "sunt"
+        },
+        {
+          "quantity": "1  unidades",
+          "name": "ad"
+        },
+        {
+          "quantity": "1  pizcas",
+          "name": "voluptate"
+        },
+        {
+          "quantity": "3  pizcas",
+          "name": "cupidatat"
+        },
+        {
+          "quantity": "3  unidades",
+          "name": "labore"
+        }
+      ],
+      "preparationDescription": "Tempor sunt do ut culpa. Aliquip qui non deserunt qui voluptate magna reprehenderit. Incididunt enim consectetur in sit magna ea eu non sint. Excepteur eiusmod esse anim enim voluptate tempor. Eiusmod ut esse consequat ea dolore tempor dolor irure deserunt aliquip exercitation. Ut in duis laboris nostrud officia officia ea. Ad velit ipsum anim id consectetur consectetur mollit do cillum."
+    }
+  },
+  {
+    "name": "culpa",
+    "type": "salsa",
+    "thumbnailImagePath": "https://picsum.photos/64",
+    "detailImagePath": "https://picsum.photos/480",
+    "hasDetails": true,
+    "summary": "In laboris est sunt anim sunt elit sint esse aliquip anim cupidatat est cillum.",
+    "detail": {
+      "difficulty": "Difícil",
+      "preparationTime": "8 - 23 min",
+      "cookingTime": "8 - 40 min",
+      "ingredients": [
+        {
+          "quantity": "3  pizcas",
+          "name": "aliqua"
+        },
+        {
+          "quantity": "1  unidades",
+          "name": "deserunt"
+        },
+        {
+          "quantity": "2  pizcas",
+          "name": "ullamco"
+        },
+        {
+          "quantity": "3  pizcas",
+          "name": "esse"
+        },
+        {
+          "quantity": "1  unidades",
+          "name": "elit"
+        },
+        {
+          "quantity": "2  unidades",
+          "name": "voluptate"
+        }
+      ],
+      "preparationDescription": "Esse cillum tempor tempor elit pariatur. Est ea irure ut in qui veniam id aliquip mollit laboris officia nostrud. Lorem excepteur eiusmod duis non magna et mollit aute commodo. Proident aliqua pariatur incididunt enim fugiat duis elit cupidatat amet magna."
+    }
+  },
+  {
+    "name": "labore",
+    "type": "aliño",
+    "thumbnailImagePath": "https://picsum.photos/64",
+    "detailImagePath": "https://picsum.photos/480",
+    "hasDetails": false,
+    "summary": "Anim cupidatat cillum aliquip ullamco magna eiusmod ut voluptate Lorem sit duis eiusmod qui.",
+    "detail": {
+      "difficulty": "Difícil",
+      "preparationTime": "6 - 28 min",
+      "cookingTime": "6 - 30 min",
+      "ingredients": [
+        {
+          "quantity": "3  pizcas",
+          "name": "incididunt"
+        },
+        {
+          "quantity": "1  pizcas",
+          "name": "eiusmod"
+        },
+        {
+          "quantity": "1  pizcas",
+          "name": "aliquip"
+        },
+        {
+          "quantity": "2  unidades",
+          "name": "dolore"
+        },
+        {
+          "quantity": "3  pizcas",
+          "name": "cupidatat"
+        },
+        {
+          "quantity": "1  pizcas",
+          "name": "aliqua"
+        },
+        {
+          "quantity": "3  pizcas",
+          "name": "ea"
+        }
+      ],
+      "preparationDescription": "Culpa et proident do irure dolor esse nisi sint ut ullamco adipisicing do. Ad duis cupidatat esse pariatur elit labore non elit mollit ea nulla. Nisi magna adipisicing aliquip anim consectetur quis pariatur velit occaecat. Quis do ea elit consequat ad nisi non dolore exercitation consequat sit nulla reprehenderit fugiat. Laborum aute sit occaecat enim ea commodo aliqua ut ullamco."
+    }
+  },
+  {
+    "name": "magna",
+    "type": "salsa",
+    "thumbnailImagePath": "https://picsum.photos/64",
+    "detailImagePath": "https://picsum.photos/480",
+    "hasDetails": true,
+    "summary": "Tempor sint qui occaecat elit reprehenderit sunt excepteur dolor fugiat sint adipisicing enim reprehenderit id.",
+    "detail": {
+      "difficulty": "Fácil",
+      "preparationTime": "8 - 38 min",
+      "cookingTime": "6 - 27 min",
+      "ingredients": [
+        {
+          "quantity": "1  unidades",
+          "name": "laborum"
+        },
+        {
+          "quantity": "2  pizcas",
+          "name": "consequat"
+        },
+        {
+          "quantity": "4  pizcas",
+          "name": "do"
+        },
+        {
+          "quantity": "4  pizcas",
+          "name": "sunt"
+        },
+        {
+          "quantity": "2  unidades",
+          "name": "irure"
+        },
+        {
+          "quantity": "2  unidades",
+          "name": "sunt"
+        }
+      ],
+      "preparationDescription": "Esse aute sit do veniam irure labore. Tempor magna tempor aute irure id veniam excepteur dolor cupidatat occaecat. Sint ea ullamco esse qui elit est proident officia et occaecat aliqua anim occaecat consequat. Aliqua amet magna cupidatat irure amet cillum velit ipsum."
+    }
+  },
+  {
+    "name": "excepteur",
+    "type": "salsa",
+    "thumbnailImagePath": "https://picsum.photos/64",
+    "detailImagePath": "https://picsum.photos/480",
+    "hasDetails": true,
+    "summary": "Do ullamco aliqua et consectetur sint exercitation exercitation esse.",
+    "detail": {
+      "difficulty": "Difícil",
+      "preparationTime": "10 - 20 min",
+      "cookingTime": "5 - 35 min",
+      "ingredients": [
+        {
+          "quantity": "3  unidades",
+          "name": "irure"
+        },
+        {
+          "quantity": "3  pizcas",
+          "name": "mollit"
+        },
+        {
+          "quantity": "2  unidades",
+          "name": "cupidatat"
+        },
+        {
+          "quantity": "3  pizcas",
+          "name": "sint"
+        }
+      ],
+      "preparationDescription": "Non laboris nulla commodo consectetur nulla excepteur veniam sint eu irure cillum sint culpa. Ipsum deserunt excepteur proident veniam ea eiusmod veniam sit sunt eu. Quis mollit sint eu aliqua deserunt sint deserunt reprehenderit nisi enim deserunt veniam."
+    }
+  },
+  {
+    "name": "aute",
+    "type": "salsa",
+    "thumbnailImagePath": "https://picsum.photos/64",
+    "detailImagePath": "https://picsum.photos/480",
+    "hasDetails": true,
+    "summary": "Sit labore culpa incididunt cillum laborum culpa cillum nisi occaecat nisi aliquip consectetur.",
+    "detail": {
+      "difficulty": "Difícil",
+      "preparationTime": "7 - 22 min",
+      "cookingTime": "9 - 22 min",
+      "ingredients": [
+        {
+          "quantity": "4  unidades",
+          "name": "laborum"
+        },
+        {
+          "quantity": "3  unidades",
+          "name": "labore"
+        },
+        {
+          "quantity": "4  pizcas",
+          "name": "nisi"
+        },
+        {
+          "quantity": "1  pizcas",
+          "name": "nisi"
+        },
+        {
+          "quantity": "1  unidades",
+          "name": "cillum"
+        },
+        {
+          "quantity": "3  unidades",
+          "name": "aliqua"
+        },
+        {
+          "quantity": "2  unidades",
+          "name": "magna"
+        }
+      ],
+      "preparationDescription": "Dolore eiusmod quis enim culpa fugiat mollit reprehenderit elit et commodo in proident laboris do. Pariatur sunt nostrud fugiat minim duis. Reprehenderit irure do mollit aute ea ad incididunt eu officia do nisi aliqua excepteur. Adipisicing nisi anim reprehenderit veniam irure. Do esse eiusmod aliqua in. Ex sint commodo consequat labore duis voluptate et qui quis do adipisicing nisi cupidatat aliqua."
+    }
+  },
+  {
+    "name": "mollit",
+    "type": "salsa",
+    "thumbnailImagePath": "https://picsum.photos/64",
+    "detailImagePath": "https://picsum.photos/480",
+    "hasDetails": true,
+    "summary": "Elit sit exercitation reprehenderit nulla esse.",
+    "detail": {
+      "difficulty": "Fácil",
+      "preparationTime": "8 - 38 min",
+      "cookingTime": "9 - 36 min",
+      "ingredients": [
+        {
+          "quantity": "4  pizcas",
+          "name": "esse"
+        },
+        {
+          "quantity": "2  pizcas",
+          "name": "nulla"
+        },
+        {
+          "quantity": "2  pizcas",
+          "name": "quis"
+        },
+        {
+          "quantity": "2  unidades",
+          "name": "cupidatat"
+        }
+      ],
+      "preparationDescription": "Consequat pariatur do ea veniam elit eu in magna cupidatat aliqua nulla. Sint ut veniam laborum irure consectetur laboris eiusmod. Ipsum ut mollit elit ullamco sunt reprehenderit sit tempor magna adipisicing est. Ut non est laboris laborum laboris nulla ullamco do ad deserunt. Velit mollit ad ullamco qui. Esse adipisicing do occaecat qui excepteur enim ad nisi velit dolore nisi occaecat ut."
+    }
+  },
+  {
+    "name": "eu",
+    "type": "salsa",
+    "thumbnailImagePath": "https://picsum.photos/64",
+    "detailImagePath": "https://picsum.photos/480",
+    "hasDetails": true,
+    "summary": "Tempor dolore nisi sit cupidatat.",
+    "detail": {
+      "difficulty": "Difícil",
+      "preparationTime": "5 - 21 min",
+      "cookingTime": "6 - 32 min",
+      "ingredients": [
+        {
+          "quantity": "1  unidades",
+          "name": "sit"
+        },
+        {
+          "quantity": "4  pizcas",
+          "name": "minim"
+        },
+        {
+          "quantity": "1  unidades",
+          "name": "duis"
+        },
+        {
+          "quantity": "3  unidades",
+          "name": "sint"
+        },
+        {
+          "quantity": "1  unidades",
+          "name": "adipisicing"
+        },
+        {
+          "quantity": "2  unidades",
+          "name": "irure"
+        }
+      ],
+      "preparationDescription": "Exercitation quis exercitation enim elit. Labore qui et ullamco labore incididunt. Est occaecat consectetur ullamco aliquip ut. Aliqua fugiat sunt dolore sint dolor nulla fugiat dolor sunt laborum esse irure consequat irure. Nulla ad occaecat elit labore laboris commodo irure nisi exercitation excepteur culpa. Magna proident laborum culpa proident consequat est do nisi voluptate qui aliquip anim dolor. Laboris amet velit pariatur exercitation commodo aliquip ut id minim cupidatat sit pariatur non sit."
+    }
+  },
+  {
+    "name": "commodo",
+    "type": "aliño",
+    "thumbnailImagePath": "https://picsum.photos/64",
+    "detailImagePath": "https://picsum.photos/480",
+    "hasDetails": false,
+    "summary": "Consequat proident minim dolor ad culpa velit minim ut nostrud labore ea sint id.",
+    "detail": {
+      "difficulty": "Fácil",
+      "preparationTime": "6 - 39 min",
+      "cookingTime": "5 - 27 min",
+      "ingredients": [
+        {
+          "quantity": "1  unidades",
+          "name": "nisi"
+        },
+        {
+          "quantity": "3  unidades",
+          "name": "sit"
+        },
+        {
+          "quantity": "2  pizcas",
+          "name": "eiusmod"
+        },
+        {
+          "quantity": "4  unidades",
+          "name": "excepteur"
+        }
+      ],
+      "preparationDescription": "Ipsum deserunt ad exercitation esse. Nisi qui ullamco cillum consectetur irure deserunt proident pariatur culpa et aliquip consequat labore exercitation. Deserunt dolore labore dolore ad nisi do ex. Voluptate sit et aliquip duis ut nulla do nulla. In pariatur ad duis sit dolore qui adipisicing non."
+    }
+  },
+  {
+    "name": "Lorem",
+    "type": "aliño",
+    "thumbnailImagePath": "https://picsum.photos/64",
+    "detailImagePath": "https://picsum.photos/480",
+    "hasDetails": false,
+    "summary": "Culpa pariatur qui proident eiusmod ut.",
+    "detail": {
+      "difficulty": "Difícil",
+      "preparationTime": "8 - 34 min",
+      "cookingTime": "7 - 27 min",
+      "ingredients": [
+        {
+          "quantity": "3  pizcas",
+          "name": "irure"
+        },
+        {
+          "quantity": "1  unidades",
+          "name": "enim"
+        },
+        {
+          "quantity": "3  unidades",
+          "name": "magna"
+        },
+        {
+          "quantity": "4  pizcas",
+          "name": "do"
+        }
+      ],
+      "preparationDescription": "Culpa incididunt sit quis fugiat nostrud cillum eu aliqua ea enim ut cillum voluptate culpa. Reprehenderit aliqua anim qui cillum. Adipisicing excepteur eiusmod veniam enim ullamco laborum aute ad Lorem ullamco qui adipisicing consectetur deserunt."
+    }
+  },
+  {
+    "name": "officia",
+    "type": "aliño",
+    "thumbnailImagePath": "https://picsum.photos/64",
+    "detailImagePath": "https://picsum.photos/480",
+    "hasDetails": false,
+    "summary": "Laborum mollit mollit exercitation est enim sunt esse incididunt dolor ea.",
+    "detail": {
+      "difficulty": "Fácil",
+      "preparationTime": "7 - 35 min",
+      "cookingTime": "8 - 39 min",
+      "ingredients": [
+        {
+          "quantity": "4  unidades",
+          "name": "enim"
+        },
+        {
+          "quantity": "4  unidades",
+          "name": "anim"
+        },
+        {
+          "quantity": "4  pizcas",
+          "name": "sint"
+        },
+        {
+          "quantity": "1  unidades",
+          "name": "do"
+        },
+        {
+          "quantity": "2  unidades",
+          "name": "aliqua"
+        },
+        {
+          "quantity": "4  unidades",
+          "name": "incididunt"
+        },
+        {
+          "quantity": "3  pizcas",
+          "name": "velit"
+        }
+      ],
+      "preparationDescription": "Exercitation ex laborum fugiat eu occaecat consequat. Esse et dolor do laborum pariatur. Consequat magna in ipsum ad qui labore nostrud aute sunt magna id magna consectetur. In deserunt proident nostrud veniam reprehenderit voluptate exercitation eu aute amet Lorem ipsum."
     }
   }
 ]
