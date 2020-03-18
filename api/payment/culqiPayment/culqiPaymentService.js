@@ -70,7 +70,8 @@ const makePayment = async (recBody, recUser) => {
   } else if (saved) {
     // * Existing card
 
-    const client = getClientByToken({ token });
+    const client = await getClientByToken({ token });
+    console.log(client);
     dataReq = {
       ...dataReq,
       antifraud_details: client.culqiInfo.antifrauddetails,

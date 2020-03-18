@@ -41,18 +41,20 @@ const createCulqiClient = async (recBody, recUser) => {
   return setResponse(respClient.status, 'Client created.', culqiClient);
 };
 
-const formatCard = async card => {
+const formatCard = card => {
   return {
     token: card.token,
-    card_number: card.culqiInfo.token.card_number,
-    card_brand: card.culqiInfo.token.iin.card_brand,
+    card_number: card.culqiInfo.source.card_number,
+    card_brand: card.culqiInfo.source.iin.card_brand,
   };
 };
 
 const listCulqiClient = async recUser => {
   const clients = await CulqiClient.find({ user: recUser.id });
+
   const cards = [];
   clients.forEach(function(client) {
+    CulqiClient.updateOne();
     client.cards.forEach(function(card) {
       cards.push(formatCard(card));
     });
@@ -61,24 +63,30 @@ const listCulqiClient = async recUser => {
 };
 
 const createCard = async recBody => {
-  const respCard = await axios.post(
-    'https://api.culqi.com/v2/cards',
-    recBody,
-    headers,
-  );
-
-  if (respCard !== 201) {
-    return setResponse(respCard.status, 'Error', respCard.data);
+  let respCard;
+  try {
+    respCard = await axios.post(
+      'https://api.culqi.com/v2/cards',
+      recBody,
+      headers,
+    );
+  } catch (error) {
+    respCard = error.response;
+    return setResponse(respCard.status, 'Error', {});
   }
 
   // *Update culqiClient
   const culqiClient = await CulqiClient.findOne({ token: recBody.customer_id });
+
   const cardData = {
-    token: respCard.id,
-    culqiInfo: respCard,
+    token: respCard.data.id,
+    culqiInfo: respCard.data,
   };
-  culqiClient.cards.push(cardData);
-  culqiClient.save();
+
+  await CulqiClient.updateOne(
+    { _id: culqiClient.id },
+    { $push: { cards: cardData } },
+  );
 
   return setResponse(respCard.status, 'Card created.', cardData);
 };
