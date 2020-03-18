@@ -15,7 +15,7 @@ const dishRecipeSchema = new Schema({
   thumbnailImagePath: {
     type: String,
   },
-  baseImagePath: {
+  detailImagePath: {
     type: String,
   },
   hasDetails: {
