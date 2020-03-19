@@ -9,6 +9,7 @@ require('../../../startup/logging')();
 
 const config = require('config');
 const { Menu } = require('../../nutrition/menu/menuModel');
+const { Aliment } = require('../../nutrition/aliment/alimentModel');
 const { DishRecipe } = require('../../nutrition/dishRecipe/dishRecipeModel');
 const {
   DeliveryPlan,
@@ -54,6 +55,7 @@ mongoose
     await seedModel(DeliveryPlan, 'deliveryPlan.json');
     await seedModel(DishRecipe, 'dishRecipe.json');
     await seedModel(Menu, 'menu.json');
+    await seedModel(Aliment, 'aliments.json');
     mongoose.connection.close();
   })
   .catch(err => console.log(`Failed to connect to MongoDB...${String(err)}`));

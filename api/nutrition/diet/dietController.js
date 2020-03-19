@@ -7,13 +7,13 @@ const getDiet = async (req, res) => {
 };
 
 const getAliment = async (req, res) => {
-  const aliment = await Service.getAliment(req.query, req.user);
+  const aliment = await Service.getAliment(req.params, req.user);
 
   return res.status(aliment.status).send(aliment);
 };
 
 const changeAliment = async (req, res) => {
-  const response = await Service.changeAliment(req.body, req.query, req.user);
+  const response = await Service.changeAliment(req.body, req.params, req.user);
 
   return res.status(response.status).send(response);
 };

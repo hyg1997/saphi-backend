@@ -1,0 +1,1652 @@
+[
+  {
+    "name": "Pechuga de pollo sin piel ",
+    "minQuantity": 10,
+    "type": "proteína",
+    "units": "gr",
+    "macroContent": {
+      "protein": 2.309,
+      "carbohydrate": 0,
+      "fat": 0.124
+    },
+    "meals": [
+      {
+        "name": "desayuno",
+        "active": true
+      },
+      {
+        "name": "media mañana",
+        "active": false
+      },
+      {
+        "name": "almuerzo",
+        "active": true
+      },
+      {
+        "name": "media tarde",
+        "active": false
+      },
+      {
+        "name": "cena",
+        "active": true
+      }
+    ]
+  },
+  {
+    "name": "Pechuga de pavo",
+    "minQuantity": 10,
+    "type": "proteína",
+    "units": "gr",
+    "macroContent": {
+      "protein": 1.707,
+      "carbohydrate": 0.421,
+      "fat": 0.166
+    },
+    "meals": [
+      {
+        "name": "desayuno",
+        "active": false
+      },
+      {
+        "name": "media mañana",
+        "active": false
+      },
+      {
+        "name": "almuerzo",
+        "active": true
+      },
+      {
+        "name": "media tarde",
+        "active": false
+      },
+      {
+        "name": "cena",
+        "active": true
+      }
+    ]
+  },
+  {
+    "name": "Carne molida de Res (95/5) ",
+    "minQuantity": 10,
+    "type": "proteína",
+    "units": "gr",
+    "macroContent": {
+      "protein": 2,
+      "carbohydrate": 0,
+      "fat": 0.5
+    },
+    "meals": [
+      {
+        "name": "desayuno",
+        "active": true
+      },
+      {
+        "name": "media mañana",
+        "active": false
+      },
+      {
+        "name": "almuerzo",
+        "active": true
+      },
+      {
+        "name": "media tarde",
+        "active": false
+      },
+      {
+        "name": "cena",
+        "active": true
+      }
+    ]
+  },
+  {
+    "name": "Bistec",
+    "minQuantity": 10,
+    "type": "proteína",
+    "units": "gr",
+    "macroContent": {
+      "protein": 2,
+      "carbohydrate": 0,
+      "fat": 0.5
+    },
+    "meals": [
+      {
+        "name": "desayuno",
+        "active": false
+      },
+      {
+        "name": "media mañana",
+        "active": false
+      },
+      {
+        "name": "almuerzo",
+        "active": true
+      },
+      {
+        "name": "media tarde",
+        "active": false
+      },
+      {
+        "name": "cena",
+        "active": true
+      }
+    ]
+  },
+  {
+    "name": "Lomo fino",
+    "minQuantity": 10,
+    "type": "proteína",
+    "units": "gr",
+    "macroContent": {
+      "protein": 2,
+      "carbohydrate": 0,
+      "fat": 0.5
+    },
+    "meals": [
+      {
+        "name": "desayuno",
+        "active": false
+      },
+      {
+        "name": "media mañana",
+        "active": false
+      },
+      {
+        "name": "almuerzo",
+        "active": true
+      },
+      {
+        "name": "media tarde",
+        "active": false
+      },
+      {
+        "name": "cena",
+        "active": true
+      }
+    ]
+  },
+  {
+    "name": "Colita de cuadril",
+    "minQuantity": 10,
+    "type": "proteína",
+    "units": "gr",
+    "macroContent": {
+      "protein": 2.165,
+      "carbohydrate": 0,
+      "fat": 0.707
+    },
+    "meals": [
+      {
+        "name": "desayuno",
+        "active": false
+      },
+      {
+        "name": "media mañana",
+        "active": false
+      },
+      {
+        "name": "almuerzo",
+        "active": true
+      },
+      {
+        "name": "media tarde",
+        "active": false
+      },
+      {
+        "name": "cena",
+        "active": true
+      }
+    ]
+  },
+  {
+    "name": "Trucha",
+    "minQuantity": 10,
+    "type": "proteína",
+    "units": "gr",
+    "macroContent": {
+      "protein": 1.905,
+      "carbohydrate": 0,
+      "fat": 0.596
+    },
+    "meals": [
+      {
+        "name": "desayuno",
+        "active": false
+      },
+      {
+        "name": "media mañana",
+        "active": false
+      },
+      {
+        "name": "almuerzo",
+        "active": true
+      },
+      {
+        "name": "media tarde",
+        "active": false
+      },
+      {
+        "name": "cena",
+        "active": true
+      }
+    ]
+  },
+  {
+    "name": "Corvina",
+    "minQuantity": 10,
+    "type": "proteína",
+    "units": "gr",
+    "macroContent": {
+      "protein": 2.216,
+      "carbohydrate": 0,
+      "fat": 0.582
+    },
+    "meals": [
+      {
+        "name": "desayuno",
+        "active": false
+      },
+      {
+        "name": "media mañana",
+        "active": false
+      },
+      {
+        "name": "almuerzo",
+        "active": true
+      },
+      {
+        "name": "media tarde",
+        "active": false
+      },
+      {
+        "name": "cena",
+        "active": true
+      }
+    ]
+  },
+  {
+    "name": "Cojinova",
+    "minQuantity": 10,
+    "type": "proteína",
+    "units": "gr",
+    "macroContent": {
+      "protein": 2.1,
+      "carbohydrate": 0,
+      "fat": 0.43
+    },
+    "meals": [
+      {
+        "name": "desayuno",
+        "active": false
+      },
+      {
+        "name": "media mañana",
+        "active": false
+      },
+      {
+        "name": "almuerzo",
+        "active": true
+      },
+      {
+        "name": "media tarde",
+        "active": false
+      },
+      {
+        "name": "cena",
+        "active": true
+      }
+    ]
+  },
+  {
+    "name": "Tilapia",
+    "minQuantity": 10,
+    "type": "proteína",
+    "units": "gr",
+    "macroContent": {
+      "protein": 2.008,
+      "carbohydrate": 0,
+      "fat": 0.17
+    },
+    "meals": [
+      {
+        "name": "desayuno",
+        "active": false
+      },
+      {
+        "name": "media mañana",
+        "active": false
+      },
+      {
+        "name": "almuerzo",
+        "active": true
+      },
+      {
+        "name": "media tarde",
+        "active": false
+      },
+      {
+        "name": "cena",
+        "active": true
+      }
+    ]
+  },
+  {
+    "name": "Lenguado",
+    "minQuantity": 10,
+    "type": "proteína",
+    "units": "gr",
+    "macroContent": {
+      "protein": 1.884,
+      "carbohydrate": 0,
+      "fat": 0.119
+    },
+    "meals": [
+      {
+        "name": "desayuno",
+        "active": false
+      },
+      {
+        "name": "media mañana",
+        "active": false
+      },
+      {
+        "name": "almuerzo",
+        "active": true
+      },
+      {
+        "name": "media tarde",
+        "active": false
+      },
+      {
+        "name": "cena",
+        "active": true
+      }
+    ]
+  },
+  {
+    "name": "Atún fresco",
+    "minQuantity": 10,
+    "type": "proteína",
+    "units": "gr",
+    "macroContent": {
+      "protein": 2.387,
+      "carbohydrate": 0,
+      "fat": 0.462
+    },
+    "meals": [
+      {
+        "name": "desayuno",
+        "active": false
+      },
+      {
+        "name": "media mañana",
+        "active": false
+      },
+      {
+        "name": "almuerzo",
+        "active": true
+      },
+      {
+        "name": "media tarde",
+        "active": false
+      },
+      {
+        "name": "cena",
+        "active": true
+      }
+    ]
+  },
+  {
+    "name": "Atún en lata",
+    "minQuantity": 10,
+    "type": "proteína",
+    "units": "gr",
+    "macroContent": {
+      "protein": 2.551,
+      "carbohydrate": 0,
+      "fat": 0.082
+    },
+    "meals": [
+      {
+        "name": "desayuno",
+        "active": false
+      },
+      {
+        "name": "media mañana",
+        "active": false
+      },
+      {
+        "name": "almuerzo",
+        "active": true
+      },
+      {
+        "name": "media tarde",
+        "active": false
+      },
+      {
+        "name": "cena",
+        "active": true
+      }
+    ]
+  },
+  {
+    "name": "Conejo",
+    "minQuantity": 10,
+    "type": "proteína",
+    "units": "gr",
+    "macroContent": {
+      "protein": 3.025,
+      "carbohydrate": 0,
+      "fat": 0.838
+    },
+    "meals": [
+      {
+        "name": "desayuno",
+        "active": false
+      },
+      {
+        "name": "media mañana",
+        "active": false
+      },
+      {
+        "name": "almuerzo",
+        "active": true
+      },
+      {
+        "name": "media tarde",
+        "active": false
+      },
+      {
+        "name": "cena",
+        "active": true
+      }
+    ]
+  },
+  {
+    "name": "Bonito",
+    "minQuantity": 10,
+    "type": "proteína",
+    "units": "gr",
+    "macroContent": {
+      "protein": 2.433,
+      "carbohydrate": 0,
+      "fat": 0.402
+    },
+    "meals": [
+      {
+        "name": "desayuno",
+        "active": false
+      },
+      {
+        "name": "media mañana",
+        "active": false
+      },
+      {
+        "name": "almuerzo",
+        "active": true
+      },
+      {
+        "name": "media tarde",
+        "active": false
+      },
+      {
+        "name": "cena",
+        "active": true
+      }
+    ]
+  },
+  {
+    "name": "Huevo entero",
+    "minQuantity": 1,
+    "type": "proteína",
+    "units": "und",
+    "macroContent": {
+      "protein": 6,
+      "carbohydrate": 0.38,
+      "fat": 5
+    },
+    "meals": [
+      {
+        "name": "desayuno",
+        "active": true
+      },
+      {
+        "name": "media mañana",
+        "active": false
+      },
+      {
+        "name": "almuerzo",
+        "active": false
+      },
+      {
+        "name": "media tarde",
+        "active": false
+      },
+      {
+        "name": "cena",
+        "active": true
+      }
+    ]
+  },
+  {
+    "name": "Clara de huevo",
+    "minQuantity": 1,
+    "type": "proteína",
+    "units": "und",
+    "macroContent": {
+      "protein": 3.5,
+      "carbohydrate": 0.24,
+      "fat": 0.06
+    },
+    "meals": [
+      {
+        "name": "desayuno",
+        "active": true
+      },
+      {
+        "name": "media mañana",
+        "active": true
+      },
+      {
+        "name": "almuerzo",
+        "active": false
+      },
+      {
+        "name": "media tarde",
+        "active": true
+      },
+      {
+        "name": "cena",
+        "active": false
+      }
+    ]
+  },
+  {
+    "name": "Yogur Skyr",
+    "minQuantity": 10,
+    "type": "proteína",
+    "units": "gr",
+    "macroContent": {
+      "protein": 1.1,
+      "carbohydrate": 0.27,
+      "fat": 0
+    },
+    "meals": [
+      {
+        "name": "desayuno",
+        "active": true
+      },
+      {
+        "name": "media mañana",
+        "active": true
+      },
+      {
+        "name": "almuerzo",
+        "active": false
+      },
+      {
+        "name": "media tarde",
+        "active": true
+      },
+      {
+        "name": "cena",
+        "active": false
+      }
+    ]
+  },
+  {
+    "name": "Avena de grano entero",
+    "minQuantity": 10,
+    "type": "proteína",
+    "units": "gr",
+    "macroContent": {
+      "protein": 1.25,
+      "carbohydrate": 6.75,
+      "fat": 0.75
+    },
+    "meals": [
+      {
+        "name": "desayuno",
+        "active": true
+      },
+      {
+        "name": "media mañana",
+        "active": false
+      },
+      {
+        "name": "almuerzo",
+        "active": false
+      },
+      {
+        "name": "media tarde",
+        "active": false
+      },
+      {
+        "name": "cena",
+        "active": false
+      }
+    ]
+  },
+  {
+    "name": "Papa ",
+    "minQuantity": 10,
+    "type": "carbohidrato",
+    "units": "gr",
+    "macroContent": {
+      "protein": 0.216,
+      "carbohydrate": 2,
+      "fat": 0.011
+    },
+    "meals": [
+      {
+        "name": "desayuno",
+        "active": false
+      },
+      {
+        "name": "media mañana",
+        "active": false
+      },
+      {
+        "name": "almuerzo",
+        "active": true
+      },
+      {
+        "name": "media tarde",
+        "active": false
+      },
+      {
+        "name": "cena",
+        "active": true
+      }
+    ]
+  },
+  {
+    "name": "Pallares ",
+    "minQuantity": 10,
+    "type": "carbohidrato",
+    "units": "gr",
+    "macroContent": {
+      "protein": 0.664,
+      "carbohydrate": 1.958,
+      "fat": 0.083
+    },
+    "meals": [
+      {
+        "name": "desayuno",
+        "active": false
+      },
+      {
+        "name": "media mañana",
+        "active": false
+      },
+      {
+        "name": "almuerzo",
+        "active": true
+      },
+      {
+        "name": "media tarde",
+        "active": false
+      },
+      {
+        "name": "cena",
+        "active": true
+      }
+    ]
+  },
+  {
+    "name": "Camote ",
+    "minQuantity": 10,
+    "type": "carbohidrato",
+    "units": "gr",
+    "macroContent": {
+      "protein": 0.194,
+      "carbohydrate": 2,
+      "fat": 0.03
+    },
+    "meals": [
+      {
+        "name": "desayuno",
+        "active": false
+      },
+      {
+        "name": "media mañana",
+        "active": false
+      },
+      {
+        "name": "almuerzo",
+        "active": true
+      },
+      {
+        "name": "media tarde",
+        "active": false
+      },
+      {
+        "name": "cena",
+        "active": true
+      }
+    ]
+  },
+  {
+    "name": "Lentejas ",
+    "minQuantity": 10,
+    "type": "carbohidrato",
+    "units": "gr",
+    "macroContent": {
+      "protein": 0.9,
+      "carbohydrate": 2,
+      "fat": 0.04
+    },
+    "meals": [
+      {
+        "name": "desayuno",
+        "active": false
+      },
+      {
+        "name": "media mañana",
+        "active": false
+      },
+      {
+        "name": "almuerzo",
+        "active": true
+      },
+      {
+        "name": "media tarde",
+        "active": false
+      },
+      {
+        "name": "cena",
+        "active": true
+      }
+    ]
+  },
+  {
+    "name": "Frejoles blancos",
+    "minQuantity": 10,
+    "type": "carbohidrato",
+    "units": "gr",
+    "macroContent": {
+      "protein": 0.973,
+      "carbohydrate": 2.509,
+      "fat": 0.035
+    },
+    "meals": [
+      {
+        "name": "desayuno",
+        "active": false
+      },
+      {
+        "name": "media mañana",
+        "active": false
+      },
+      {
+        "name": "almuerzo",
+        "active": true
+      },
+      {
+        "name": "media tarde",
+        "active": false
+      },
+      {
+        "name": "cena",
+        "active": true
+      }
+    ]
+  },
+  {
+    "name": "Arroz blanco",
+    "minQuantity": 10,
+    "type": "carbohidrato",
+    "units": "gr",
+    "macroContent": {
+      "protein": 0.266,
+      "carbohydrate": 3,
+      "fat": 0.028
+    },
+    "meals": [
+      {
+        "name": "desayuno",
+        "active": false
+      },
+      {
+        "name": "media mañana",
+        "active": false
+      },
+      {
+        "name": "almuerzo",
+        "active": true
+      },
+      {
+        "name": "media tarde",
+        "active": false
+      },
+      {
+        "name": "cena",
+        "active": true
+      }
+    ]
+  },
+  {
+    "name": "Fideos",
+    "minQuantity": 10,
+    "type": "carbohidrato",
+    "units": "gr",
+    "macroContent": {
+      "protein": 0.451,
+      "carbohydrate": 3,
+      "fat": 0.206
+    },
+    "meals": [
+      {
+        "name": "desayuno",
+        "active": false
+      },
+      {
+        "name": "media mañana",
+        "active": false
+      },
+      {
+        "name": "almuerzo",
+        "active": true
+      },
+      {
+        "name": "media tarde",
+        "active": false
+      },
+      {
+        "name": "cena",
+        "active": true
+      }
+    ]
+  },
+  {
+    "name": "Quinoa",
+    "minQuantity": 10,
+    "type": "carbohidrato",
+    "units": "gr",
+    "macroContent": {
+      "protein": 0.501,
+      "carbohydrate": 3,
+      "fat": 0.222
+    },
+    "meals": [
+      {
+        "name": "desayuno",
+        "active": false
+      },
+      {
+        "name": "media mañana",
+        "active": false
+      },
+      {
+        "name": "almuerzo",
+        "active": true
+      },
+      {
+        "name": "media tarde",
+        "active": false
+      },
+      {
+        "name": "cena",
+        "active": true
+      }
+    ]
+  },
+  {
+    "name": "Garbanzos ",
+    "minQuantity": 10,
+    "type": "carbohidrato",
+    "units": "gr",
+    "macroContent": {
+      "protein": 0.886,
+      "carbohydrate": 3,
+      "fat": 0.259
+    },
+    "meals": [
+      {
+        "name": "desayuno",
+        "active": false
+      },
+      {
+        "name": "media mañana",
+        "active": false
+      },
+      {
+        "name": "almuerzo",
+        "active": true
+      },
+      {
+        "name": "media tarde",
+        "active": false
+      },
+      {
+        "name": "cena",
+        "active": true
+      }
+    ]
+  },
+  {
+    "name": "Pan de molde",
+    "minQuantity": 1,
+    "type": "carbohidrato",
+    "units": "rebanada",
+    "macroContent": {
+      "protein": 2.2,
+      "carbohydrate": 13,
+      "fat": 0.5
+    },
+    "meals": [
+      {
+        "name": "desayuno",
+        "active": true
+      },
+      {
+        "name": "media mañana",
+        "active": false
+      },
+      {
+        "name": "almuerzo",
+        "active": true
+      },
+      {
+        "name": "media tarde",
+        "active": false
+      },
+      {
+        "name": "cena",
+        "active": true
+      }
+    ]
+  },
+  {
+    "name": "Choclo desgranado",
+    "minQuantity": 10,
+    "type": "carbohidrato",
+    "units": "gr",
+    "macroContent": {
+      "protein": 0.327,
+      "carbohydrate": 2.206,
+      "fat": 0.123
+    },
+    "meals": [
+      {
+        "name": "desayuno",
+        "active": false
+      },
+      {
+        "name": "media mañana",
+        "active": false
+      },
+      {
+        "name": "almuerzo",
+        "active": true
+      },
+      {
+        "name": "media tarde",
+        "active": false
+      },
+      {
+        "name": "cena",
+        "active": true
+      }
+    ]
+  },
+  {
+    "name": "Corazón de alcachofa",
+    "minQuantity": 10,
+    "type": "carbohidrato",
+    "units": "gr",
+    "macroContent": {
+      "protein": 0.337,
+      "carbohydrate": 1.087,
+      "fat": 0.229
+    },
+    "meals": [
+      {
+        "name": "desayuno",
+        "active": false
+      },
+      {
+        "name": "media mañana",
+        "active": false
+      },
+      {
+        "name": "almuerzo",
+        "active": true
+      },
+      {
+        "name": "media tarde",
+        "active": false
+      },
+      {
+        "name": "cena",
+        "active": true
+      }
+    ]
+  },
+  {
+    "name": "Arroz integral",
+    "minQuantity": 10,
+    "type": "carbohidrato",
+    "units": "gr",
+    "macroContent": {
+      "protein": 0.3,
+      "carbohydrate": 2.2,
+      "fat": 0.03
+    },
+    "meals": [
+      {
+        "name": "desayuno",
+        "active": false
+      },
+      {
+        "name": "media mañana",
+        "active": false
+      },
+      {
+        "name": "almuerzo",
+        "active": true
+      },
+      {
+        "name": "media tarde",
+        "active": false
+      },
+      {
+        "name": "cena",
+        "active": true
+      }
+    ]
+  },
+  {
+    "name": "Fresas",
+    "minQuantity": 10,
+    "type": "carbohidrato",
+    "units": "gr",
+    "macroContent": {
+      "protein": 0.067,
+      "carbohydrate": 0.768,
+      "fat": 0.03
+    },
+    "meals": [
+      {
+        "name": "desayuno",
+        "active": true
+      },
+      {
+        "name": "media mañana",
+        "active": true
+      },
+      {
+        "name": "almuerzo",
+        "active": false
+      },
+      {
+        "name": "media tarde",
+        "active": true
+      },
+      {
+        "name": "cena",
+        "active": false
+      }
+    ]
+  },
+  {
+    "name": "Blueberries",
+    "minQuantity": 10,
+    "type": "carbohidrato",
+    "units": "gr",
+    "macroContent": {
+      "protein": 0.074,
+      "carbohydrate": 1.449,
+      "fat": 0.033
+    },
+    "meals": [
+      {
+        "name": "desayuno",
+        "active": true
+      },
+      {
+        "name": "media mañana",
+        "active": true
+      },
+      {
+        "name": "almuerzo",
+        "active": false
+      },
+      {
+        "name": "media tarde",
+        "active": true
+      },
+      {
+        "name": "cena",
+        "active": false
+      }
+    ]
+  },
+  {
+    "name": "Zarzamoras",
+    "minQuantity": 10,
+    "type": "carbohidrato",
+    "units": "gr",
+    "macroContent": {
+      "protein": 0.139,
+      "carbohydrate": 0.961,
+      "fat": 0.049
+    },
+    "meals": [
+      {
+        "name": "desayuno",
+        "active": true
+      },
+      {
+        "name": "media mañana",
+        "active": true
+      },
+      {
+        "name": "almuerzo",
+        "active": false
+      },
+      {
+        "name": "media tarde",
+        "active": true
+      },
+      {
+        "name": "cena",
+        "active": false
+      }
+    ]
+  },
+  {
+    "name": "Sandia",
+    "minQuantity": 10,
+    "type": "carbohidrato",
+    "units": "gr",
+    "macroContent": {
+      "protein": 0.061,
+      "carbohydrate": 0.755,
+      "fat": 0.015
+    },
+    "meals": [
+      {
+        "name": "desayuno",
+        "active": true
+      },
+      {
+        "name": "media mañana",
+        "active": true
+      },
+      {
+        "name": "almuerzo",
+        "active": false
+      },
+      {
+        "name": "media tarde",
+        "active": true
+      },
+      {
+        "name": "cena",
+        "active": false
+      }
+    ]
+  },
+  {
+    "name": "Melón",
+    "minQuantity": 10,
+    "type": "carbohidrato",
+    "units": "gr",
+    "macroContent": {
+      "protein": 0.084,
+      "carbohydrate": 0.816,
+      "fat": 0.019
+    },
+    "meals": [
+      {
+        "name": "desayuno",
+        "active": true
+      },
+      {
+        "name": "media mañana",
+        "active": true
+      },
+      {
+        "name": "almuerzo",
+        "active": false
+      },
+      {
+        "name": "media tarde",
+        "active": true
+      },
+      {
+        "name": "cena",
+        "active": false
+      }
+    ]
+  },
+  {
+    "name": "Granadilla",
+    "minQuantity": 1,
+    "type": "carbohidrato",
+    "units": "und",
+    "macroContent": {
+      "protein": 0.4,
+      "carbohydrate": 4.21,
+      "fat": 0.13
+    },
+    "meals": [
+      {
+        "name": "desayuno",
+        "active": true
+      },
+      {
+        "name": "media mañana",
+        "active": true
+      },
+      {
+        "name": "almuerzo",
+        "active": false
+      },
+      {
+        "name": "media tarde",
+        "active": true
+      },
+      {
+        "name": "cena",
+        "active": false
+      }
+    ]
+  },
+  {
+    "name": "Pera",
+    "minQuantity": 1,
+    "type": "carbohidrato",
+    "units": "und",
+    "macroContent": {
+      "protein": 0.38,
+      "carbohydrate": 15.46,
+      "fat": 0.12
+    },
+    "meals": [
+      {
+        "name": "desayuno",
+        "active": true
+      },
+      {
+        "name": "media mañana",
+        "active": true
+      },
+      {
+        "name": "almuerzo",
+        "active": false
+      },
+      {
+        "name": "media tarde",
+        "active": true
+      },
+      {
+        "name": "cena",
+        "active": false
+      }
+    ]
+  },
+  {
+    "name": "Manzana verde",
+    "minQuantity": 1,
+    "type": "carbohidrato",
+    "units": "und",
+    "macroContent": {
+      "protein": 0.24,
+      "carbohydrate": 14.48,
+      "fat": 0.25
+    },
+    "meals": [
+      {
+        "name": "desayuno",
+        "active": true
+      },
+      {
+        "name": "media mañana",
+        "active": true
+      },
+      {
+        "name": "almuerzo",
+        "active": false
+      },
+      {
+        "name": "media tarde",
+        "active": true
+      },
+      {
+        "name": "cena",
+        "active": false
+      }
+    ]
+  },
+  {
+    "name": "Piña",
+    "minQuantity": 10,
+    "type": "carbohidrato",
+    "units": "gr",
+    "macroContent": {
+      "protein": 0.054,
+      "carbohydrate": 1.263,
+      "fat": 0.012
+    },
+    "meals": [
+      {
+        "name": "desayuno",
+        "active": true
+      },
+      {
+        "name": "media mañana",
+        "active": true
+      },
+      {
+        "name": "almuerzo",
+        "active": false
+      },
+      {
+        "name": "media tarde",
+        "active": true
+      },
+      {
+        "name": "cena",
+        "active": false
+      }
+    ]
+  },
+  {
+    "name": "Papaya",
+    "minQuantity": 10,
+    "type": "carbohidrato",
+    "units": "gr",
+    "macroContent": {
+      "protein": 0.061,
+      "carbohydrate": 0.981,
+      "fat": 0.014
+    },
+    "meals": [
+      {
+        "name": "desayuno",
+        "active": true
+      },
+      {
+        "name": "media mañana",
+        "active": true
+      },
+      {
+        "name": "almuerzo",
+        "active": false
+      },
+      {
+        "name": "media tarde",
+        "active": true
+      },
+      {
+        "name": "cena",
+        "active": false
+      }
+    ]
+  },
+  {
+    "name": "Plátano",
+    "minQuantity": 1,
+    "type": "carbohidrato",
+    "units": "und",
+    "macroContent": {
+      "protein": 1.09,
+      "carbohydrate": 22.84,
+      "fat": 0.33
+    },
+    "meals": [
+      {
+        "name": "desayuno",
+        "active": true
+      },
+      {
+        "name": "media mañana",
+        "active": true
+      },
+      {
+        "name": "almuerzo",
+        "active": false
+      },
+      {
+        "name": "media tarde",
+        "active": true
+      },
+      {
+        "name": "cena",
+        "active": false
+      }
+    ]
+  },
+  {
+    "name": "Pitahaya",
+    "minQuantity": 1,
+    "type": "carbohidrato",
+    "units": "und",
+    "macroContent": {
+      "protein": 0.78,
+      "carbohydrate": 12.26,
+      "fat": 0.38
+    },
+    "meals": [
+      {
+        "name": "desayuno",
+        "active": true
+      },
+      {
+        "name": "media mañana",
+        "active": true
+      },
+      {
+        "name": "almuerzo",
+        "active": false
+      },
+      {
+        "name": "media tarde",
+        "active": true
+      },
+      {
+        "name": "cena",
+        "active": false
+      }
+    ]
+  },
+  {
+    "name": "Granada",
+    "minQuantity": 1,
+    "type": "carbohidrato",
+    "units": "und",
+    "macroContent": {
+      "protein": 1.46,
+      "carbohydrate": 26.44,
+      "fat": 0.46
+    },
+    "meals": [
+      {
+        "name": "desayuno",
+        "active": true
+      },
+      {
+        "name": "media mañana",
+        "active": true
+      },
+      {
+        "name": "almuerzo",
+        "active": false
+      },
+      {
+        "name": "media tarde",
+        "active": true
+      },
+      {
+        "name": "cena",
+        "active": false
+      }
+    ]
+  },
+  {
+    "name": "Leche de almendras sin azucar",
+    "minQuantity": 10,
+    "type": "grasa",
+    "units": "ml",
+    "macroContent": {
+      "protein": 0.04,
+      "carbohydrate": 0.04,
+      "fat": 0.105
+    },
+    "meals": [
+      {
+        "name": "desayuno",
+        "active": true
+      },
+      {
+        "name": "media mañana",
+        "active": false
+      },
+      {
+        "name": "almuerzo",
+        "active": false
+      },
+      {
+        "name": "media tarde",
+        "active": false
+      },
+      {
+        "name": "cena",
+        "active": false
+      }
+    ]
+  },
+  {
+    "name": "Palta",
+    "minQuantity": 10,
+    "type": "grasa",
+    "units": "gr",
+    "macroContent": {
+      "protein": 0.2,
+      "carbohydrate": 0.18,
+      "fat": 1.466
+    },
+    "meals": [
+      {
+        "name": "desayuno",
+        "active": true
+      },
+      {
+        "name": "media mañana",
+        "active": false
+      },
+      {
+        "name": "almuerzo",
+        "active": true
+      },
+      {
+        "name": "media tarde",
+        "active": false
+      },
+      {
+        "name": "cena",
+        "active": true
+      }
+    ]
+  },
+  {
+    "name": "Aceite de oliva extra virgen",
+    "minQuantity": 1,
+    "type": "grasa",
+    "units": "cucharadita",
+    "macroContent": {
+      "protein": 0,
+      "carbohydrate": 0,
+      "fat": 4.5
+    },
+    "meals": [
+      {
+        "name": "desayuno",
+        "active": false
+      },
+      {
+        "name": "media mañana",
+        "active": false
+      },
+      {
+        "name": "almuerzo",
+        "active": true
+      },
+      {
+        "name": "media tarde",
+        "active": false
+      },
+      {
+        "name": "cena",
+        "active": true
+      }
+    ]
+  },
+  {
+    "name": "Almendras",
+    "minQuantity": 10,
+    "type": "grasa",
+    "units": "gr",
+    "macroContent": {
+      "protein": 2.126,
+      "carbohydrate": 1.974,
+      "fat": 5.064
+    },
+    "meals": [
+      {
+        "name": "desayuno",
+        "active": true
+      },
+      {
+        "name": "media mañana",
+        "active": true
+      },
+      {
+        "name": "almuerzo",
+        "active": false
+      },
+      {
+        "name": "media tarde",
+        "active": true
+      },
+      {
+        "name": "cena",
+        "active": false
+      }
+    ]
+  },
+  {
+    "name": "Linaza",
+    "minQuantity": 5,
+    "type": "grasa",
+    "units": "gr",
+    "macroContent": {
+      "protein": 1,
+      "carbohydrate": 1.333,
+      "fat": 2.133
+    },
+    "meals": [
+      {
+        "name": "desayuno",
+        "active": true
+      },
+      {
+        "name": "media mañana",
+        "active": false
+      },
+      {
+        "name": "almuerzo",
+        "active": false
+      },
+      {
+        "name": "media tarde",
+        "active": false
+      },
+      {
+        "name": "cena",
+        "active": false
+      }
+    ]
+  }
+]

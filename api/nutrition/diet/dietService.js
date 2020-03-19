@@ -3,11 +3,14 @@
 const { Diet } = require('./dietModel');
 const { Aliment } = require('../aliment/alimentModel');
 const { setResponse } = require('../../utils');
-const { MEAL_NAME } = require('../../utils/constants');
+const {
+  MEAL_NAME,
+  getDictValues,
+  ALIMENT_TYPE,
+} = require('../../utils/constants');
 
 const calcRestMacro = (macroContent, aliments) => {
   const rest = { ...macroContent };
-
   aliments.forEach(function(aliment) {
     aliment.finalMacroContent = {
       protein:
@@ -59,11 +62,13 @@ const adjustOneAliment = (aliments, macroContent) => {
     if (macroList.every(val => aliment[refMacro] >= aliment[val])) {
       if (macroContent[refMacro] > 0) {
         aliment.quantity += aliment.minQuantity;
-      } else if (aliment.quantity > 0) {
+      } else if (aliment.quantity > 0.5) {
         aliment.quantity -= aliment.minQuantity;
       }
     }
   });
+
+  return aliments;
 };
 
 const macroError = macroContent => {
@@ -75,7 +80,7 @@ const macroError = macroContent => {
 };
 
 const adjustMeal = (meal, contentRef, macroContent) => {
-  const newMeal = { ...meal };
+  const newMeal = { ...meal.toObject() };
   let { aliments } = meal;
 
   if (aliments.length === 1) {
@@ -88,14 +93,15 @@ const adjustMeal = (meal, contentRef, macroContent) => {
   }
 
   aliments = aliments.map(function(aliment) {
-    aliment.quantity = calcInitQuantity(contentRef, aliment);
-    return aliment;
+    const quantity = calcInitQuantity(contentRef, aliment);
+    return { ...aliment.toObject(), quantity };
   });
 
   while (true) {
     const actRest = calcRestMacro(contentRef, aliments);
-    let newAliments = aliments.map(function(aliment) {
-      return { ...aliment };
+
+    let newAliments = aliments.map(function(item) {
+      return { ...item };
     });
 
     newAliments = adjustOneAliment(newAliments, actRest);
@@ -108,11 +114,13 @@ const adjustMeal = (meal, contentRef, macroContent) => {
     }
   }
 
+  const newRest = calcRestMacro(macroContent, aliments);
   newMeal.aliments = aliments;
-  return newMeal;
+  return { newRest, newMeal };
 };
 
 const calcFormatDiet = diet => {
+  const newDiet = { ...diet.toObject() };
   const meals = [];
   let rest = diet.macroContent;
 
@@ -130,35 +138,31 @@ const calcFormatDiet = diet => {
       content: { protein: 20, carbohydrate: 20, fat: 10 },
     },
     { mealName: MEAL_NAME.lunch, content: { func: val => val / 2 } },
-    { mealName: MEAL_NAME.dinner, content: { func: val => val / 2 } },
+    { mealName: MEAL_NAME.dinner, content: { func: val => val } },
   ];
 
   for (let i = 0; i < 5; i += 1) {
     const { mealName, content } = mealReference[i];
     const meal = diet.meals.find(item => item.name === mealName);
 
-    let reference = { ...rest };
-    if ('func' in content) {
-      Object.keys(reference).forEach(function(key) {
-        reference[key] = content.func(reference[key]);
-      });
-    } else {
-      reference = { ...content };
+    if (meal) {
+      let reference = { ...rest };
+      if ('func' in content) {
+        Object.keys(reference).forEach(function(key) {
+          reference[key] = content.func(reference[key]);
+        });
+      } else {
+        reference = { ...content };
+      }
+
+      const { newRest, newMeal } = adjustMeal(meal, reference, rest);
+      rest = newRest;
+      meals.push(newMeal);
     }
-
-    const { newRest, newMeal } = adjustMeal(meal, reference, rest);
-    rest = newRest;
-    meals.push(newMeal);
   }
-
-  diet.meals = meals;
-  return diet;
-};
-
-const getDiet = async reqUser => {
-  let diet = await Diet.findOne({ user: reqUser.id });
-  diet = calcFormatDiet(diet);
-  return setResponse(200, 'Diet found.', diet);
+  // console.log('Error', rest);
+  newDiet.meals = meals;
+  return newDiet;
 };
 
 const setMeals = async (reqBody, reqUser) => {
@@ -166,7 +170,7 @@ const setMeals = async (reqBody, reqUser) => {
 
   if (
     ['desayuno', 'almuerzo', 'cena'].some(function(mealName) {
-      return mealName in reqBody;
+      return !(mealName in reqBody && reqBody[mealName]);
     })
   ) {
     return setResponse(
@@ -176,20 +180,84 @@ const setMeals = async (reqBody, reqUser) => {
     );
   }
 
-  const meals = []; // Init with base meals
+  let tmpAliments = [];
+  // TODO: Depends on the seed
+  tmpAliments = [
+    '5e7324607efd103a1a5a4882',
+    '5e7324607efd103a1a5a47f2',
+    '5e7324607efd103a1a5a490c',
+  ].map(async function(id) {
+    const aliment = await Aliment.findById(id);
+    const data = { ...aliment.toObject(), aliment: aliment.id };
+    return data;
+  });
+  tmpAliments = await Promise.all(tmpAliments);
 
-  if (MEAL_NAME.beforeLunch in reqBody) {
-    meals.push();
+  const lunch = { name: MEAL_NAME.lunch, aliments: tmpAliments };
+  const dinner = { name: MEAL_NAME.dinner, aliments: tmpAliments };
+
+  tmpAliments = [
+    '5e7324607efd103a1a5a48e2',
+    '5e7324607efd103a1a5a47f2',
+    '5e7324607efd103a1a5a4906',
+  ].map(async function(id) {
+    const aliment = await Aliment.findById(id);
+    const data = { ...aliment.toObject(), aliment: aliment.id };
+    return data;
+  });
+  tmpAliments = await Promise.all(tmpAliments);
+  const breakfast = { name: MEAL_NAME.breakfast, aliments: tmpAliments };
+
+  tmpAliments = ['5e7324607efd103a1a5a48dc'].map(async function(id) {
+    const aliment = await Aliment.findById(id);
+    const data = { ...aliment.toObject(), aliment: aliment.id };
+    return data;
+  });
+  tmpAliments = await Promise.all(tmpAliments);
+  const beforeLunch = { name: MEAL_NAME.beforeLunch, aliments: tmpAliments };
+  const afterLunch = { name: MEAL_NAME.afterLunch, aliments: tmpAliments };
+
+  const meals = [breakfast, lunch, dinner]; // Init with base meals
+
+  if (MEAL_NAME.beforeLunch in reqBody && reqBody[MEAL_NAME.beforeLunch]) {
+    meals.push(beforeLunch);
   }
-  if (MEAL_NAME.afterLunch in reqBody) {
-    meals.push();
+  if (MEAL_NAME.afterLunch in reqBody && reqBody[MEAL_NAME.afterLunch]) {
+    meals.push(afterLunch);
   }
 
   diet.meals = meals;
-  await Diet.updateOne({ _id: diet.id }, { $set: { meals } });
+  await diet.save();
 
   diet = calcFormatDiet(diet);
+
   return setResponse(200, 'Diet updated.', diet);
+};
+
+const getDiet = async reqUser => {
+  let diet = await Diet.findOne({ user: reqUser.id });
+
+  if (diet == null) {
+    await Diet.deleteMany({});
+    await Diet.create({
+      user: reqUser.id,
+      macroContent: {
+        protein: 160,
+        carbohydrate: 169,
+        fat: 37,
+      },
+      meals: [],
+    });
+
+    const dataMeals = {};
+    getDictValues(MEAL_NAME).forEach(val => {
+      dataMeals[val] = true;
+    });
+    const response = setMeals(dataMeals, reqUser);
+    return response;
+  }
+  diet = calcFormatDiet(diet);
+  return setResponse(200, 'Diet found.', diet);
 };
 
 const changeAliment = async (reqBody, reqQuery, reqUser) => {
@@ -202,21 +270,29 @@ const changeAliment = async (reqBody, reqQuery, reqUser) => {
   if (macroStep === 'fat' || macroStep === 'all') {
     const diet = await Diet.find({ user: reqUser.id });
     let { meals } = diet;
-    const aliments = past.map(async function(item) {
-      const aliment = await Aliment.findById(item.alimentId);
+    let aliments = past.map(async function(item) {
+      let aliment = await Aliment.findById(item.alimentId);
+      aliment = aliment.toObject();
       aliment.aliment = aliment.id;
       return aliment;
     });
+    aliments = await Promise.all(aliments);
     const mealData = { name: meal, aliments };
     meals = meals.map(function(item) {
       return item.name === meal ? mealData : item;
     });
 
-    await Diet.updateOne({ _id: diet.id }, { $set: { meals } });
+    diet.meals = meals;
+    await diet.save();
+    return setResponse(200, 'Diet updated.', {
+      nextStep: 'end',
+      allow: true,
+    });
   }
 
   const pos = stepList.findIndex(val => val === macroStep);
-  let nextStep = macroStep[pos + 1];
+
+  let nextStep = stepList[pos + 1];
   let typeAllow = [nextStep];
 
   if (meal === MEAL_NAME.beforeLunch || meal === MEAL_NAME.afterLunch) {
@@ -224,12 +300,12 @@ const changeAliment = async (reqBody, reqQuery, reqUser) => {
     typeAllow = ['protein', 'carbohydrate', 'fat'];
   }
 
+  typeAllow = typeAllow.map(val => ALIMENT_TYPE[val]);
+
   const aliments = await Aliment.find({
     $and: [
       { type: { $in: typeAllow } },
-      {
-        meals: { $elementMatch: { $and: [{ name: meal }, { active: true }] } },
-      },
+      { meals: { $elemMatch: { name: meal, active: true } } },
     ],
   });
 
