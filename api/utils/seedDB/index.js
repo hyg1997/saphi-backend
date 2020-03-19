@@ -16,9 +16,11 @@ const {
 
 const { asyncForEach } = require('../../utils');
 
-const seedModel = async (model, filename) => {
+const seedModel = async (model, filename, clearCollection = true) => {
   const rawdata = fs.readFileSync(path.join(__dirname, filename));
-  // await model.deleteMany({});
+  if (clearCollection) {
+    await model.deleteMany({});
+  }
   await model.insertMany(JSON.parse(rawdata));
   winston.info(`${model.collection.collectionName} seeded!`);
   return 1;
@@ -50,6 +52,8 @@ mongoose
   })
   .then(async () => {
     await seedModel(DeliveryPlan, 'deliveryPlan.json');
+    await seedModel(DishRecipe, 'dishRecipe.json');
+    await seedModel(Menu, 'menu.json');
     mongoose.connection.close();
   })
   .catch(err => console.log(`Failed to connect to MongoDB...${String(err)}`));
