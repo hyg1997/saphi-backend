@@ -1,4 +1,9 @@
 const mongoose = require('mongoose');
+const {
+  ALIMENT_TYPE,
+  MEAL_NAME,
+  getDictValues,
+} = require('../../utils/constants');
 
 const { Schema } = mongoose;
 
@@ -10,10 +15,14 @@ const alimentSchema = new Schema({
   type: {
     type: String,
     required: true,
-    enum: ['carbohidrato', 'proteína'],
+    enum: getDictValues(ALIMENT_TYPE),
   },
   thumbnailImagePath: {
     type: String,
+  },
+  minQuantity: {
+    type: Number,
+    required: true,
   },
   units: {
     type: String,
@@ -33,6 +42,19 @@ const alimentSchema = new Schema({
       required: true,
     },
   },
+  meals: [
+    {
+      name: {
+        type: String,
+        required: true,
+        enum: getDictValues(MEAL_NAME),
+      },
+      active: {
+        type: Boolean,
+        required: true,
+      },
+    },
+  ],
 });
 
 const Aliment = mongoose.model('Aliment', alimentSchema);
