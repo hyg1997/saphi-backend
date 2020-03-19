@@ -10,12 +10,18 @@ const headers = {
   },
 };
 
-const getClientByToken = async recBody => {
-  const client = await CulqiClient.findOne({ 'cards.token': recBody.token });
+const getClientByToken = async reqBody => {
+  const client = await CulqiClient.findOne({ 'cards.token': reqBody.token });
   return client;
 };
 
 const createCulqiClient = async (recBody, recUser) => {
+  let culqiClient = await CulqiClient.findOne({
+    'culqiInfo.email': recBody.email,
+  });
+  if (culqiClient) {
+    return setResponse(200, 'Client found.', culqiClient);
+  }
   let respClient;
   try {
     respClient = await axios.post(
@@ -24,6 +30,7 @@ const createCulqiClient = async (recBody, recUser) => {
       headers,
     );
   } catch (error) {
+    console.log(error);
     respClient = error.response;
     return setResponse(respClient.status, 'Error', {});
   }
@@ -35,7 +42,7 @@ const createCulqiClient = async (recBody, recUser) => {
     cards: [],
   };
 
-  const culqiClient = new CulqiClient(clientData);
+  culqiClient = new CulqiClient(clientData);
   await culqiClient.save();
 
   return setResponse(respClient.status, 'Client created.', culqiClient);
@@ -49,8 +56,8 @@ const formatCard = card => {
   };
 };
 
-const listCulqiClient = async recUser => {
-  const clients = await CulqiClient.find({ user: recUser.id });
+const listCulqiClient = async reqUser => {
+  const clients = await CulqiClient.find({ user: reqUser.id });
 
   const cards = [];
   clients.forEach(function(client) {
@@ -62,12 +69,12 @@ const listCulqiClient = async recUser => {
   return setResponse(200, 'Cards found.', cards);
 };
 
-const createCard = async recBody => {
+const createCard = async reqBody => {
   let respCard;
   try {
     respCard = await axios.post(
       'https://api.culqi.com/v2/cards',
-      recBody,
+      reqBody,
       headers,
     );
   } catch (error) {
@@ -76,7 +83,7 @@ const createCard = async recBody => {
   }
 
   // *Update culqiClient
-  const culqiClient = await CulqiClient.findOne({ token: recBody.customer_id });
+  const culqiClient = await CulqiClient.findOne({ token: reqBody.customer_id });
 
   const cardData = {
     token: respCard.data.id,
