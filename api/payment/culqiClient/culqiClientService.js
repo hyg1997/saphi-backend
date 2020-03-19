@@ -1,5 +1,6 @@
 const axios = require('axios');
 const config = require('config');
+const _ = require('lodash');
 const { CulqiClient } = require('./culqiClientModel');
 
 const { setResponse } = require('../../utils');
@@ -30,9 +31,17 @@ const createCulqiClient = async (recBody, recUser) => {
       headers,
     );
   } catch (error) {
-    console.log(error);
     respClient = error.response;
-    return setResponse(respClient.status, 'Error', {});
+    return setResponse(
+      respClient.status,
+      _.get(respClient, 'data.merchant_message', 'Error de culqi.'),
+      {},
+      _.get(
+        respClient,
+        'data.user_message',
+        'Hubo un error en la operación. Contáctanos para ayudarte.',
+      ),
+    );
   }
 
   const clientData = {

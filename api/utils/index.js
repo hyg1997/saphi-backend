@@ -1,10 +1,12 @@
+/* eslint-disable no-param-reassign */
 /* eslint-disable global-require */
 /* eslint-disable no-await-in-loop */
 const fs = require('fs');
 const path = require('path');
 
-const setResponse = (status, message = '', data = null) => {
-  return { data, status, message };
+const setResponse = (status, message = '', data = null, clientMessage) => {
+  if (!clientMessage) clientMessage = message;
+  return { data, status, message, clientMessage };
 };
 
 const asyncForEach = async (array, callback) => {
