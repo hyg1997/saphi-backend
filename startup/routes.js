@@ -30,7 +30,7 @@ module.exports = app => {
 
   app.use(
     express.json({
-      verify (req, res, buf, encoding) {
+      verify(req, res, buf, encoding) {
         req.rawBody = buf.toString();
       },
     }),
@@ -41,7 +41,9 @@ module.exports = app => {
 
   // app.use('/menus', menuRouter);
   // app.use('/aliments', alimentRouter);
-
+  app.get('/culqi', (req, res) => {
+    res.sendFile(path.join(__dirname, '../templates/culqui_form.html'));
+  });
   app.use('/auth', authRouter);
   app.use('/', nutritionRouter);
   app.use('/payment', paymentRouter);

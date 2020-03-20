@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Incluye Culqi Checkout en tu sitio web-->
+    <script src="https://checkout.culqi.com/js/v3"></script>
+
+    <script>
+      $(document).ready(function(){
+        // Configura tu llave pública
+        Culqi.publicKey = 'pk_test_oNJ4QvAZIEtcWLsK';
+        // Configura tu Culqi Checkout
+        Culqi.settings({
+            title: 'Saphi',
+            currency: 'PEN',
+            description: 'Plan delivery culqi',
+            amount: 60000
+        });
+        // Usa la funcion Culqi.open() en el evento que desees
+        $('#buyButton').on('click', function(e) {
+            // Abre el formulario con las opciones de Culqi.settings
+            Culqi.open();
+            e.preventDefault();
+        });
+      })
+
+      function culqi() {
+        if (Culqi.token) { // ¡Objeto Token creado exitosamente!
+            var token = Culqi.token.id;
+            alert('Se ha creado un token: ' + token);
+        } else { // ¡Hubo algún problema!
+            // Mostramos JSON de objeto error en consola
+            console.log(Culqi.error);
+            alert(Culqi.error.user_message);
+        }
+      };
+    </script>
+
+  </head>
+  <body>
+    <input type="button" id="buyButton" name="Culqui" value="OpenCulqui">
+
+  </body>
+</html>

@@ -54,7 +54,6 @@ const makePayment = async (recBody, recUser) => {
     email: recBody.email,
     source_id: token,
   };
-
   if (clientToken !== '') {
     // * To create card
 

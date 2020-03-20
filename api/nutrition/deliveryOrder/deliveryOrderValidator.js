@@ -23,7 +23,11 @@ const Post = {
     payment: Joi.object({
       clientToken: Joi.string()
         .allow('')
-        .default(''),
+        .when('savedCard', {
+          is: true,
+          then: Joi.required(),
+          otherwise: Joi.string().default(''),
+        }),
       savedCard: Joi.boolean().default(false),
       culqiToken: Joi.string().required(),
     }).required(),
