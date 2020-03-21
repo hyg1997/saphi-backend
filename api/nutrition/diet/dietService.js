@@ -5,8 +5,8 @@ const { Aliment } = require('../aliment/alimentModel');
 const { setResponse } = require('../../utils');
 const {
   MEAL_NAME,
-  getDictValues,
   ALIMENT_TYPE,
+  ALIMENT_TAG_TITLE,
 } = require('../../utils/constants');
 
 const calcRestMacro = (macroContent, aliments) => {
@@ -59,7 +59,11 @@ const adjustOneAliment = (aliments, macroContent) => {
 
   // * Consider ther is at most one of each type
   aliments.forEach(function(aliment) {
-    if (macroList.every(val => aliment[refMacro] >= aliment[val])) {
+    if (
+      macroList.every(
+        val => aliment.macroContent[refMacro] >= aliment.macroContent[val],
+      )
+    ) {
       if (macroContent[refMacro] > 0) {
         aliment.quantity += aliment.minQuantity;
       } else if (aliment.quantity > 0.5) {
@@ -73,9 +77,9 @@ const adjustOneAliment = (aliments, macroContent) => {
 
 const macroError = macroContent => {
   return (
-    Math.abs(macroContent.protein) +
-    Math.abs(macroContent.fat) +
-    Math.abs(macroContent.carbohydrate)
+    4 * Math.abs(macroContent.protein) +
+    9 * Math.abs(macroContent.fat) +
+    4 * Math.abs(macroContent.carbohydrate)
   );
 };
 
@@ -107,6 +111,8 @@ const adjustMeal = (meal, contentRef, macroContent) => {
     newAliments = adjustOneAliment(newAliments, actRest);
 
     const newRest = calcRestMacro(contentRef, newAliments);
+    // console.log(aliments, newAliments);
+    // console.log(actRest, newRest);
     if (macroError(actRest) > macroError(newRest)) {
       aliments = newAliments;
     } else {
@@ -166,7 +172,7 @@ const calcFormatDiet = diet => {
 };
 
 const setMeals = async (reqBody, reqUser) => {
-  let diet = await Diet.findOne({ user: reqUser.id });
+  const diet = await Diet.findOne({ user: reqUser.id });
 
   if (
     ['desayuno', 'almuerzo', 'cena'].some(function(mealName) {
@@ -183,11 +189,11 @@ const setMeals = async (reqBody, reqUser) => {
   let tmpAliments = [];
   // TODO: Depends on the seed
   tmpAliments = [
-    '5e7324607efd103a1a5a4882',
-    '5e7324607efd103a1a5a47f2',
-    '5e7324607efd103a1a5a490c',
-  ].map(async function(id) {
-    const aliment = await Aliment.findById(id);
+    'Pechuga de pollo sin piel ',
+    'Arroz blanco',
+    'Aceite de oliva extra virgen',
+  ].map(async function(name) {
+    const aliment = await Aliment.findOne({ name });
     const data = { ...aliment.toObject(), aliment: aliment.id };
     return data;
   });
@@ -196,20 +202,18 @@ const setMeals = async (reqBody, reqUser) => {
   const lunch = { name: MEAL_NAME.lunch, aliments: tmpAliments };
   const dinner = { name: MEAL_NAME.dinner, aliments: tmpAliments };
 
-  tmpAliments = [
-    '5e7324607efd103a1a5a48e2',
-    '5e7324607efd103a1a5a47f2',
-    '5e7324607efd103a1a5a4906',
-  ].map(async function(id) {
-    const aliment = await Aliment.findById(id);
-    const data = { ...aliment.toObject(), aliment: aliment.id };
-    return data;
-  });
+  tmpAliments = ['Pechuga de pollo sin piel ', 'Pan de molde', 'Linaza'].map(
+    async function(name) {
+      const aliment = await Aliment.findOne({ name });
+      const data = { ...aliment.toObject(), aliment: aliment.id };
+      return data;
+    },
+  );
   tmpAliments = await Promise.all(tmpAliments);
   const breakfast = { name: MEAL_NAME.breakfast, aliments: tmpAliments };
 
-  tmpAliments = ['5e7324607efd103a1a5a48dc'].map(async function(id) {
-    const aliment = await Aliment.findById(id);
+  tmpAliments = ['Manzana verde'].map(async function(name) {
+    const aliment = await Aliment.findOne({ name });
     const data = { ...aliment.toObject(), aliment: aliment.id };
     return data;
   });
@@ -227,9 +231,10 @@ const setMeals = async (reqBody, reqUser) => {
   }
 
   diet.meals = meals;
-  await diet.save();
+  const auxDiet = calcFormatDiet(diet);
+  diet.meals = auxDiet.meals;
 
-  diet = calcFormatDiet(diet);
+  await diet.save();
 
   return setResponse(200, 'Diet updated.', diet);
 };
@@ -238,6 +243,7 @@ const getDiet = async reqUser => {
   let diet = await Diet.findOne({ user: reqUser.id });
 
   if (diet == null) {
+    /*
     await Diet.deleteMany({});
     await Diet.create({
       user: reqUser.id,
@@ -254,8 +260,15 @@ const getDiet = async reqUser => {
       dataMeals[val] = true;
     });
     const response = setMeals(dataMeals, reqUser);
-    return response;
+    return response; */
+    return setResponse(
+      404,
+      'No Diet',
+      {},
+      'Pronto tendrás una dieta asignada.',
+    );
   }
+
   diet = calcFormatDiet(diet);
   return setResponse(200, 'Diet found.', diet);
 };
@@ -263,7 +276,7 @@ const getDiet = async reqUser => {
 const changeAliment = async (reqBody, reqQuery, reqUser) => {
   const { macroStep, past } = reqBody;
   const { meal } = reqQuery;
-  // const alimentId = reqBody.selectedAlimentId;
+
   const stepList = ['init', 'protein', 'carbohydrate', 'fat', 'end'];
 
   //* Save Meal
@@ -283,7 +296,10 @@ const changeAliment = async (reqBody, reqQuery, reqUser) => {
     });
 
     diet.meals = meals;
+    const auxDiet = calcFormatDiet(diet);
+    diet.meals = auxDiet.meals;
     await diet.save();
+
     return setResponse(200, 'Diet updated.', {
       nextStep: 'end',
       allow: true,
@@ -299,7 +315,7 @@ const changeAliment = async (reqBody, reqQuery, reqUser) => {
     nextStep = 'all';
     typeAllow = ['protein', 'carbohydrate', 'fat'];
   }
-
+  const title = ALIMENT_TAG_TITLE[nextStep];
   typeAllow = typeAllow.map(val => ALIMENT_TYPE[val]);
 
   const aliments = await Aliment.find({
@@ -311,10 +327,40 @@ const changeAliment = async (reqBody, reqQuery, reqUser) => {
 
   const data = {
     nextStep,
+    title,
     allow: true,
     aliments,
   };
   return setResponse(200, 'Aliments founds.', data);
+};
+
+const getAliment = async (reqParams, reqUser) => {
+  let diet = await Diet.findOne({ user: reqUser.id });
+  if (diet == null) {
+    return setResponse(404, 'No Diet found.', {});
+  }
+  diet = diet.toObject();
+
+  const { meals } = diet;
+  const meal = meals.find(val => val.name === reqParams.meal);
+  if (meal == null) {
+    return setResponse(404, 'No Meal found.', {});
+  }
+
+  const { aliments } = meal;
+  // eslint-disable-next-line eqeqeq
+  const aliment = aliments.find(a => a.aliment == reqParams.aliment);
+  if (aliment == null) {
+    return setResponse(404, 'No Aliment found.', {});
+  }
+
+  aliment.finalMacroContent = {
+    protein: aliment.macroContent.protein * aliment.quantity,
+    carbohydrate: aliment.macroContent.carbohydrate * aliment.quantity,
+    fat: aliment.macroContent.fat * aliment.quantity,
+  };
+
+  return setResponse(200, 'Aliment found.', aliment);
 };
 
 const calcDiet = async userData => {
@@ -345,4 +391,5 @@ module.exports = {
   calcDiet,
   setMeals,
   changeAliment,
+  getAliment,
 };

@@ -46,6 +46,10 @@ const dietSchema = new mongoose.Schema({
             type: Number,
             required: true,
           },
+          quantity: {
+            type: Number,
+            required: true,
+          },
           units: {
             type: String,
             required: true,

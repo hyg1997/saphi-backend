@@ -3,9 +3,9 @@ const express = require('express');
 const router = express.Router();
 const Controller = require('./dietController');
 
-router.get('/:meal/:id', Controller.getAliment);
-router.post('/:meal', Controller.changeAliment);
-router.get('/', Controller.getDiet);
-router.post('/', Controller.setMeals);
+router.get('/meals/:meal/aliments/:aliment', Controller.getAliment);
+router.post('/meals/:meal', Controller.changeAliment);
+router.get('/myplan', Controller.getDiet);
+router.put('/meals', Controller.setMeals);
 
 module.exports = router;

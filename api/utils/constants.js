@@ -23,6 +23,13 @@ module.exports = {
     protein: 'proteína',
     fat: 'grasa',
   },
+  ALIMENT_TAG_TITLE: {
+    carbohydrate: 'Carbohidratos',
+    protein: 'Proteínas',
+    fat: 'Grasas',
+    all: 'Alimentos',
+    end: '',
+  },
   getDictValues: dict => {
     return Object.keys(dict).map(function(key) {
       return dict[key];

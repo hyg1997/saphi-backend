@@ -19,6 +19,7 @@ const alimentSchema = new Schema({
   },
   thumbnailImagePath: {
     type: String,
+    required: true,
   },
   minQuantity: {
     type: Number,

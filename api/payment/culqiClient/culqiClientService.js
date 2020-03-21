@@ -1,15 +1,9 @@
-const axios = require('axios');
-const config = require('config');
 const _ = require('lodash');
+const { culqiRequest } = require('../utils/utils');
+
 const { CulqiClient } = require('./culqiClientModel');
 
 const { setResponse } = require('../../utils');
-
-const headers = {
-  headers: {
-    Authorization: `Bearer ${config.get('skCulqi')}`,
-  },
-};
 
 const getClientByToken = async reqBody => {
   const client = await CulqiClient.findOne({ 'cards.token': reqBody.token });
@@ -23,38 +17,24 @@ const createCulqiClient = async (recBody, recUser) => {
   if (culqiClient) {
     return setResponse(200, 'Client found.', culqiClient);
   }
-  let respClient;
-  try {
-    respClient = await axios.post(
-      'https://api.culqi.com/v2/customers',
-      recBody,
-      headers,
-    );
-  } catch (error) {
-    respClient = error.response;
-    return setResponse(
-      respClient.status,
-      _.get(respClient, 'data.merchant_message', 'Error de culqi.'),
-      {},
-      _.get(
-        respClient,
-        'data.user_message',
-        'Hubo un error en la operación. Contáctanos para ayudarte.',
-      ),
-    );
-  }
+  const { error, respCulqi } = await culqiRequest(
+    'https://api.culqi.com/v2/customers',
+    recBody,
+  );
+
+  if (error) return respCulqi;
 
   const clientData = {
     user: recUser.id,
-    token: respClient.data.id,
-    culqiInfo: respClient.data,
+    token: respCulqi.data.id,
+    culqiInfo: respCulqi.data,
     cards: [],
   };
 
   culqiClient = new CulqiClient(clientData);
   await culqiClient.save();
 
-  return setResponse(respClient.status, 'Client created.', culqiClient);
+  return setResponse(respCulqi.status, 'Client created.', culqiClient);
 };
 
 const formatCard = card => {
@@ -79,24 +59,19 @@ const listCulqiClient = async reqUser => {
 };
 
 const createCard = async reqBody => {
-  let respCard;
-  try {
-    respCard = await axios.post(
-      'https://api.culqi.com/v2/cards',
-      reqBody,
-      headers,
-    );
-  } catch (error) {
-    respCard = error.response;
-    return setResponse(respCard.status, 'Error', {});
-  }
+  const { error, respCulqi } = await culqiRequest(
+    'https://api.culqi.com/v2/cards',
+    reqBody,
+  );
+
+  if (error) return respCulqi;
 
   // *Update culqiClient
   const culqiClient = await CulqiClient.findOne({ token: reqBody.customer_id });
 
   const cardData = {
-    token: respCard.data.id,
-    culqiInfo: respCard.data,
+    token: respCulqi.data.id,
+    culqiInfo: respCulqi.data,
   };
 
   await CulqiClient.updateOne(
@@ -104,7 +79,7 @@ const createCard = async reqBody => {
     { $push: { cards: cardData } },
   );
 
-  return setResponse(respCard.status, 'Card created.', cardData);
+  return setResponse(respCulqi.status, 'Card created.', cardData);
 };
 
 module.exports = {

@@ -72,7 +72,7 @@ Algunos de estos servicios ya cubren otros especificados más adelante
 
 [Zeplin](https://zpl.io/amNRDk3)
 
-- [ ] GET /aliments/:id
+- [ ] GET /meals/:mealName/aliments/:id
 
 - Retorna un alimento en particular, considerando la cantidad recomendada para el paciente
 

@@ -1,11 +1,5 @@
 const Service = require('./alimentService');
 
-const listAlimentUser = async (req, res) => {
-  const aliments = await Service.listAlimentUser(req.query);
-
-  return res.status(aliments.status).send(aliments);
-};
-
 const getAliment = async (req, res) => {
   const aliment = await Service.getAliment(req.params);
 
@@ -25,7 +19,6 @@ const createAliment = async (req, res) => {
 };
 
 module.exports = {
-  listAlimentUser,
   listAliment,
   getAliment,
   createAliment,

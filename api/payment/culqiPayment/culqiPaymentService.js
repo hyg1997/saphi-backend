@@ -1,43 +1,31 @@
-const axios = require('axios');
-const config = require('config');
 const { CulqiPayment } = require('./culqiPaymentModel');
 const {
   createCard,
   getClientByToken,
 } = require('./../culqiClient/culqiClientService');
+const { culqiRequest } = require('../utils/utils');
 const { setResponse } = require('../../utils');
 
-const headers = {
-  headers: {
-    Authorization: `Bearer ${config.get('skCulqi')}`,
-  },
-};
-
-const createCharge = async (recBody, recUser) => {
-  let chargeResp;
-  try {
-    chargeResp = await axios.post(
-      'https://api.culqi.com/v2/charges',
-      recBody,
-      headers,
-    );
-  } catch (error) {
-    chargeResp = error.response;
-    return setResponse(chargeResp.status, chargeResp.data.user_message, {});
-  }
+const createCharge = async (reqBody, reqUser) => {
+  const { error, respCulqi } = await culqiRequest(
+    'https://api.culqi.com/v2/charges',
+    reqBody,
+  );
+  if (error) return respCulqi;
 
   const chargeData = {
-    culqiInfo: chargeResp.data,
-    user: recUser.id,
-    amount: recBody.amount,
+    culqiInfo: respCulqi.data,
+    user: reqUser.id,
+    amount: reqBody.amount,
   };
   const charge = new CulqiPayment(chargeData);
   await charge.save();
 
   return setResponse(
-    chargeResp.status,
-    chargeResp.data.user_message,
+    respCulqi.status,
+    'Charge Created.',
     chargeData,
+    respCulqi.data.user_message,
   );
 };
 
