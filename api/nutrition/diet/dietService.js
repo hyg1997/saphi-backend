@@ -276,7 +276,7 @@ const getDiet = async reqUser => {
 const changeAliment = async (reqBody, reqQuery, reqUser) => {
   const { macroStep, past } = reqBody;
   const { meal } = reqQuery;
-
+  console.log(meal);
   const stepList = ['init', 'protein', 'carbohydrate', 'fat', 'end'];
 
   //* Save Meal

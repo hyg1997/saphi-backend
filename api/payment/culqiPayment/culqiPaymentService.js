@@ -3,7 +3,7 @@ const {
   createCard,
   getClientByToken,
 } = require('./../culqiClient/culqiClientService');
-const { culqiRequest } = require('../utils/utils');
+const { culqiRequest } = require('../utils');
 const { setResponse } = require('../../utils');
 
 const createCharge = async (reqBody, reqUser) => {

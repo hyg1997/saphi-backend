@@ -1,5 +1,5 @@
 const _ = require('lodash');
-const { culqiRequest } = require('../utils/utils');
+const { culqiRequest } = require('../utils');
 
 const { CulqiClient } = require('./culqiClientModel');
 

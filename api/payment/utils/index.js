@@ -32,6 +32,6 @@ const culqiRequest = async (url, reqBody) => {
   return { error: false, respCulqi };
 };
 
-exports = {
+module.exports = {
   culqiRequest,
 };
