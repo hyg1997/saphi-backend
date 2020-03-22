@@ -24,7 +24,7 @@ const createDeliveryOrder = async (reqBody, reqUser) => {
   return setResponse(200, 'DeliveryOrder created.', deliveryOrder);
 };
 
-const getUserDeliveryOrder = async (reqBody, reqUser) => {
+const getUserDeliveryOrder = async reqUser => {
   const deliveryOrder = await DeliveryOrder.find({
     user: reqUser.id,
   })

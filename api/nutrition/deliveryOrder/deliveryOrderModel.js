@@ -6,7 +6,7 @@ const deliveryOrderSchema = new Schema({
   user: {
     type: Schema.Types.ObjectId,
     required: true,
-    ref: 'user',
+    ref: 'User',
   },
   startDate: {
     type: Date,
