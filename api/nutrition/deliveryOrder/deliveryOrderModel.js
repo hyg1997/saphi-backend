@@ -2,45 +2,50 @@ const mongoose = require('mongoose');
 const { addBussinesDays } = require('../../utils');
 
 const { Schema } = mongoose;
-const deliveryOrderSchema = new Schema({
-  user: {
-    type: Schema.Types.ObjectId,
-    required: true,
-    ref: 'User',
+const deliveryOrderSchema = new Schema(
+  {
+    user: {
+      type: Schema.Types.ObjectId,
+      required: true,
+      ref: 'User',
+    },
+    startDate: {
+      type: Date,
+      required: true,
+    },
+    endDate: {
+      type: Date,
+      required: true,
+    },
+    contactName: {
+      type: String,
+      required: true,
+    },
+    contactPhone: {
+      type: String,
+      required: true,
+    },
+    deliveryAddress: {
+      type: String,
+      required: true,
+    },
+    deliveryInstruction: {
+      type: String,
+      default: '',
+    },
+    deliveryPlan: {
+      type: Schema.Types.Mixed,
+      required: true,
+    },
+    culqiPayment: {
+      type: Schema.Types.Mixed,
+      required: true,
+    },
   },
-  startDate: {
-    type: Date,
-    required: true,
+  {
+    timestamps: true,
   },
-  endDate: {
-    type: Date,
-    required: true,
-  },
-  contactName: {
-    type: String,
-    required: true,
-  },
-  contactPhone: {
-    type: String,
-    required: true,
-  },
-  deliveryAddress: {
-    type: String,
-    required: true,
-  },
-  deliveryInstruction: {
-    type: String,
-    default: '',
-  },
-  deliveryPlan: {
-    type: Schema.Types.Mixed,
-    required: true,
-  },
-  culqiPayment: {
-    type: Schema.Types.Mixed,
-    required: true,
-  },
-});
+);
 
 deliveryOrderSchema.pre('validate', function() {
   this.endDate = addBussinesDays(

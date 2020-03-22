@@ -3,7 +3,7 @@ const { DeliveryOrder } = require('./deliveryOrderModel');
 const { DeliveryPlan } = require('../deliveryPlan/deliveryPlanModel');
 const { setResponse } = require('../../utils');
 
-const validateDeliveryOrder = async (reqBody, reqUser) => {
+const validateDeliveryOrder = async reqBody => {
   const deliveryPlan = await DeliveryPlan.findById(reqBody.deliveryPlan);
   if (!deliveryPlan) return setResponse(404, 'DeliveryPlan not found.');
 
@@ -28,10 +28,13 @@ const getUserDeliveryOrder = async reqUser => {
   const deliveryOrder = await DeliveryOrder.find({
     user: reqUser.id,
   })
-    .sort({ createAt: 1 })
+    .sort({ createdAt: 1 })
     .limit(1);
 
-  return setResponse(200, 'DeliveryOrder created.', deliveryOrder[0]);
+  if (deliveryOrder.length === 0)
+    return setResponse(404, 'Not DeliveryOrder found.', {});
+
+  return setResponse(200, 'DeliveryOrder found.', deliveryOrder[0]);
 };
 
 module.exports = {
