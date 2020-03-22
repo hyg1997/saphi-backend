@@ -275,18 +275,20 @@ const getDiet = async reqUser => {
 
 const changeAliment = async (reqBody, reqQuery, reqUser) => {
   const { macroStep, past } = reqBody;
+
   const { meal } = reqQuery;
   console.log(meal);
+  // console.log(meal);
   const stepList = ['init', 'protein', 'carbohydrate', 'fat', 'end'];
 
   //* Save Meal
   if (macroStep === 'fat' || macroStep === 'all') {
-    const diet = await Diet.find({ user: reqUser.id });
+    const diet = await Diet.findOne({ user: reqUser.id });
     let { meals } = diet;
     let aliments = past.map(async function(item) {
       let aliment = await Aliment.findById(item.alimentId);
       aliment = aliment.toObject();
-      aliment.aliment = aliment.id;
+      aliment.aliment = item.alimentId;
       return aliment;
     });
     aliments = await Promise.all(aliments);
@@ -311,7 +313,10 @@ const changeAliment = async (reqBody, reqQuery, reqUser) => {
   let nextStep = stepList[pos + 1];
   let typeAllow = [nextStep];
 
-  if (meal === MEAL_NAME.beforeLunch || meal === MEAL_NAME.afterLunch) {
+  if (
+    meal === MEAL_NAME.beforeLunch.toLowerCase() ||
+    meal === MEAL_NAME.afterLunch.toLowerCase()
+  ) {
     nextStep = 'all';
     typeAllow = ['protein', 'carbohydrate', 'fat'];
   }
