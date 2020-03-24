@@ -98,7 +98,7 @@ const adjustMeal = (meal, contentRef, macroContent) => {
 
   aliments = aliments.map(function(aliment) {
     const quantity = calcInitQuantity(contentRef, aliment);
-    return { ...aliment.toObject(), quantity };
+    return { ...aliment, quantity };
   });
 
   while (true) {

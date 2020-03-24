@@ -30,45 +30,48 @@ const dietSchema = new mongoose.Schema({
       },
       aliments: [
         {
-          aliment: {
-            type: mongoose.Schema.Types.ObjectId,
-            required: true,
-            ref: 'Aliment',
-          },
-          name: {
-            type: String,
-            required: true,
-          },
-          thumbnailImagePath: {
-            type: String,
-          },
-          minQuantity: {
-            type: Number,
-            required: true,
-          },
-          quantity: {
-            type: Number,
-            required: true,
-          },
-          units: {
-            type: String,
-            required: true,
-          },
-          macroContent: {
-            carbohydrate: {
-              type: Number,
-              required: true,
-            },
-            protein: {
-              type: Number,
-              required: true,
-            },
-            fat: {
-              type: Number,
-              required: true,
-            },
-          },
+          type: mongoose.Schema.Types.Mixed,
         },
+        // {
+        //   aliment: {
+        //     type: mongoose.Schema.Types.ObjectId,
+        //     required: true,
+        //     ref: 'Aliment',
+        //   },
+        //   name: {
+        //     type: String,
+        //     required: true,
+        //   },
+        //   thumbnailImagePath: {
+        //     type: String,
+        //   },
+        //   minQuantity: {
+        //     type: Number,
+        //     required: true,
+        //   },
+        //   quantity: {
+        //     type: Number,
+        //     required: true,
+        //   },
+        //   units: {
+        //     type: String,
+        //     required: true,
+        //   },
+        //   macroContent: {
+        //     carbohydrate: {
+        //       type: Number,
+        //       required: true,
+        //     },
+        //     protein: {
+        //       type: Number,
+        //       required: true,
+        //     },
+        //     fat: {
+        //       type: Number,
+        //       required: true,
+        //     },
+        //   },
+        // },
       ],
     },
   ],
