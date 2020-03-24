@@ -17,9 +17,6 @@ const Post = {
     deliveryInstruction: Joi.string()
       .allow('')
       .default(''),
-    email: Joi.string()
-      .email()
-      .required(),
     payment: Joi.object({
       clientToken: Joi.string()
         .allow('')

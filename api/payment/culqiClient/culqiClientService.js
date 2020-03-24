@@ -1,4 +1,4 @@
-const _ = require('lodash');
+/* eslint-disable no-param-reassign */
 const { culqiRequest } = require('../utils');
 
 const { CulqiClient } = require('./culqiClientModel');
@@ -10,22 +10,24 @@ const getClientByToken = async reqBody => {
   return client;
 };
 
-const createCulqiClient = async (recBody, recUser) => {
+const createCulqiClient = async (reqBody, reqUser) => {
   let culqiClient = await CulqiClient.findOne({
-    'culqiInfo.email': recBody.email,
+    'culqiInfo.email': reqUser.email,
   });
   if (culqiClient) {
     return setResponse(200, 'Client found.', culqiClient);
   }
+
+  reqBody.email = reqUser.email;
   const { error, respCulqi } = await culqiRequest(
     'https://api.culqi.com/v2/customers',
-    recBody,
+    reqBody,
   );
 
   if (error) return respCulqi;
 
   const clientData = {
-    user: recUser.id,
+    user: reqUser.id,
     token: respCulqi.data.id,
     culqiInfo: respCulqi.data,
     cards: [],

@@ -29,17 +29,17 @@ const createCharge = async (reqBody, reqUser) => {
   );
 };
 
-const makePayment = async (recBody, recUser) => {
-  const saved = recBody.payment.savedCard;
-  const token = recBody.payment.culqiToken;
-  const { clientToken } = recBody.payment;
+const makePayment = async (reqBody, reqUser) => {
+  const saved = reqBody.payment.savedCard;
+  const token = reqBody.payment.culqiToken;
+  const { clientToken } = reqBody.payment;
 
-  const selectedPlan = recBody.deliveryPlan.selectedOption;
+  const selectedPlan = reqBody.deliveryPlan.selectedOption;
 
   let dataReq = {
     amount: selectedPlan.amount,
     currency_code: selectedPlan.currency_code,
-    email: recBody.email,
+    email: reqUser.email,
     source_id: token,
   };
   if (clientToken !== '') {
@@ -58,7 +58,7 @@ const makePayment = async (recBody, recUser) => {
     // * Existing card
 
     const client = await getClientByToken({ token });
-    console.log(client);
+
     dataReq = {
       ...dataReq,
       antifraud_details: client.culqiInfo.antifrauddetails,
@@ -66,7 +66,7 @@ const makePayment = async (recBody, recUser) => {
   }
   // *Else unique charge
 
-  const chargeResp = createCharge(dataReq, recUser);
+  const chargeResp = createCharge(dataReq, reqUser);
   return chargeResp;
 };
 
