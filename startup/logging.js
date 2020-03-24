@@ -40,11 +40,11 @@ module.exports = () => {
       // new winston.transports.File({
       //   filename: 'combined.log'
       // }),
-      // new winston.transports.MongoDB({
-      //   db: config.get('dbConfig'),
-      //   level: 'error',
-      //   collection: 'errorLog'
-      // })
+      new winston.transports.MongoDB({
+        db: config.get('dbConfig'),
+        level: 'error',
+        collection: 'errorLog',
+      }),
     ],
   });
 
