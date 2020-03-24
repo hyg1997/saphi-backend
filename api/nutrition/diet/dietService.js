@@ -189,7 +189,7 @@ const setMeals = async (reqBody, reqUser) => {
   let tmpAliments = [];
   // TODO: Depends on the seed
   tmpAliments = [
-    'Pechuga de pollo sin piel ',
+    'Pechuga de pollo sin piel',
     'Arroz blanco',
     'Aceite de oliva extra virgen',
   ].map(async function(name) {
@@ -202,7 +202,7 @@ const setMeals = async (reqBody, reqUser) => {
   const lunch = { name: MEAL_NAME.lunch, aliments: tmpAliments };
   const dinner = { name: MEAL_NAME.dinner, aliments: tmpAliments };
 
-  tmpAliments = ['Pechuga de pollo sin piel ', 'Pan de molde', 'Linaza'].map(
+  tmpAliments = ['Pechuga de pollo sin piel', 'Pan de molde', 'Linaza'].map(
     async function(name) {
       const aliment = await Aliment.findOne({ name });
       const data = { ...aliment.toObject(), aliment: aliment.id };
