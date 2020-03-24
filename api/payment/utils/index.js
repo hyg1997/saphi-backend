@@ -1,6 +1,7 @@
 const _ = require('lodash');
 const axios = require('axios');
 const config = require('config');
+const winston = require('winston');
 const { setResponse } = require('../../utils');
 
 const headers = {
@@ -15,6 +16,7 @@ const culqiRequest = async (url, reqBody) => {
     respCulqi = await axios.post(url, reqBody, headers);
   } catch (error) {
     respCulqi = error.response;
+    winston.error(error);
     return {
       error: true,
       respCulqi: setResponse(
