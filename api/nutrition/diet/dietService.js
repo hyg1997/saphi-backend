@@ -360,9 +360,11 @@ const getAliment = async (reqParams, reqUser) => {
   }
 
   aliment.finalMacroContent = {
-    protein: aliment.macroContent.protein * aliment.quantity,
-    carbohydrate: aliment.macroContent.carbohydrate * aliment.quantity,
-    fat: aliment.macroContent.fat * aliment.quantity,
+    protein: (aliment.macroContent.protein * aliment.quantity).toFixed(2),
+    carbohydrate: (
+      aliment.macroContent.carbohydrate * aliment.quantity
+    ).toFixed(2),
+    fat: (aliment.macroContent.fat * aliment.quantity).toFixed(2),
   };
 
   return setResponse(200, 'Aliment found.', aliment);
