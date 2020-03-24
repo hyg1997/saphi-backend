@@ -28,7 +28,7 @@ const getUserDeliveryOrder = async reqUser => {
   const deliveryOrder = await DeliveryOrder.find({
     user: reqUser.id,
   })
-    .sort({ createdAt: 1 })
+    .sort({ createdAt: -1 })
     .limit(1);
 
   if (deliveryOrder.length === 0)
