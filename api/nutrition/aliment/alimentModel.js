@@ -21,6 +21,11 @@ const alimentSchema = new Schema({
     type: String,
     required: true,
   },
+  imagePath: {
+    type: String,
+    required: true,
+    default: 'https://picsum.photos/480',
+  },
   minQuantity: {
     type: Number,
     required: true,
