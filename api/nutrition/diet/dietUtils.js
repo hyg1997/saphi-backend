@@ -1,30 +1,30 @@
 /* eslint-disable no-param-reassign */
-const { MEAL_NAME } = require('../../utils/constants');
-
-// ! Si es posible dejar un descripcion de que hacen estas funciones
+const {
+  MEAL_NAME,
+  MACROCONTENT_CAL,
+  FAT_LIMIT,
+  MACRO_ERROR_LIMIT,
+} = require('../../utils/constants');
 
 const macroError = macroContent => {
-  // ! Esos valores no deberían ser parte de una constante
+  //* Metric to minimize calories error
   return (
-    4 * Math.abs(macroContent.protein) +
-    9 * Math.abs(macroContent.fat) +
-    4 * Math.abs(macroContent.carbohydrate)
+    MACROCONTENT_CAL.protein * Math.abs(macroContent.protein) +
+    MACROCONTENT_CAL.fat * Math.abs(macroContent.fat) +
+    MACROCONTENT_CAL.carbohydrate * Math.abs(macroContent.carbohydrate)
   );
 };
 
 const calcInitQuantity = (macroContent, aliment) => {
-  // ! Deberían provenir de una constante
-  const macroList = ['carbohydrate', 'protein', 'fat'];
-  let maxMacro = macroList[0];
+  //* Quantity of aliment to start close to macronutrient value
+  let maxMacro = '';
   let quantity = 0;
 
-  // !? Como recomendacion usar fat arrows para funciones
-  // ! El function solo es util cuando se quiere usar el "this"
-  // ! (macro) => { ...contenido de la funcion }
-  macroList.forEach(function(macro) {
+  Object.keys(aliment.macroContent).forEach(macro => {
     if (
-      aliment.macroContent[macro] > 0 &&
-      aliment.macroContent[maxMacro] <= aliment.macroContent[macro]
+      !maxMacro ||
+      (aliment.macroContent[macro] > 0 &&
+        aliment.macroContent[maxMacro] <= aliment.macroContent[macro])
     ) {
       //* Find principal macronutrient
       quantity =
@@ -37,8 +37,11 @@ const calcInitQuantity = (macroContent, aliment) => {
 };
 
 const calcRestMacro = (macroContent, aliments) => {
+  //* Calculate deficit on macroContent
+  //* after consider the list of aliments each one with their quantities
+
   const rest = { ...macroContent };
-  aliments.forEach(function(aliment) {
+  aliments.forEach(aliment => {
     aliment.finalMacroContent = {
       protein:
         (aliment.macroContent.protein * aliment.quantity) / aliment.minQuantity,
@@ -57,34 +60,42 @@ const calcRestMacro = (macroContent, aliments) => {
 };
 
 const adjustOneAliment = (aliments, macroContent) => {
-  const macroList = ['carbohydrate', 'protein', 'fat'];
-  let refMacro = macroList[0];
-  macroList.forEach(function(macro) {
-    if (Math.abs(macroContent[macro]) > Math.abs(macroContent[refMacro])) {
-      refMacro = macro;
-    }
+  //* Step to improve solution
+  //* Changing quantity of the aliment of the macronutrient with the greatest difference
+
+  const macroOrdered = Object.keys(macroContent).sort((a, b) => {
+    return Math.abs(macroContent[b]) - Math.abs(macroContent[a]);
   });
 
-  // * Consider ther is at most one of each type
-  aliments.forEach(function(aliment) {
-    if (
-      macroList.every(
-        val => aliment.macroContent[refMacro] >= aliment.macroContent[val],
-      )
-    ) {
-      if (macroContent[refMacro] > 0) {
-        aliment.quantity += aliment.minQuantity;
-      } else if (aliment.quantity > 0.5) {
-        aliment.quantity -= aliment.minQuantity;
+  for (let i = 0; i < macroOrdered.length; i += 1) {
+    const refMacro = macroOrdered[i];
+    let change = false;
+    //* Is considered there is at most one of each type
+    aliments.forEach(function(aliment) {
+      if (
+        Object.keys(aliment.macroContent).every(
+          val => aliment.macroContent[refMacro] >= aliment.macroContent[val],
+        )
+      ) {
+        if (macroContent[refMacro] > 0) {
+          aliment.quantity += aliment.minQuantity;
+          change = true;
+        } else if (aliment.quantity > aliment.minQuantity) {
+          aliment.quantity -= aliment.minQuantity;
+          change = true;
+        }
       }
-    }
-  });
+    });
+    if (change) break;
+  }
 
   return aliments;
 };
 
 const adjustMeal = (meal, contentRef, macroContent) => {
-  const newMeal = { ...meal.toObject() };
+  //* Calculate quantities on aliments meal
+  //* based on getting close to contentRef
+  const newMeal = { ...meal };
   let { aliments } = meal;
 
   if (aliments.length === 1) {
@@ -92,8 +103,8 @@ const adjustMeal = (meal, contentRef, macroContent) => {
     const aliment = newMeal.aliments[0];
     aliment.quantity = calcInitQuantity(contentRef, aliment);
 
-    const newRest = calcRestMacro(macroContent, [aliment]);
-    return { newRest, newMeal };
+    const newRestMacroContent = calcRestMacro(macroContent, [aliment]);
+    return { newRestMacroContent, newMeal };
   }
 
   aliments = aliments.map(function(aliment) {
@@ -101,9 +112,10 @@ const adjustMeal = (meal, contentRef, macroContent) => {
     return { ...aliment, quantity };
   });
 
+  const actRest = calcRestMacro(contentRef, aliments);
+  let actError = macroError(actRest);
   while (true) {
-    const actRest = calcRestMacro(contentRef, aliments);
-
+    //* Little change on quantities for aliments
     let newAliments = aliments.map(function(item) {
       return { ...item };
     });
@@ -111,22 +123,61 @@ const adjustMeal = (meal, contentRef, macroContent) => {
     newAliments = adjustOneAliment(newAliments, actRest);
 
     const newRest = calcRestMacro(contentRef, newAliments);
+    const newError = macroError(newRest);
     // console.log(aliments, newAliments);
     // console.log(actRest, newRest);
-    if (macroError(actRest) > macroError(newRest)) {
+    if (actError > newError) {
       aliments = newAliments;
+      actError = newError;
     } else {
       break;
     }
   }
 
-  const newRest = calcRestMacro(macroContent, aliments);
+  const newRestMacroContent = calcRestMacro(macroContent, aliments);
   newMeal.aliments = aliments;
-  return { newRest, newMeal };
+  return { newRestMacroContent, newMeal };
+};
+
+const mealReference = [
+  {
+    mealName: MEAL_NAME.breakfast,
+    content: { protein: 30, carbohydrate: 40, fat: 15 },
+  },
+  {
+    mealName: MEAL_NAME.beforeLunch,
+    content: { protein: 20, carbohydrate: 20, fat: 10 },
+  },
+  {
+    mealName: MEAL_NAME.afterLunch,
+    content: { protein: 20, carbohydrate: 20, fat: 10 },
+  },
+  { mealName: MEAL_NAME.lunch, content: { func: val => val / 2 } },
+  { mealName: MEAL_NAME.dinner, content: { func: val => val } },
+];
+
+const allowFat = (mealName, aliments, macroContent, meals) => {
+  let restMacroContent = { ...macroContent };
+  meals.forEach(meal => {
+    if (meal.name !== mealName)
+      restMacroContent = calcRestMacro(restMacroContent, meal.aliments);
+  });
+
+  const { newRestMacroContent } = adjustMeal(
+    { aliments },
+    restMacroContent,
+    restMacroContent,
+  );
+
+  return (
+    newRestMacroContent.fat > FAT_LIMIT ||
+    macroError(newRestMacroContent) > MACRO_ERROR_LIMIT
+  );
 };
 
 const calcFormatDiet = diet => {
-  // ! Creo q la logica deberia modularizarse un poco mas
+  //* Add quantities on each aliment based on list of aliments
+  //* and the rules of mealReference
   // ! Sugerencia
   // ! 1. funcion que primero haga la separacion de
   // !    las macros del dia segun los meals del usuario
@@ -135,49 +186,44 @@ const calcFormatDiet = diet => {
   // !    Dentro de esta segundo funcion se realizaria las operaciones
   // !    necesarias para calcular las cantidades correctas
 
+  // ? If every meal is processed indepently first
+  // ? it would make the adjustment process more complicated
+  // ? How do we know which aliment must be changed
+  // ? to make a better aproximation to final content but also
+  // ? minimizing error on the especific meal?
+
   const newDiet = { ...diet.toObject() };
   const meals = [];
-  // ! que representa la variable rest? Darle un nombre mas significativo tal vez
-  let rest = diet.macroContent;
 
-  // ! ¿Este objeto debería ser una constanto o un objeto global?
-  const mealReference = [
-    {
-      mealName: MEAL_NAME.breakfast,
-      content: { protein: 30, carbohydrate: 40, fat: 15 },
-    },
-    {
-      mealName: MEAL_NAME.beforeLunch,
-      content: { protein: 20, carbohydrate: 20, fat: 10 },
-    },
-    {
-      mealName: MEAL_NAME.afterLunch,
-      content: { protein: 20, carbohydrate: 20, fat: 10 },
-    },
-    { mealName: MEAL_NAME.lunch, content: { func: val => val / 2 } },
-    { mealName: MEAL_NAME.dinner, content: { func: val => val } },
-  ];
+  let restMacroContent = newDiet.macroContent;
 
-  for (let i = 0; i < 5; i += 1) {
+  for (let i = 0; i < mealReference.length; i += 1) {
     const { mealName, content } = mealReference[i];
     const meal = diet.meals.find(item => item.name === mealName);
 
     if (meal) {
-      let reference = { ...rest };
+      let reference = { ...restMacroContent };
+
       if ('func' in content) {
-        Object.keys(reference).forEach(function(key) {
+        Object.keys(reference).forEach(key => {
           reference[key] = content.func(reference[key]);
         });
       } else {
         reference = { ...content };
       }
 
-      const { newRest, newMeal } = adjustMeal(meal, reference, rest);
-      rest = newRest;
+      const { newRestMacroContent, newMeal } = adjustMeal(
+        meal.toObject(),
+        reference,
+        restMacroContent,
+      );
+
+      restMacroContent = newRestMacroContent;
       meals.push(newMeal);
     }
   }
-  // console.log('Error', rest);
+
+  // console.log(restMacroContent);
   newDiet.meals = meals;
   return newDiet;
 };
@@ -208,4 +254,5 @@ const calcDiet = async userData => {
 module.exports = {
   calcFormatDiet,
   calcDiet,
+  allowFat,
 };

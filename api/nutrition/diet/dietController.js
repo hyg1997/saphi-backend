@@ -6,8 +6,8 @@ const getDiet = async (req, res) => {
   return res.status(diet.status).send(diet);
 };
 
-const getAliment = async (req, res) => {
-  const aliment = await Service.getAliment(req.params, req.user);
+const getAlimentDiet = async (req, res) => {
+  const aliment = await Service.getAlimentDiet(req.params, req.user);
 
   return res.status(aliment.status).send(aliment);
 };
@@ -26,7 +26,7 @@ const setMeals = async (req, res) => {
 
 module.exports = {
   getDiet,
-  getAliment,
+  getAlimentDiet,
   changeAliment,
   setMeals,
 };

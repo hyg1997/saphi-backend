@@ -9,14 +9,9 @@ const { calcFormatDiet } = require('../dietUtils');
 const getDiet = async reqUser => {
   let diet = await Diet.findOne({ user: reqUser.id });
 
-  // ! Nunca se deberia hacer comparaciones con solo dos igual (==)
-  // ! Siempre deberia usarse la comparacion fuerte q es con 3 (===)
-  // ! En este caso para evaluar si el objeto diet existe
-  // ! basta evaluar el nulo if (!diet)
-  if (diet == null) {
-    // ! Si este bloque de comentarios no va a ser usado borrarlo
-    // ! en caso vaya a ser usado indicarlo dentro del comentario
-    /*
+  if (!diet) {
+    /*  Para inicializar dieta 
+    
     await Diet.deleteMany({});
     await Diet.create({
       user: reqUser.id,

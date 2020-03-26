@@ -1,7 +1,7 @@
 /* eslint-disable global-require */
 module.exports = {
   getDiet: require('./getDiet'),
-  getAliment: require('./getAliment'),
+  getAlimentDiet: require('./getAlimentDiet'),
   setMeals: require('./setMeals'),
   changeAliment: require('./changeAliment'),
 };

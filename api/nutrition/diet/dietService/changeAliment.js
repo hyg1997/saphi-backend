@@ -9,7 +9,9 @@ const {
   ALIMENT_TAG_TITLE,
 } = require('../../../utils/constants');
 
-const { calcFormatDiet } = require('../dietUtils');
+const { calcFormatDiet, allowFat } = require('../dietUtils');
+
+const stepList = ['init', 'protein', 'carbohydrate', 'fat', 'end'];
 
 const changeAliment = async (reqBody, reqQuery, reqUser) => {
   // ! Se sugiere incluir un flujo de validacion en un servicio aparte
@@ -17,15 +19,13 @@ const changeAliment = async (reqBody, reqQuery, reqUser) => {
   // ! seleccionados existen o que corresponden a los grupos que dicen ser
 
   const { macroStep, past } = reqBody;
-
   const { meal } = reqQuery;
 
-  // ! Deberia ser global en el archivo
-  const stepList = ['init', 'protein', 'carbohydrate', 'fat', 'end'];
-
-  //* Save Meal
-  // ! No se esta considerando el caso en el que el flujo termina en carbos
-  if (macroStep === 'fat' || macroStep === 'all') {
+  if (
+    macroStep === 'carbohydrate' ||
+    macroStep === 'fat' ||
+    macroStep === 'all'
+  ) {
     const diet = await Diet.findOne({ user: reqUser.id });
 
     let { meals } = diet;
@@ -36,20 +36,28 @@ const changeAliment = async (reqBody, reqQuery, reqUser) => {
       return aliment;
     });
     aliments = await Promise.all(aliments);
-    const mealData = { name: meal, aliments };
-    meals = meals.map(function(item) {
-      return item.name === meal ? mealData : item;
-    });
 
-    diet.meals = meals;
-    const auxDiet = calcFormatDiet(diet);
-    diet.meals = auxDiet.meals;
-    await diet.save();
+    if (
+      (macroStep === 'carbohydrate' &&
+        allowFat(meal, aliments, diet.macroContent, diet.meals)) ||
+      macroStep === 'fat' ||
+      macroStep === 'all'
+    ) {
+      const mealData = { name: meal, aliments };
+      meals = meals.map(function(item) {
+        return item.name === meal ? mealData : item;
+      });
 
-    return setResponse(200, 'Diet updated.', {
-      nextStep: 'end',
-      allow: true,
-    });
+      diet.meals = meals;
+      const auxDiet = calcFormatDiet(diet);
+      diet.meals = auxDiet.meals;
+      await diet.save();
+
+      return setResponse(200, 'Diet updated.', {
+        nextStep: 'end',
+        allow: true,
+      });
+    }
   }
 
   const pos = stepList.findIndex(val => val === macroStep);
@@ -80,7 +88,7 @@ const changeAliment = async (reqBody, reqQuery, reqUser) => {
     allow: true,
     aliments,
   };
-  return setResponse(200, 'Aliments founds.', data);
+  return setResponse(200, 'Aliments found.', data);
 };
 
 module.exports = changeAliment;

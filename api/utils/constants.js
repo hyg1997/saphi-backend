@@ -30,6 +30,13 @@ module.exports = {
     all: 'Alimentos',
     end: '',
   },
+  MACROCONTENT_CAL: {
+    carbohydrate: 4,
+    protein: 4,
+    fat: 9,
+  },
+  FAT_LIMIT: 1,
+  MACRO_ERROR_LIMIT: 30,
   getDictValues: dict => {
     return Object.keys(dict).map(function(key) {
       return dict[key];

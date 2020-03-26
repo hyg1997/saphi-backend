@@ -7,12 +7,15 @@ const { calcFormatDiet } = require('../dietUtils');
 
 const { MEAL_NAME } = require('../../../utils/constants');
 
+const BASIC_MEALS = ['desayuno', 'almuerzo', 'cena'];
+
 const setMeals = async (reqBody, reqUser) => {
   const diet = await Diet.findOne({ user: reqUser.id });
 
-  // ! El array deberia ser global/constantes
+  if (!diet) return setResponse(404, 'Diet not found.', {});
+
   if (
-    ['desayuno', 'almuerzo', 'cena'].some(function(mealName) {
+    BASIC_MEALS.some(function(mealName) {
       return !(mealName in reqBody && reqBody[mealName]);
     })
   ) {
@@ -58,7 +61,7 @@ const setMeals = async (reqBody, reqUser) => {
   const beforeLunch = { name: MEAL_NAME.beforeLunch, aliments: tmpAliments };
   const afterLunch = { name: MEAL_NAME.afterLunch, aliments: tmpAliments };
 
-  const meals = [breakfast, lunch, dinner]; // Init with base meals
+  const meals = [breakfast, lunch, dinner]; //* Init with base meals
 
   if (MEAL_NAME.beforeLunch in reqBody && reqBody[MEAL_NAME.beforeLunch]) {
     meals.push(beforeLunch);
