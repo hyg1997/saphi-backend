@@ -6,6 +6,8 @@ const Controller = require('./culqiClientController');
 // TODO:
 // const Validator = require('./culqiClientValidator');
 
+// ! Considerar incluir validadores para servicios
+
 router.post('/', Controller.createCulqiClient);
 router.get('/', Controller.listCulqiClient);
 

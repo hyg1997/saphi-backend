@@ -8,11 +8,13 @@ const listDeliveryPlan = async reqQuery => {
 
 const getDeliveryPlan = async reqParams => {
   const deliveryPlan = await DeliveryPlan.findById(reqParams.id);
+  // ! Que pasa si no existe
   return setResponse(200, 'DeliveryPlan found.', deliveryPlan);
 };
 
 const createDeliveryPlan = async reqBody => {
   const deliveryPlan = new DeliveryPlan(reqBody);
+  // ! Que pasa si la estrucutra del request no es correcta
   await deliveryPlan.save();
   return setResponse(201, 'DeliveryPlan created.', deliveryPlan);
 };

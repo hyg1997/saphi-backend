@@ -5,6 +5,9 @@ const { CulqiClient } = require('./culqiClientModel');
 
 const { setResponse } = require('../../utils');
 
+// ! Es necesario crear una funciona aparte?
+// ! Considerar usar un static del schema mongoose
+// ! https://mongoosejs.com/docs/guide.html#statics
 const getClientByToken = async reqBody => {
   const client = await CulqiClient.findOne({ 'cards.token': reqBody.token });
   return client;
@@ -20,6 +23,8 @@ const createCulqiClient = async (reqBody, reqUser) => {
 
   reqBody.email = reqUser.email;
   const { error, respCulqi } = await culqiRequest(
+    // ! Mismo comentario que en el archivo de payment
+    // ! traer las urls del objeto config
     'https://api.culqi.com/v2/customers',
     reqBody,
   );
@@ -62,6 +67,8 @@ const listCulqiClient = async reqUser => {
 
 const createCard = async reqBody => {
   const { error, respCulqi } = await culqiRequest(
+    // ! Mismo comentario que en el archivo de payment
+    // ! traer las urls del objeto config
     'https://api.culqi.com/v2/cards',
     reqBody,
   );
@@ -69,6 +76,7 @@ const createCard = async reqBody => {
   if (error) return respCulqi;
 
   // *Update culqiClient
+  // ! En el request validar que tambien concida el userId con el user del request
   const culqiClient = await CulqiClient.findOne({ token: reqBody.customer_id });
 
   const cardData = {

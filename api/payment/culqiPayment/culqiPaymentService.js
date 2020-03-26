@@ -6,8 +6,16 @@ const {
 const { culqiRequest } = require('../utils');
 const { setResponse } = require('../../utils');
 
+// ! const urlCulqi = config.get('urlCulqi');
+
 const createCharge = async (reqBody, reqUser) => {
+  // ! Las URLs de servicios externos deberían estar
+  // ! en los objetos development/production/test en la carpeta config
+  // ! e importarse usando el paquete config
+  // ! Esto debido a que el url va a cambiar según se tenga el entorno
+
   const { error, respCulqi } = await culqiRequest(
+    // ! urlCulqi.charge
     'https://api.culqi.com/v2/charges',
     reqBody,
   );
@@ -42,6 +50,16 @@ const makePayment = async (reqBody, reqUser) => {
     email: reqUser.email,
     source_id: token,
   };
+
+  // ! URGENTE Corroborar logica de los requests con LUIS
+  // ! Segun entendia el bool saved indica si el token de la tarjeta sera guardada
+  // ! en el cliente del token enviado
+
+  // ! De lo que entiendo en el codigo no se sigue esa logica, sino si se manda el token
+  // ! de cliente
+  // ! De ser necesario no cambiar el back, pero asegurarse que LUIS crea el body
+  // ! siguiendo la logica implementada
+
   if (clientToken !== '') {
     // * To create card
 

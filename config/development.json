@@ -1,4 +1,7 @@
 {
   "name": "Backend-Server-Development",
-  "saltPow": 1
+  "saltPow": 1,
+  "urlCulqi": {
+    "charges": "URL DEL ENTORNO DEV"
+  }
 }

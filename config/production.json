@@ -1,4 +1,7 @@
 {
   "name": "Backend-Server-Production",
-  "saltPow": 12
+  "saltPow": 12,
+  "urlCulqi": {
+    "charges": "URL DEL ENTORNO PROD"
+  }
 }
