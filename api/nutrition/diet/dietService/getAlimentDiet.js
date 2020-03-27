@@ -21,11 +21,18 @@ const getAlimentDiet = async (reqParams, reqUser) => {
   if (!aliment) return setResponse(404, 'Aliment not found.', {});
 
   aliment.finalMacroContent = {
-    protein: (aliment.macroContent.protein * aliment.quantity).toFixed(2),
-    carbohydrate: (
-      aliment.macroContent.carbohydrate * aliment.quantity
+    protein: (
+      (aliment.macroContent.protein * aliment.quantity) /
+      aliment.minQuantity
     ).toFixed(2),
-    fat: (aliment.macroContent.fat * aliment.quantity).toFixed(2),
+    carbohydrate: (
+      (aliment.macroContent.carbohydrate * aliment.quantity) /
+      aliment.minQuantity
+    ).toFixed(2),
+    fat: (
+      (aliment.macroContent.fat * aliment.quantity) /
+      aliment.minQuantity
+    ).toFixed(2),
   };
 
   return setResponse(200, 'Aliment found.', aliment);
