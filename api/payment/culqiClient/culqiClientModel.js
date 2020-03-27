@@ -2,8 +2,6 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 
-// ! Añadir timestamps a todos los modelos
-
 const culqiClientSchema = new Schema(
   {
     user: {
@@ -36,6 +34,10 @@ const culqiClientSchema = new Schema(
     timestamps: true,
   },
 );
+
+culqiClientSchema.statics.findByCardToken = function(token) {
+  return this.findOne({ 'cards.token': token });
+};
 
 const CulqiClient = mongoose.model('CulqiClient', culqiClientSchema);
 

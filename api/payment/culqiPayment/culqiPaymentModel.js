@@ -2,8 +2,6 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 
-// ! Añadir timestamps a todos los modelos
-
 const culqiPaymentSchema = new Schema(
   {
     user: { type: Schema.Types.ObjectId, required: true, ref: 'User' },

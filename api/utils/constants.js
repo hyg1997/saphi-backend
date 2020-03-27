@@ -37,6 +37,11 @@ module.exports = {
   },
   FAT_LIMIT: 1,
   MACRO_ERROR_LIMIT: 30,
+  URL_CULQI: {
+    userCreate: 'https://api.culqi.com/v2/customers',
+    cardCreate: 'https://api.culqi.com/v2/cards',
+    chargeCreate: 'https://api.culqi.com/v2/charges',
+  },
   getDictValues: dict => {
     return Object.keys(dict).map(function(key) {
       return dict[key];

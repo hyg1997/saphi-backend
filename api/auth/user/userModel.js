@@ -5,46 +5,51 @@ const _ = require('lodash');
 const bcrypt = require('bcrypt');
 
 const { Schema } = mongoose;
-const userSchema = new Schema({
-  idDocumentType: { type: String },
-  idDocumentNumber: { type: String },
-  email: { type: String, required: true },
-  password: { type: String, required: true },
-  permissions: {
-    type: {
-      isAdmin: { type: Boolean },
-      isPatient: { type: Boolean },
-      isCompany: { type: Boolean },
+const userSchema = new Schema(
+  {
+    idDocumentType: { type: String },
+    idDocumentNumber: { type: String },
+    email: { type: String, required: true },
+    password: { type: String, required: true },
+    permissions: {
+      type: {
+        isAdmin: { type: Boolean },
+        isPatient: { type: Boolean },
+        isCompany: { type: Boolean },
+      },
+    },
+    name: { type: String },
+    lastName: { type: String },
+    birthDate: { type: Date },
+    phonePrefix: { type: String },
+    phoneNumber: { type: String },
+    companyName: { type: String },
+    macroContent: {
+      type: {
+        carbohydrate: { type: Number },
+        protein: { type: Number },
+        fat: { type: Number },
+      },
+    },
+    indicators: {
+      type: {
+        objective: { type: String },
+        sex: { type: String },
+        weight: { type: Number },
+        size: { type: Number },
+        bodyFatPercentage: { type: Number },
+        physicalActivity: { type: String },
+        patologies: [{ type: String }],
+      },
+    },
+    avoidedAliments: {
+      type: [{ type: Schema.Types.Mixed }],
     },
   },
-  name: { type: String },
-  lastName: { type: String },
-  birthDate: { type: Date },
-  phonePrefix: { type: String },
-  phoneNumber: { type: String },
-  companyName: { type: String },
-  macroContent: {
-    type: {
-      carbohydrate: { type: Number },
-      protein: { type: Number },
-      fat: { type: Number },
-    },
+  {
+    timestamps: true,
   },
-  indicators: {
-    type: {
-      objective: { type: String },
-      sex: { type: String },
-      weight: { type: Number },
-      size: { type: Number },
-      bodyFatPercentage: { type: Number },
-      physicalActivity: { type: String },
-      patologies: [{ type: String }],
-    },
-  },
-  avoidedAliments: {
-    type: [{ type: Schema.Types.Mixed }],
-  },
-});
+);
 
 userSchema.pre('save', async function(next) {
   const salt = await bcrypt.genSalt(config.get('saltPow'));

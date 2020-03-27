@@ -8,7 +8,7 @@ const listDishRecipe = async reqQuery => {
 
 const getDishRecipe = async reqParams => {
   const dishRecipe = await DishRecipe.findById(reqParams.id);
-  // ! Que pasa si no existe
+  if (!dishRecipe) return setResponse(404, 'DishRecipe not found.', {});
   return setResponse(200, 'DishRecipe Found.', dishRecipe);
 };
 

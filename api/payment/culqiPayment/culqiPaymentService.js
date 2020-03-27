@@ -1,10 +1,9 @@
 const { CulqiPayment } = require('./culqiPaymentModel');
-const {
-  createCard,
-  getClientByToken,
-} = require('./../culqiClient/culqiClientService');
+const { CulqiClient } = require('../culqiClient/culqiClientModel');
+const { createCard } = require('./../culqiClient/culqiClientService');
 const { culqiRequest } = require('../utils');
 const { setResponse } = require('../../utils');
+const { URL_CULQI } = require('../../utils/constants');
 
 // ! const urlCulqi = config.get('urlCulqi');
 
@@ -13,10 +12,11 @@ const createCharge = async (reqBody, reqUser) => {
   // ! en los objetos development/production/test en la carpeta config
   // ! e importarse usando el paquete config
   // ! Esto debido a que el url va a cambiar según se tenga el entorno
+  // ? No tendria por que cambiar por el entorno
+  // ? Para eso estan las llaves de autenticacion
 
   const { error, respCulqi } = await culqiRequest(
-    // ! urlCulqi.charge
-    'https://api.culqi.com/v2/charges',
+    URL_CULQI.chargeCreate,
     reqBody,
   );
   if (error) return respCulqi;
@@ -67,7 +67,7 @@ const makePayment = async (reqBody, reqUser) => {
     if (cardResp.status !== 201) {
       return cardResp;
     }
-    const client = getClientByToken({ token: cardResp.data.id });
+    const client = await CulqiClient.findByCardToken(cardResp.data.id);
     dataReq = {
       ...dataReq,
       antifraud_details: client.culqiInfo.antifrauddetails,
@@ -75,7 +75,7 @@ const makePayment = async (reqBody, reqUser) => {
   } else if (saved) {
     // * Existing card
 
-    const client = await getClientByToken({ token });
+    const client = await CulqiClient.findByCardToken(token);
 
     dataReq = {
       ...dataReq,

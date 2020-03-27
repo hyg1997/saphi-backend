@@ -8,7 +8,7 @@ const listDeliveryPlan = async reqQuery => {
 
 const getDeliveryPlan = async reqParams => {
   const deliveryPlan = await DeliveryPlan.findById(reqParams.id);
-  // ! Que pasa si no existe
+  if (!deliveryPlan) return setResponse(404, 'DeliveryPlan not found.', {});
   return setResponse(200, 'DeliveryPlan found.', deliveryPlan);
 };
 

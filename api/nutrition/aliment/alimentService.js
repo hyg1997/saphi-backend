@@ -3,7 +3,7 @@ const { setResponse } = require('../../utils');
 
 const getAliment = async reqParams => {
   const aliment = await Aliment.findById(reqParams.id);
-  // ! Que ocurre si el alimento no existe?
+  if (!aliment) return setResponse(404, 'Aliment not found.', {});
   return setResponse(200, 'Aliment Found.', aliment);
 };
 
