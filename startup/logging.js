@@ -44,6 +44,9 @@ module.exports = () => {
         db: config.get('dbConfig'),
         level: 'error',
         collection: 'errorLog',
+        options: {
+          useUnifiedTopology: true,
+        },
       }),
     ],
   });
