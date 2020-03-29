@@ -16,26 +16,14 @@ const readUser = async reqParams => {
 };
 
 const readUserByFieldIds = async reqBody => {
-  const user = await User.findOne({
-    $or: [
-      _.pick(reqBody, ['email']),
-      // _.pick(reqBody, ['idDocumentType', 'idDocumentNumber']),
-    ],
-  });
-
+  const user = await User.findByIds(reqBody);
   if (!user) return setResponse(404, 'User not found.');
 
   return setResponse(200, 'User found.', user);
 };
 
 const createUser = async reqBody => {
-  let user = await User.findOne({
-    $or: [
-      _.pick(reqBody, ['email']),
-      // _.pick(reqBody, ['idDocumentType', 'idDocumentNumber']),
-    ],
-  });
-
+  let user = await User.findByIds(reqBody);
   if (user) return setResponse(400, 'User already exists.');
 
   user = new User(reqBody);
