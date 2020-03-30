@@ -11,7 +11,8 @@ router.use('/deliveryOrder', require('./deliveryOrder/deliveryOrderRouter'));
 router.use('/deliveryPlan', require('./deliveryPlan/deliveryPlanRouter'));
 router.use('/', require('./diet/dietRouter'));
 
-secureRouter.use('/', authenticateMiddleware('jwt'), router);
 secureRouter.use('/aliments', require('./aliment/alimentRouter'));
+
+secureRouter.use('/', authenticateMiddleware('jwt'), router);
 
 module.exports = secureRouter;
