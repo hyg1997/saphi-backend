@@ -90,6 +90,20 @@ userSchema.methods.generateAuthToken = function() {
   return jwt.sign(payload, config.get('jwtSecret'));
 };
 
+userSchema.statics.findByIds = function(ids) {
+  const idIdentifiers = [
+    ['email'],
+    ['idDocumentType', 'idDocumentNumber'],
+    ['oauth.googleAuth'],
+    ['oauth.facebookAuth'],
+  ];
+  return this.findOne({
+    $or: idIdentifiers
+      .filter(fields => _.has(ids, fields))
+      .map(fields => _.pick(ids, fields)),
+  });
+};
+
 const User = mongoose.model('User', userSchema);
 
 module.exports = {
