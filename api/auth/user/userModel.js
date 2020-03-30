@@ -24,6 +24,9 @@ const userSchema = new Schema(
     phonePrefix: { type: String },
     phoneNumber: { type: String },
     companyName: { type: String },
+
+    endDate: { type: Date },
+
     macroContent: {
       type: {
         carbohydrate: { type: Number },
@@ -31,19 +34,38 @@ const userSchema = new Schema(
         fat: { type: Number },
       },
     },
+
+    plan: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Plan',
+    },
     indicators: {
       type: {
-        objective: { type: String },
+        objective: { type: Number },
         sex: { type: String },
         weight: { type: Number },
-        size: { type: Number },
+        heigth: { type: Number },
         bodyFatPercentage: { type: Number },
-        physicalActivity: { type: String },
-        patologies: [{ type: String }],
+        physicalActivity: { type: Number },
       },
     },
+    pathologies: [{ type: String }],
+    otherPathology: { type: String, default: '' },
     avoidedAliments: {
-      type: [{ type: Schema.Types.Mixed }],
+      type: {
+        carbohydrate: [{ type: String }],
+        protein: [{ type: String }],
+        fat: [{ type: String }],
+      },
+    },
+    onboardingFinished: { type: Boolean, default: false },
+    activeDiet: { type: Boolean, default: false },
+
+    actionCode: {
+      type: {
+        code: { type: String },
+        expires: { type: Date },
+      },
     },
   },
   {

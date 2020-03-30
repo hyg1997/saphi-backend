@@ -12,6 +12,12 @@ const listAliment = async (req, res) => {
   return res.status(aliments.status).send(aliments);
 };
 
+const listCategories = async (req, res) => {
+  const aliments = await Service.listCategories(req.query);
+
+  return res.status(aliments.status).send(aliments);
+};
+
 const createAliment = async (req, res) => {
   const aliment = await Service.createAliment(req.body);
 
@@ -22,4 +28,5 @@ module.exports = {
   listAliment,
   getAliment,
   createAliment,
+  listCategories,
 };

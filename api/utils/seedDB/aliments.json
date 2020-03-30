@@ -1,6 +1,7 @@
 [
   {
     "name": "Pechuga de pollo sin piel",
+    "category": "Pollo",
     "minQuantity": 10,
     "type": "proteína",
     "units": "gr",
@@ -35,6 +36,7 @@
   },
   {
     "name": "Pechuga de pavo",
+    "category": "Pavo",
     "minQuantity": 10,
     "type": "proteína",
     "units": "gr",
@@ -68,7 +70,8 @@
     "thumbnailImagePath": "https://i.picsum.photos/id/1/480/480.jpg"
   },
   {
-    "name": "Carne molida de Res (95/5) ",
+    "name": "Carne molida de Res (95/5)",
+    "category": "Carne roja",
     "minQuantity": 10,
     "type": "proteína",
     "units": "gr",
@@ -103,6 +106,7 @@
   },
   {
     "name": "Bistec",
+    "category": "Carne roja",
     "minQuantity": 10,
     "type": "proteína",
     "units": "gr",
@@ -137,6 +141,7 @@
   },
   {
     "name": "Lomo fino",
+    "category": "Carne roja",
     "minQuantity": 10,
     "type": "proteína",
     "units": "gr",
@@ -171,6 +176,7 @@
   },
   {
     "name": "Colita de cuadril",
+    "category": "Carne roja",
     "minQuantity": 10,
     "type": "proteína",
     "units": "gr",
@@ -205,6 +211,7 @@
   },
   {
     "name": "Trucha",
+    "category": "Pescado",
     "minQuantity": 10,
     "type": "proteína",
     "units": "gr",
@@ -239,6 +246,7 @@
   },
   {
     "name": "Corvina",
+    "category": "Pescado",
     "minQuantity": 10,
     "type": "proteína",
     "units": "gr",
@@ -273,6 +281,7 @@
   },
   {
     "name": "Cojinova",
+    "category": "Pescado",
     "minQuantity": 10,
     "type": "proteína",
     "units": "gr",
@@ -307,6 +316,7 @@
   },
   {
     "name": "Tilapia",
+    "category": "Pescado",
     "minQuantity": 10,
     "type": "proteína",
     "units": "gr",
@@ -341,6 +351,7 @@
   },
   {
     "name": "Lenguado",
+    "category": "Pescado",
     "minQuantity": 10,
     "type": "proteína",
     "units": "gr",
@@ -375,6 +386,7 @@
   },
   {
     "name": "Atún fresco",
+    "category": "Pescado",
     "minQuantity": 10,
     "type": "proteína",
     "units": "gr",
@@ -409,6 +421,7 @@
   },
   {
     "name": "Atún en lata",
+    "category": "Atún",
     "minQuantity": 10,
     "type": "proteína",
     "units": "gr",
@@ -443,6 +456,7 @@
   },
   {
     "name": "Conejo",
+    "category": "Conejo",
     "minQuantity": 10,
     "type": "proteína",
     "units": "gr",
@@ -477,6 +491,7 @@
   },
   {
     "name": "Bonito",
+    "category": "Pescado",
     "minQuantity": 10,
     "type": "proteína",
     "units": "gr",
@@ -511,6 +526,7 @@
   },
   {
     "name": "Huevo entero",
+    "category": "Huevo",
     "minQuantity": 1,
     "type": "proteína",
     "units": "und",
@@ -545,6 +561,7 @@
   },
   {
     "name": "Clara de huevo",
+    "category": "Huevo",
     "minQuantity": 1,
     "type": "proteína",
     "units": "und",
@@ -579,6 +596,7 @@
   },
   {
     "name": "Yogur Skyr",
+    "category": "Yogur",
     "minQuantity": 10,
     "type": "proteína",
     "units": "gr",
@@ -613,6 +631,7 @@
   },
   {
     "name": "Avena de grano entero",
+    "category": "Avena",
     "minQuantity": 10,
     "type": "proteína",
     "units": "gr",
@@ -646,7 +665,8 @@
     "thumbnailImagePath": "https://i.picsum.photos/id/18/480/480.jpg"
   },
   {
-    "name": "Papa ",
+    "name": "Papa",
+    "category": "Papa",
     "minQuantity": 10,
     "type": "carbohidrato",
     "units": "gr",
@@ -680,7 +700,8 @@
     "thumbnailImagePath": "https://i.picsum.photos/id/20/480/480.jpg"
   },
   {
-    "name": "Pallares ",
+    "name": "Pallares",
+    "category": "Pallares",
     "minQuantity": 10,
     "type": "carbohidrato",
     "units": "gr",
@@ -714,7 +735,8 @@
     "thumbnailImagePath": "https://i.picsum.photos/id/21/480/480.jpg"
   },
   {
-    "name": "Camote ",
+    "name": "Camote",
+    "category": "Camote",
     "minQuantity": 10,
     "type": "carbohidrato",
     "units": "gr",
@@ -748,7 +770,8 @@
     "thumbnailImagePath": "https://i.picsum.photos/id/22/480/480.jpg"
   },
   {
-    "name": "Lentejas ",
+    "name": "Lentejas",
+    "category": "Lentejas",
     "minQuantity": 10,
     "type": "carbohidrato",
     "units": "gr",
@@ -783,6 +806,7 @@
   },
   {
     "name": "Frejoles blancos",
+    "category": "Frejoles blancos",
     "minQuantity": 10,
     "type": "carbohidrato",
     "units": "gr",
@@ -817,6 +841,7 @@
   },
   {
     "name": "Arroz blanco",
+    "category": "Arroz blanco",
     "minQuantity": 10,
     "type": "carbohidrato",
     "units": "gr",
@@ -851,6 +876,7 @@
   },
   {
     "name": "Fideos",
+    "category": "Fideos",
     "minQuantity": 10,
     "type": "carbohidrato",
     "units": "gr",
@@ -885,6 +911,7 @@
   },
   {
     "name": "Quinoa",
+    "category": "Quinoa",
     "minQuantity": 10,
     "type": "carbohidrato",
     "units": "gr",
@@ -918,7 +945,8 @@
     "thumbnailImagePath": "https://i.picsum.photos/id/27/480/480.jpg"
   },
   {
-    "name": "Garbanzos ",
+    "name": "Garbanzos",
+    "category": "Garbanzos",
     "minQuantity": 10,
     "type": "carbohidrato",
     "units": "gr",
@@ -953,6 +981,7 @@
   },
   {
     "name": "Pan de molde",
+    "category": "Pan de molde",
     "minQuantity": 1,
     "type": "carbohidrato",
     "units": "rebanada",
@@ -987,6 +1016,7 @@
   },
   {
     "name": "Choclo desgranado",
+    "category": "Choclo desgranado",
     "minQuantity": 10,
     "type": "carbohidrato",
     "units": "gr",
@@ -1021,6 +1051,7 @@
   },
   {
     "name": "Corazón de alcachofa",
+    "category": "Corazón de alcachofa",
     "minQuantity": 10,
     "type": "carbohidrato",
     "units": "gr",
@@ -1055,6 +1086,7 @@
   },
   {
     "name": "Arroz integral",
+    "category": "Arroz integral",
     "minQuantity": 10,
     "type": "carbohidrato",
     "units": "gr",
@@ -1089,6 +1121,7 @@
   },
   {
     "name": "Fresas",
+    "category": "Fresas",
     "minQuantity": 10,
     "type": "carbohidrato",
     "units": "gr",
@@ -1123,6 +1156,7 @@
   },
   {
     "name": "Blueberries",
+    "category": "Blueberries",
     "minQuantity": 10,
     "type": "carbohidrato",
     "units": "gr",
@@ -1157,6 +1191,7 @@
   },
   {
     "name": "Zarzamoras",
+    "category": "Zarzamoras",
     "minQuantity": 10,
     "type": "carbohidrato",
     "units": "gr",
@@ -1191,6 +1226,7 @@
   },
   {
     "name": "Sandia",
+    "category": "Sandia",
     "minQuantity": 10,
     "type": "carbohidrato",
     "units": "gr",
@@ -1225,6 +1261,7 @@
   },
   {
     "name": "Melón",
+    "category": "Melón",
     "minQuantity": 10,
     "type": "carbohidrato",
     "units": "gr",
@@ -1259,6 +1296,7 @@
   },
   {
     "name": "Granadilla",
+    "category": "Granadilla",
     "minQuantity": 1,
     "type": "carbohidrato",
     "units": "und",
@@ -1293,6 +1331,7 @@
   },
   {
     "name": "Pera",
+    "category": "Pera",
     "minQuantity": 1,
     "type": "carbohidrato",
     "units": "und",
@@ -1327,6 +1366,7 @@
   },
   {
     "name": "Manzana verde",
+    "category": "Manzana verde",
     "minQuantity": 1,
     "type": "carbohidrato",
     "units": "und",
@@ -1361,6 +1401,7 @@
   },
   {
     "name": "Piña",
+    "category": "Piña",
     "minQuantity": 10,
     "type": "carbohidrato",
     "units": "gr",
@@ -1395,6 +1436,7 @@
   },
   {
     "name": "Papaya",
+    "category": "Papaya",
     "minQuantity": 10,
     "type": "carbohidrato",
     "units": "gr",
@@ -1429,6 +1471,7 @@
   },
   {
     "name": "Plátano",
+    "category": "Plátano",
     "minQuantity": 1,
     "type": "carbohidrato",
     "units": "und",
@@ -1463,6 +1506,7 @@
   },
   {
     "name": "Pitahaya",
+    "category": "Pitahaya",
     "minQuantity": 1,
     "type": "carbohidrato",
     "units": "und",
@@ -1497,6 +1541,7 @@
   },
   {
     "name": "Granada",
+    "category": "Granada",
     "minQuantity": 1,
     "type": "carbohidrato",
     "units": "und",
@@ -1531,6 +1576,7 @@
   },
   {
     "name": "Leche de almendras sin azucar",
+    "category": "Leche",
     "minQuantity": 10,
     "type": "grasa",
     "units": "ml",
@@ -1565,6 +1611,7 @@
   },
   {
     "name": "Palta",
+    "category": "Palta",
     "minQuantity": 10,
     "type": "grasa",
     "units": "gr",
@@ -1599,6 +1646,7 @@
   },
   {
     "name": "Aceite de oliva extra virgen",
+    "category": "Aceite de oliva extra virgen",
     "minQuantity": 1,
     "type": "grasa",
     "units": "cucharadita",
@@ -1633,6 +1681,7 @@
   },
   {
     "name": "Almendras",
+    "category": "Almendras",
     "minQuantity": 10,
     "type": "grasa",
     "units": "gr",
@@ -1667,6 +1716,7 @@
   },
   {
     "name": "Linaza",
+    "category": "Linaza",
     "minQuantity": 5,
     "type": "grasa",
     "units": "gr",

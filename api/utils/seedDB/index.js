@@ -11,6 +11,7 @@ require('../../../startup/logging')();
 const config = require('config');
 const { Menu } = require('../../nutrition/menu/menuModel');
 const { Aliment } = require('../../nutrition/aliment/alimentModel');
+const { Company } = require('../../auth/company/companyModel');
 const { DishRecipe } = require('../../nutrition/dishRecipe/dishRecipeModel');
 const {
   DeliveryPlan,
@@ -66,6 +67,7 @@ mongoose
     //   return moment(obj.date).isoWeekday() < 6;
     // });
     await seedModel(Aliment, 'aliments.json');
+    // await seedModel(Company, 'company.json');
     mongoose.connection.close();
   })
   .catch(err => console.log(`Failed to connect to MongoDB...${String(err)}`));

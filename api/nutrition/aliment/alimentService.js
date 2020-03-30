@@ -21,8 +21,16 @@ const listAliment = async reqQuery => {
   return setResponse(200, 'Aliments Found.', aliments);
 };
 
+const listCategories = async reqQuery => {
+  let aliments = await Aliment.find(reqQuery);
+  if (!aliments) aliments = [];
+  aliments = [...new Set(aliments.map(a => a.category))];
+  return setResponse(200, 'Categories Found.', aliments);
+};
+
 module.exports = {
   listAliment,
+  listCategories,
   getAliment,
   createAliment,
 };
