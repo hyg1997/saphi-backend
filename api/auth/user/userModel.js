@@ -10,7 +10,7 @@ const userSchema = new Schema(
     idDocumentType: { type: String },
     idDocumentNumber: { type: String },
     email: { type: String, required: true },
-    password: { type: String, required: true },
+    password: { type: String },
     permissions: {
       type: {
         isAdmin: { type: Boolean },
@@ -67,6 +67,10 @@ const userSchema = new Schema(
         expires: { type: Date },
       },
     },
+    oauth: {
+      googleId: { type: String },
+      facebookId: { type: String },
+    },
   },
   {
     timestamps: true,
@@ -94,8 +98,8 @@ userSchema.statics.findByIds = function(ids) {
   const idIdentifiers = [
     ['email'],
     ['idDocumentType', 'idDocumentNumber'],
-    ['oauth.googleAuth'],
-    ['oauth.facebookAuth'],
+    ['oauth.googleId'],
+    ['oauth.facebookId'],
   ];
   return this.findOne({
     $or: idIdentifiers
