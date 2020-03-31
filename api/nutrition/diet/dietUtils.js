@@ -4,6 +4,7 @@ const {
   MACROCONTENT_CAL,
   FAT_LIMIT,
   MACRO_ERROR_LIMIT,
+  DIET_FACTORS,
 } = require('../../utils/constants');
 
 const macroError = macroContent => {
@@ -234,17 +235,17 @@ const calcDiet = async userData => {
   const plus = userData.sex === 'F' ? -161 : 5;
   let calories = 10 * userData.weight + 6.25 * userData.height - 5 * age + plus;
 
-  const exerciseFactor = { 0: 1.2, 1: 1.5, 2: 1.7, 3: 1.9 };
-  calories *= exerciseFactor[userData.exerciseLevel];
+  // const exerciseFactor = { 0: 1.2, 1: 1.5, 2: 1.7, 3: 1.9 };
+  calories *= DIET_FACTORS.exerciseFactor[userData.exerciseLevel];
 
-  const objectiveFactor = { 0: 0.7, 1: 0.75, 2: 0.8, 3: 1.1 };
-  calories *= objectiveFactor[userData.objectiveLevel];
+  // const objectiveFactor = { 0: 0.7, 1: 0.75, 2: 0.8, 3: 1.1 };
+  calories *= DIET_FACTORS.objectiveFactor[userData.objectiveLevel];
 
   const weightMinusFat = userData.weight * (1 - userData.percFat);
   const protein = 2.5 * weightMinusFat;
 
-  const fatFactor = { 0: 0.35, 1: 0.3, 2: 0.2, 3: 0 };
-  const fat = (calories * fatFactor[userData.fatLevel]) / 9;
+  // const fatFactor = { 0: 0.35, 1: 0.3, 2: 0.2, 3: 0 };
+  const fat = (calories * DIET_FACTORS.fatFactor[userData.fatLevel]) / 9;
 
   const carbohydrate = (calories - protein * 4 - fat * 9) / 4;
 

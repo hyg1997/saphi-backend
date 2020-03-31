@@ -32,7 +32,8 @@
         "active": true
       }
     ],
-    "thumbnailImagePath": "https://i.picsum.photos/id/0/480/480.jpg"
+    "thumbnailImagePath": "https://i.picsum.photos/id/0/240/240.jpg",
+    "imagePath": "https://i.picsum.photos/id/0/480/480.jpg"
   },
   {
     "name": "Pechuga de pavo",
@@ -67,7 +68,8 @@
         "active": true
       }
     ],
-    "thumbnailImagePath": "https://i.picsum.photos/id/1/480/480.jpg"
+    "thumbnailImagePath": "https://i.picsum.photos/id/1/240/240.jpg",
+    "imagePath": "https://i.picsum.photos/id/1/480/480.jpg"
   },
   {
     "name": "Carne molida de Res (95/5)",
@@ -83,7 +85,7 @@
     "meals": [
       {
         "name": "desayuno",
-        "active": true
+        "active": false
       },
       {
         "name": "media mañana",
@@ -102,7 +104,8 @@
         "active": true
       }
     ],
-    "thumbnailImagePath": "https://i.picsum.photos/id/2/480/480.jpg"
+    "thumbnailImagePath": "https://i.picsum.photos/id/2/240/240.jpg",
+    "imagePath": "https://i.picsum.photos/id/2/480/480.jpg"
   },
   {
     "name": "Bistec",
@@ -137,7 +140,8 @@
         "active": true
       }
     ],
-    "thumbnailImagePath": "https://i.picsum.photos/id/3/480/480.jpg"
+    "thumbnailImagePath": "https://i.picsum.photos/id/3/240/240.jpg",
+    "imagePath": "https://i.picsum.photos/id/3/480/480.jpg"
   },
   {
     "name": "Lomo fino",
@@ -172,7 +176,8 @@
         "active": true
       }
     ],
-    "thumbnailImagePath": "https://i.picsum.photos/id/4/480/480.jpg"
+    "thumbnailImagePath": "https://i.picsum.photos/id/4/240/240.jpg",
+    "imagePath": "https://i.picsum.photos/id/4/480/480.jpg"
   },
   {
     "name": "Colita de cuadril",
@@ -207,7 +212,8 @@
         "active": true
       }
     ],
-    "thumbnailImagePath": "https://i.picsum.photos/id/5/480/480.jpg"
+    "thumbnailImagePath": "https://i.picsum.photos/id/5/240/240.jpg",
+    "imagePath": "https://i.picsum.photos/id/5/480/480.jpg"
   },
   {
     "name": "Trucha",
@@ -242,7 +248,8 @@
         "active": true
       }
     ],
-    "thumbnailImagePath": "https://i.picsum.photos/id/6/480/480.jpg"
+    "thumbnailImagePath": "https://i.picsum.photos/id/6/240/240.jpg",
+    "imagePath": "https://i.picsum.photos/id/6/480/480.jpg"
   },
   {
     "name": "Corvina",
@@ -277,7 +284,8 @@
         "active": true
       }
     ],
-    "thumbnailImagePath": "https://i.picsum.photos/id/7/480/480.jpg"
+    "thumbnailImagePath": "https://i.picsum.photos/id/7/240/240.jpg",
+    "imagePath": "https://i.picsum.photos/id/7/480/480.jpg"
   },
   {
     "name": "Cojinova",
@@ -312,7 +320,8 @@
         "active": true
       }
     ],
-    "thumbnailImagePath": "https://i.picsum.photos/id/8/480/480.jpg"
+    "thumbnailImagePath": "https://i.picsum.photos/id/8/240/240.jpg",
+    "imagePath": "https://i.picsum.photos/id/8/480/480.jpg"
   },
   {
     "name": "Tilapia",
@@ -347,7 +356,8 @@
         "active": true
       }
     ],
-    "thumbnailImagePath": "https://i.picsum.photos/id/9/480/480.jpg"
+    "thumbnailImagePath": "https://i.picsum.photos/id/9/240/240.jpg",
+    "imagePath": "https://i.picsum.photos/id/9/480/480.jpg"
   },
   {
     "name": "Lenguado",
@@ -382,7 +392,8 @@
         "active": true
       }
     ],
-    "thumbnailImagePath": "https://i.picsum.photos/id/10/480/480.jpg"
+    "thumbnailImagePath": "https://i.picsum.photos/id/10/240/240.jpg",
+    "imagePath": "https://i.picsum.photos/id/10/480/480.jpg"
   },
   {
     "name": "Atún fresco",
@@ -417,7 +428,8 @@
         "active": true
       }
     ],
-    "thumbnailImagePath": "https://i.picsum.photos/id/11/480/480.jpg"
+    "thumbnailImagePath": "https://i.picsum.photos/id/11/240/240.jpg",
+    "imagePath": "https://i.picsum.photos/id/11/480/480.jpg"
   },
   {
     "name": "Atún en lata",
@@ -452,7 +464,8 @@
         "active": true
       }
     ],
-    "thumbnailImagePath": "https://i.picsum.photos/id/12/480/480.jpg"
+    "thumbnailImagePath": "https://i.picsum.photos/id/12/240/240.jpg",
+    "imagePath": "https://i.picsum.photos/id/12/480/480.jpg"
   },
   {
     "name": "Conejo",
@@ -487,7 +500,8 @@
         "active": true
       }
     ],
-    "thumbnailImagePath": "https://i.picsum.photos/id/13/480/480.jpg"
+    "thumbnailImagePath": "https://i.picsum.photos/id/13/240/240.jpg",
+    "imagePath": "https://i.picsum.photos/id/13/480/480.jpg"
   },
   {
     "name": "Bonito",
@@ -522,7 +536,8 @@
         "active": true
       }
     ],
-    "thumbnailImagePath": "https://i.picsum.photos/id/14/480/480.jpg"
+    "thumbnailImagePath": "https://i.picsum.photos/id/14/240/240.jpg",
+    "imagePath": "https://i.picsum.photos/id/14/480/480.jpg"
   },
   {
     "name": "Huevo entero",
@@ -557,7 +572,8 @@
         "active": true
       }
     ],
-    "thumbnailImagePath": "https://i.picsum.photos/id/15/480/480.jpg"
+    "thumbnailImagePath": "https://i.picsum.photos/id/15/240/240.jpg",
+    "imagePath": "https://i.picsum.photos/id/15/480/480.jpg"
   },
   {
     "name": "Clara de huevo",
@@ -592,7 +608,8 @@
         "active": false
       }
     ],
-    "thumbnailImagePath": "https://i.picsum.photos/id/16/480/480.jpg"
+    "thumbnailImagePath": "https://i.picsum.photos/id/16/240/240.jpg",
+    "imagePath": "https://i.picsum.photos/id/16/480/480.jpg"
   },
   {
     "name": "Yogur Skyr",
@@ -627,13 +644,158 @@
         "active": false
       }
     ],
-    "thumbnailImagePath": "https://i.picsum.photos/id/17/480/480.jpg"
+    "thumbnailImagePath": "https://i.picsum.photos/id/17/240/240.jpg",
+    "imagePath": "https://i.picsum.photos/id/17/480/480.jpg"
   },
   {
-    "name": "Avena de grano entero",
+    "name": "Proteína en polvo",
+    "category": "Proteína",
+    "minQuantity": 0.5,
+    "type": "proteína",
+    "units": "scoop",
+    "macroContent": {
+      "protein": 12.5,
+      "carbohydrate": 0,
+      "fat": 0
+    },
+    "meals": [
+      {
+        "name": "desayuno",
+        "active": true
+      },
+      {
+        "name": "media mañana",
+        "active": false
+      },
+      {
+        "name": "almuerzo",
+        "active": false
+      },
+      {
+        "name": "media tarde",
+        "active": false
+      },
+      {
+        "name": "cena",
+        "active": false
+      }
+    ],
+    "thumbnailImagePath": "https://i.picsum.photos/id/18/240/240.jpg",
+    "imagePath": "https://i.picsum.photos/id/18/480/480.jpg"
+  },
+  {
+    "name": "Huevo entero(2) + Proteina(1/2 scoop)",
+    "category": "Huevo + Proteína",
+    "minQuantity": 1,
+    "type": "proteína",
+    "units": "und",
+    "macroContent": {
+      "protein": 24.5,
+      "carbohydrate": 0.76,
+      "fat": 10
+    },
+    "meals": [
+      {
+        "name": "desayuno",
+        "active": true
+      },
+      {
+        "name": "media mañana",
+        "active": false
+      },
+      {
+        "name": "almuerzo",
+        "active": false
+      },
+      {
+        "name": "media tarde",
+        "active": false
+      },
+      {
+        "name": "cena",
+        "active": false
+      }
+    ],
+    "thumbnailImagePath": "https://i.picsum.photos/id/19/240/240.jpg",
+    "imagePath": "https://i.picsum.photos/id/19/480/480.jpg"
+  },
+  {
+    "name": "Huevo entero(2) + Pollo(50g)",
+    "category": "Huevo + Pollo",
+    "minQuantity": 1,
+    "type": "proteína",
+    "units": "und",
+    "macroContent": {
+      "protein": 23.545,
+      "carbohydrate": 0.76,
+      "fat": 10.62
+    },
+    "meals": [
+      {
+        "name": "desayuno",
+        "active": true
+      },
+      {
+        "name": "media mañana",
+        "active": false
+      },
+      {
+        "name": "almuerzo",
+        "active": false
+      },
+      {
+        "name": "media tarde",
+        "active": false
+      },
+      {
+        "name": "cena",
+        "active": false
+      }
+    ],
+    "thumbnailImagePath": "https://i.picsum.photos/id/20/240/240.jpg",
+    "imagePath": "https://i.picsum.photos/id/20/480/480.jpg"
+  },
+  {
+    "name": "Huevo entero(2) + Skyr(125g)",
+    "category": "Huevo + Skyr",
+    "minQuantity": 1,
+    "type": "proteína",
+    "units": "und",
+    "macroContent": {
+      "protein": 25.75,
+      "carbohydrate": 4.135,
+      "fat": 10
+    },
+    "meals": [
+      {
+        "name": "desayuno",
+        "active": true
+      },
+      {
+        "name": "media mañana",
+        "active": false
+      },
+      {
+        "name": "almuerzo",
+        "active": false
+      },
+      {
+        "name": "media tarde",
+        "active": false
+      },
+      {
+        "name": "cena",
+        "active": false
+      }
+    ],
+    "thumbnailImagePath": "https://i.picsum.photos/id/21/240/240.jpg",
+    "imagePath": "https://i.picsum.photos/id/21/480/480.jpg"
+  },
+  {
+    "name": "Avena de grano entero + canela(Opcional)",
     "category": "Avena",
     "minQuantity": 10,
-    "type": "proteína",
+    "type": "carbohidrato",
     "units": "gr",
     "macroContent": {
       "protein": 1.25,
@@ -662,7 +824,8 @@
         "active": false
       }
     ],
-    "thumbnailImagePath": "https://i.picsum.photos/id/18/480/480.jpg"
+    "thumbnailImagePath": "https://i.picsum.photos/id/24/240/240.jpg",
+    "imagePath": "https://i.picsum.photos/id/24/480/480.jpg"
   },
   {
     "name": "Papa",
@@ -697,7 +860,8 @@
         "active": true
       }
     ],
-    "thumbnailImagePath": "https://i.picsum.photos/id/20/480/480.jpg"
+    "thumbnailImagePath": "https://i.picsum.photos/id/25/240/240.jpg",
+    "imagePath": "https://i.picsum.photos/id/25/480/480.jpg"
   },
   {
     "name": "Pallares",
@@ -732,7 +896,8 @@
         "active": true
       }
     ],
-    "thumbnailImagePath": "https://i.picsum.photos/id/21/480/480.jpg"
+    "thumbnailImagePath": "https://i.picsum.photos/id/26/240/240.jpg",
+    "imagePath": "https://i.picsum.photos/id/26/480/480.jpg"
   },
   {
     "name": "Camote",
@@ -767,7 +932,8 @@
         "active": true
       }
     ],
-    "thumbnailImagePath": "https://i.picsum.photos/id/22/480/480.jpg"
+    "thumbnailImagePath": "https://i.picsum.photos/id/27/240/240.jpg",
+    "imagePath": "https://i.picsum.photos/id/27/480/480.jpg"
   },
   {
     "name": "Lentejas",
@@ -802,11 +968,12 @@
         "active": true
       }
     ],
-    "thumbnailImagePath": "https://i.picsum.photos/id/23/480/480.jpg"
+    "thumbnailImagePath": "https://i.picsum.photos/id/28/240/240.jpg",
+    "imagePath": "https://i.picsum.photos/id/28/480/480.jpg"
   },
   {
-    "name": "Frejoles blancos",
-    "category": "Frejoles blancos",
+    "name": "Frejoles",
+    "category": "Frejoles",
     "minQuantity": 10,
     "type": "carbohidrato",
     "units": "gr",
@@ -837,7 +1004,8 @@
         "active": true
       }
     ],
-    "thumbnailImagePath": "https://i.picsum.photos/id/24/480/480.jpg"
+    "thumbnailImagePath": "https://i.picsum.photos/id/29/240/240.jpg",
+    "imagePath": "https://i.picsum.photos/id/29/480/480.jpg"
   },
   {
     "name": "Arroz blanco",
@@ -872,7 +1040,8 @@
         "active": true
       }
     ],
-    "thumbnailImagePath": "https://i.picsum.photos/id/25/480/480.jpg"
+    "thumbnailImagePath": "https://i.picsum.photos/id/30/240/240.jpg",
+    "imagePath": "https://i.picsum.photos/id/30/480/480.jpg"
   },
   {
     "name": "Fideos",
@@ -907,7 +1076,8 @@
         "active": true
       }
     ],
-    "thumbnailImagePath": "https://i.picsum.photos/id/26/480/480.jpg"
+    "thumbnailImagePath": "https://i.picsum.photos/id/31/240/240.jpg",
+    "imagePath": "https://i.picsum.photos/id/31/480/480.jpg"
   },
   {
     "name": "Quinoa",
@@ -942,7 +1112,8 @@
         "active": true
       }
     ],
-    "thumbnailImagePath": "https://i.picsum.photos/id/27/480/480.jpg"
+    "thumbnailImagePath": "https://i.picsum.photos/id/32/240/240.jpg",
+    "imagePath": "https://i.picsum.photos/id/32/480/480.jpg"
   },
   {
     "name": "Garbanzos",
@@ -977,7 +1148,8 @@
         "active": true
       }
     ],
-    "thumbnailImagePath": "https://i.picsum.photos/id/28/480/480.jpg"
+    "thumbnailImagePath": "https://i.picsum.photos/id/33/240/240.jpg",
+    "imagePath": "https://i.picsum.photos/id/33/480/480.jpg"
   },
   {
     "name": "Pan de molde",
@@ -1001,7 +1173,7 @@
       },
       {
         "name": "almuerzo",
-        "active": true
+        "active": false
       },
       {
         "name": "media tarde",
@@ -1009,10 +1181,11 @@
       },
       {
         "name": "cena",
-        "active": true
+        "active": false
       }
     ],
-    "thumbnailImagePath": "https://i.picsum.photos/id/29/480/480.jpg"
+    "thumbnailImagePath": "https://i.picsum.photos/id/34/240/240.jpg",
+    "imagePath": "https://i.picsum.photos/id/34/480/480.jpg"
   },
   {
     "name": "Choclo desgranado",
@@ -1047,42 +1220,8 @@
         "active": true
       }
     ],
-    "thumbnailImagePath": "https://i.picsum.photos/id/30/480/480.jpg"
-  },
-  {
-    "name": "Corazón de alcachofa",
-    "category": "Corazón de alcachofa",
-    "minQuantity": 10,
-    "type": "carbohidrato",
-    "units": "gr",
-    "macroContent": {
-      "protein": 0.337,
-      "carbohydrate": 1.087,
-      "fat": 0.229
-    },
-    "meals": [
-      {
-        "name": "desayuno",
-        "active": false
-      },
-      {
-        "name": "media mañana",
-        "active": false
-      },
-      {
-        "name": "almuerzo",
-        "active": true
-      },
-      {
-        "name": "media tarde",
-        "active": false
-      },
-      {
-        "name": "cena",
-        "active": true
-      }
-    ],
-    "thumbnailImagePath": "https://i.picsum.photos/id/31/480/480.jpg"
+    "thumbnailImagePath": "https://i.picsum.photos/id/35/240/240.jpg",
+    "imagePath": "https://i.picsum.photos/id/35/480/480.jpg"
   },
   {
     "name": "Arroz integral",
@@ -1117,7 +1256,8 @@
         "active": true
       }
     ],
-    "thumbnailImagePath": "https://i.picsum.photos/id/32/480/480.jpg"
+    "thumbnailImagePath": "https://i.picsum.photos/id/36/240/240.jpg",
+    "imagePath": "https://i.picsum.photos/id/36/480/480.jpg"
   },
   {
     "name": "Fresas",
@@ -1152,7 +1292,8 @@
         "active": false
       }
     ],
-    "thumbnailImagePath": "https://i.picsum.photos/id/33/480/480.jpg"
+    "thumbnailImagePath": "https://i.picsum.photos/id/37/240/240.jpg",
+    "imagePath": "https://i.picsum.photos/id/37/480/480.jpg"
   },
   {
     "name": "Blueberries",
@@ -1187,42 +1328,8 @@
         "active": false
       }
     ],
-    "thumbnailImagePath": "https://i.picsum.photos/id/34/480/480.jpg"
-  },
-  {
-    "name": "Zarzamoras",
-    "category": "Zarzamoras",
-    "minQuantity": 10,
-    "type": "carbohidrato",
-    "units": "gr",
-    "macroContent": {
-      "protein": 0.139,
-      "carbohydrate": 0.961,
-      "fat": 0.049
-    },
-    "meals": [
-      {
-        "name": "desayuno",
-        "active": true
-      },
-      {
-        "name": "media mañana",
-        "active": true
-      },
-      {
-        "name": "almuerzo",
-        "active": false
-      },
-      {
-        "name": "media tarde",
-        "active": true
-      },
-      {
-        "name": "cena",
-        "active": false
-      }
-    ],
-    "thumbnailImagePath": "https://i.picsum.photos/id/35/480/480.jpg"
+    "thumbnailImagePath": "https://i.picsum.photos/id/38/240/240.jpg",
+    "imagePath": "https://i.picsum.photos/id/38/480/480.jpg"
   },
   {
     "name": "Sandia",
@@ -1257,7 +1364,8 @@
         "active": false
       }
     ],
-    "thumbnailImagePath": "https://i.picsum.photos/id/36/480/480.jpg"
+    "thumbnailImagePath": "https://i.picsum.photos/id/39/240/240.jpg",
+    "imagePath": "https://i.picsum.photos/id/39/480/480.jpg"
   },
   {
     "name": "Melón",
@@ -1292,7 +1400,8 @@
         "active": false
       }
     ],
-    "thumbnailImagePath": "https://i.picsum.photos/id/37/480/480.jpg"
+    "thumbnailImagePath": "https://i.picsum.photos/id/40/240/240.jpg",
+    "imagePath": "https://i.picsum.photos/id/40/480/480.jpg"
   },
   {
     "name": "Granadilla",
@@ -1327,7 +1436,8 @@
         "active": false
       }
     ],
-    "thumbnailImagePath": "https://i.picsum.photos/id/38/480/480.jpg"
+    "thumbnailImagePath": "https://i.picsum.photos/id/41/240/240.jpg",
+    "imagePath": "https://i.picsum.photos/id/41/480/480.jpg"
   },
   {
     "name": "Pera",
@@ -1362,7 +1472,8 @@
         "active": false
       }
     ],
-    "thumbnailImagePath": "https://i.picsum.photos/id/39/480/480.jpg"
+    "thumbnailImagePath": "https://i.picsum.photos/id/42/240/240.jpg",
+    "imagePath": "https://i.picsum.photos/id/42/480/480.jpg"
   },
   {
     "name": "Manzana verde",
@@ -1397,7 +1508,8 @@
         "active": false
       }
     ],
-    "thumbnailImagePath": "https://i.picsum.photos/id/40/480/480.jpg"
+    "thumbnailImagePath": "https://i.picsum.photos/id/43/240/240.jpg",
+    "imagePath": "https://i.picsum.photos/id/43/480/480.jpg"
   },
   {
     "name": "Piña",
@@ -1432,7 +1544,8 @@
         "active": false
       }
     ],
-    "thumbnailImagePath": "https://i.picsum.photos/id/41/480/480.jpg"
+    "thumbnailImagePath": "https://i.picsum.photos/id/44/240/240.jpg",
+    "imagePath": "https://i.picsum.photos/id/44/480/480.jpg"
   },
   {
     "name": "Papaya",
@@ -1467,7 +1580,8 @@
         "active": false
       }
     ],
-    "thumbnailImagePath": "https://i.picsum.photos/id/42/480/480.jpg"
+    "thumbnailImagePath": "https://i.picsum.photos/id/45/240/240.jpg",
+    "imagePath": "https://i.picsum.photos/id/45/480/480.jpg"
   },
   {
     "name": "Plátano",
@@ -1502,77 +1616,8 @@
         "active": false
       }
     ],
-    "thumbnailImagePath": "https://i.picsum.photos/id/43/480/480.jpg"
-  },
-  {
-    "name": "Pitahaya",
-    "category": "Pitahaya",
-    "minQuantity": 1,
-    "type": "carbohidrato",
-    "units": "und",
-    "macroContent": {
-      "protein": 0.78,
-      "carbohydrate": 12.26,
-      "fat": 0.38
-    },
-    "meals": [
-      {
-        "name": "desayuno",
-        "active": true
-      },
-      {
-        "name": "media mañana",
-        "active": true
-      },
-      {
-        "name": "almuerzo",
-        "active": false
-      },
-      {
-        "name": "media tarde",
-        "active": true
-      },
-      {
-        "name": "cena",
-        "active": false
-      }
-    ],
-    "thumbnailImagePath": "https://i.picsum.photos/id/44/480/480.jpg"
-  },
-  {
-    "name": "Granada",
-    "category": "Granada",
-    "minQuantity": 1,
-    "type": "carbohidrato",
-    "units": "und",
-    "macroContent": {
-      "protein": 1.46,
-      "carbohydrate": 26.44,
-      "fat": 0.46
-    },
-    "meals": [
-      {
-        "name": "desayuno",
-        "active": true
-      },
-      {
-        "name": "media mañana",
-        "active": true
-      },
-      {
-        "name": "almuerzo",
-        "active": false
-      },
-      {
-        "name": "media tarde",
-        "active": true
-      },
-      {
-        "name": "cena",
-        "active": false
-      }
-    ],
-    "thumbnailImagePath": "https://i.picsum.photos/id/45/480/480.jpg"
+    "thumbnailImagePath": "https://i.picsum.photos/id/46/240/240.jpg",
+    "imagePath": "https://i.picsum.photos/id/46/480/480.jpg"
   },
   {
     "name": "Leche de almendras sin azucar",
@@ -1607,7 +1652,8 @@
         "active": false
       }
     ],
-    "thumbnailImagePath": "https://i.picsum.photos/id/47/480/480.jpg"
+    "thumbnailImagePath": "https://i.picsum.photos/id/48/240/240.jpg",
+    "imagePath": "https://i.picsum.photos/id/48/480/480.jpg"
   },
   {
     "name": "Palta",
@@ -1642,7 +1688,8 @@
         "active": true
       }
     ],
-    "thumbnailImagePath": "https://i.picsum.photos/id/48/480/480.jpg"
+    "thumbnailImagePath": "https://i.picsum.photos/id/49/240/240.jpg",
+    "imagePath": "https://i.picsum.photos/id/49/480/480.jpg"
   },
   {
     "name": "Aceite de oliva extra virgen",
@@ -1677,7 +1724,8 @@
         "active": true
       }
     ],
-    "thumbnailImagePath": "https://i.picsum.photos/id/49/480/480.jpg"
+    "thumbnailImagePath": "https://i.picsum.photos/id/50/240/240.jpg",
+    "imagePath": "https://i.picsum.photos/id/50/480/480.jpg"
   },
   {
     "name": "Almendras",
@@ -1712,7 +1760,8 @@
         "active": false
       }
     ],
-    "thumbnailImagePath": "https://i.picsum.photos/id/50/480/480.jpg"
+    "thumbnailImagePath": "https://i.picsum.photos/id/51/240/240.jpg",
+    "imagePath": "https://i.picsum.photos/id/51/480/480.jpg"
   },
   {
     "name": "Linaza",
@@ -1747,6 +1796,43 @@
         "active": false
       }
     ],
-    "thumbnailImagePath": "https://i.picsum.photos/id/51/480/480.jpg"
+    "thumbnailImagePath": "https://i.picsum.photos/id/52/240/240.jpg",
+    "imagePath": "https://i.picsum.photos/id/52/480/480.jpg"
+  },
+  {
+    "name": "Aceite de coco",
+    "category": "Aceite de coco",
+    "minQuantity": 1,
+    "type": "grasa",
+    "units": "cucharadita",
+    "macroContent": {
+      "protein": 0,
+      "carbohydrate": 0,
+      "fat": 5.125
+    },
+    "meals": [
+      {
+        "name": "desayuno",
+        "active": false
+      },
+      {
+        "name": "media mañana",
+        "active": false
+      },
+      {
+        "name": "almuerzo",
+        "active": true
+      },
+      {
+        "name": "media tarde",
+        "active": false
+      },
+      {
+        "name": "cena",
+        "active": true
+      }
+    ],
+    "thumbnailImagePath": "https://i.picsum.photos/id/53/240/240.jpg",
+    "imagePath": "https://i.picsum.photos/id/53/480/480.jpg"
   }
 ]

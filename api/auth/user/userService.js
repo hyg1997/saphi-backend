@@ -41,6 +41,7 @@ const onboarding = async (reqBody, reqUser) => {
 
 const getUserByPhoneOrEmail = async phoneOrEmail => {
   const emailRegex = /^.{2,}@.{2,}\..{2,}$/g;
+  // TODO: Check phone regex
   const phoneRegex = /^\+?[0-9]{9,}$/g;
 
   let user = null;
@@ -67,7 +68,14 @@ const forgotPassword = async reqBody => {
 
   if (response.status !== 200) return response;
 
-  const code = '1234';
+  const code = String(Math.floor(Math.random() * 10000)).padStart(4, '0');
+
+  if (response.email) {
+    // TODO: Send email
+  } else {
+    // TODO: Send phone
+  }
+
   const expires = moment
     .tz('America/Lima')
     .add(1, 'hours')
@@ -76,7 +84,6 @@ const forgotPassword = async reqBody => {
     actionCode: { code, expires },
   });
 
-  // TODO: Send code phone or email
   return setResponse(200, 'Code Sended.', {});
 };
 
