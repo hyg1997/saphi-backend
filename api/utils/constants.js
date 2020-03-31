@@ -36,7 +36,12 @@ module.exports = {
     fat: 9,
   },
   FAT_LIMIT: 1,
-  MACRO_ERROR_LIMIT: 30,
+  MACRO_ERROR_LIMIT: 20,
+  DIET_FACTORS: {
+    exerciseFactor: { 0: 1.2, 1: 1.5, 2: 1.7, 3: 1.9 },
+    objectiveFactor: { 0: 0.7, 1: 0.75, 2: 0.8, 3: 1.1 },
+    fatFactor: { 0: 0.35, 1: 0.3, 2: 0.2, 3: 0 },
+  },
   URL_CULQI: {
     userCreate: 'https://api.culqi.com/v2/customers',
     cardCreate: 'https://api.culqi.com/v2/cards',

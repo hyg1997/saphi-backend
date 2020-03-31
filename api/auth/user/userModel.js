@@ -41,12 +41,13 @@ const userSchema = new Schema(
     },
     indicators: {
       type: {
-        objective: { type: Number },
+        idObjective: { type: Number },
         sex: { type: String },
         weight: { type: Number },
         heigth: { type: Number },
+        idbodyFat: { type: Number },
         bodyFatPercentage: { type: Number },
-        physicalActivity: { type: Number },
+        idPhysicalActivity: { type: Number },
       },
     },
     pathologies: [{ type: String }],
