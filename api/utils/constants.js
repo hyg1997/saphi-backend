@@ -47,6 +47,15 @@ module.exports = {
     cardCreate: 'https://api.culqi.com/v2/cards',
     chargeCreate: 'https://api.culqi.com/v2/charges',
   },
+
+  CONFIG_EMAIL: {
+    service: 'gmail',
+    auth: {
+      user: 'abc@gmail.com',
+      pass: '1234',
+    },
+  },
+
   getDictValues: dict => {
     return Object.keys(dict).map(function(key) {
       return dict[key];

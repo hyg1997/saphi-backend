@@ -1,8 +1,11 @@
 const _ = require('lodash');
+const nodemailer = require('nodemailer');
 const moment = require('moment-timezone');
 
 const { User } = require('./userModel');
-const { setResponse } = require('../../utils');
+const { setResponse, renderTemplate } = require('../../utils');
+
+const { CONFIG_EMAIL } = require('../../utils/constants');
 
 const listUser = async reqQuery => {
   const users = await User.find();
@@ -70,8 +73,20 @@ const forgotPassword = async reqBody => {
 
   const code = String(Math.floor(Math.random() * 10000)).padStart(4, '0');
 
-  if (response.email) {
-    // TODO: Send email
+  if (response.data.email) {
+    const content = renderTemplate('email_send_code.html', { code });
+    const transporter = nodemailer.createTransport(CONFIG_EMAIL);
+
+    try {
+      await transporter.sendMail({
+        from: CONFIG_EMAIL.auth.user,
+        to: response.data.email,
+        subject: 'Your saphi code',
+        text: content,
+      });
+    } catch (error) {
+      return setResponse(500, 'Ocurrio un error', {});
+    }
   } else {
     // TODO: Send phone
   }

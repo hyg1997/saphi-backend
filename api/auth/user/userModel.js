@@ -45,7 +45,7 @@ const userSchema = new Schema(
         sex: { type: String },
         weight: { type: Number },
         heigth: { type: Number },
-        idbodyFat: { type: Number },
+        idBodyFat: { type: Number },
         bodyFatPercentage: { type: Number },
         idPhysicalActivity: { type: Number },
       },
