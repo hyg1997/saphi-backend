@@ -4,10 +4,15 @@ const config = require('config');
 const _ = require('lodash');
 const bcrypt = require('bcrypt');
 
+const { DOCUMENT_TYPE } = require('../../utils/constants');
+
 const { Schema } = mongoose;
 const userSchema = new Schema(
   {
-    idDocumentType: { type: String },
+    idDocumentType: {
+      type: String,
+      enum: [DOCUMENT_TYPE.DNI, DOCUMENT_TYPE.CE, DOCUMENT_TYPE.PASSPORT],
+    },
     idDocumentNumber: { type: String },
     email: { type: String, required: true },
     password: { type: String },
