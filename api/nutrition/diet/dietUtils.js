@@ -236,16 +236,16 @@ const calcDiet = async userData => {
   let calories = 10 * userData.weight + 6.25 * userData.height - 5 * age + plus;
 
   // const exerciseFactor = { 0: 1.2, 1: 1.5, 2: 1.7, 3: 1.9 };
-  calories *= DIET_FACTORS.exerciseFactor[userData.exerciseLevel];
+  calories *= DIET_FACTORS.exerciseFactor[userData.idPhysicalActivity];
 
   // const objectiveFactor = { 0: 0.7, 1: 0.75, 2: 0.8, 3: 1.1 };
-  calories *= DIET_FACTORS.objectiveFactor[userData.objectiveLevel];
+  calories *= DIET_FACTORS.objectiveFactor[userData.idObjective];
 
-  const weightMinusFat = userData.weight * (1 - userData.percFat);
+  const weightMinusFat = userData.weight * (1 - userData.bodyFatPercentage);
   const protein = 2.5 * weightMinusFat;
 
   // const fatFactor = { 0: 0.35, 1: 0.3, 2: 0.2, 3: 0 };
-  const fat = (calories * DIET_FACTORS.fatFactor[userData.fatLevel]) / 9;
+  const fat = (calories * DIET_FACTORS.fatFactor[userData.idBodyFat]) / 9;
 
   const carbohydrate = (calories - protein * 4 - fat * 9) / 4;
 
