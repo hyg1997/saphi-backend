@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "startN": "nodemon ./bin/www",
+    "startN": "nodemon -e yml,js ./bin/www",
     "seedDB": "node api/utils/seedDB"
   },
   "dependencies": {
@@ -20,6 +20,7 @@
     "escape-html": "^1.0.3",
     "express": "^4.16.4",
     "express-async-errors": "^3.1.1",
+    "google-auth-library": "^6.0.0",
     "helmet": "^3.21.2",
     "joi-objectid": "^3.0.1",
     "jsonwebtoken": "^8.5.1",
@@ -28,8 +29,12 @@
     "moment-timezone": "^0.5.28",
     "mongoose": "^5.9.3",
     "passport": "^0.4.1",
+    "passport-custom": "^1.1.1",
+    "passport-google-oauth": "^2.0.0",
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
+    "swagger-jsdoc": "^4.0.0",
+    "swagger-ui-express": "^4.1.4",
     "winston": "^3.2.1",
     "winston-mongodb": "^5.0.1"
   },
