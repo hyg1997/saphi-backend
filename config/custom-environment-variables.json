@@ -3,5 +3,7 @@
   "jwtSecret": "JWT_SECRET",
   "hostname": "ENV_HOSTNAME",
   "skCulqi": "SK_CULQI",
-  "pkCulqi": "PK_CULQI"
+  "pkCulqi": "PK_CULQI",
+  "googleClientId": "GOOGLE_CLIENT_ID",
+  "googleClientSecret": "GOOGLE_CLIENT_SECRET"
 }
