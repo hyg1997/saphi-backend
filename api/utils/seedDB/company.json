@@ -3,8 +3,8 @@
     "name": "Zanymax",
     "users": [
       {
-        "idDocumentType": "Pasaporte",
-        "idDocumentNumber": "1864706X",
+        "idDocumentType": "DNI",
+        "idDocumentNumber": "12342356",
         "endDate": "2021/09/26 12:03:56"
       },
       {
@@ -43,8 +43,8 @@
         "endDate": "2021/04/16 20:59:42"
       },
       {
-        "idDocumentType": "Pasaporte",
-        "idDocumentNumber": "1274895X",
+        "idDocumentType": "DNI",
+        "idDocumentNumber": "12748958",
         "endDate": "2021/04/01 20:07:07"
       },
       {
@@ -118,8 +118,8 @@
         "endDate": "2021/03/11 01:42:22"
       },
       {
-        "idDocumentType": "CE",
-        "idDocumentNumber": "3685071X",
+        "idDocumentType": "DNI",
+        "idDocumentNumber": "36850710",
         "endDate": "2021/02/21 04:34:18"
       },
       {
@@ -178,8 +178,8 @@
         "endDate": "2021/08/22 21:05:34"
       },
       {
-        "idDocumentType": "Pasaporte",
-        "idDocumentNumber": "2724649X",
+        "idDocumentType": "DNI",
+        "idDocumentNumber": "27246491",
         "endDate": "2021/11/06 18:12:11"
       },
       {

@@ -15,6 +15,8 @@ const error = require('../api/middleware/error');
 const nutritionRouter = require('../api/nutrition/nutritionRouter');
 const paymentRouter = require('../api/payment/PaymentRouter');
 const authRouter = require('../api/auth/authRouter');
+const companyRouter = require('../api/auth/company/companyRouter');
+
 const { initialiseAuthentication } = require('../api/middleware/auth');
 
 module.exports = app => {
@@ -30,7 +32,7 @@ module.exports = app => {
 
   app.use(
     express.json({
-      verify(req, res, buf, encoding) {
+      verify (req, res, buf, encoding) {
         req.rawBody = buf.toString();
       },
     }),
@@ -45,8 +47,9 @@ module.exports = app => {
     res.sendFile(path.join(__dirname, '../templates/culqui_form.html'));
   });
   app.use('/auth', authRouter);
-  app.use('/', nutritionRouter);
   app.use('/payment', paymentRouter);
+  app.use('/company', companyRouter);
+  app.use('/', nutritionRouter);
 
   app.use(celebrateError);
   app.use(error);

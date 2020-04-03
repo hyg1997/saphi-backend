@@ -4,6 +4,8 @@ const { celebrate } = require('celebrate');
 const { authenticateMiddleware } = require('../../middleware/auth');
 const Validator = require('./authenticationValidator');
 
+const CompanyController = require('../company/companyController');
+
 const router = express.Router();
 
 const userController = (status, message) => (req, res) => {
@@ -30,4 +32,11 @@ router.post(
   authenticateMiddleware('localSignup'),
   userController(201, 'User created'),
 );
+
+router.post(
+  '/checkdocument',
+  celebrate(Validator.CheckDocument),
+  CompanyController.checkDocument,
+);
+
 module.exports = router;

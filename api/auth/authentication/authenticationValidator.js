@@ -36,7 +36,24 @@ const Login = {
   },
 };
 
+const CheckDocument = {
+  body: {
+    idDocumentType: Joi.string()
+      .valid('DNI', 'Pasaporte', 'CE')
+      .required(),
+    idDocumentNumber: Joi.string()
+      .min(5)
+      .max(255)
+      .when('idDocumentType', {
+        is: 'DNI',
+        then: Joi.string().regex(/^\d{8}$/),
+      })
+      .required(),
+  },
+};
+
 module.exports = {
   Register,
   Login,
+  CheckDocument,
 };

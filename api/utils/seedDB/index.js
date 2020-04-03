@@ -66,8 +66,8 @@ mongoose
     // await seedModel(Menu, 'menu.json', true, obj => {
     //   return moment(obj.date).isoWeekday() < 6;
     // });
-    await seedModel(Aliment, 'aliments.json');
-    // await seedModel(Company, 'company.json');
+    // await seedModel(Aliment, 'aliments.json');
+    await seedModel(Company, 'company.json');
     mongoose.connection.close();
   })
   .catch(err => console.log(`Failed to connect to MongoDB...${String(err)}`));
