@@ -38,6 +38,29 @@ const getDiet = async reqUser => {
   }
 
   diet = calcFormatDiet(diet);
+  const aux = ['protein', 'carbohydrate', 'fat'];
+  const tot = {};
+  aux.forEach(v => {
+    tot[v] = 0;
+  });
+  console.log(tot);
+  diet.meals.forEach(meal => {
+    console.log(meal.name);
+    meal.aliments.forEach(al => {
+      aux.forEach(v => {
+        tot[v] += al.finalMacroContent[v];
+      });
+      console.log(
+        `Prot: ${al.finalMacroContent.protein.toFixed(
+          2,
+        )} - Carb: ${al.finalMacroContent.carbohydrate.toFixed(
+          2,
+        )} - Gras: ${al.finalMacroContent.fat.toFixed(2)}`,
+      );
+    });
+  });
+  console.log(tot);
+  console.log(diet.macroContent);
   return setResponse(200, 'Diet found.', diet);
 };
 

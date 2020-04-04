@@ -1,5 +1,7 @@
 const { Joi } = require('celebrate');
-const { CheckDocument } = require('../authentication/authenticationValidator');
+const {
+  documentPayload,
+} = require('../authentication/authenticationValidator');
 
 const CreateCompany = {
   body: {
@@ -8,7 +10,7 @@ const CreateCompany = {
       .max(255)
       .required(),
     users: Joi.array().items({
-      ...CheckDocument.body,
+      ...documentPayload,
       endDate: Joi.date()
         .iso()
         .required(),
@@ -16,14 +18,20 @@ const CreateCompany = {
   },
 };
 
-const AddUser = {
+const UpdateCompany = {
   body: {
-    company: Joi.objectId().required(),
-    users: CreateCompany.body.users,
+    name: Joi.string()
+      .min(2)
+      .max(255),
+    users: Joi.array().items({
+      ...documentPayload,
+      endDate: Joi.date().iso(),
+      deleted: Joi.boolean(),
+    }),
   },
 };
 
 module.exports = {
   CreateCompany,
-  AddUser,
+  UpdateCompany,
 };

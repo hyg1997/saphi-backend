@@ -15,6 +15,11 @@ const createCompany = async reqBody => {
   return setResponse(201, 'Company Created.', company);
 };
 
+const updateCompany = async (reqParams, reqBody) => {
+  const company = await Company.findById(reqParams.id);
+  return setResponse(200, 'Company Updated.', company);
+};
+
 const listCompany = async reqQuery => {
   const companys = await Company.find(reqQuery);
   return setResponse(200, 'Companys Found.', companys);
@@ -22,6 +27,7 @@ const listCompany = async reqQuery => {
 
 const checkDocument = async reqBody => {
   const filter = _.pick(reqBody, ['idDocumentType', 'idDocumentNumber']);
+  filter.deleted = false;
 
   const company = await Company.findOne({ users: { $elemMatch: filter } });
   if (!company) return setResponse(404, 'Document not found.', {});
@@ -37,5 +43,6 @@ module.exports = {
   listCompany,
   getCompany,
   createCompany,
+  updateCompany,
   checkDocument,
 };

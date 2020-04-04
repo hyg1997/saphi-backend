@@ -19,14 +19,6 @@
       }
     ],
     "no-console": "warn",
-    "func-names": "off",
-    "space-before-function-paren": [
-      "error",
-      {
-        "anonymous": "never",
-        "named": "always",
-        "asyncArrow": "always"
-      }
-    ]
+    "func-names": "off"
   }
 }

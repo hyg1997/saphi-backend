@@ -1,3 +1,11 @@
+const USER_CONSTANTS = {
+  DOCUMENT_TYPE: {
+    DNI: 'DNI',
+    CE: 'CE',
+    PASSPORT: 'PASSPORT',
+  },
+};
+
 module.exports = {
   MENU_TYPE: {
     lunch: 'almuerzo',
@@ -61,4 +69,5 @@ module.exports = {
       return dict[key];
     });
   },
+  ...USER_CONSTANTS,
 };

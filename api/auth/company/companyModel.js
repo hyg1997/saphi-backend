@@ -9,6 +9,7 @@ const companySchema = new Schema(
         idDocumentType: { type: String },
         idDocumentNumber: { type: String },
         endDate: { type: Date },
+        deleted: { type: Boolean, default: false },
       },
     ],
   },

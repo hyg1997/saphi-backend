@@ -4,12 +4,19 @@ const config = require('config');
 const _ = require('lodash');
 const bcrypt = require('bcrypt');
 
+const { DOCUMENT_TYPE } = require('../../utils/constants');
+
 const { Schema } = mongoose;
 const userSchema = new Schema(
   {
-    idDocumentType: { type: String },
+    idDocumentType: {
+      type: String,
+      enum: [DOCUMENT_TYPE.DNI, DOCUMENT_TYPE.CE, DOCUMENT_TYPE.PASSPORT],
+    },
     idDocumentNumber: { type: String },
-    email: { type: String, required: true },
+    email: { type: String, required: true, unique: true },
+    googleId: { type: String, unique: true },
+    facebookId: { type: String, unique: true },
     password: { type: String },
     permissions: {
       type: {
@@ -68,10 +75,6 @@ const userSchema = new Schema(
         expires: { type: Date },
       },
     },
-    oauth: {
-      googleId: { type: String },
-      facebookId: { type: String },
-    },
   },
   {
     timestamps: true,
@@ -79,6 +82,7 @@ const userSchema = new Schema(
 );
 
 userSchema.pre('save', async function(next) {
+  if (!this.password) next();
   const salt = await bcrypt.genSalt(config.get('saltPow'));
   const hash = await bcrypt.hash(this.password, salt);
   this.password = hash;
@@ -99,8 +103,8 @@ userSchema.statics.findByIds = function(ids) {
   const idIdentifiers = [
     ['email'],
     ['idDocumentType', 'idDocumentNumber'],
-    ['oauth.googleId'],
-    ['oauth.facebookId'],
+    ['googleId'],
+    ['facebookId'],
   ];
   return this.findOne({
     $or: idIdentifiers
