@@ -106,9 +106,10 @@ userSchema.statics.findByIds = function(ids) {
     ['googleId'],
     ['facebookId'],
   ];
+
   return this.findOne({
     $or: idIdentifiers
-      .filter(fields => _.has(ids, fields))
+      .filter(fields => _.every(fields, _.partial(_.has, ids)))
       .map(fields => _.pick(ids, fields)),
   });
 };

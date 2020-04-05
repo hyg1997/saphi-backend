@@ -75,16 +75,16 @@ const CheckDocument = {
   body: documentPayload,
 };
 
-const RegisterGoogle = {
+const RegisterGoogleFacebook = {
   body: {
-    idToken: Joi.string().required(),
+    access_token: Joi.string().required(),
     ...registerPayload,
   },
 };
 
-const LoginGoogle = {
+const LoginGoogleFacebook = {
   body: {
-    idToken: Joi.string().required(),
+    access_token: Joi.string().required(),
   },
 };
 
@@ -92,7 +92,7 @@ module.exports = {
   Register,
   Login,
   CheckDocument,
-  RegisterGoogle,
-  LoginGoogle,
   documentPayload,
+  RegisterGoogleFacebook,
+  LoginGoogleFacebook,
 };

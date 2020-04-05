@@ -10,6 +10,7 @@ const initialiseAuthentication = app => {
     strategies.JWTStrategy,
     strategies.LocalStrategy,
     strategies.GoogleStrategy,
+    strategies.FacebookStrategy,
   )(app);
 };
 
