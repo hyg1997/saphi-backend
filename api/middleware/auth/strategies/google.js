@@ -3,6 +3,8 @@ const passport = require('passport');
 const config = require('config');
 const _ = require('lodash');
 const { Strategy: CustomStrategy } = require('passport-custom');
+const { Strategy: GoogleStrategy } = require('passport-token-google2');
+
 const { OAuth2Client } = require('google-auth-library');
 
 const {
@@ -11,6 +13,7 @@ const {
 } = require('../../../auth/user/userService');
 
 const CLIENT_ID = config.get('googleClientId');
+const CLIENT_SECRET = config.get('googleClientSecret');
 const client = new OAuth2Client(CLIENT_ID);
 
 const verify = async token => {
@@ -33,7 +36,7 @@ const verify = async token => {
 
 const strategy = () => {
   passport.use(
-    'googleLogin',
+    'googleLogin2',
     new CustomStrategy(async (req, done) => {
       const data = await verify(req.body.idToken);
       if (!data) {
@@ -51,7 +54,7 @@ const strategy = () => {
     }),
   );
   passport.use(
-    'googleSignup',
+    'googleSignup2',
     new CustomStrategy(async (req, done) => {
       const data = await verify(req.body.idToken);
       if (!data) {
@@ -68,6 +71,44 @@ const strategy = () => {
       if (user.status !== 201) return done(null, false, user);
       return done(null, user.data);
     }),
+  );
+
+  passport.use(
+    'googleLogin',
+    new GoogleStrategy(
+      {
+        clientID: CLIENT_ID,
+        clientSecret: CLIENT_SECRET,
+        passReqToCallback: true,
+      },
+      async (req, accessToken, refreshToken, profile, done) => {
+        const user = await readUserByFieldIds({
+          googleId: profile.id,
+        });
+        if (user.status !== 200) return done(null, false, user);
+
+        return done(null, user.data);
+      },
+    ),
+  );
+  passport.use(
+    'googleSignup',
+    new GoogleStrategy(
+      {
+        clientID: CLIENT_ID,
+        clientSecret: CLIENT_SECRET,
+        passReqToCallback: true,
+      },
+      async (req, accessToken, refreshToken, profile, done) => {
+        const user = await createUser({
+          ..._.omit(req.body, ['access_token']),
+          googleId: profile.id,
+        });
+        if (user.status !== 201) return done(null, false, user);
+
+        return done(null, user.data);
+      },
+    ),
   );
 };
 
