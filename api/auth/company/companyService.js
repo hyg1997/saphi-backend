@@ -17,6 +17,27 @@ const createCompany = async reqBody => {
 
 const updateCompany = async (reqParams, reqBody) => {
   const company = await Company.findById(reqParams.id);
+
+  const newCompany = { name: company.name, users: company.users };
+
+  if (reqBody.name) newCompany.name = reqBody.name;
+  if (reqBody.users) {
+    reqBody.users.forEach(userUpdate => {
+      const userDB = newCompany.users.find(
+        elem =>
+          elem.idDocumentType === userUpdate.idDocumentType &&
+          elem.idDocumentNumber === userUpdate.idDocumentNumber,
+      );
+
+      if (userDB) {
+        Object.assign(userDB, userUpdate);
+      } else {
+        newCompany.users.push(userDB);
+      }
+    });
+  }
+
+  Company.findByIdAndUpdate(reqParams.id, newCompany);
   return setResponse(200, 'Company Updated.', company);
 };
 

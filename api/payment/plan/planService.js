@@ -1,4 +1,5 @@
 const { Plan } = require('./planModel');
+const { makePayment } = require('../culqiPayment/culqiPaymentService');
 const { setResponse } = require('../../utils');
 
 const getPlan = async reqParams => {
@@ -18,8 +19,19 @@ const listPlan = async reqQuery => {
   return setResponse(200, 'Plans Found.', plans);
 };
 
+const buyPlan = async (reqParams, reqBody, reqUser) => {
+  const plan = await Plan.findById(reqParams.id);
+  if (!plan) return setResponse(200, 'Plans not found.', plan);
+  const newBody = {
+    payment: { savedCard: false, culqiToken: reqBody.culqiToken },
+  };
+  const response = makePayment(newBody, reqUser, plan);
+  return response;
+};
+
 module.exports = {
   listPlan,
   getPlan,
   createPlan,
+  buyPlan,
 };

@@ -8,14 +8,15 @@ const Validator = require('./userValidator');
 const { authenticateMiddleware } = require('../../middleware/auth');
 
 router.post(
-  '/user/onboarding',
+  '/onboarding',
   authenticateMiddleware('jwt'),
-  celebrate(Validator.Post),
+  celebrate(Validator.UpdateOnBoarding),
   Controller.onboarding,
 );
 
-router.post('/forgotpassword', Controller.forgotPassword);
-router.post('/checkcode', Controller.checkCode);
-router.post('/resetpassword', Controller.resetPassword);
+// TODO: Move
+// router.post('/forgotpassword', Controller.forgotPassword);
+// router.post('/checkcode', Controller.checkCode);
+// router.post('/resetpassword', Controller.resetPassword);
 
 module.exports = router;

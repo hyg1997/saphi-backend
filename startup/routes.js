@@ -13,7 +13,7 @@ module.exports = app => {
     res.sendFile(path.join(__dirname, '../templates/redoc.html'));
   });
 
-  app.use('/auth', authRouter);
+  app.use('/', authRouter);
   app.use('/payment', paymentRouter);
   app.use('/company', companyRouter);
   app.use('/', nutritionRouter);

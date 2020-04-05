@@ -18,8 +18,15 @@ const createPlan = async (req, res) => {
   return res.status(plan.status).send(plan);
 };
 
+const buyPlan = async (req, res) => {
+  const plan = await Service.buyPlan(req.params, req.body, req.user);
+
+  return res.status(plan.status).send(plan);
+};
+
 module.exports = {
   listPlan,
   getPlan,
   createPlan,
+  buyPlan,
 };

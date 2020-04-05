@@ -37,16 +37,16 @@ const createCharge = async (reqBody, reqUser) => {
   );
 };
 
-const makePayment = async (reqBody, reqUser) => {
+const makePayment = async (reqBody, reqUser, itemToBuy) => {
   const saved = reqBody.payment.savedCard;
   const token = reqBody.payment.culqiToken;
   const { clientToken } = reqBody.payment;
 
-  const selectedPlan = reqBody.deliveryPlan.selectedOption;
+  // const selectedPlan = reqBody.deliveryPlan.selectedOption;
 
   let dataReq = {
-    amount: selectedPlan.amount,
-    currency_code: selectedPlan.currency_code,
+    amount: itemToBuy.amount,
+    currency_code: itemToBuy.currency_code,
     email: reqUser.email,
     source_id: token,
   };
@@ -60,7 +60,7 @@ const makePayment = async (reqBody, reqUser) => {
   // ! De ser necesario no cambiar el back, pero asegurarse que LUIS crea el body
   // ! siguiendo la logica implementada
 
-  if (clientToken !== '') {
+  if (clientToken) {
     // * To create card
 
     const cardResp = createCard({ customer_id: clientToken, token_id: token });

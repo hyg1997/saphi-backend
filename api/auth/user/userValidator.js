@@ -2,13 +2,15 @@ const { Joi } = require('celebrate');
 
 const { DIET_FACTORS } = require('../../utils/constants');
 
-const Post = {
+const UpdateOnBoarding = {
   body: {
     pathologies: Joi.array()
-      .items(Joi.string())
+      .items(Joi.objectId())
       .required(),
 
-    otherPathology: Joi.array().items(Joi.string().allow('')),
+    otherPathology: Joi.string()
+      .allow('')
+      .default(''),
 
     avoidedAliments: Joi.object({
       carbohydrate: Joi.array()
@@ -23,27 +25,27 @@ const Post = {
     }).required(),
 
     indicators: Joi.object({
-      idObjective: Joi.number()
-        .integer()
-        .valid(...Object.keys(DIET_FACTORS.objectiveFactor))
-        .required(),
       sex: Joi.string()
         .valid('M', 'F')
         .required(),
       weight: Joi.number().required(),
       heigth: Joi.number().required(),
-      idBodyFat: Joi.number()
-        .integer()
-        .valid(...Object.keys(DIET_FACTORS.fatFactor)),
-      bodyFatPercentage: Joi.number(),
-      idPhysicalActivity: Joi.number()
-        .integer()
-        .valid(...Object.keys(DIET_FACTORS.exerciseFactor))
-        .required(),
-    }).required(),
+      idBodyFat: Joi.valid(...Object.keys(DIET_FACTORS.fatFactor)),
+      bodyFatPercentage: Joi.number()
+        .min(1)
+        .max(100),
+      idPhysicalActivity: Joi.valid(
+        ...Object.keys(DIET_FACTORS.exerciseFactor),
+      ).required(),
+      idObjective: Joi.valid(
+        ...Object.keys(DIET_FACTORS.objectiveFactor),
+      ).required(),
+    })
+      .or('idBodyFat', 'bodyFatPercentage')
+      .required(),
   },
 };
 
 module.exports = {
-  Post,
+  UpdateOnBoarding,
 };

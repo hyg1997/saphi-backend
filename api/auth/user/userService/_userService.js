@@ -1,14 +1,13 @@
-const _ = require('lodash');
 const nodemailer = require('nodemailer');
 const moment = require('moment-timezone');
 
-const { User } = require('./userModel');
-const { setResponse, renderTemplate } = require('../../utils');
+const { User } = require('../userModel');
+const { setResponse, renderTemplate } = require('../../../utils');
 
-const { CONFIG_EMAIL } = require('../../utils/constants');
+const { CONFIG_EMAIL } = require('../../../utils/constants');
 
 const listUser = async reqQuery => {
-  const users = await User.find();
+  const users = await User.find(reqQuery);
   return setResponse(200, 'Users found.', users);
 };
 

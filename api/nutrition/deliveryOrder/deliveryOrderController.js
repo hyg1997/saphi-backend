@@ -8,7 +8,12 @@ const createDeliveryOrder = async (req, res) => {
   if (validate.status !== 200)
     return res.status(validate.status).send(validate);
   // * Step 1. Procesar el pago
-  const culqiPayment = await PaymentService.makePayment(req.body, req.user);
+  const selectedPlan = req.body.deliveryPlan.selectedOption;
+  const culqiPayment = await PaymentService.makePayment(
+    req.body,
+    req.user,
+    selectedPlan,
+  );
 
   if (culqiPayment.status !== 201)
     return res.status(culqiPayment.status).send(culqiPayment);

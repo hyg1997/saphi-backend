@@ -56,6 +56,8 @@ module.exports = {
     chargeCreate: 'https://api.culqi.com/v2/charges',
   },
 
+  OTHER_PATHOLOGY: 'Otros',
+
   CONFIG_EMAIL: {
     service: 'gmail',
     auth: {

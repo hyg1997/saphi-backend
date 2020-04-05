@@ -16,6 +16,8 @@ const { DishRecipe } = require('../../nutrition/dishRecipe/dishRecipeModel');
 const {
   DeliveryPlan,
 } = require('../../nutrition/deliveryPlan/deliveryPlanModel');
+const { Plan } = require('../../payment/plan/planModel');
+const { Pathology } = require('../../nutrition/pathology/pathologyModel');
 
 const { asyncForEach } = require('../../utils');
 
@@ -67,7 +69,9 @@ mongoose
     //   return moment(obj.date).isoWeekday() < 6;
     // });
     // await seedModel(Aliment, 'aliments.json');
-    await seedModel(Company, 'company.json');
+    // await seedModel(Company, 'company.json');
+    // await seedModel(Plan, 'plan.json');
+    await seedModel(Pathology, 'pathologies.json');
     mongoose.connection.close();
   })
   .catch(err => console.log(`Failed to connect to MongoDB...${String(err)}`));
