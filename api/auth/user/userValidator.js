@@ -14,13 +14,13 @@ const UpdateOnBoarding = {
 
     avoidedAliments: Joi.object({
       carbohydrate: Joi.array()
-        .items(Joi.objectId())
+        .items(Joi.string())
         .required(),
       protein: Joi.array()
-        .items(Joi.objectId())
+        .items(Joi.string())
         .required(),
       fat: Joi.array()
-        .items(Joi.objectId())
+        .items(Joi.string())
         .required(),
     }).required(),
 

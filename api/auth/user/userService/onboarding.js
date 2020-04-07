@@ -21,8 +21,8 @@ const validateOnboarding = async (reqBody, reqUser) => {
   for (const [type, name] of alimentEntries) {
     let refAliments = await listAliment({ type: name });
     refAliments = refAliments.data;
-    for (const id of updateUser.avoidedAliments[type]) {
-      const found = refAliments.find(a => a.id === id);
+    for (const cat of updateUser.avoidedAliments[type]) {
+      const found = refAliments.find(a => a.category === cat);
       if (!found) return setResponse(400, 'Incorrect Avoided Aliments', {});
     }
   }
