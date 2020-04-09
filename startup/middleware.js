@@ -34,13 +34,34 @@ module.exports = app => {
 
   app.use(function(req, res, next) {
     // TODO: Remove
-    winston.error({
-      url: req.url,
-      method: req.method,
-      body: req.body,
-      params: req.params,
-      query: req.query,
-    });
+    const defaultWrite = res.write;
+    const defaultEnd = res.end;
+    const chunks = [];
+
+    res.write = (...restArgs) => {
+      chunks.push(new Buffer(restArgs[0]));
+      defaultWrite.apply(res, restArgs);
+    };
+
+    res.end = (...restArgs) => {
+      if (restArgs[0]) {
+        chunks.push(new Buffer(restArgs[0]));
+      }
+      const body = Buffer.concat(chunks).toString('utf8');
+
+      winston.error(
+        JSON.stringify({
+          url: req.url,
+          method: req.method,
+          body: req.body,
+          params: req.params,
+          query: req.query,
+          status: res.statusCode,
+          response: JSON.parse(body),
+        }),
+      );
+      defaultEnd.apply(res, restArgs);
+    };
     next();
   });
   initialiseAuthentication(app);
