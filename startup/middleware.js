@@ -58,7 +58,7 @@ module.exports = app => {
 
       winston.error(
         JSON.stringify({
-          url: req.url,
+          url: req.baseUrl + req.path,
           method: req.method,
           body: req.body,
           params: req.params,
