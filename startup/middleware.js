@@ -31,6 +31,18 @@ module.exports = app => {
   );
 
   app.use(passport.initialize());
+
+  app.use(function(req, res, next) {
+    // TODO: Remove
+    winston.error({
+      url: req.url,
+      method: req.method,
+      body: req.body,
+      params: req.params,
+      query: req.query,
+    });
+    next();
+  });
   initialiseAuthentication(app);
   require('./documentation')(app);
 
