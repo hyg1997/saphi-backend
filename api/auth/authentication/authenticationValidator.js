@@ -24,6 +24,8 @@ const registerPayload = {
     .min(1)
     .required(),
   email: Joi.string()
+    .lowercase()
+    .trim()
     .min(5)
     .max(255)
     .email()
@@ -63,11 +65,14 @@ const Register = {
 const Login = {
   body: {
     email: Joi.string()
+      .lowercase()
+      .trim()
       .min(5)
       .max(255)
       .email()
       .required(),
     password: Joi.string()
+      .trim()
       .min(6)
       .max(255)
       .required(),
@@ -78,6 +83,8 @@ const CheckDocument = {
   body: {
     ...documentPayload,
     email: Joi.string()
+      .lowercase()
+      .trim()
       .min(5)
       .max(255)
       .email()
