@@ -45,6 +45,9 @@ const registerPayload = {
   companyName: Joi.string()
     .min(1)
     .max(255),
+  companyId: Joi.string()
+    .min(1)
+    .max(255),
 };
 
 const Register = {
