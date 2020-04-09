@@ -1,4 +1,8 @@
+const moment = require('moment');
+
 const { Plan } = require('./planModel');
+const { User } = require('../../auth/user/userModel');
+
 const { makePayment } = require('../culqiPayment/culqiPaymentService');
 const { setResponse } = require('../../utils');
 
@@ -21,11 +25,21 @@ const listPlan = async reqQuery => {
 
 const buyPlan = async (reqParams, reqBody, reqUser) => {
   const plan = await Plan.findById(reqParams.id);
-  if (!plan) return setResponse(200, 'Plans not found.', plan);
+  if (!plan) return setResponse(404, 'Plans not found.', plan);
   const newBody = {
     payment: { savedCard: false, culqiToken: reqBody.culqiToken },
   };
   const response = makePayment(newBody, reqUser, plan);
+
+  if (response.status === 201) {
+    const planSubscription = {
+      active: true,
+      type: 'User Plan',
+      endDate: moment().add(plan.toObject().months, 'months'),
+    };
+    await User.findByIdAndUpdate(reqUser.id, { planSubscription });
+  }
+
   return response;
 };
 

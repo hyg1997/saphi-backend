@@ -28,6 +28,10 @@ const planSchema = new Schema(
       type: String,
       required: true,
     },
+    months: {
+      type: Number,
+      required: true,
+    },
     tag: {
       type: String,
     },

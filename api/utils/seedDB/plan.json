@@ -6,7 +6,8 @@
       "amount": 39850,
       "discountText": "67% DESCUENTO",
       "perMonthText": "PEN. 33.18/MES",
-      "tag": "RECOMENDADO"      
+      "tag": "RECOMENDADO",
+      "months": 12     
     },
     {
       "name": "6 Meses",
@@ -14,7 +15,8 @@
       "price": "199.06",
       "amount": 19906,
       "discountText": "33% DESCUENTO",
-      "perMonthText": "PEN. 66.18/MES"
+      "perMonthText": "PEN. 66.18/MES",
+      "months": 6 
     },
     {
       "name": "3 Meses",
@@ -22,7 +24,8 @@
       "price": "199.06",
       "amount": 19906,
       "discountText": "33% DESCUENTO",
-      "perMonthText": "PEN. 66.18/MES"
+      "perMonthText": "PEN. 66.18/MES",
+      "months": 3 
     }
   ]  
   
