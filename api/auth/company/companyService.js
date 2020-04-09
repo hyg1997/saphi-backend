@@ -61,7 +61,7 @@ const checkDocument = async reqBody => {
     companyName: company.name,
     name: 'Nombre',
     lastname: 'Apellido',
-    email: 'correo',
+    email: 'correo@correo.com',
   };
   return setResponse(200, 'Document Found.', data);
 };
