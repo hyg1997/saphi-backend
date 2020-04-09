@@ -57,7 +57,9 @@ const checkDocument = async reqBody => {
   const company = await Company.findOne({ users: { $elemMatch: filter } });
   if (!company) return setResponse(404, 'Document not found.', {});
 
-  let user = await User.findOne(filter);
+  let user = await User.findOne(
+    _.pick(reqBody, ['idDocumentType', 'idDocumentNumber']),
+  );
   if (user) return setResponse(400, 'User already exists.', {});
 
   user = company.users.find(obj => {
