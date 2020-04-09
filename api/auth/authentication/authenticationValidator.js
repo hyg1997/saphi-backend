@@ -4,7 +4,7 @@ const { DOCUMENT_TYPE } = require('../../utils/constants');
 
 const documentPayload = {
   idDocumentType: Joi.string()
-    .valid('DNI', 'Pasaporte', 'CE')
+    .valid(DOCUMENT_TYPE.DNI, DOCUMENT_TYPE.CE, DOCUMENT_TYPE.PASSPORT)
     .required(),
   idDocumentNumber: Joi.string()
     .min(5)

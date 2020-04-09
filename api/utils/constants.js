@@ -45,11 +45,18 @@ module.exports = {
   },
   FAT_LIMIT: 1,
   MACRO_ERROR_LIMIT: 20,
+
   DIET_FACTORS: {
     exerciseFactor: { 0: 1.2, 1: 1.5, 2: 1.7, 3: 1.9 },
     objectiveFactor: { 0: 0.7, 1: 0.75, 2: 0.8, 3: 1.1 },
-    fatFactor: { 0: 0.35, 1: 0.3, 2: 0.2, 3: 0 },
+    fatFactor: {
+      0: { val: 0.35, min: 0, max: 15, mean: 7.5 },
+      1: { val: 0.3, min: 15, max: 20, mean: 17.5 },
+      2: { val: 0.2, min: 20, max: 30, mean: 25 },
+      3: { val: 0, min: 30, max: 100, mean: 35 },
+    },
   },
+
   URL_CULQI: {
     userCreate: 'https://api.culqi.com/v2/customers',
     cardCreate: 'https://api.culqi.com/v2/cards',

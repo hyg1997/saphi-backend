@@ -2,33 +2,31 @@
 const { Diet } = require('../dietModel');
 const { setResponse } = require('../../../utils');
 
-const { calcFormatDiet } = require('../dietUtils');
+const setMeals = require('./setMeals');
 
+const { calcFormatDiet } = require('../dietUtils');
+const { MEAL_NAME, getDictValues } = require('../../../utils/constants');
 // * Servicio para obtener la dieta de un usuario
 
 const getDiet = async reqUser => {
   let diet = await Diet.findOne({ user: reqUser.id });
 
   if (!diet) {
-    /*  Para inicializar dieta 
-    
-    await Diet.deleteMany({});
-    await Diet.create({
-      user: reqUser.id,
-      macroContent: {
-        protein: 160,
-        carbohydrate: 169,
-        fat: 37,
-      },
-      meals: [],
-    });
+    if (reqUser.activeDiet) {
+      await Diet.create({
+        user: reqUser.id,
+        macroContent: reqUser.macroContent,
+        meals: [],
+      });
 
-    const dataMeals = {};
-    getDictValues(MEAL_NAME).forEach(val => {
-      dataMeals[val] = true;
-    });
-    const response = setMeals(dataMeals, reqUser);
-    return response; */
+      const dataMeals = {};
+      getDictValues(MEAL_NAME).forEach(val => {
+        dataMeals[val] = true;
+      });
+      const response = setMeals(dataMeals, reqUser);
+      return response;
+    }
+
     return setResponse(
       404,
       'No Diet',

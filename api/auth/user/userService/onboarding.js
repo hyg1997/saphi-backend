@@ -5,11 +5,16 @@ const _ = require('lodash');
 const { User } = require('../userModel');
 const { setResponse } = require('../../../utils');
 const { listAliment } = require('../../../nutrition/aliment/alimentService');
+const { calcDiet } = require('../../../nutrition/diet/dietUtils');
 const {
   listPathology,
 } = require('../../../nutrition/pathology/pathologyService');
 
-const { ALIMENT_TYPE, OTHER_PATHOLOGY } = require('../../../utils/constants');
+const {
+  ALIMENT_TYPE,
+  OTHER_PATHOLOGY,
+  DIET_FACTORS,
+} = require('../../../utils/constants');
 
 const validateOnboarding = async (reqBody, reqUser) => {
   const updateUser = { ...reqBody };
@@ -37,13 +42,32 @@ const validateOnboarding = async (reqBody, reqUser) => {
       return setResponse(400, 'Other Pathology empty', {});
   }
 
+  // *Complete bodyFat data
+  const { bodyFatPercentage, idBodyFat } = updateUser.indicators;
+  if (bodyFatPercentage) {
+    for (const [fatLevel, obj] in DIET_FACTORS.fatFactor.entries) {
+      if (obj.min <= bodyFatPercentage && bodyFatPercentage < obj.max) {
+        updateUser.indicators.idBodyFat = fatLevel;
+      }
+    }
+  } else {
+    updateUser.indicators.bodyFatPercentage =
+      DIET_FACTORS.fatFactor[idBodyFat].mean;
+  }
+
   return setResponse(200, '', updateUser);
 };
 
 const onboarding = async (reqBody, reqUser) => {
   const updateUser = await validateOnboarding(reqBody, reqUser);
   if (updateUser.status !== 200) return updateUser;
+
   await User.findByIdAndUpdate(reqUser.id, updateUser.data);
+
+  const user = await User.findById(reqUser.id);
+  const macroContent = calcDiet(user.toObject());
+  await User.findByIdAndUpdate(reqUser.id, { macroContent });
+
   return setResponse(200, 'Finished Onboarding', {});
 };
 

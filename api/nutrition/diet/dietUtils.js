@@ -1,4 +1,6 @@
 /* eslint-disable no-param-reassign */
+const _ = require('lodash');
+const moment = require('moment');
 const {
   MEAL_NAME,
   MACROCONTENT_CAL,
@@ -229,25 +231,32 @@ const calcFormatDiet = diet => {
   return newDiet;
 };
 
-const calcDiet = async userData => {
-  // TODO: Calc age
-  const age = 0;
-  const plus = userData.sex === 'F' ? -161 : 5;
-  let calories = 10 * userData.weight + 6.25 * userData.height - 5 * age + plus;
+const calcDiet = userData => {
+  const age = moment().diff(userData.birthDate, 'years');
+
+  const { indicators } = userData;
+  const plus = indicators.sex === 'F' ? -161 : 5;
+  let calories =
+    10 * indicators.weight + 6.25 * indicators.height - 5 * age + plus;
 
   // const exerciseFactor = { 0: 1.2, 1: 1.5, 2: 1.7, 3: 1.9 };
-  calories *= DIET_FACTORS.exerciseFactor[userData.idPhysicalActivity];
+  calories *= DIET_FACTORS.exerciseFactor[indicators.idPhysicalActivity];
 
   // const objectiveFactor = { 0: 0.7, 1: 0.75, 2: 0.8, 3: 1.1 };
-  calories *= DIET_FACTORS.objectiveFactor[userData.idObjective];
+  calories *= DIET_FACTORS.objectiveFactor[indicators.idObjective];
 
-  const weightMinusFat = userData.weight * (1 - userData.bodyFatPercentage);
-  const protein = 2.5 * weightMinusFat;
+  const weightMinusFat =
+    indicators.weight * (1 - indicators.bodyFatPercentage / 100);
+  let protein = 2.5 * weightMinusFat;
 
   // const fatFactor = { 0: 0.35, 1: 0.3, 2: 0.2, 3: 0 };
-  const fat = (calories * DIET_FACTORS.fatFactor[userData.idBodyFat]) / 9;
+  let fat = (calories * DIET_FACTORS.fatFactor[indicators.idBodyFat].val) / 9;
 
-  const carbohydrate = (calories - protein * 4 - fat * 9) / 4;
+  let carbohydrate = (calories - protein * 4 - fat * 9) / 4;
+
+  carbohydrate = _.round(carbohydrate, 1);
+  protein = _.round(protein, 1);
+  fat = _.round(fat, 1);
 
   return { carbohydrate, protein, fat };
 };
