@@ -29,7 +29,7 @@ const UpdateOnBoarding = {
         .valid('M', 'F')
         .required(),
       weight: Joi.number().required(),
-      heigth: Joi.number().required(),
+      height: Joi.number().required(),
       idBodyFat: Joi.valid(...Object.keys(DIET_FACTORS.fatFactor)),
       bodyFatPercentage: Joi.number()
         .min(1)

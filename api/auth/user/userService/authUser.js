@@ -38,7 +38,7 @@ const createUser = async reqBody => {
     });
     if (!preRegistered) return setResponse(400, 'User not found on company.');
     if (preRegistered)
-      user.planSuscription = {
+      user.planSubscription = {
         active: true,
         type: 'Company Plan',
         endDate: preRegistered.endDate,

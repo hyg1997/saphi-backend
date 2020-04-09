@@ -35,7 +35,7 @@ const userSchema = new Schema(
 
     endDate: { type: Date },
 
-    planSuscription: {
+    planSubscription: {
       active: { type: Boolean, default: false },
       type: { type: String },
       startDate: { type: Date },
@@ -59,7 +59,7 @@ const userSchema = new Schema(
         idObjective: { type: String },
         sex: { type: String },
         weight: { type: Number },
-        heigth: { type: Number },
+        height: { type: Number },
         idBodyFat: { type: String },
         bodyFatPercentage: { type: Number },
         idPhysicalActivity: { type: String },
