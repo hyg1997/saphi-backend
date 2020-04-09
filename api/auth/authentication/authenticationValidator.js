@@ -46,10 +46,9 @@ const registerPayload = {
     .max(255),
   companyName: Joi.string()
     .min(1)
-    .max(255),
-  companyId: Joi.string()
-    .min(1)
-    .max(255),
+    .max(255)
+    .allow(''),
+  companyId: Joi.objectId(),
 };
 
 const Register = {
