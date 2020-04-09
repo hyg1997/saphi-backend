@@ -75,7 +75,14 @@ const Login = {
 };
 
 const CheckDocument = {
-  body: documentPayload,
+  body: {
+    ...documentPayload,
+    email: Joi.string()
+      .min(5)
+      .max(255)
+      .email()
+      .required(),
+  },
 };
 
 const RegisterGoogleFacebook = {

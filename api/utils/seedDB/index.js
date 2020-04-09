@@ -28,12 +28,17 @@ const seedModel = async (
   filterFun = obj => {
     return true;
   },
+  transformFun = obj => obj,
 ) => {
   const rawdata = fs.readFileSync(path.join(__dirname, filename));
   if (clearCollection) {
-    await model.deleteMany({});
+    await model.collection.drop();
   }
-  await model.insertMany(JSON.parse(rawdata).filter(filterFun));
+  await model.insertMany(
+    JSON.parse(rawdata)
+      .filter(filterFun)
+      .map(transformFun),
+  );
   winston.info(`${model.collection.collectionName} seeded!`);
   return 1;
 };
@@ -69,9 +74,21 @@ mongoose
     //   return moment(obj.date).isoWeekday() < 6;
     // });
     // await seedModel(Aliment, 'aliments.json');
-    // await seedModel(Company, 'company.json');
+    await seedModel(
+      Company,
+      'company.json',
+      true,
+      obj => true,
+      obj => {
+        obj.users = obj.users.map(u => {
+          u.idDocumentNumber = u.idDocumentNumber.toString();
+          return u;
+        });
+        return obj;
+      },
+    );
     // await seedModel(Plan, 'plan.json');
-    await seedModel(Pathology, 'pathologies.json');
+    // await seedModel(Pathology, 'pathologies.json');
     mongoose.connection.close();
   })
   .catch(err => console.log(`Failed to connect to MongoDB...${String(err)}`));
