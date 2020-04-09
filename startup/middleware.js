@@ -49,6 +49,13 @@ module.exports = app => {
       }
       const body = Buffer.concat(chunks).toString('utf8');
 
+      let response;
+      try {
+        response = JSON.parse(body);
+      } catch (error) {
+        response = body;
+      }
+
       winston.error(
         JSON.stringify({
           url: req.url,
@@ -57,7 +64,7 @@ module.exports = app => {
           params: req.params,
           query: req.query,
           status: res.statusCode,
-          response: JSON.parse(body),
+          response,
         }),
       );
       defaultEnd.apply(res, restArgs);
