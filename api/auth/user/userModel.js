@@ -31,8 +31,16 @@ const userSchema = new Schema(
     phonePrefix: { type: String },
     phoneNumber: { type: String },
     companyName: { type: String },
+    companyId: { type: mongoose.Schema.Types.ObjectId },
 
     endDate: { type: Date },
+
+    planSuscription: {
+      active: { type: Boolean, default: false },
+      type: { type: String },
+      startDate: { type: Date },
+      endDate: { type: Date },
+    },
 
     macroContent: {
       type: {

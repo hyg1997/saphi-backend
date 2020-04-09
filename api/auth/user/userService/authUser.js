@@ -1,4 +1,5 @@
 const { User } = require('../userModel');
+const { Company } = require('../../company/companyModel');
 const { setResponse } = require('../../../utils');
 
 const listUser = async reqQuery => {
@@ -25,6 +26,25 @@ const createUser = async reqBody => {
   if (user) return setResponse(400, 'User already exists.');
 
   user = new User(reqBody);
+
+  if (reqBody.companyId) {
+    let company = await Company.findById(reqBody.companyId);
+    if (!company) return setResponse(400, 'Company not found.');
+    let preRegistered = company.users.find(obj => {
+      return (
+        obj.idDocumentType === user.idDocumentType &&
+        obj.idDocumentNumber === user.idDocumentNumber
+      );
+    });
+    if (!preRegistered) return setResponse(400, 'User not found on company.');
+    if (preRegistered)
+      user.planSuscription = {
+        active: true,
+        type: 'Company Plan',
+        endDate: preRegistered.endDate,
+      };
+  }
+
   await user.save();
 
   user = await User.findById(user.id, { password: 0 });
