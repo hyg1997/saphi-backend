@@ -12,7 +12,7 @@ const userController = (status, message) => (req, res) => {
   return res.status(status).send({
     data: {
       user: req.user,
-      // token: req.user.generateAuthToken(), // TODO: Uncomment
+      token: req.user.generateAuthToken(), // TODO: Uncomment
     },
     status,
     message,
