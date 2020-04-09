@@ -56,7 +56,13 @@ const checkDocument = async reqBody => {
   const user = await User.findOne(filter);
   if (user) return setResponse(400, 'User already exists.', {});
 
-  const data = { id: company.id, name: company.name };
+  const data = {
+    companyId: company.id,
+    companyName: company.name,
+    name: 'Nombre',
+    lastname: 'Apellido',
+    email: 'correo',
+  };
   return setResponse(200, 'Document Found.', data);
 };
 
