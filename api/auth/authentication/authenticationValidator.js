@@ -7,6 +7,7 @@ const documentPayload = {
     .valid(DOCUMENT_TYPE.DNI, DOCUMENT_TYPE.CE, DOCUMENT_TYPE.PASSPORT)
     .required(),
   idDocumentNumber: Joi.string()
+    .trim()
     .min(5)
     .max(255)
     .when('idDocumentType', {
@@ -21,6 +22,7 @@ const registerPayload = {
     .valid(DOCUMENT_TYPE.DNI, DOCUMENT_TYPE.CE, DOCUMENT_TYPE.PASSPORT)
     .required(),
   idDocumentNumber: Joi.string()
+    .trim()
     .min(1)
     .required(),
   email: Joi.string()
@@ -54,6 +56,7 @@ const registerPayload = {
 const Register = {
   body: {
     password: Joi.string()
+      .trim()
       .min(6)
       .max(255)
       .required(),

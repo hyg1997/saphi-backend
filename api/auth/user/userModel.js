@@ -20,9 +20,9 @@ const userSchema = new Schema(
     password: { type: String },
     permissions: {
       type: {
-        isAdmin: { type: Boolean },
-        isPatient: { type: Boolean },
-        isCompany: { type: Boolean },
+        isAdmin: { type: Boolean, default: false },
+        isPatient: { type: Boolean, default: true },
+        isCompany: { type: Boolean, default: false },
       },
     },
     name: { type: String },
