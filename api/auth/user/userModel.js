@@ -15,8 +15,8 @@ const userSchema = new Schema(
     },
     idDocumentNumber: { type: String },
     email: { type: String, required: true, unique: true },
-    googleId: { type: String, unique: true },
-    facebookId: { type: String, unique: true },
+    googleId: { type: String },
+    facebookId: { type: String },
     password: { type: String },
     permissions: {
       type: {
