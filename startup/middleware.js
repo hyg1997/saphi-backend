@@ -33,6 +33,7 @@ module.exports = app => {
   app.use(passport.initialize());
 
   app.use(function(req, res, next) {
+    if ((req.baseUrl + req.path).startsWith('/apiDocs')) return next();
     // TODO: Remove
     const defaultWrite = res.write;
     const defaultEnd = res.end;
