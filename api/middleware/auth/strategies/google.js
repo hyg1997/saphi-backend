@@ -13,6 +13,8 @@ const {
 } = require('../../../auth/user/userService');
 
 const CLIENT_ID = config.get('googleClientId');
+const CLIENT_ID_ANDROID = config.get('googleClientIdAndroid');
+const CLIENT_ID_IOS = config.get('googleClientIdIOS');
 const CLIENT_SECRET = config.get('googleClientSecret');
 const client = new OAuth2Client(CLIENT_ID);
 
@@ -77,7 +79,7 @@ const strategy = () => {
     'googleLogin',
     new GoogleStrategy(
       {
-        clientID: CLIENT_ID,
+        clientID: [CLIENT_ID, CLIENT_ID_ANDROID, CLIENT_ID_IOS],
         clientSecret: CLIENT_SECRET,
         passReqToCallback: true,
       },
@@ -95,7 +97,7 @@ const strategy = () => {
     'googleSignup',
     new GoogleStrategy(
       {
-        clientID: CLIENT_ID,
+        clientID: [CLIENT_ID, CLIENT_ID_ANDROID, CLIENT_ID_IOS],
         clientSecret: CLIENT_SECRET,
         passReqToCallback: true,
       },

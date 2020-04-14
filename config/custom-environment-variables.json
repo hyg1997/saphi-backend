@@ -5,6 +5,8 @@
   "skCulqi": "SK_CULQI",
   "pkCulqi": "PK_CULQI",
   "googleClientId": "GOOGLE_CLIENT_ID",
+  "googleClientIdAndroid": "GOOGLE_CLIENT_ID_ANDROID",
+  "googleClientIdIOS": "GOOGLE_CLIENT_ID_IOS",
   "googleClientSecret": "GOOGLE_CLIENT_SECRET",
   "facebookClientId": "FACEBOOK_APP_ID",
   "facebookClientSecret": "FACEBOOK_APP_SECRET"
