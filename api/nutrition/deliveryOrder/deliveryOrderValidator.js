@@ -4,6 +4,7 @@ const { DELIVERY_ORDER_PLAN_TYPE } = require('../../utils/constants');
 
 const Post = {
   body: {
+    email: Joi.string(),
     deliveryPlan: Joi.objectId().required(),
     deliveryPlanType: Joi.string()
       .valid(DELIVERY_ORDER_PLAN_TYPE.lunch, DELIVERY_ORDER_PLAN_TYPE.complete)
