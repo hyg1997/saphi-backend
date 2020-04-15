@@ -18,8 +18,15 @@ const listMenu = async (req, res) => {
   return res.status(menus.status).send(menus);
 };
 
+const listAdminMenu = async (req, res) => {
+  const menus = await Service.listAdminMenu(req.query);
+
+  return res.status(menus.status).send(menus);
+};
+
 module.exports = {
   listMenu,
+  listAdminMenu,
   getMenu,
   postMenu,
 };

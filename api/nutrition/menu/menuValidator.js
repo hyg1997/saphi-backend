@@ -16,6 +16,19 @@ const List = {
   },
 };
 
+const Pagination = {
+  query: {
+    size: Joi.number()
+      .integer()
+      .min(1)
+      .required(),
+    page: Joi.number()
+      .integer()
+      .min(1)
+      .default(1),
+  },
+};
+
 const Get = {
   params: {
     id: Joi.string().required(),
@@ -39,6 +52,7 @@ const Post = {
 
 module.exports = {
   List,
+  Pagination,
   Get,
   Post,
 };

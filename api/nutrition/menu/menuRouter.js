@@ -5,6 +5,7 @@ const router = express.Router();
 const Controller = require('./menuController');
 const Validator = require('./menuValidator');
 
+router.get('/admin', celebrate(Validator.Pagination), Controller.listAdminMenu);
 router.get('/', celebrate(Validator.List), Controller.listMenu);
 router.get('/:id', celebrate(Validator.Get), Controller.getMenu);
 router.post('/', celebrate(Validator.Post), Controller.postMenu);
