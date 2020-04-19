@@ -1,3 +1,5 @@
+/* eslint-disable no-restricted-syntax */
+/* eslint-disable no-await-in-loop */
 const moment = require('moment-timezone');
 
 const { Menu } = require('./menuModel');
@@ -37,6 +39,11 @@ const listAdminMenu = async reqQuery => {
   });
 };
 
+const createBulkMenu = async reqBody => {
+  await Menu.collection.insert(reqBody.data);
+  return setResponse(201, 'Menus created.', {});
+};
+
 const readMenu = async reqParams => {
   const menu = await Menu.findById(reqParams.id);
   return setResponse(200, 'Menu found.', menu);
@@ -54,4 +61,5 @@ module.exports = {
   listAdminMenu,
   readMenu,
   createMenu,
+  createBulkMenu,
 };
