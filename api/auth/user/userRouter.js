@@ -14,9 +14,17 @@ router.post(
   Controller.onboarding,
 );
 
-// TODO: Move
-// router.post('/forgotpassword', Controller.forgotPassword);
-// router.post('/checkcode', Controller.checkCode);
-// router.post('/resetpassword', Controller.resetPassword);
+// Password recover
+router.post(
+  '/forgotpassword',
+  celebrate(Validator.ForgotPassword),
+  Controller.forgotPassword,
+);
+router.post('/checkcode', celebrate(Validator.CheckCode), Controller.checkCode);
+router.post(
+  '/resetpassword',
+  celebrate(Validator.ResetPassword),
+  Controller.resetPassword,
+);
 
 module.exports = router;
