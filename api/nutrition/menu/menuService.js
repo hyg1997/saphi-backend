@@ -1,7 +1,13 @@
+/* eslint-disable no-restricted-syntax */
+/* eslint-disable no-await-in-loop */
 const moment = require('moment-timezone');
 
 const { Menu } = require('./menuModel');
-const { setResponse, addBussinesDays } = require('../../utils');
+const {
+  setResponse,
+  addBussinesDays,
+  validatePagination,
+} = require('../../utils');
 
 const listMenu = async reqQuery => {
   const menus = await Menu.find({
@@ -13,6 +19,29 @@ const listMenu = async reqQuery => {
     },
   }).sort({ date: 1 });
   return setResponse(200, 'Menus found.', menus);
+};
+
+const listAdminMenu = async reqQuery => {
+  const total = await Menu.countDocuments();
+  const val = validatePagination(total, reqQuery.page, reqQuery.size);
+  if (!val.ok) return setResponse(400, val.message, {});
+  const items = await Menu.find({})
+    .sort({ date: -1, type: 1 })
+    .skip(val.skip)
+    .limit(reqQuery.size)
+    .exec('find');
+
+  return setResponse(200, 'Menus found.', {
+    total,
+    numPages: val.numPages,
+    page: reqQuery.page,
+    items,
+  });
+};
+
+const createBulkMenu = async reqBody => {
+  await Menu.collection.insert(reqBody.data);
+  return setResponse(201, 'Menus created.', {});
 };
 
 const readMenu = async reqParams => {
@@ -29,6 +58,8 @@ const createMenu = async reqBody => {
 
 module.exports = {
   listMenu,
+  listAdminMenu,
   readMenu,
   createMenu,
+  createBulkMenu,
 };

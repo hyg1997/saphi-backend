@@ -9,5 +9,7 @@
   "googleClientIdIOS": "GOOGLE_CLIENT_ID_IOS",
   "googleClientSecret": "GOOGLE_CLIENT_SECRET",
   "facebookClientId": "FACEBOOK_APP_ID",
-  "facebookClientSecret": "FACEBOOK_APP_SECRET"
+  "facebookClientSecret": "FACEBOOK_APP_SECRET",
+  "emailSaphi": "SAPHI_EMAIL",
+  "passwordEmailSaphi": "SAPHI_EMAIL_PASSWORD"
 }

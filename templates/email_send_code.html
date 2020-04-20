@@ -1,1 +1,39 @@
-<h2>Tu código es {{ code }}</h2>
+<html lang="en" dir="ltr" style="margin:0;">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+  </head>
+  <body style="font-family:'Raleway', sans-serif; color:#fff;">
+    <div style="max-width:12.5cm;margin:auto;">
+      <div style="position:relative;background-image:url('{{ domain }}/static/img/header_mail.png');padding:10px;background-size:cover;
+      border-left:1px solid #000;border-right:1px solid #000;">
+        <div style="width:20%;display:inline-block;">
+          <img src="{{ domain }}/static/img/logo_saphi.png" alt="" style="max-width:2.5cm;vertical-align:middle;margin-bottom:10px;">
+        </div>
+        <div style="display:inline-block; width:75%;text-align:right;color:#fff">
+        </div>
+      </div>
+      <div class="container-fluid under-nav template-login-form" style="color:#000">
+        <div class="row h-100 align-items-center">
+			<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 col-centered">
+    			<div class="center-text">
+					<strong>Tu codigo para reestablecer tu contraseña es {{ code }}</strong>
+				</div>
+			</div>
+		</div>
+	</div>
+      <div style="background-color:#1C2F4F;
+      padding:5px;text-align:center;">
+        <div style="margin:auto;">
+          <h5 style="display:inline-block;margin-right:10px;font-size:10px;color:#fff;text-decoration:none;">contacto@saphi.pe</h5>
+          <h5 style="display:inline-block;margin-right:10px;font-size:10px;color:#fff;">+51 997 522 482</h5>
+        </div>
+        <p style="font-size:8px;color:#fff;text-align:center;">Este mail se ha generado por un sistema automático. Por favor, no responda a este e-mail directamente.  <br> Si tiene alguna
+        duda o necesita ayuda contacta con nosotros. <br> Si no deseas recibir más alertas como esta, por favor, haz click en Baja de
+        alertas.</p>
+      </div>
+    </div>
+  </body>
+</html>

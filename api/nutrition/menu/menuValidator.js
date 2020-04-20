@@ -16,6 +16,19 @@ const List = {
   },
 };
 
+const Pagination = {
+  query: {
+    size: Joi.number()
+      .integer()
+      .min(1)
+      .required(),
+    page: Joi.number()
+      .integer()
+      .min(1)
+      .default(1),
+  },
+};
+
 const Get = {
   params: {
     id: Joi.string().required(),
@@ -37,8 +50,27 @@ const Post = {
   },
 };
 
+const Bulk = {
+  body: {
+    data: Joi.array().items({
+      name: Joi.string()
+        .min(1)
+        .max(255)
+        .required(),
+      type: Joi.string()
+        .valid(MENU_TYPE.lunch, MENU_TYPE.dinner)
+        .required(),
+      date: Joi.date()
+        .iso()
+        .required(),
+    }),
+  },
+};
+
 module.exports = {
   List,
+  Pagination,
   Get,
   Post,
+  Bulk,
 };

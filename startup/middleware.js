@@ -20,7 +20,7 @@ module.exports = app => {
       extended: false,
     }),
   );
-  app.use(express.static(path.join(__dirname, '../public')));
+  app.use('/static', express.static(path.join(__dirname, '../static')));
 
   app.use(
     express.json({

@@ -1,3 +1,5 @@
+const config = require('config');
+
 const USER_CONSTANTS = {
   DOCUMENT_TYPE: {
     DNI: 'DNI',
@@ -68,8 +70,8 @@ module.exports = {
   CONFIG_EMAIL: {
     service: 'gmail',
     auth: {
-      user: 'abc@gmail.com',
-      pass: '1234',
+      user: config.get('emailSaphi'),
+      pass: config.get('passwordEmailSaphi'),
     },
   },
 

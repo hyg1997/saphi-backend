@@ -46,6 +46,43 @@ const UpdateOnBoarding = {
   },
 };
 
+const ForgotPassword = {
+  body: {
+    email: Joi.string()
+      .lowercase()
+      .trim()
+      .min(5)
+      .max(255)
+      .email()
+      .required(),
+  },
+};
+
+const CheckCode = {
+  body: {
+    ...ForgotPassword.body,
+    code: Joi.string()
+      .trim()
+      .min(4)
+      .max(4)
+      .required(),
+  },
+};
+
+const ResetPassword = {
+  body: {
+    ...CheckCode.body,
+    newPassword: Joi.string()
+      .trim()
+      .min(6)
+      .max(255)
+      .required(),
+  },
+};
+
 module.exports = {
   UpdateOnBoarding,
+  ForgotPassword,
+  CheckCode,
+  ResetPassword,
 };
