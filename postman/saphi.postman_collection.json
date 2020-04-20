@@ -2400,6 +2400,97 @@
 			"name": "user",
 			"item": [
 				{
+					"name": "password",
+					"item": [
+						{
+							"name": "forgotPassword",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"email\": \"chubakueno@gmail.com\"\n}"
+								},
+								"url": {
+									"raw": "{{urlD}}/user/forgotpassword",
+									"host": [
+										"{{urlD}}"
+									],
+									"path": [
+										"user",
+										"forgotpassword"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "checkCode",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"email\": \"chubakueno@gmail.com\",\n\t\"code\": \"2262\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/user/checkcode",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"checkcode"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "resetPassword",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"email\": \"chubakueno@gmail.com\",\n\t\"code\": \"2262\",\n\t\"newPassword\": \"password\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/user/resetpassword",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"resetpassword"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
 					"name": "onboarding",
 					"request": {
 						"auth": {
