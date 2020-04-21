@@ -24,6 +24,11 @@ const userSchema = new Schema(
         isPatient: { type: Boolean, default: true },
         isCompany: { type: Boolean, default: false },
       },
+      default: {
+        isAdmin: false,
+        isPatient: true,
+        isCompany: false,
+      },
     },
     name: { type: String },
     lastName: { type: String },
