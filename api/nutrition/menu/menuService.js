@@ -44,6 +44,14 @@ const createBulkMenu = async reqBody => {
   return setResponse(201, 'Menus created.', {});
 };
 
+const deleteMenu = async reqParams => {
+  const response = await Menu.deleteOne({ id: reqParams.id });
+  if (!response || !response.deletedCount) {
+    return setResponse(404, 'Menu not found.', {});
+  }
+  return setResponse(200, 'Menu deleted.', {});
+};
+
 const readMenu = async reqParams => {
   const menu = await Menu.findById(reqParams.id);
   return setResponse(200, 'Menu found.', menu);
@@ -62,4 +70,5 @@ module.exports = {
   readMenu,
   createMenu,
   createBulkMenu,
+  deleteMenu,
 };

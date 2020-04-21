@@ -49,4 +49,5 @@ module.exports = {
   validatePagination,
   addBussinesDays: require('./addBussinesDays'),
   renderTemplate,
+  joi: require('./joiUtils'),
 };

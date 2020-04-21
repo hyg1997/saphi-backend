@@ -1,7 +1,7 @@
 const _ = require('lodash');
 const { Company } = require('./companyModel');
 const { User } = require('../user/userModel');
-const { setResponse } = require('../../utils');
+const { setResponse, validatePagination } = require('../../utils');
 
 const getCompany = async reqParams => {
   const company = await Company.findById(reqParams.id);
@@ -42,8 +42,21 @@ const updateCompany = async (reqParams, reqBody) => {
 };
 
 const listCompany = async reqQuery => {
-  const companys = await Company.find(reqQuery);
-  return setResponse(200, 'Companys Found.', companys);
+  const total = await Company.countDocuments();
+  const val = validatePagination(total, reqQuery.page, reqQuery.size);
+  if (!val.ok) return setResponse(400, val.message, {});
+  const items = await Company.find({})
+    .sort({ createdAt: -1 })
+    .skip(val.skip)
+    .limit(reqQuery.size)
+    .exec('find');
+
+  return setResponse(200, 'Companies found.', {
+    total,
+    numPages: val.numPages,
+    page: reqQuery.page,
+    items,
+  });
 };
 
 const checkDocument = async reqBody => {

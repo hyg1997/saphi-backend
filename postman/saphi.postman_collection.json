@@ -1645,6 +1645,89 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "delete menu",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/menus/5e65d7e54ad3f2074de49c49/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"menus",
+										"5e65d7e54ad3f2074de49c49",
+										""
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "delete menu",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/menus/5e65d7e54ad3f2074de49c49/",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"menus",
+												"5e65d7e54ad3f2074de49c49",
+												""
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "82"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"52-0++ta+jnZ/a6ODknqtCQztOAw0s\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 21 Apr 2020 01:41:45 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {},\n    \"status\": 200,\n    \"message\": \"Menu deleted.\",\n    \"clientMessage\": \"Menu deleted.\"\n}"
+								}
+							]
 						}
 					],
 					"protocolProfileBehavior": {},
@@ -2591,6 +2674,179 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"data\": {},\n    \"status\": 200,\n    \"message\": \"Finished Onboarding\",\n    \"clientMessage\": \"Finished Onboarding\"\n}"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "company",
+			"item": [
+				{
+					"name": "list companies",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/company/?size=1&page=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"company",
+								""
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "1"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get company",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/company/5e94dabc8c04eb01b5aa6627",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"company",
+								"5e94dabc8c04eb01b5aa6627"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create Company",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"newCompany\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/company/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"company",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "create Company",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": \"newCompany\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/company/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"company",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "237"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ed-m9B22htHf/WQH1opKqrbGTaS2Ko\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 21 Apr 2020 01:45:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"_id\": \"5e9e50506ce9850ddc91191c\",\n        \"name\": \"newCompany\",\n        \"users\": [],\n        \"createdAt\": \"2020-04-21T01:45:52.475Z\",\n        \"updatedAt\": \"2020-04-21T01:45:52.475Z\",\n        \"__v\": 0\n    },\n    \"status\": 201,\n    \"message\": \"Company Created.\",\n    \"clientMessage\": \"Company Created.\"\n}"
 						}
 					]
 				}

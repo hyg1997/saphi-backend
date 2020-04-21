@@ -12,6 +12,12 @@ const createBulkMenu = async (req, res) => {
   return res.status(resp.status).send(resp);
 };
 
+const deleteMenu = async (req, res) => {
+  const response = await Service.deleteMenu(req.params);
+
+  return res.status(response.status).send(response);
+};
+
 const getMenu = async (req, res) => {
   const menu = await Service.readMenu(req.params);
 
@@ -36,4 +42,5 @@ module.exports = {
   getMenu,
   postMenu,
   createBulkMenu,
+  deleteMenu,
 };
