@@ -1,3 +1,5 @@
+/* eslint-disable no-restricted-syntax */
+/* eslint-disable no-await-in-loop */
 const _ = require('lodash');
 const { Company } = require('./companyModel');
 const { User } = require('../user/userModel');
@@ -15,15 +17,23 @@ const createCompany = async reqBody => {
   return setResponse(201, 'Company Created.', company);
 };
 
-const updateCompany = async (reqParams, reqBody) => {
-  const company = await Company.findById(reqParams.id);
+const updateCompanies = async (reqParams, reqBody) => {
+  const companies = {};
+  reqBody.data.forEach(item => {
+    const users = _.get(companies, item.companyName, []);
+    users.push(_.omit(item, ['nameCompany']));
+    companies[item.companyName] = users;
+  });
 
-  const newCompany = { name: company.name, users: company.users };
+  for (const [companyName, newUsers] of Object.entries(companies)) {
+    let company = await Company.findOne({ name: companyName });
+    if (!company) {
+      company = new Company({ name: companyName });
+      await company.save();
+    }
 
-  if (reqBody.name) newCompany.name = reqBody.name;
-  if (reqBody.users) {
-    reqBody.users.forEach(userUpdate => {
-      const userDB = newCompany.users.find(
+    newUsers.forEach(userUpdate => {
+      const userDB = company.users.find(
         elem =>
           elem.idDocumentType === userUpdate.idDocumentType &&
           elem.idDocumentNumber === userUpdate.idDocumentNumber,
@@ -32,13 +42,14 @@ const updateCompany = async (reqParams, reqBody) => {
       if (userDB) {
         Object.assign(userDB, userUpdate);
       } else {
-        newCompany.users.push(userDB);
+        company.users.push(userUpdate);
       }
     });
+
+    await company.save();
   }
 
-  Company.findByIdAndUpdate(reqParams.id, newCompany);
-  return setResponse(200, 'Company Updated.', company);
+  return setResponse(200, 'Companies Updated.', {});
 };
 
 const listCompany = async reqQuery => {
@@ -96,6 +107,6 @@ module.exports = {
   listCompany,
   getCompany,
   createCompany,
-  updateCompany,
+  updateCompanies,
   checkDocument,
 };

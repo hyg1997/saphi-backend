@@ -2849,6 +2849,44 @@
 							"body": "{\n    \"data\": {\n        \"_id\": \"5e9e50506ce9850ddc91191c\",\n        \"name\": \"newCompany\",\n        \"users\": [],\n        \"createdAt\": \"2020-04-21T01:45:52.475Z\",\n        \"updatedAt\": \"2020-04-21T01:45:52.475Z\",\n        \"__v\": 0\n    },\n    \"status\": 201,\n    \"message\": \"Company Created.\",\n    \"clientMessage\": \"Company Created.\"\n}"
 						}
 					]
+				},
+				{
+					"name": "update Companies",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"data\":[\n\t\t\n\t\t{\n\t\t\t\"companyName\":\"otraEmpresa\",\n\t\t\t\"name\": \"ABC\",\n\t\t\t\"lastName\": \"XYZ\",\n\t\t\t\"email\":\"xyz@gmail.abc\",\n\t\t\t\"endDate\":\"2020-12-05\",\n\t\t\t\"idDocumentType\": \"DNI\",\n\t\t\t\"idDocumentNumber\": \"25342134\"\n\t\t},\n\t\t\n\t\t{\n\t\t\t\"companyName\":\"Company XYZ\",\n\t\t\t\"name\": \"ABC\",\n\t\t\t\"lastName\": \"XYZ\",\n\t\t\t\"email\":\"xyz@gmail.abc\",\n\t\t\t\"endDate\":\"2020-12-05\",\n\t\t\t\"idDocumentType\": \"CE\",\n\t\t\t\"idDocumentNumber\": \"HJK25342134\"\n\t\t}\n\t\t\n\t]\n}"
+						},
+						"url": {
+							"raw": "{{url}}/company/update",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"company",
+								"update"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"protocolProfileBehavior": {}

@@ -12,9 +12,9 @@ const { authenticateMiddleware } = require('../../middleware/auth');
 const utils = require('../../utils');
 
 router.put(
-  '/:id',
-  celebrate(Validator.UpdateCompany),
-  Controller.updateCompany,
+  '/update',
+  celebrate(Validator.UpdateCompanies),
+  Controller.updateCompanies,
 );
 
 router.get('/:id', Controller.getCompany);

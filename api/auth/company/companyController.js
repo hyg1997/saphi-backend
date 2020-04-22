@@ -18,8 +18,8 @@ const createCompany = async (req, res) => {
   return res.status(company.status).send(company);
 };
 
-const updateCompany = async (req, res) => {
-  const response = await Service.updateCompany(req.params, req.body);
+const updateCompanies = async (req, res) => {
+  const response = await Service.updateCompanies(req.params, req.body);
 
   return res.status(response.status).send(response);
 };
@@ -35,5 +35,5 @@ module.exports = {
   getCompany,
   createCompany,
   checkDocument,
-  updateCompany,
+  updateCompanies,
 };
