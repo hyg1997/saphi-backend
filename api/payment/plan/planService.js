@@ -1,5 +1,4 @@
 const moment = require('moment');
-const winston = require('winston');
 
 const { Plan } = require('./planModel');
 const { User } = require('../../auth/user/userModel');
@@ -31,6 +30,7 @@ const buyPlan = async (reqParams, reqBody, reqUser) => {
     payment: { savedCard: false, culqiToken: reqBody.culqiToken },
   };
   const response = await makePayment(newBody, reqUser, plan);
+
   if (response.status === 201) {
     const planSubscription = {
       active: true,
