@@ -30,7 +30,7 @@ const buyPlan = async (reqParams, reqBody, reqUser) => {
     payment: { savedCard: false, culqiToken: reqBody.culqiToken },
   };
   const response = makePayment(newBody, reqUser, plan);
-
+  winston.error(response);
   if (response.status === 201) {
     const planSubscription = {
       active: true,
