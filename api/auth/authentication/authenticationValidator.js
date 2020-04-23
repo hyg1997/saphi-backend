@@ -71,8 +71,16 @@ const Login = {
       .trim()
       .min(5)
       .max(255)
-      .email()
-      .required(),
+      .default('-'),
+    idDocumentType: Joi.string().valid(
+      DOCUMENT_TYPE.DNI,
+      DOCUMENT_TYPE.CE,
+      DOCUMENT_TYPE.PASSPORT,
+    ),
+    idDocumentNumber: Joi.string()
+      .trim()
+      .min(5)
+      .max(255),
     password: Joi.string()
       .trim()
       .min(6)

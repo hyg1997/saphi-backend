@@ -28,9 +28,9 @@ const createUser = async reqBody => {
   user = new User(reqBody);
 
   if (reqBody.companyId) {
-    let company = await Company.findById(reqBody.companyId);
+    const company = await Company.findById(reqBody.companyId);
     if (!company) return setResponse(400, 'Company not found.');
-    let preRegistered = company.users.find(obj => {
+    const preRegistered = company.users.find(obj => {
       return (
         obj.idDocumentType === user.idDocumentType &&
         obj.idDocumentNumber === user.idDocumentNumber
