@@ -5,7 +5,7 @@ const {
   readUserByFieldIds,
   createUser,
 } = require('./authUser');
-const { onboarding } = require('./onboarding');
+const { onboarding, validateOnboarding } = require('./onboarding');
 const { forgotPassword, checkCode, resetPassword } = require('./password');
 
 module.exports = {
@@ -17,4 +17,5 @@ module.exports = {
   checkCode,
   resetPassword,
   onboarding,
+  validateOnboarding,
 };

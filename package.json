@@ -6,7 +6,8 @@
     "start": "node ./bin/www",
     "startN": "nodemon -e yml,js ./bin/www",
     "seedDB": "node api/utils/seedDB",
-    "cleanCulqi": "node api/utils/cleanCulqi"
+    "cleanCulqi": "node api/utils/cleanCulqi",
+    "seedUsers": "node api/utils/seedUsers"
   },
   "dependencies": {
     "axios": "^0.19.2",

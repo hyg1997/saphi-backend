@@ -45,7 +45,7 @@ const validateOnboarding = async (reqBody, reqUser) => {
   // *Complete bodyFat data
   const { bodyFatPercentage, idBodyFat } = updateUser.indicators;
   if (bodyFatPercentage) {
-    for (const [fatLevel, obj] in DIET_FACTORS.fatFactor.entries) {
+    for (const [fatLevel, obj] of Object.entries(DIET_FACTORS.fatFactor)) {
       if (obj.min <= bodyFatPercentage && bodyFatPercentage < obj.max) {
         updateUser.indicators.idBodyFat = fatLevel;
       }
@@ -73,4 +73,5 @@ const onboarding = async (reqBody, reqUser) => {
 
 module.exports = {
   onboarding,
+  validateOnboarding,
 };
