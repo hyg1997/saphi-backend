@@ -45,7 +45,7 @@ const createBulkMenu = async reqBody => {
 };
 
 const deleteMenu = async reqParams => {
-  const response = await Menu.deleteOne({ id: reqParams.id });
+  const response = await Menu.deleteOne({ _id: reqParams.id });
   if (!response || !response.deletedCount) {
     return setResponse(404, 'Menu not found.', {});
   }
