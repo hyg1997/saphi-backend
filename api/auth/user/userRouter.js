@@ -7,6 +7,8 @@ const Validator = require('./userValidator');
 
 const { authenticateMiddleware } = require('../../middleware/auth');
 
+const utils = require('../../utils');
+
 router.post(
   '/onboarding',
   authenticateMiddleware('jwt'),
@@ -26,5 +28,9 @@ router.post(
   celebrate(Validator.ResetPassword),
   Controller.resetPassword,
 );
+
+// Admin
+router.get('/:id', Controller.getAdminUser);
+router.get('/', celebrate(utils.joi.Pagination), Controller.listAdminUsers);
 
 module.exports = router;

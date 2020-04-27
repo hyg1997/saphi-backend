@@ -23,17 +23,18 @@ const listMenu = async reqQuery => {
 
 const listAdminMenu = async reqQuery => {
   const total = await Menu.countDocuments();
-  const val = validatePagination(total, reqQuery.page, reqQuery.size);
-  if (!val.ok) return setResponse(400, val.message, {});
+  const resp = validatePagination(total, reqQuery.page, reqQuery.size);
+  if (resp.status !== 200) return resp;
+
   const items = await Menu.find({})
     .sort({ date: -1, type: 1 })
-    .skip(val.skip)
+    .skip(resp.data.skip)
     .limit(reqQuery.size)
     .exec('find');
 
   return setResponse(200, 'Menus found.', {
     total,
-    numPages: val.numPages,
+    numPages: resp.data.numPages,
     page: reqQuery.page,
     items,
   });

@@ -25,7 +25,7 @@ const validatePagination = (total, page, size) => {
     numPages = Math.max(Math.ceil(total / size), 1);
   }
 
-  return { ok, skip, message, numPages };
+  return setResponse(ok ? 200 : 400, message, ok ? { skip, numPages } : {});
 };
 
 const asyncForEach = async (array, callback) => {

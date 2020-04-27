@@ -54,17 +54,17 @@ const updateCompanies = async (reqParams, reqBody) => {
 
 const listCompany = async reqQuery => {
   const total = await Company.countDocuments();
-  const val = validatePagination(total, reqQuery.page, reqQuery.size);
-  if (!val.ok) return setResponse(400, val.message, {});
+  const resp = validatePagination(total, reqQuery.page, reqQuery.size);
+  if (resp.status !== 200) return resp;
   const items = await Company.find({})
     .sort({ createdAt: -1 })
-    .skip(val.skip)
+    .skip(resp.data.skip)
     .limit(reqQuery.size)
     .exec('find');
 
   return setResponse(200, 'Companies found.', {
     total,
-    numPages: val.numPages,
+    numPages: resp.data.numPages,
     page: reqQuery.page,
     items,
   });

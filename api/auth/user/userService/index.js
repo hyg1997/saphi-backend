@@ -7,6 +7,7 @@ const {
 } = require('./authUser');
 const { onboarding, validateOnboarding } = require('./onboarding');
 const { forgotPassword, checkCode, resetPassword } = require('./password');
+const { generateQueryUsers, listAdminUsers, getAdminUser } = require('./admin');
 
 module.exports = {
   listUser,
@@ -18,4 +19,9 @@ module.exports = {
   resetPassword,
   onboarding,
   validateOnboarding,
+
+  // Admin
+  generateQueryUsers,
+  listAdminUsers,
+  getAdminUser,
 };
