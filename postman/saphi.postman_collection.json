@@ -1212,9 +1212,6 @@
 						},
 						{
 							"name": "list admin DeliveryOrder",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
 							"request": {
 								"auth": {
 									"type": "bearer",
@@ -1226,7 +1223,7 @@
 										}
 									]
 								},
-								"method": "GET",
+								"method": "POST",
 								"header": [
 									{
 										"key": "Content-Type",
@@ -2731,9 +2728,6 @@
 				},
 				{
 					"name": "list admin users",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -2745,7 +2739,7 @@
 								}
 							]
 						},
-						"method": "GET",
+						"method": "POST",
 						"header": [
 							{
 								"key": "Content-Type",
@@ -2755,7 +2749,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"match\": [{\"field\":\"activeDiet\", \"value\": false}],\n\t\n\t\"filter\":[{\"field\":\"name\",\"value\":\"saphi\"}],\n\t\"sort\": [{\"field\":\"lastName\", \"value\":\"asc\"}]\n}"
+							"raw": "{\n\t\"match\": [{\"field\":\"activeDiet\", \"value\": false}],\n\t\n\t\"filter\":[{\"field\":\"name\",\"value\":\"a\"}],\n\t\"sort\": [{\"field\":\"lastName\", \"value\":\"asc\"}]\n}"
 						},
 						"url": {
 							"raw": "{{url}}/user/?size=30&page=1",

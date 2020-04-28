@@ -31,6 +31,6 @@ router.post(
 
 // Admin
 router.get('/:id', Controller.getAdminUser);
-router.get('/', celebrate(utils.joi.Pagination), Controller.listAdminUsers);
+router.post('/', celebrate(utils.joi.Pagination), Controller.listAdminUsers);
 
 module.exports = router;

@@ -11,7 +11,7 @@ router.post('/', celebrate(Validator.Post), Controller.createDeliveryOrder);
 router.get('/mydeliveryorder', Controller.getUserDeliveryOrder);
 
 // admin
-router.get(
+router.post(
   '/admin',
   celebrate(utils.joi.Pagination),
   Controller.listAdminDeliveryOrder,
