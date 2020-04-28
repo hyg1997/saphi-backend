@@ -44,7 +44,7 @@ const getDeliveryOrder = async reqParams => {
 };
 
 const generateQueryDeliveryOrder = reqBody => {
-  const filterFields = ['name', 'lastName', 'email'];
+  const filterFields = ['name', 'lastName', 'email', 'id'];
   const query = [];
 
   if (reqBody.filter) {

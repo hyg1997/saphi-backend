@@ -70,7 +70,7 @@ const userSchema = new Schema(
         idPhysicalActivity: { type: String },
       },
     },
-    pathologies: [{ type: String }],
+    pathologies: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Pathology' }],
     otherPathology: { type: String, default: '' },
     avoidedAliments: {
       type: {

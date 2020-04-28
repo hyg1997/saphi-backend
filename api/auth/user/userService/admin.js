@@ -11,7 +11,7 @@ const {
 const { setResponse } = require('../../../utils');
 
 const generateQueryUsers = reqBody => {
-  const allFields = ['name', 'lastName', 'email', 'companyName'];
+  const allFields = ['name', 'lastName', 'email', 'companyName', 'id'];
   const matchFields = ['activeDiet'];
   const query = [];
 
@@ -97,7 +97,14 @@ const listAdminUsers = async reqQueryMongoose => {
 };
 
 const getAdminUser = async id => {
-  const user = await User.findById(id);
+  let user = {};
+  try {
+    user = await User.findById(id)
+      .populate('pathologies')
+      .populate('plan');
+  } catch (e) {
+    return setResponse(500, 'Error', {});
+  }
   const deliveryOrders = await DeliveryOrder.find({ user: user.id });
   const payments = await CulqiPayment.find({ user: user.id });
   return setResponse(200, 'User found.', { user, deliveryOrders, payments });
