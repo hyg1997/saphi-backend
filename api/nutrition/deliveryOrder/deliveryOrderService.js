@@ -38,13 +38,15 @@ const getUserDeliveryOrder = async reqUser => {
 };
 
 const getDeliveryOrder = async reqParams => {
-  const deliveryPlan = await DeliveryPlan.findById(reqParams.id);
+  const deliveryOrder = await DeliveryOrder.findById(reqParams.id).populate(
+    'user',
+  );
 
-  return setResponse(200, 'DeliveryPlan found.', deliveryPlan);
+  return setResponse(200, 'DeliveryOrder found.', deliveryOrder);
 };
 
 const generateQueryDeliveryOrder = reqBody => {
-  const filterFields = ['name', 'lastName', 'email', 'id'];
+  const filterFields = ['id', 'name', 'lastName', 'email', 'id'];
   const query = [];
 
   if (reqBody.filter) {

@@ -7,7 +7,12 @@ const {
 } = require('./authUser');
 const { onboarding, validateOnboarding } = require('./onboarding');
 const { forgotPassword, checkCode, resetPassword } = require('./password');
-const { generateQueryUsers, listAdminUsers, getAdminUser } = require('./admin');
+const {
+  generateQueryUsers,
+  listAdminUsers,
+  getAdminUser,
+  setMacrosOnUser,
+} = require('./admin');
 
 module.exports = {
   listUser,
@@ -24,4 +29,5 @@ module.exports = {
   generateQueryUsers,
   listAdminUsers,
   getAdminUser,
+  setMacrosOnUser,
 };

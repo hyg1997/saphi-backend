@@ -16,5 +16,6 @@ router.post(
   celebrate(utils.joi.Pagination),
   Controller.listAdminDeliveryOrder,
 );
+router.get('/:id', Controller.getDeliveryOrder);
 
 module.exports = router;

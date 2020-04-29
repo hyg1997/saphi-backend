@@ -30,6 +30,7 @@ router.post(
 );
 
 // Admin
+router.post('/:id/updatemacros', Controller.setMacrosOnUser);
 router.get('/:id', Controller.getAdminUser);
 router.post('/', celebrate(utils.joi.Pagination), Controller.listAdminUsers);
 

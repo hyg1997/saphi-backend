@@ -61,6 +61,11 @@ const listAdminUsers = async (req, res) => {
   return res.status(listUsers.status).send(listUsers);
 };
 
+const setMacrosOnUser = async (req, res) => {
+  const response = await Service.setMacrosOnUser(req.params.id, req.body);
+  return res.status(response.status).send(response);
+};
+
 module.exports = {
   onboarding,
   forgotPassword,
@@ -69,4 +74,5 @@ module.exports = {
   // Admin
   listAdminUsers,
   getAdminUser,
+  setMacrosOnUser,
 };

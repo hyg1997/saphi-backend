@@ -81,6 +81,7 @@ const userSchema = new Schema(
     },
     onboardingFinished: { type: Boolean, default: false },
     activeDiet: { type: Boolean, default: false },
+    specialDiet: { type: Boolean, default: false },
 
     actionCode: {
       type: {

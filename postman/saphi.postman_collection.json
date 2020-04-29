@@ -1258,6 +1258,40 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "get deliveryOrder  By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/deliveryOrder/5e9526b3976aa200193d1494",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"deliveryOrder",
+										"5e9526b3976aa200193d1494"
+									]
+								}
+							},
+							"response": []
 						}
 					],
 					"protocolProfileBehavior": {},
@@ -2803,6 +2837,45 @@
 							"path": [
 								"user",
 								"5e950a98bd8b0c00185035f6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update macros",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"protenin\":100,\n\t\"carbohydrate\":100,\n\t\"fat\": 100,\n\t\"message\":\"Bienvenido a Saphi\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/user/5e950dabbd8b0c0018503655/updatemacros",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"5e950dabbd8b0c0018503655",
+								"updatemacros"
 							]
 						}
 					},

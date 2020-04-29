@@ -1,5 +1,8 @@
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable no-param-reassign */
+const nodemailer = require('nodemailer');
+const config = require('config');
+
 const { User } = require('../userModel');
 const {
   DeliveryOrder,
@@ -8,7 +11,9 @@ const {
   CulqiPayment,
 } = require('../../../payment/culqiPayment/culqiPaymentModel');
 
-const { setResponse } = require('../../../utils');
+const { CONFIG_EMAIL } = require('../../../utils/constants');
+
+const { setResponse, renderTemplate } = require('../../../utils');
 
 const generateQueryUsers = reqBody => {
   const allFields = ['name', 'lastName', 'email', 'companyName', 'id'];
@@ -96,10 +101,10 @@ const listAdminUsers = async reqQueryMongoose => {
   return setResponse(200, 'Users found.', listUsers);
 };
 
-const getAdminUser = async id => {
+const getAdminUser = async userId => {
   let user = {};
   try {
-    user = await User.findById(id)
+    user = await User.findById(userId)
       .populate('pathologies')
       .populate('plan');
   } catch (e) {
@@ -110,8 +115,49 @@ const getAdminUser = async id => {
   return setResponse(200, 'User found.', { user, deliveryOrders, payments });
 };
 
+const setMacrosOnUser = async (userId, reqBody) => {
+  const user = await User.findById(userId);
+  user.macroContent = {
+    carbohydrate: reqBody.carbohydrate,
+    protein: reqBody.protein,
+    fat: reqBody.fat,
+  };
+  user.specialDiet = true;
+  user.activeDiet = true;
+  await user.save();
+
+  const domain = config.get('hostname');
+  const content = await renderTemplate('email_new_diet.html', {
+    domain,
+    message: reqBody.message,
+  });
+
+  const { email } = user;
+  const transporter = nodemailer.createTransport(CONFIG_EMAIL);
+  const mailOptions = {
+    from: 'Saphi',
+    to: email,
+    envelop: {
+      from: 'Saphi',
+      to: email,
+    },
+    subject: 'Tu nuevo plan nutricional',
+    html: content,
+  };
+
+  try {
+    await transporter.sendMail(mailOptions);
+  } catch (error) {
+    console.log(error);
+    return setResponse(500, 'Ocurrio un error', {});
+  }
+
+  return setResponse(200, 'Updated User', {});
+};
+
 module.exports = {
   generateQueryUsers,
   listAdminUsers,
   getAdminUser,
+  setMacrosOnUser,
 };
