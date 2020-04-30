@@ -80,9 +80,30 @@ const ResetPassword = {
   },
 };
 
+const ContactForm = {
+  body: {
+    name: Joi.string().max(255),
+    lastName: Joi.string().max(255),
+    email: Joi.string()
+      .lowercase()
+      .trim()
+      .min(5)
+      .max(255)
+      .email(),
+    rating: Joi.number().integer(),
+    subject: Joi.string()
+      .max(255)
+      .default('Contacto SaphiApp'),
+    message: Joi.string()
+      .max(5000)
+      .required(),
+  },
+};
+
 module.exports = {
   UpdateOnBoarding,
   ForgotPassword,
   CheckCode,
   ResetPassword,
+  ContactForm,
 };

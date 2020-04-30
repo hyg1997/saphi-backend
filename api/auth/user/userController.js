@@ -66,6 +66,11 @@ const setMacrosOnUser = async (req, res) => {
   return res.status(response.status).send(response);
 };
 
+const contactForm = async (req, res) => {
+  const response = await Service.contactForm(req.body, req.user);
+  return res.status(response.status).send(response);
+};
+
 module.exports = {
   onboarding,
   forgotPassword,
@@ -75,4 +80,5 @@ module.exports = {
   listAdminUsers,
   getAdminUser,
   setMacrosOnUser,
+  contactForm,
 };

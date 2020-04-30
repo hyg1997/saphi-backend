@@ -4,6 +4,8 @@
 const fs = require('fs');
 const path = require('path');
 const handlebars = require('handlebars');
+const nodemailer = require('nodemailer');
+const { CONFIG_EMAIL } = require('./constants');
 
 const setResponse = (status, message = '', data = null, clientMessage) => {
   if (!clientMessage) clientMessage = message;
@@ -43,11 +45,28 @@ const renderTemplate = async (filename, data) => {
   return template(data);
 };
 
+const sendEmail = async (content, to, subject) => {
+  const transporter = nodemailer.createTransport(CONFIG_EMAIL);
+  const mailOptions = {
+    from: 'Saphi',
+    to,
+    envelop: {
+      from: 'Saphi',
+      to,
+    },
+    subject,
+    html: content,
+  };
+
+  return transporter.sendMail(mailOptions);
+};
+
 module.exports = {
   setResponse,
   asyncForEach,
   validatePagination,
   addBussinesDays: require('./addBussinesDays'),
   renderTemplate,
+  sendEmail,
   joi: require('./joiUtils'),
 };

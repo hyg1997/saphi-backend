@@ -3,7 +3,7 @@ const nodemailer = require('nodemailer');
 const moment = require('moment-timezone');
 
 const { User } = require('../userModel');
-const { setResponse, renderTemplate } = require('../../../utils');
+const { setResponse, renderTemplate, sendEmail } = require('../../../utils');
 
 const { CONFIG_EMAIL } = require('../../../utils/constants');
 
@@ -25,23 +25,11 @@ const forgotPassword = async reqBody => {
     code,
     domain,
   });
-  const transporter = nodemailer.createTransport(CONFIG_EMAIL);
-
-  const mailOptions = {
-    from: 'Saphi',
-    to: reqBody.email,
-    envelop: {
-      from: 'Saphi',
-      to: reqBody.email,
-    },
-    subject: 'Tu Código Saphi',
-    html: content,
-  };
 
   try {
-    await transporter.sendMail(mailOptions);
+    await sendEmail(content, reqBody.email, 'Tu Codigo Saphi');
   } catch (error) {
-    return setResponse(500, 'Ocurrio un error', {});
+    return setResponse(503, 'Ocurrio un error', {});
   }
 
   const expires = moment

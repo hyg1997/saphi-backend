@@ -29,7 +29,7 @@ const verify = async token => {
       googleId: payload.sub,
       email: payload.email,
       name: payload.given_name,
-      lastname: payload.family_name,
+      lastName: payload.family_name,
     };
   } catch (error) {
     return undefined;

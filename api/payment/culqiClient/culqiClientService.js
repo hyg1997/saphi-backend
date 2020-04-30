@@ -46,7 +46,7 @@ const listCulqiClient = async reqUser => {
 
   const cards = [];
   clients.forEach(function(client) {
-    CulqiClient.updateOne();
+    CulqiClient.updateOne(); // ! ¿Que hace esta linea?
     client.cards.forEach(function(card) {
       cards.push(formatCard(card));
     });

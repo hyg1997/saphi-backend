@@ -131,7 +131,28 @@ userSchema.statics.findByIds = function(ids) {
 
 const User = mongoose.model('User', userSchema);
 
+const UserLog = mongoose.model(
+  'UserLog',
+  new Schema(
+    {
+      user: {
+        type: Schema.Types.ObjectId,
+        required: true,
+        ref: 'User',
+      },
+      type: {
+        type: String,
+      },
+      metadata: {
+        type: Schema.Types.Mixed,
+      },
+    },
+    { timestamps: true },
+  ),
+);
+
 module.exports = {
   userSchema,
   User,
+  UserLog,
 };

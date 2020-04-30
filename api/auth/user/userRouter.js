@@ -16,6 +16,13 @@ router.post(
   Controller.onboarding,
 );
 
+router.post(
+  '/contact',
+  authenticateMiddleware('jwt'),
+  celebrate(Validator.ContactForm),
+  Controller.contactForm,
+);
+
 // Password recover
 router.post(
   '/forgotpassword',
