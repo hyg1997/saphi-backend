@@ -2880,6 +2880,82 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "update user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\":\"newName\",\n\t\"lastName\":\"otherLastName\",\n\t\"phonePrefix\":\"51\",\n\t\"phoneNumber\":\"99999999\",\n\t\n\t\"pastPassword\":\"past\",\n\t\"newPassword\": \"new\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/user/update",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update aliments",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"avoidedAliments\":{\n\t\t\"protein\":[],\n\t\t\"carbohydrate\":[],\n\t\t\"fat\":[]\n\t}\n}"
+						},
+						"url": {
+							"raw": "{{url}}/user/update",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"update"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"protocolProfileBehavior": {}

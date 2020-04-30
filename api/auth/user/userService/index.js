@@ -5,7 +5,12 @@ const {
   readUserByFieldIds,
   createUser,
 } = require('./authUser');
-const { onboarding, validateOnboarding } = require('./onboarding');
+const {
+  onboarding,
+  validateOnboarding,
+  updateUser,
+  validateUpdateUser,
+} = require('./onboarding');
 const { forgotPassword, checkCode, resetPassword } = require('./password');
 const {
   generateQueryUsers,
@@ -25,6 +30,8 @@ module.exports = {
   onboarding,
   validateOnboarding,
 
+  updateUser,
+  validateUpdateUser,
   // Admin
   generateQueryUsers,
   listAdminUsers,

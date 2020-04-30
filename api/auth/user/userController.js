@@ -66,6 +66,18 @@ const setMacrosOnUser = async (req, res) => {
   return res.status(response.status).send(response);
 };
 
+const updateUser = async (req, res) => {
+  const validate = await Service.validateUpdateUser(req.body, req.user);
+  if (validate.status !== 200)
+    return res.status(validate.status).send(validate);
+
+  const response = await Service.updateUser(
+    validate.data.reqBody,
+    validate.data.user,
+  );
+  return res.status(response.status).send(response);
+};
+
 module.exports = {
   onboarding,
   forgotPassword,
@@ -75,4 +87,5 @@ module.exports = {
   listAdminUsers,
   getAdminUser,
   setMacrosOnUser,
+  updateUser,
 };

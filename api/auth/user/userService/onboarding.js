@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable no-await-in-loop */
 const _ = require('lodash');
@@ -71,7 +72,28 @@ const onboarding = async (reqBody, reqUser) => {
   return setResponse(200, 'Finished Onboarding', {});
 };
 
+const validateUpdateUser = async (reqBody, reqUser) => {
+  const user = await User.findById(reqUser.id);
+  if (reqBody.pastPassword && reqBody.newPassword) {
+    if (!user.isValidPassword(reqBody.pastPassword))
+      return setResponse(400, 'Incorrect password', {});
+    reqBody.password = reqBody.newPassword;
+    delete reqBody.newPassword;
+    delete reqBody.pastPassword;
+  }
+
+  return setResponse(200, 'Ok', { reqBody, user });
+};
+
+const updateUser = async (reqBody, user) => {
+  _.merge(user, reqBody);
+  await user.save();
+  return setResponse(200, 'User updated.', user);
+};
+
 module.exports = {
   onboarding,
   validateOnboarding,
+  updateUser,
+  validateUpdateUser,
 };
