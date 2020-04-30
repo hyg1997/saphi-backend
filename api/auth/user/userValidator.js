@@ -100,10 +100,59 @@ const ContactForm = {
   },
 };
 
+const UpdateUser = {
+  body: Joi.object()
+    .keys({
+      name: Joi.string()
+        .min(1)
+        .max(255),
+      lastName: Joi.string()
+        .min(1)
+        .max(255),
+      phonePrefix: Joi.string()
+        .min(1)
+        .max(255),
+      phoneNumber: Joi.string()
+        .min(1)
+        .max(255),
+
+      avoidedAliments: Joi.object({
+        carbohydrate: Joi.array()
+          .items(Joi.string())
+          .required(),
+        protein: Joi.array()
+          .items(Joi.string())
+          .required(),
+        fat: Joi.array()
+          .items(Joi.string())
+          .required(),
+      }),
+
+      pastPassword: Joi.string()
+        .trim()
+        .min(6)
+        .max(255),
+      newPassword: Joi.string()
+        .trim()
+        .min(6)
+        .max(255),
+    })
+    .without('avoidedAliments', [
+      'name',
+      'lastName',
+      'phonePrefix',
+      'phoneNumber',
+      'pastPassword',
+      'newPassword',
+    ])
+    .with('pastPassword', 'newPassword'),
+};
+
 module.exports = {
   UpdateOnBoarding,
   ForgotPassword,
   CheckCode,
   ResetPassword,
   ContactForm,
+  UpdateUser,
 };

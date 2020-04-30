@@ -25,6 +25,7 @@ const createCharge = async (reqBody, reqUser) => {
     culqiInfo: respCulqi.data,
     user: reqUser.id,
     amount: reqBody.amount,
+    concept: reqBody.metadata.concept,
   };
   const charge = new CulqiPayment(chargeData);
   await charge.save();
@@ -37,7 +38,7 @@ const createCharge = async (reqBody, reqUser) => {
   );
 };
 
-const makePayment = async (reqBody, reqUser, itemToBuy) => {
+const makePayment = async (reqBody, reqUser, itemToBuy, concept) => {
   const saved = reqBody.payment.savedCard;
   const token = reqBody.payment.culqiToken;
   const { clientToken } = reqBody.payment;
@@ -49,6 +50,7 @@ const makePayment = async (reqBody, reqUser, itemToBuy) => {
     currency_code: itemToBuy.currency_code,
     email: reqUser.email,
     source_id: token,
+    metadata: { concept },
   };
 
   // ! URGENTE Corroborar logica de los requests con LUIS

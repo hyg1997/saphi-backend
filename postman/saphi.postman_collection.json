@@ -2882,25 +2882,7 @@
 					"response": []
 				},
 				{
-					"name": "user Payments",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{url}}/user/mypayments",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"user",
-								"mypayments"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "sendContactForm",
+					"name": "update user",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -2913,31 +2895,32 @@
 							]
 						},
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"name\": \"Jose\",\n\t\"lastName\": \"Mallma\",\n\t\"message\": \"Esta es una prueba\",\n\t\"email\": \"correo@pucp.pe\",\n\t\"subject\": \"Solicitud de contacto recibida <El subject es fijo, debe setearse en front>\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
+							"raw": "{\n\t\"name\":\"newName\",\n\t\"lastName\":\"otherLastName\",\n\t\"phonePrefix\":\"51\",\n\t\"phoneNumber\":\"99999999\",\n\t\n\t\"pastPassword\":\"past\",\n\t\"newPassword\": \"new\"\n}"
 						},
 						"url": {
-							"raw": "{{url}}/user/contact",
+							"raw": "{{url}}/user/update",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"user",
-								"contact"
+								"update"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "sendValoracion",
+					"name": "update aliments",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -2950,24 +2933,25 @@
 							]
 						},
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"message\": \"Ingresar aqui el mensaje\",\n\t\"rating\": 5,\n\t\"subject\": \"Nueva valoración recibida <El subject es fijo, debe setearse en front>\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
+							"raw": "{\n\t\"avoidedAliments\":{\n\t\t\"protein\":[],\n\t\t\"carbohydrate\":[],\n\t\t\"fat\":[]\n\t}\n}"
 						},
 						"url": {
-							"raw": "{{url}}/user/contact",
+							"raw": "{{url}}/user/update",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"user",
-								"contact"
+								"update"
 							]
 						}
 					},

@@ -70,6 +70,17 @@ const contactForm = async (req, res) => {
   const response = await Service.contactForm(req.body, req.user);
   return res.status(response.status).send(response);
 };
+const updateUser = async (req, res) => {
+  const validate = await Service.validateUpdateUser(req.body, req.user);
+  if (validate.status !== 200)
+    return res.status(validate.status).send(validate);
+
+  const response = await Service.updateUser(
+    validate.data.reqBody,
+    validate.data.user,
+  );
+  return res.status(response.status).send(response);
+};
 
 module.exports = {
   onboarding,
@@ -81,4 +92,5 @@ module.exports = {
   getAdminUser,
   setMacrosOnUser,
   contactForm,
+  updateUser,
 };

@@ -36,9 +36,25 @@ router.post(
   Controller.resetPassword,
 );
 
+router.post(
+  '/update',
+  authenticateMiddleware('jwt'),
+  celebrate(Validator.UpdateUser),
+  Controller.updateUser,
+);
+
 // Admin
-router.post('/:id/updatemacros', Controller.setMacrosOnUser);
-router.get('/:id', Controller.getAdminUser);
-router.post('/', celebrate(utils.joi.Pagination), Controller.listAdminUsers);
+router.post(
+  '/:id/updatemacros',
+  authenticateMiddleware('jwt'),
+  Controller.setMacrosOnUser,
+);
+router.get('/:id', authenticateMiddleware('jwt'), Controller.getAdminUser);
+router.post(
+  '/',
+  authenticateMiddleware('jwt'),
+  celebrate(utils.joi.Pagination),
+  Controller.listAdminUsers,
+);
 
 module.exports = router;

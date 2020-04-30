@@ -7,6 +7,7 @@ const culqiPaymentSchema = new Schema(
     user: { type: Schema.Types.ObjectId, required: true, ref: 'User' },
     amount: { type: Number, required: true },
     culqiInfo: { type: Schema.Types.Mixed, required: true },
+    concept: { type: String, required: true, default: '' },
   },
   {
     timestamps: true,
