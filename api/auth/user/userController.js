@@ -70,6 +70,7 @@ const contactForm = async (req, res) => {
   const response = await Service.contactForm(req.body, req.user);
   return res.status(response.status).send(response);
 };
+
 const updateUser = async (req, res) => {
   const validate = await Service.validateUpdateUser(req.body, req.user);
   if (validate.status !== 200)
@@ -82,11 +83,17 @@ const updateUser = async (req, res) => {
   return res.status(response.status).send(response);
 };
 
+const listPayments = async (req, res) => {
+  const payments = await Service.listPayments(req.user.id);
+  return res.status(payments.status).send(payments);
+};
+
 module.exports = {
   onboarding,
   forgotPassword,
   checkCode,
   resetPassword,
+  listPayments,
   // Admin
   listAdminUsers,
   getAdminUser,

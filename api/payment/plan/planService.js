@@ -29,7 +29,7 @@ const buyPlan = async (reqParams, reqBody, reqUser) => {
   const newBody = {
     payment: { savedCard: false, culqiToken: reqBody.culqiToken },
   };
-  const response = await makePayment(newBody, reqUser, plan, 'Subscription');
+  const response = await makePayment(newBody, reqUser, plan, 'Subscripción');
 
   if (response.status === 201) {
     const planSubscription = {

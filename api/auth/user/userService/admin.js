@@ -1,6 +1,5 @@
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable no-param-reassign */
-const nodemailer = require('nodemailer');
 const config = require('config');
 
 const { User } = require('../userModel');
@@ -11,9 +10,7 @@ const {
   CulqiPayment,
 } = require('../../../payment/culqiPayment/culqiPaymentModel');
 
-const { CONFIG_EMAIL } = require('../../../utils/constants');
-
-const { setResponse, renderTemplate } = require('../../../utils');
+const { setResponse, renderTemplate, sendEmail } = require('../../../utils');
 
 const generateQueryUsers = reqBody => {
   const allFields = ['name', 'lastName', 'email', 'companyName', 'id'];
@@ -132,24 +129,10 @@ const setMacrosOnUser = async (userId, reqBody) => {
     message: reqBody.message,
   });
 
-  const { email } = user;
-  const transporter = nodemailer.createTransport(CONFIG_EMAIL);
-  const mailOptions = {
-    from: 'Saphi',
-    to: email,
-    envelop: {
-      from: 'Saphi',
-      to: email,
-    },
-    subject: 'Tu nuevo plan nutricional',
-    html: content,
-  };
-
   try {
-    await transporter.sendMail(mailOptions);
+    await sendEmail(content, user.email, 'Tu Nuevo Plan Nutricional');
   } catch (error) {
-    console.log(error);
-    return setResponse(500, 'Ocurrio un error', {});
+    return setResponse(503, 'Ocurrio un error', {});
   }
 
   return setResponse(200, 'Updated User', {});

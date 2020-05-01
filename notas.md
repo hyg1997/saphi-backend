@@ -30,7 +30,7 @@
 
 ---
 
-* En envio de email debería estar en un utils aparte ya que es algo que se va a usar en varias funcionalidades.
+* [X] En envio de email debería estar en un utils aparte ya que es algo que se va a usar en varias funcionalidades.
 
 ---
 

@@ -36,12 +36,15 @@ router.post(
   Controller.resetPassword,
 );
 
+// Profile
 router.post(
   '/update',
   authenticateMiddleware('jwt'),
   celebrate(Validator.UpdateUser),
   Controller.updateUser,
 );
+
+router.get('/payments', authenticateMiddleware('jwt'), Controller.listPayments);
 
 // Admin
 router.post(

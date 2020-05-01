@@ -15,7 +15,7 @@ const createDeliveryOrder = async (req, res) => {
     req.body,
     req.user,
     selectedPlan,
-    'Delivery Order',
+    'Menú Delivery',
   );
 
   if (culqiPayment.status !== 201)

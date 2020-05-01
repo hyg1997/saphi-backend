@@ -1,11 +1,8 @@
 const config = require('config');
-const nodemailer = require('nodemailer');
 const moment = require('moment-timezone');
 
 const { User } = require('../userModel');
 const { setResponse, renderTemplate, sendEmail } = require('../../../utils');
-
-const { CONFIG_EMAIL } = require('../../../utils/constants');
 
 const getUserByEmail = async email => {
   const user = await User.findOne({ email });
