@@ -2730,7 +2730,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"protenin\":100,\n\t\"carbohydrate\":100,\n\t\"fat\": 100,\n\t\"message\":\"Bienvenido a Saphi\"\n}"
+									"raw": "{\n\t\"protein\":100,\n\t\"carbohydrate\":100,\n\t\"fat\": 100,\n\t\"message\":\"Bienvenido a Saphi\"\n}"
 								},
 								"url": {
 									"raw": "{{url}}/user/5e950dabbd8b0c0018503655/updatemacros",
