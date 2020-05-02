@@ -130,8 +130,6 @@ const adjustMeal = (meal, contentRef, macroContent) => {
 
     const newRest = calcRestMacro(contentRef, newAliments);
     const newError = macroError(newRest);
-    // console.log(aliments, newAliments);
-    // console.log(actRest, newRest);
     if (actError > newError) {
       aliments = newAliments;
       actError = newError;
@@ -230,7 +228,6 @@ const calcFormatDiet = diet => {
     }
   }
 
-  // console.log(restMacroContent);
   newDiet.meals = meals;
   return newDiet;
 };
