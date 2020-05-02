@@ -77,35 +77,32 @@ const generateQueryDeliveryOrder = reqBody => {
 
 const listAdminDeliveryOrder = async reqQueryMongoose => {
   let listDeliveryOrder = [];
-  try {
-    listDeliveryOrder = await DeliveryOrder.aggregate([
-      {
-        $lookup: {
-          from: 'users',
-          localField: 'user',
-          foreignField: '_id',
-          as: 'user_data',
-        },
+
+  listDeliveryOrder = await DeliveryOrder.aggregate([
+    {
+      $lookup: {
+        from: 'users',
+        localField: 'user',
+        foreignField: '_id',
+        as: 'user_data',
       },
-      {
-        $project: {
-          contactName: 1,
-          contactPhone: 1,
-          deliveryAddress: 1,
-          startDate: 1,
-          endDate: 1,
-          deliveryPlan: 1,
-          'culqiPayment.culqiInfo.id': 1,
-          'user_data.name': 1,
-          'user_data.lastName': 1,
-          'user_data.email': 1,
-        },
+    },
+    {
+      $project: {
+        contactName: 1,
+        contactPhone: 1,
+        deliveryAddress: 1,
+        startDate: 1,
+        endDate: 1,
+        deliveryPlan: 1,
+        'culqiPayment.culqiInfo.id': 1,
+        'user_data.name': 1,
+        'user_data.lastName': 1,
+        'user_data.email': 1,
       },
-      ...reqQueryMongoose,
-    ]).exec();
-  } catch (e) {
-    return setResponse(500, 'Erorr', {});
-  }
+    },
+    ...reqQueryMongoose,
+  ]).exec();
 
   return setResponse(200, 'DeliveryPlans found.', listDeliveryOrder);
 };
