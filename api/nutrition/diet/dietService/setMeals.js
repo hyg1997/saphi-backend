@@ -9,11 +9,13 @@ const { MEAL_NAME } = require('../../../utils/constants');
 
 const BASIC_MEALS = ['desayuno', 'almuerzo', 'cena'];
 
+// ? Se crea la dieta default
 const setMeals = async (reqBody, reqUser) => {
-  const diet = await Diet.findOne({ user: reqUser.id });
+  const diet = await Diet.findOne({ user: reqUser.id }); // ? Macronutrientes
 
   if (!diet) return setResponse(404, 'Diet not found.', {});
 
+  // TODO: a cambiar cuando se tengan nuevas combinaciones
   if (
     BASIC_MEALS.some(function(mealName) {
       return !(mealName in reqBody && reqBody[mealName]);
@@ -34,7 +36,7 @@ const setMeals = async (reqBody, reqUser) => {
     'Aceite de oliva extra virgen',
   ].map(async function(name) {
     const aliment = await Aliment.findOne({ name });
-    const data = { ...aliment.toObject(), aliment: aliment.id };
+    const data = { ...aliment.toObject(), aliment: aliment.id }; // TODO: refactor para retirar aliment
     return data;
   });
   tmpAliments = await Promise.all(tmpAliments);
@@ -43,6 +45,7 @@ const setMeals = async (reqBody, reqUser) => {
   const dinner = { name: MEAL_NAME.dinner, aliments: tmpAliments };
 
   tmpAliments = ['Pechuga de pollo sin piel', 'Pan de molde', 'Linaza'].map(
+    // TODO: Cambiar para q grasas tenga sentido
     async function(name) {
       const aliment = await Aliment.findOne({ name });
       const data = { ...aliment.toObject(), aliment: aliment.id };

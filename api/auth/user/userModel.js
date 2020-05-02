@@ -89,6 +89,8 @@ const userSchema = new Schema(
         expires: { type: Date },
       },
     },
+
+    // ! añadir id de la dieta actual
   },
   {
     timestamps: true,

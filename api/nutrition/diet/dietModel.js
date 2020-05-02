@@ -76,6 +76,7 @@ const dietSchema = new mongoose.Schema(
         ],
       },
     ],
+    // ! indicadores_medicos => Que parametros se usan para generan los macros
   },
   {
     timestamps: true,
