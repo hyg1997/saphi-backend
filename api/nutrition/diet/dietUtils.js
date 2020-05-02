@@ -96,6 +96,9 @@ const adjustOneAliment = (aliments, macroContent) => {
 };
 
 const adjustMeal = (meal, contentRef, macroContent) => {
+  // ? meal => Comidas
+  // ? contentRef => Objetivo de macros
+  // ? macroContent => Total de macros
   //* Calculate quantities on aliments meal
   //* based on getting close to contentRef
   const newMeal = { ...meal };
@@ -142,6 +145,7 @@ const adjustMeal = (meal, contentRef, macroContent) => {
   return { newRestMacroContent, newMeal };
 };
 
+// TODO: A cambiar con nuevas combinaciones
 const mealReference = [
   {
     mealName: MEAL_NAME.breakfast,
@@ -205,7 +209,7 @@ const calcFormatDiet = diet => {
     const meal = diet.meals.find(item => item.name === mealName);
 
     if (meal) {
-      let reference = { ...restMacroContent };
+      let reference = { ...restMacroContent }; // ? Los macronutrientes
 
       if ('func' in content) {
         Object.keys(reference).forEach(key => {
