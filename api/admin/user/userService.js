@@ -2,15 +2,15 @@
 /* eslint-disable no-param-reassign */
 const config = require('config');
 
-const { User } = require('../userModel');
+const { User } = require('../../auth/user/userModel');
 const {
   DeliveryOrder,
-} = require('../../../nutrition/deliveryOrder/deliveryOrderModel');
+} = require('../../nutrition/deliveryOrder/deliveryOrderModel');
 const {
   CulqiPayment,
-} = require('../../../payment/culqiPayment/culqiPaymentModel');
+} = require('../../payment/culqiPayment/culqiPaymentModel');
 
-const { setResponse, renderTemplate, sendEmail } = require('../../../utils');
+const { setResponse, renderTemplate, sendEmail } = require('../../utils');
 
 const generateQueryUsers = reqBody => {
   const allFields = ['name', 'lastName', 'email', 'companyName', 'id'];

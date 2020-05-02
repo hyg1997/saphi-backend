@@ -1,7 +1,7 @@
 const { Joi } = require('celebrate');
 const {
   documentPayload,
-} = require('../authentication/authenticationValidator');
+} = require('../../auth/authentication/authenticationValidator');
 
 const companyUser = {
   ...documentPayload,

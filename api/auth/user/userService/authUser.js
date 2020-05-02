@@ -1,5 +1,5 @@
 const { User } = require('../userModel');
-const { Company } = require('../../company/companyModel');
+const { Company } = require('../../../business/company/companyModel');
 const { setResponse } = require('../../../utils');
 
 const listUser = async reqQuery => {

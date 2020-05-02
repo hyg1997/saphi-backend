@@ -2,7 +2,7 @@ const path = require('path');
 
 const nutritionRouter = require('../api/nutrition/nutritionRouter');
 const paymentRouter = require('../api/payment/PaymentRouter');
-const companyRouter = require('../api/auth/company/companyRouter');
+const adminRouter = require('../api/admin/adminRouter');
 const authRouter = require('../api/auth/authRouter');
 
 module.exports = app => {
@@ -15,6 +15,6 @@ module.exports = app => {
 
   app.use('/', authRouter);
   app.use('/payment', paymentRouter);
-  app.use('/company', companyRouter);
   app.use('/', nutritionRouter);
+  app.use('/', adminRouter);
 };

@@ -8,12 +8,6 @@ const {
 const { onboarding, validateOnboarding } = require('./onboarding');
 const { updateUser, validateUpdateUser, listPayments } = require('./profile');
 const { forgotPassword, checkCode, resetPassword } = require('./password');
-const {
-  generateQueryUsers,
-  listAdminUsers,
-  getAdminUser,
-  setMacrosOnUser,
-} = require('./admin');
 
 module.exports = {
   listUser,
@@ -30,10 +24,5 @@ module.exports = {
   updateUser,
   validateUpdateUser,
   listPayments,
-  // Admin
-  generateQueryUsers,
-  listAdminUsers,
-  getAdminUser,
-  setMacrosOnUser,
   ...require('./contactForm'),
 };

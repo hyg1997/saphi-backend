@@ -5,7 +5,11 @@ const Controller = require('./pathologyController');
 
 const { authenticateMiddleware } = require('../../middleware/auth');
 
-router.get('/:id', authenticateMiddleware('jwt'), Controller.getPathology);
+router.get(
+  '/:id([a-fA-F0-9]{24})',
+  authenticateMiddleware('jwt'),
+  Controller.getPathology,
+);
 router.post('/', authenticateMiddleware('jwt'), Controller.createPathology);
 router.get('/', authenticateMiddleware('jwt'), Controller.listPathology);
 

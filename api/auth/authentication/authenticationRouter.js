@@ -4,7 +4,7 @@ const { celebrate } = require('celebrate');
 const { authenticateMiddleware } = require('../../middleware/auth');
 const Validator = require('./authenticationValidator');
 
-const CompanyController = require('../company/companyController');
+const CompanyController = require('../../business/company/companyController');
 
 const router = express.Router();
 

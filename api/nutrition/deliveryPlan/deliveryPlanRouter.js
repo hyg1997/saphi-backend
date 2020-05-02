@@ -5,7 +5,7 @@ const Controller = require('./deliveryPlanController');
 
 // ! Considerar incluir validadores para servicios
 
-router.get('/:id', Controller.getDeliveryPlan);
+router.get('/:id([a-fA-F0-9]{24})', Controller.getDeliveryPlan);
 router.get('/', Controller.listDeliveryPlan);
 router.post('/', Controller.createDeliveryPlan);
 

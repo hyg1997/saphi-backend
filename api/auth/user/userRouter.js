@@ -7,8 +7,6 @@ const Validator = require('./userValidator');
 
 const { authenticateMiddleware } = require('../../middleware/auth');
 
-const utils = require('../../utils');
-
 router.post(
   '/onboarding',
   authenticateMiddleware('jwt'),
@@ -43,21 +41,6 @@ router.post(
   celebrate(Validator.UpdateUser),
   Controller.updateUser,
 );
-
 router.get('/payments', authenticateMiddleware('jwt'), Controller.listPayments);
-
-// Admin
-router.post(
-  '/:id/updatemacros',
-  authenticateMiddleware('jwt'),
-  Controller.setMacrosOnUser,
-);
-router.get('/:id', authenticateMiddleware('jwt'), Controller.getAdminUser);
-router.post(
-  '/',
-  authenticateMiddleware('jwt'),
-  celebrate(utils.joi.Pagination),
-  Controller.listAdminUsers,
-);
 
 module.exports = router;

@@ -7,7 +7,7 @@ const Validator = require('./dishRecipeValidator');
 
 // ! Considerar incluir validadores para servicios
 
-router.get('/:id', Controller.getDishRecipe);
+router.get('/:id([a-fA-F0-9]{24})', Controller.getDishRecipe);
 router.get('/', celebrate(Validator.List), Controller.listDishRecipe);
 router.post('/', Controller.createDishRecipe);
 

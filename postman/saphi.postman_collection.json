@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "fa828b79-883f-42ff-a33f-bffd3f8c9ab7",
+		"_postman_id": "81185b14-6f54-45ef-b8a0-2106151b9e10",
 		"name": "saphi",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -278,65 +278,6 @@
 										},
 										{
 											"key": "Content-Length",
-											"value": "157"
-										},
-										{
-											"key": "ETag",
-											"value": "W/\"9d-Jk7UfeK62x6bHZnzSICAO/xhbU8\""
-										},
-										{
-											"key": "Date",
-											"value": "Mon, 30 Mar 2020 01:23:25 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"data\": [\n        \"Leche\",\n        \"Palta\",\n        \"Aceite de oliva extra virgen\",\n        \"Almendras\",\n        \"Linaza\"\n    ],\n    \"status\": 200,\n    \"message\": \"Categories Found.\",\n    \"clientMessage\": \"Categories Found.\"\n}"
-								},
-								{
-									"name": "list Categories",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{url}}/aliments/category/?type=grasa",
-											"host": [
-												"{{url}}"
-											],
-											"path": [
-												"aliments",
-												"category",
-												""
-											],
-											"query": [
-												{
-													"key": "type",
-													"value": "grasa"
-												}
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "X-Powered-By",
-											"value": "Express"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "Content-Length",
 											"value": "174"
 										},
 										{
@@ -406,6 +347,65 @@
 									],
 									"cookie": [],
 									"body": "{\n    \"data\": [\n        {\n            \"macroContent\": {\n                \"protein\": 2.309,\n                \"carbohydrate\": 0,\n                \"fat\": 0.124\n            },\n            \"_id\": \"5e7324607efd103a1a5a47f2\",\n            \"name\": \"Pechuga de pollo sin piel \",\n            \"minQuantity\": 10,\n            \"type\": \"proteína\",\n            \"units\": \"gr\",\n            \"meals\": [\n                {\n                    \"_id\": \"5e7324607efd103a1a5a47f3\",\n                    \"name\": \"desayuno\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a47f4\",\n                    \"name\": \"media mañana\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a47f5\",\n                    \"name\": \"almuerzo\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a47f6\",\n                    \"name\": \"media tarde\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a47f7\",\n                    \"name\": \"cena\",\n                    \"active\": true\n                }\n            ],\n            \"__v\": 0\n        },\n        {\n            \"macroContent\": {\n                \"protein\": 1.707,\n                \"carbohydrate\": 0.421,\n                \"fat\": 0.166\n            },\n            \"_id\": \"5e7324607efd103a1a5a47f8\",\n            \"name\": \"Pechuga de pavo\",\n            \"minQuantity\": 10,\n            \"type\": \"proteína\",\n            \"units\": \"gr\",\n            \"meals\": [\n                {\n                    \"_id\": \"5e7324607efd103a1a5a47f9\",\n                    \"name\": \"desayuno\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a47fa\",\n                    \"name\": \"media mañana\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a47fb\",\n                    \"name\": \"almuerzo\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a47fc\",\n                    \"name\": \"media tarde\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a47fd\",\n                    \"name\": \"cena\",\n                    \"active\": true\n                }\n            ],\n            \"__v\": 0\n        },\n        {\n            \"macroContent\": {\n                \"protein\": 2,\n                \"carbohydrate\": 0,\n                \"fat\": 0.5\n            },\n            \"_id\": \"5e7324607efd103a1a5a47fe\",\n            \"name\": \"Carne molida de Res (95/5) \",\n            \"minQuantity\": 10,\n            \"type\": \"proteína\",\n            \"units\": \"gr\",\n            \"meals\": [\n                {\n                    \"_id\": \"5e7324607efd103a1a5a47ff\",\n                    \"name\": \"desayuno\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4800\",\n                    \"name\": \"media mañana\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4801\",\n                    \"name\": \"almuerzo\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4802\",\n                    \"name\": \"media tarde\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4803\",\n                    \"name\": \"cena\",\n                    \"active\": true\n                }\n            ],\n            \"__v\": 0\n        },\n        {\n            \"macroContent\": {\n                \"protein\": 2,\n                \"carbohydrate\": 0,\n                \"fat\": 0.5\n            },\n            \"_id\": \"5e7324607efd103a1a5a4804\",\n            \"name\": \"Bistec\",\n            \"minQuantity\": 10,\n            \"type\": \"proteína\",\n            \"units\": \"gr\",\n            \"meals\": [\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4805\",\n                    \"name\": \"desayuno\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4806\",\n                    \"name\": \"media mañana\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4807\",\n                    \"name\": \"almuerzo\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4808\",\n                    \"name\": \"media tarde\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4809\",\n                    \"name\": \"cena\",\n                    \"active\": true\n                }\n            ],\n            \"__v\": 0\n        },\n        {\n            \"macroContent\": {\n                \"protein\": 2,\n                \"carbohydrate\": 0,\n                \"fat\": 0.5\n            },\n            \"_id\": \"5e7324607efd103a1a5a480a\",\n            \"name\": \"Lomo fino\",\n            \"minQuantity\": 10,\n            \"type\": \"proteína\",\n            \"units\": \"gr\",\n            \"meals\": [\n                {\n                    \"_id\": \"5e7324607efd103a1a5a480b\",\n                    \"name\": \"desayuno\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a480c\",\n                    \"name\": \"media mañana\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a480d\",\n                    \"name\": \"almuerzo\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a480e\",\n                    \"name\": \"media tarde\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a480f\",\n                    \"name\": \"cena\",\n                    \"active\": true\n                }\n            ],\n            \"__v\": 0\n        },\n        {\n            \"macroContent\": {\n                \"protein\": 2.165,\n                \"carbohydrate\": 0,\n                \"fat\": 0.707\n            },\n            \"_id\": \"5e7324607efd103a1a5a4810\",\n            \"name\": \"Colita de cuadril\",\n            \"minQuantity\": 10,\n            \"type\": \"proteína\",\n            \"units\": \"gr\",\n            \"meals\": [\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4811\",\n                    \"name\": \"desayuno\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4812\",\n                    \"name\": \"media mañana\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4813\",\n                    \"name\": \"almuerzo\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4814\",\n                    \"name\": \"media tarde\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4815\",\n                    \"name\": \"cena\",\n                    \"active\": true\n                }\n            ],\n            \"__v\": 0\n        },\n        {\n            \"macroContent\": {\n                \"protein\": 1.905,\n                \"carbohydrate\": 0,\n                \"fat\": 0.596\n            },\n            \"_id\": \"5e7324607efd103a1a5a4816\",\n            \"name\": \"Trucha\",\n            \"minQuantity\": 10,\n            \"type\": \"proteína\",\n            \"units\": \"gr\",\n            \"meals\": [\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4817\",\n                    \"name\": \"desayuno\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4818\",\n                    \"name\": \"media mañana\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4819\",\n                    \"name\": \"almuerzo\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a481a\",\n                    \"name\": \"media tarde\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a481b\",\n                    \"name\": \"cena\",\n                    \"active\": true\n                }\n            ],\n            \"__v\": 0\n        },\n        {\n            \"macroContent\": {\n                \"protein\": 2.216,\n                \"carbohydrate\": 0,\n                \"fat\": 0.582\n            },\n            \"_id\": \"5e7324607efd103a1a5a481c\",\n            \"name\": \"Corvina\",\n            \"minQuantity\": 10,\n            \"type\": \"proteína\",\n            \"units\": \"gr\",\n            \"meals\": [\n                {\n                    \"_id\": \"5e7324607efd103a1a5a481d\",\n                    \"name\": \"desayuno\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a481e\",\n                    \"name\": \"media mañana\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a481f\",\n                    \"name\": \"almuerzo\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4820\",\n                    \"name\": \"media tarde\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4821\",\n                    \"name\": \"cena\",\n                    \"active\": true\n                }\n            ],\n            \"__v\": 0\n        },\n        {\n            \"macroContent\": {\n                \"protein\": 2.1,\n                \"carbohydrate\": 0,\n                \"fat\": 0.43\n            },\n            \"_id\": \"5e7324607efd103a1a5a4822\",\n            \"name\": \"Cojinova\",\n            \"minQuantity\": 10,\n            \"type\": \"proteína\",\n            \"units\": \"gr\",\n            \"meals\": [\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4823\",\n                    \"name\": \"desayuno\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4824\",\n                    \"name\": \"media mañana\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4825\",\n                    \"name\": \"almuerzo\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4826\",\n                    \"name\": \"media tarde\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4827\",\n                    \"name\": \"cena\",\n                    \"active\": true\n                }\n            ],\n            \"__v\": 0\n        },\n        {\n            \"macroContent\": {\n                \"protein\": 2.008,\n                \"carbohydrate\": 0,\n                \"fat\": 0.17\n            },\n            \"_id\": \"5e7324607efd103a1a5a4828\",\n            \"name\": \"Tilapia\",\n            \"minQuantity\": 10,\n            \"type\": \"proteína\",\n            \"units\": \"gr\",\n            \"meals\": [\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4829\",\n                    \"name\": \"desayuno\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a482a\",\n                    \"name\": \"media mañana\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a482b\",\n                    \"name\": \"almuerzo\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a482c\",\n                    \"name\": \"media tarde\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a482d\",\n                    \"name\": \"cena\",\n                    \"active\": true\n                }\n            ],\n            \"__v\": 0\n        },\n        {\n            \"macroContent\": {\n                \"protein\": 1.884,\n                \"carbohydrate\": 0,\n                \"fat\": 0.119\n            },\n            \"_id\": \"5e7324607efd103a1a5a482e\",\n            \"name\": \"Lenguado\",\n            \"minQuantity\": 10,\n            \"type\": \"proteína\",\n            \"units\": \"gr\",\n            \"meals\": [\n                {\n                    \"_id\": \"5e7324607efd103a1a5a482f\",\n                    \"name\": \"desayuno\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4830\",\n                    \"name\": \"media mañana\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4831\",\n                    \"name\": \"almuerzo\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4832\",\n                    \"name\": \"media tarde\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4833\",\n                    \"name\": \"cena\",\n                    \"active\": true\n                }\n            ],\n            \"__v\": 0\n        },\n        {\n            \"macroContent\": {\n                \"protein\": 2.387,\n                \"carbohydrate\": 0,\n                \"fat\": 0.462\n            },\n            \"_id\": \"5e7324607efd103a1a5a4834\",\n            \"name\": \"Atún fresco\",\n            \"minQuantity\": 10,\n            \"type\": \"proteína\",\n            \"units\": \"gr\",\n            \"meals\": [\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4835\",\n                    \"name\": \"desayuno\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4836\",\n                    \"name\": \"media mañana\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4837\",\n                    \"name\": \"almuerzo\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4838\",\n                    \"name\": \"media tarde\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4839\",\n                    \"name\": \"cena\",\n                    \"active\": true\n                }\n            ],\n            \"__v\": 0\n        },\n        {\n            \"macroContent\": {\n                \"protein\": 2.551,\n                \"carbohydrate\": 0,\n                \"fat\": 0.082\n            },\n            \"_id\": \"5e7324607efd103a1a5a483a\",\n            \"name\": \"Atún en lata\",\n            \"minQuantity\": 10,\n            \"type\": \"proteína\",\n            \"units\": \"gr\",\n            \"meals\": [\n                {\n                    \"_id\": \"5e7324607efd103a1a5a483b\",\n                    \"name\": \"desayuno\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a483c\",\n                    \"name\": \"media mañana\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a483d\",\n                    \"name\": \"almuerzo\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a483e\",\n                    \"name\": \"media tarde\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a483f\",\n                    \"name\": \"cena\",\n                    \"active\": true\n                }\n            ],\n            \"__v\": 0\n        },\n        {\n            \"macroContent\": {\n                \"protein\": 3.025,\n                \"carbohydrate\": 0,\n                \"fat\": 0.838\n            },\n            \"_id\": \"5e7324607efd103a1a5a4840\",\n            \"name\": \"Conejo\",\n            \"minQuantity\": 10,\n            \"type\": \"proteína\",\n            \"units\": \"gr\",\n            \"meals\": [\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4841\",\n                    \"name\": \"desayuno\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4842\",\n                    \"name\": \"media mañana\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4843\",\n                    \"name\": \"almuerzo\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4844\",\n                    \"name\": \"media tarde\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4845\",\n                    \"name\": \"cena\",\n                    \"active\": true\n                }\n            ],\n            \"__v\": 0\n        },\n        {\n            \"macroContent\": {\n                \"protein\": 2.433,\n                \"carbohydrate\": 0,\n                \"fat\": 0.402\n            },\n            \"_id\": \"5e7324607efd103a1a5a4846\",\n            \"name\": \"Bonito\",\n            \"minQuantity\": 10,\n            \"type\": \"proteína\",\n            \"units\": \"gr\",\n            \"meals\": [\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4847\",\n                    \"name\": \"desayuno\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4848\",\n                    \"name\": \"media mañana\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4849\",\n                    \"name\": \"almuerzo\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a484a\",\n                    \"name\": \"media tarde\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a484b\",\n                    \"name\": \"cena\",\n                    \"active\": true\n                }\n            ],\n            \"__v\": 0\n        },\n        {\n            \"macroContent\": {\n                \"protein\": 6,\n                \"carbohydrate\": 0.38,\n                \"fat\": 5\n            },\n            \"_id\": \"5e7324607efd103a1a5a484c\",\n            \"name\": \"Huevo entero\",\n            \"minQuantity\": 1,\n            \"type\": \"proteína\",\n            \"units\": \"und\",\n            \"meals\": [\n                {\n                    \"_id\": \"5e7324607efd103a1a5a484d\",\n                    \"name\": \"desayuno\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a484e\",\n                    \"name\": \"media mañana\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a484f\",\n                    \"name\": \"almuerzo\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4850\",\n                    \"name\": \"media tarde\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4851\",\n                    \"name\": \"cena\",\n                    \"active\": true\n                }\n            ],\n            \"__v\": 0\n        },\n        {\n            \"macroContent\": {\n                \"protein\": 3.5,\n                \"carbohydrate\": 0.24,\n                \"fat\": 0.06\n            },\n            \"_id\": \"5e7324607efd103a1a5a4852\",\n            \"name\": \"Clara de huevo\",\n            \"minQuantity\": 1,\n            \"type\": \"proteína\",\n            \"units\": \"und\",\n            \"meals\": [\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4853\",\n                    \"name\": \"desayuno\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4854\",\n                    \"name\": \"media mañana\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4855\",\n                    \"name\": \"almuerzo\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4856\",\n                    \"name\": \"media tarde\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4857\",\n                    \"name\": \"cena\",\n                    \"active\": false\n                }\n            ],\n            \"__v\": 0\n        },\n        {\n            \"macroContent\": {\n                \"protein\": 1.1,\n                \"carbohydrate\": 0.27,\n                \"fat\": 0\n            },\n            \"_id\": \"5e7324607efd103a1a5a4858\",\n            \"name\": \"Yogur Skyr\",\n            \"minQuantity\": 10,\n            \"type\": \"proteína\",\n            \"units\": \"gr\",\n            \"meals\": [\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4859\",\n                    \"name\": \"desayuno\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a485a\",\n                    \"name\": \"media mañana\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a485b\",\n                    \"name\": \"almuerzo\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a485c\",\n                    \"name\": \"media tarde\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a485d\",\n                    \"name\": \"cena\",\n                    \"active\": false\n                }\n            ],\n            \"__v\": 0\n        },\n        {\n            \"macroContent\": {\n                \"protein\": 1.25,\n                \"carbohydrate\": 6.75,\n                \"fat\": 0.75\n            },\n            \"_id\": \"5e7324607efd103a1a5a485e\",\n            \"name\": \"Avena de grano entero\",\n            \"minQuantity\": 10,\n            \"type\": \"proteína\",\n            \"units\": \"gr\",\n            \"meals\": [\n                {\n                    \"_id\": \"5e7324607efd103a1a5a485f\",\n                    \"name\": \"desayuno\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4860\",\n                    \"name\": \"media mañana\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4861\",\n                    \"name\": \"almuerzo\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4862\",\n                    \"name\": \"media tarde\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4863\",\n                    \"name\": \"cena\",\n                    \"active\": false\n                }\n            ],\n            \"__v\": 0\n        },\n        {\n            \"macroContent\": {\n                \"protein\": 0.216,\n                \"carbohydrate\": 2,\n                \"fat\": 0.011\n            },\n            \"_id\": \"5e7324607efd103a1a5a4864\",\n            \"name\": \"Papa \",\n            \"minQuantity\": 10,\n            \"type\": \"carbohidrato\",\n            \"units\": \"gr\",\n            \"meals\": [\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4865\",\n                    \"name\": \"desayuno\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4866\",\n                    \"name\": \"media mañana\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4867\",\n                    \"name\": \"almuerzo\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4868\",\n                    \"name\": \"media tarde\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4869\",\n                    \"name\": \"cena\",\n                    \"active\": true\n                }\n            ],\n            \"__v\": 0\n        },\n        {\n            \"macroContent\": {\n                \"protein\": 0.664,\n                \"carbohydrate\": 1.958,\n                \"fat\": 0.083\n            },\n            \"_id\": \"5e7324607efd103a1a5a486a\",\n            \"name\": \"Pallares \",\n            \"minQuantity\": 10,\n            \"type\": \"carbohidrato\",\n            \"units\": \"gr\",\n            \"meals\": [\n                {\n                    \"_id\": \"5e7324607efd103a1a5a486b\",\n                    \"name\": \"desayuno\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a486c\",\n                    \"name\": \"media mañana\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a486d\",\n                    \"name\": \"almuerzo\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a486e\",\n                    \"name\": \"media tarde\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a486f\",\n                    \"name\": \"cena\",\n                    \"active\": true\n                }\n            ],\n            \"__v\": 0\n        },\n        {\n            \"macroContent\": {\n                \"protein\": 0.194,\n                \"carbohydrate\": 2,\n                \"fat\": 0.03\n            },\n            \"_id\": \"5e7324607efd103a1a5a4870\",\n            \"name\": \"Camote \",\n            \"minQuantity\": 10,\n            \"type\": \"carbohidrato\",\n            \"units\": \"gr\",\n            \"meals\": [\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4871\",\n                    \"name\": \"desayuno\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4872\",\n                    \"name\": \"media mañana\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4873\",\n                    \"name\": \"almuerzo\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4874\",\n                    \"name\": \"media tarde\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4875\",\n                    \"name\": \"cena\",\n                    \"active\": true\n                }\n            ],\n            \"__v\": 0\n        },\n        {\n            \"macroContent\": {\n                \"protein\": 0.9,\n                \"carbohydrate\": 2,\n                \"fat\": 0.04\n            },\n            \"_id\": \"5e7324607efd103a1a5a4876\",\n            \"name\": \"Lentejas \",\n            \"minQuantity\": 10,\n            \"type\": \"carbohidrato\",\n            \"units\": \"gr\",\n            \"meals\": [\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4877\",\n                    \"name\": \"desayuno\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4878\",\n                    \"name\": \"media mañana\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4879\",\n                    \"name\": \"almuerzo\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a487a\",\n                    \"name\": \"media tarde\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a487b\",\n                    \"name\": \"cena\",\n                    \"active\": true\n                }\n            ],\n            \"__v\": 0\n        },\n        {\n            \"macroContent\": {\n                \"protein\": 0.973,\n                \"carbohydrate\": 2.509,\n                \"fat\": 0.035\n            },\n            \"_id\": \"5e7324607efd103a1a5a487c\",\n            \"name\": \"Frejoles blancos\",\n            \"minQuantity\": 10,\n            \"type\": \"carbohidrato\",\n            \"units\": \"gr\",\n            \"meals\": [\n                {\n                    \"_id\": \"5e7324607efd103a1a5a487d\",\n                    \"name\": \"desayuno\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a487e\",\n                    \"name\": \"media mañana\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a487f\",\n                    \"name\": \"almuerzo\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4880\",\n                    \"name\": \"media tarde\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4881\",\n                    \"name\": \"cena\",\n                    \"active\": true\n                }\n            ],\n            \"__v\": 0\n        },\n        {\n            \"macroContent\": {\n                \"protein\": 0.266,\n                \"carbohydrate\": 3,\n                \"fat\": 0.028\n            },\n            \"_id\": \"5e7324607efd103a1a5a4882\",\n            \"name\": \"Arroz blanco\",\n            \"minQuantity\": 10,\n            \"type\": \"carbohidrato\",\n            \"units\": \"gr\",\n            \"meals\": [\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4883\",\n                    \"name\": \"desayuno\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4884\",\n                    \"name\": \"media mañana\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4885\",\n                    \"name\": \"almuerzo\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4886\",\n                    \"name\": \"media tarde\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4887\",\n                    \"name\": \"cena\",\n                    \"active\": true\n                }\n            ],\n            \"__v\": 0\n        },\n        {\n            \"macroContent\": {\n                \"protein\": 0.451,\n                \"carbohydrate\": 3,\n                \"fat\": 0.206\n            },\n            \"_id\": \"5e7324607efd103a1a5a4888\",\n            \"name\": \"Fideos\",\n            \"minQuantity\": 10,\n            \"type\": \"carbohidrato\",\n            \"units\": \"gr\",\n            \"meals\": [\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4889\",\n                    \"name\": \"desayuno\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a488a\",\n                    \"name\": \"media mañana\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a488b\",\n                    \"name\": \"almuerzo\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a488c\",\n                    \"name\": \"media tarde\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a488d\",\n                    \"name\": \"cena\",\n                    \"active\": true\n                }\n            ],\n            \"__v\": 0\n        },\n        {\n            \"macroContent\": {\n                \"protein\": 0.501,\n                \"carbohydrate\": 3,\n                \"fat\": 0.222\n            },\n            \"_id\": \"5e7324607efd103a1a5a488e\",\n            \"name\": \"Quinoa\",\n            \"minQuantity\": 10,\n            \"type\": \"carbohidrato\",\n            \"units\": \"gr\",\n            \"meals\": [\n                {\n                    \"_id\": \"5e7324607efd103a1a5a488f\",\n                    \"name\": \"desayuno\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4890\",\n                    \"name\": \"media mañana\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4891\",\n                    \"name\": \"almuerzo\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4892\",\n                    \"name\": \"media tarde\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4893\",\n                    \"name\": \"cena\",\n                    \"active\": true\n                }\n            ],\n            \"__v\": 0\n        },\n        {\n            \"macroContent\": {\n                \"protein\": 0.886,\n                \"carbohydrate\": 3,\n                \"fat\": 0.259\n            },\n            \"_id\": \"5e7324607efd103a1a5a4894\",\n            \"name\": \"Garbanzos \",\n            \"minQuantity\": 10,\n            \"type\": \"carbohidrato\",\n            \"units\": \"gr\",\n            \"meals\": [\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4895\",\n                    \"name\": \"desayuno\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4896\",\n                    \"name\": \"media mañana\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4897\",\n                    \"name\": \"almuerzo\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4898\",\n                    \"name\": \"media tarde\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4899\",\n                    \"name\": \"cena\",\n                    \"active\": true\n                }\n            ],\n            \"__v\": 0\n        },\n        {\n            \"macroContent\": {\n                \"protein\": 2.2,\n                \"carbohydrate\": 13,\n                \"fat\": 0.5\n            },\n            \"_id\": \"5e7324607efd103a1a5a489a\",\n            \"name\": \"Pan de molde\",\n            \"minQuantity\": 1,\n            \"type\": \"carbohidrato\",\n            \"units\": \"rebanada\",\n            \"meals\": [\n                {\n                    \"_id\": \"5e7324607efd103a1a5a489b\",\n                    \"name\": \"desayuno\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a489c\",\n                    \"name\": \"media mañana\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a489d\",\n                    \"name\": \"almuerzo\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a489e\",\n                    \"name\": \"media tarde\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a489f\",\n                    \"name\": \"cena\",\n                    \"active\": true\n                }\n            ],\n            \"__v\": 0\n        },\n        {\n            \"macroContent\": {\n                \"protein\": 0.327,\n                \"carbohydrate\": 2.206,\n                \"fat\": 0.123\n            },\n            \"_id\": \"5e7324607efd103a1a5a48a0\",\n            \"name\": \"Choclo desgranado\",\n            \"minQuantity\": 10,\n            \"type\": \"carbohidrato\",\n            \"units\": \"gr\",\n            \"meals\": [\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48a1\",\n                    \"name\": \"desayuno\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48a2\",\n                    \"name\": \"media mañana\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48a3\",\n                    \"name\": \"almuerzo\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48a4\",\n                    \"name\": \"media tarde\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48a5\",\n                    \"name\": \"cena\",\n                    \"active\": true\n                }\n            ],\n            \"__v\": 0\n        },\n        {\n            \"macroContent\": {\n                \"protein\": 0.337,\n                \"carbohydrate\": 1.087,\n                \"fat\": 0.229\n            },\n            \"_id\": \"5e7324607efd103a1a5a48a6\",\n            \"name\": \"Corazón de alcachofa\",\n            \"minQuantity\": 10,\n            \"type\": \"carbohidrato\",\n            \"units\": \"gr\",\n            \"meals\": [\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48a7\",\n                    \"name\": \"desayuno\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48a8\",\n                    \"name\": \"media mañana\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48a9\",\n                    \"name\": \"almuerzo\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48aa\",\n                    \"name\": \"media tarde\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48ab\",\n                    \"name\": \"cena\",\n                    \"active\": true\n                }\n            ],\n            \"__v\": 0\n        },\n        {\n            \"macroContent\": {\n                \"protein\": 0.3,\n                \"carbohydrate\": 2.2,\n                \"fat\": 0.03\n            },\n            \"_id\": \"5e7324607efd103a1a5a48ac\",\n            \"name\": \"Arroz integral\",\n            \"minQuantity\": 10,\n            \"type\": \"carbohidrato\",\n            \"units\": \"gr\",\n            \"meals\": [\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48ad\",\n                    \"name\": \"desayuno\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48ae\",\n                    \"name\": \"media mañana\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48af\",\n                    \"name\": \"almuerzo\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48b0\",\n                    \"name\": \"media tarde\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48b1\",\n                    \"name\": \"cena\",\n                    \"active\": true\n                }\n            ],\n            \"__v\": 0\n        },\n        {\n            \"macroContent\": {\n                \"protein\": 0.067,\n                \"carbohydrate\": 0.768,\n                \"fat\": 0.03\n            },\n            \"_id\": \"5e7324607efd103a1a5a48b2\",\n            \"name\": \"Fresas\",\n            \"minQuantity\": 10,\n            \"type\": \"carbohidrato\",\n            \"units\": \"gr\",\n            \"meals\": [\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48b3\",\n                    \"name\": \"desayuno\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48b4\",\n                    \"name\": \"media mañana\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48b5\",\n                    \"name\": \"almuerzo\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48b6\",\n                    \"name\": \"media tarde\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48b7\",\n                    \"name\": \"cena\",\n                    \"active\": false\n                }\n            ],\n            \"__v\": 0\n        },\n        {\n            \"macroContent\": {\n                \"protein\": 0.074,\n                \"carbohydrate\": 1.449,\n                \"fat\": 0.033\n            },\n            \"_id\": \"5e7324607efd103a1a5a48b8\",\n            \"name\": \"Blueberries\",\n            \"minQuantity\": 10,\n            \"type\": \"carbohidrato\",\n            \"units\": \"gr\",\n            \"meals\": [\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48b9\",\n                    \"name\": \"desayuno\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48ba\",\n                    \"name\": \"media mañana\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48bb\",\n                    \"name\": \"almuerzo\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48bc\",\n                    \"name\": \"media tarde\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48bd\",\n                    \"name\": \"cena\",\n                    \"active\": false\n                }\n            ],\n            \"__v\": 0\n        },\n        {\n            \"macroContent\": {\n                \"protein\": 0.139,\n                \"carbohydrate\": 0.961,\n                \"fat\": 0.049\n            },\n            \"_id\": \"5e7324607efd103a1a5a48be\",\n            \"name\": \"Zarzamoras\",\n            \"minQuantity\": 10,\n            \"type\": \"carbohidrato\",\n            \"units\": \"gr\",\n            \"meals\": [\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48bf\",\n                    \"name\": \"desayuno\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48c0\",\n                    \"name\": \"media mañana\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48c1\",\n                    \"name\": \"almuerzo\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48c2\",\n                    \"name\": \"media tarde\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48c3\",\n                    \"name\": \"cena\",\n                    \"active\": false\n                }\n            ],\n            \"__v\": 0\n        },\n        {\n            \"macroContent\": {\n                \"protein\": 0.061,\n                \"carbohydrate\": 0.755,\n                \"fat\": 0.015\n            },\n            \"_id\": \"5e7324607efd103a1a5a48c4\",\n            \"name\": \"Sandia\",\n            \"minQuantity\": 10,\n            \"type\": \"carbohidrato\",\n            \"units\": \"gr\",\n            \"meals\": [\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48c5\",\n                    \"name\": \"desayuno\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48c6\",\n                    \"name\": \"media mañana\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48c7\",\n                    \"name\": \"almuerzo\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48c8\",\n                    \"name\": \"media tarde\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48c9\",\n                    \"name\": \"cena\",\n                    \"active\": false\n                }\n            ],\n            \"__v\": 0\n        },\n        {\n            \"macroContent\": {\n                \"protein\": 0.084,\n                \"carbohydrate\": 0.816,\n                \"fat\": 0.019\n            },\n            \"_id\": \"5e7324607efd103a1a5a48ca\",\n            \"name\": \"Melón\",\n            \"minQuantity\": 10,\n            \"type\": \"carbohidrato\",\n            \"units\": \"gr\",\n            \"meals\": [\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48cb\",\n                    \"name\": \"desayuno\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48cc\",\n                    \"name\": \"media mañana\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48cd\",\n                    \"name\": \"almuerzo\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48ce\",\n                    \"name\": \"media tarde\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48cf\",\n                    \"name\": \"cena\",\n                    \"active\": false\n                }\n            ],\n            \"__v\": 0\n        },\n        {\n            \"macroContent\": {\n                \"protein\": 0.4,\n                \"carbohydrate\": 4.21,\n                \"fat\": 0.13\n            },\n            \"_id\": \"5e7324607efd103a1a5a48d0\",\n            \"name\": \"Granadilla\",\n            \"minQuantity\": 1,\n            \"type\": \"carbohidrato\",\n            \"units\": \"und\",\n            \"meals\": [\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48d1\",\n                    \"name\": \"desayuno\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48d2\",\n                    \"name\": \"media mañana\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48d3\",\n                    \"name\": \"almuerzo\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48d4\",\n                    \"name\": \"media tarde\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48d5\",\n                    \"name\": \"cena\",\n                    \"active\": false\n                }\n            ],\n            \"__v\": 0\n        },\n        {\n            \"macroContent\": {\n                \"protein\": 0.38,\n                \"carbohydrate\": 15.46,\n                \"fat\": 0.12\n            },\n            \"_id\": \"5e7324607efd103a1a5a48d6\",\n            \"name\": \"Pera\",\n            \"minQuantity\": 1,\n            \"type\": \"carbohidrato\",\n            \"units\": \"und\",\n            \"meals\": [\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48d7\",\n                    \"name\": \"desayuno\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48d8\",\n                    \"name\": \"media mañana\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48d9\",\n                    \"name\": \"almuerzo\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48da\",\n                    \"name\": \"media tarde\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48db\",\n                    \"name\": \"cena\",\n                    \"active\": false\n                }\n            ],\n            \"__v\": 0\n        },\n        {\n            \"macroContent\": {\n                \"protein\": 0.24,\n                \"carbohydrate\": 14.48,\n                \"fat\": 0.25\n            },\n            \"_id\": \"5e7324607efd103a1a5a48dc\",\n            \"name\": \"Manzana verde\",\n            \"minQuantity\": 1,\n            \"type\": \"carbohidrato\",\n            \"units\": \"und\",\n            \"meals\": [\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48dd\",\n                    \"name\": \"desayuno\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48de\",\n                    \"name\": \"media mañana\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48df\",\n                    \"name\": \"almuerzo\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48e0\",\n                    \"name\": \"media tarde\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48e1\",\n                    \"name\": \"cena\",\n                    \"active\": false\n                }\n            ],\n            \"__v\": 0\n        },\n        {\n            \"macroContent\": {\n                \"protein\": 0.054,\n                \"carbohydrate\": 1.263,\n                \"fat\": 0.012\n            },\n            \"_id\": \"5e7324607efd103a1a5a48e2\",\n            \"name\": \"Piña\",\n            \"minQuantity\": 10,\n            \"type\": \"carbohidrato\",\n            \"units\": \"gr\",\n            \"meals\": [\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48e3\",\n                    \"name\": \"desayuno\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48e4\",\n                    \"name\": \"media mañana\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48e5\",\n                    \"name\": \"almuerzo\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48e6\",\n                    \"name\": \"media tarde\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48e7\",\n                    \"name\": \"cena\",\n                    \"active\": false\n                }\n            ],\n            \"__v\": 0\n        },\n        {\n            \"macroContent\": {\n                \"protein\": 0.061,\n                \"carbohydrate\": 0.981,\n                \"fat\": 0.014\n            },\n            \"_id\": \"5e7324607efd103a1a5a48e8\",\n            \"name\": \"Papaya\",\n            \"minQuantity\": 10,\n            \"type\": \"carbohidrato\",\n            \"units\": \"gr\",\n            \"meals\": [\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48e9\",\n                    \"name\": \"desayuno\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48ea\",\n                    \"name\": \"media mañana\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48eb\",\n                    \"name\": \"almuerzo\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48ec\",\n                    \"name\": \"media tarde\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48ed\",\n                    \"name\": \"cena\",\n                    \"active\": false\n                }\n            ],\n            \"__v\": 0\n        },\n        {\n            \"macroContent\": {\n                \"protein\": 1.09,\n                \"carbohydrate\": 22.84,\n                \"fat\": 0.33\n            },\n            \"_id\": \"5e7324607efd103a1a5a48ee\",\n            \"name\": \"Plátano\",\n            \"minQuantity\": 1,\n            \"type\": \"carbohidrato\",\n            \"units\": \"und\",\n            \"meals\": [\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48ef\",\n                    \"name\": \"desayuno\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48f0\",\n                    \"name\": \"media mañana\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48f1\",\n                    \"name\": \"almuerzo\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48f2\",\n                    \"name\": \"media tarde\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48f3\",\n                    \"name\": \"cena\",\n                    \"active\": false\n                }\n            ],\n            \"__v\": 0\n        },\n        {\n            \"macroContent\": {\n                \"protein\": 0.78,\n                \"carbohydrate\": 12.26,\n                \"fat\": 0.38\n            },\n            \"_id\": \"5e7324607efd103a1a5a48f4\",\n            \"name\": \"Pitahaya\",\n            \"minQuantity\": 1,\n            \"type\": \"carbohidrato\",\n            \"units\": \"und\",\n            \"meals\": [\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48f5\",\n                    \"name\": \"desayuno\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48f6\",\n                    \"name\": \"media mañana\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48f7\",\n                    \"name\": \"almuerzo\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48f8\",\n                    \"name\": \"media tarde\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48f9\",\n                    \"name\": \"cena\",\n                    \"active\": false\n                }\n            ],\n            \"__v\": 0\n        },\n        {\n            \"macroContent\": {\n                \"protein\": 1.46,\n                \"carbohydrate\": 26.44,\n                \"fat\": 0.46\n            },\n            \"_id\": \"5e7324607efd103a1a5a48fa\",\n            \"name\": \"Granada\",\n            \"minQuantity\": 1,\n            \"type\": \"carbohidrato\",\n            \"units\": \"und\",\n            \"meals\": [\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48fb\",\n                    \"name\": \"desayuno\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48fc\",\n                    \"name\": \"media mañana\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48fd\",\n                    \"name\": \"almuerzo\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48fe\",\n                    \"name\": \"media tarde\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a48ff\",\n                    \"name\": \"cena\",\n                    \"active\": false\n                }\n            ],\n            \"__v\": 0\n        },\n        {\n            \"macroContent\": {\n                \"protein\": 0.04,\n                \"carbohydrate\": 0.04,\n                \"fat\": 0.105\n            },\n            \"_id\": \"5e7324607efd103a1a5a4900\",\n            \"name\": \"Leche de almendras sin azucar\",\n            \"minQuantity\": 10,\n            \"type\": \"grasa\",\n            \"units\": \"ml\",\n            \"meals\": [\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4901\",\n                    \"name\": \"desayuno\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4902\",\n                    \"name\": \"media mañana\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4903\",\n                    \"name\": \"almuerzo\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4904\",\n                    \"name\": \"media tarde\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4905\",\n                    \"name\": \"cena\",\n                    \"active\": false\n                }\n            ],\n            \"__v\": 0\n        },\n        {\n            \"macroContent\": {\n                \"protein\": 0.2,\n                \"carbohydrate\": 0.18,\n                \"fat\": 1.466\n            },\n            \"_id\": \"5e7324607efd103a1a5a4906\",\n            \"name\": \"Palta\",\n            \"minQuantity\": 10,\n            \"type\": \"grasa\",\n            \"units\": \"gr\",\n            \"meals\": [\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4907\",\n                    \"name\": \"desayuno\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4908\",\n                    \"name\": \"media mañana\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4909\",\n                    \"name\": \"almuerzo\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a490a\",\n                    \"name\": \"media tarde\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a490b\",\n                    \"name\": \"cena\",\n                    \"active\": true\n                }\n            ],\n            \"__v\": 0\n        },\n        {\n            \"macroContent\": {\n                \"protein\": 0,\n                \"carbohydrate\": 0,\n                \"fat\": 4.5\n            },\n            \"_id\": \"5e7324607efd103a1a5a490c\",\n            \"name\": \"Aceite de oliva extra virgen\",\n            \"minQuantity\": 1,\n            \"type\": \"grasa\",\n            \"units\": \"cucharadita\",\n            \"meals\": [\n                {\n                    \"_id\": \"5e7324607efd103a1a5a490d\",\n                    \"name\": \"desayuno\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a490e\",\n                    \"name\": \"media mañana\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a490f\",\n                    \"name\": \"almuerzo\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4910\",\n                    \"name\": \"media tarde\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4911\",\n                    \"name\": \"cena\",\n                    \"active\": true\n                }\n            ],\n            \"__v\": 0\n        },\n        {\n            \"macroContent\": {\n                \"protein\": 2.126,\n                \"carbohydrate\": 1.974,\n                \"fat\": 5.064\n            },\n            \"_id\": \"5e7324607efd103a1a5a4912\",\n            \"name\": \"Almendras\",\n            \"minQuantity\": 10,\n            \"type\": \"grasa\",\n            \"units\": \"gr\",\n            \"meals\": [\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4913\",\n                    \"name\": \"desayuno\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4914\",\n                    \"name\": \"media mañana\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4915\",\n                    \"name\": \"almuerzo\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4916\",\n                    \"name\": \"media tarde\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4917\",\n                    \"name\": \"cena\",\n                    \"active\": false\n                }\n            ],\n            \"__v\": 0\n        },\n        {\n            \"macroContent\": {\n                \"protein\": 1,\n                \"carbohydrate\": 1.333,\n                \"fat\": 2.133\n            },\n            \"_id\": \"5e7324607efd103a1a5a4918\",\n            \"name\": \"Linaza\",\n            \"minQuantity\": 5,\n            \"type\": \"grasa\",\n            \"units\": \"gr\",\n            \"meals\": [\n                {\n                    \"_id\": \"5e7324607efd103a1a5a4919\",\n                    \"name\": \"desayuno\",\n                    \"active\": true\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a491a\",\n                    \"name\": \"media mañana\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a491b\",\n                    \"name\": \"almuerzo\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a491c\",\n                    \"name\": \"media tarde\",\n                    \"active\": false\n                },\n                {\n                    \"_id\": \"5e7324607efd103a1a5a491d\",\n                    \"name\": \"cena\",\n                    \"active\": false\n                }\n            ],\n            \"__v\": 0\n        }\n    ],\n    \"status\": 200,\n    \"message\": \"Aliments Found.\"\n}"
+								},
+								{
+									"name": "list Categories",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/aliments/category/?type=grasa",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"aliments",
+												"category",
+												""
+											],
+											"query": [
+												{
+													"key": "type",
+													"value": "grasa"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "157"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"9d-Jk7UfeK62x6bHZnzSICAO/xhbU8\""
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 30 Mar 2020 01:23:25 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        \"Leche\",\n        \"Palta\",\n        \"Aceite de oliva extra virgen\",\n        \"Almendras\",\n        \"Linaza\"\n    ],\n    \"status\": 200,\n    \"message\": \"Categories Found.\",\n    \"clientMessage\": \"Categories Found.\"\n}"
 								}
 							]
 						}
@@ -834,6 +834,72 @@
 							},
 							"response": [
 								{
+									"name": "create delivertOrder with new Card",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"deliveryPlan\": \"5e7177b16070280bd9f6e3d8\",\n\t\"deliveryPlanType\": \"almuerzo\",\n\t\"startDate\": \"2020-03-01\",\n\t\"contactName\": \"Nombre\",\n\t\"contactPhone\": \"989123555\",\n\t\"deliveryAddress\": \"Avenida Direccion 123\",\n\t\"email\": \"pago123@abc.co\",\n\t\"payment\":{\n\t\t\"clientToken\" : \"cus_test_Xn1HYSfMeS9WD4h3\",\n\t\t\"culqiToken\": \"tkn_test_mHXlCsMbWEItuOIt\"\n\t}\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/deliveryOrder",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"deliveryOrder"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "1723"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"6bb-O3D6qmSUPA6WVbHipPVBnZF2/qQ\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 18 Mar 2020 03:53:20 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"deliveryInstruction\": \"\",\n        \"_id\": \"5e719b2fc102d92b10a9f90a\",\n        \"user\": \"5e6453bacacfb80a23516e34\",\n        \"deliveryPlan\": {\n            \"_id\": \"5e7177b16070280bd9f6e3d8\",\n            \"name\": \"Plan 10 dias\",\n            \"periodTime\": \"10 dias\",\n            \"discountText\": \"\",\n            \"planDuration\": 10,\n            \"option\": [\n                {\n                    \"_id\": \"5e7177b16070280bd9f6e3d9\",\n                    \"planType\": \"almuerzo\",\n                    \"description\": \"Almuerzo\",\n                    \"price\": 30,\n                    \"amount\": 3000,\n                    \"currency_code\": \"PEN\"\n                },\n                {\n                    \"_id\": \"5e7177b16070280bd9f6e3da\",\n                    \"planType\": \"completo\",\n                    \"description\": \"Almuerzo + Cena\",\n                    \"price\": 50,\n                    \"amount\": 5000,\n                    \"currency_code\": \"PEN\"\n                }\n            ],\n            \"__v\": 0,\n            \"selectedOption\": {\n                \"_id\": \"5e7177b16070280bd9f6e3d9\",\n                \"planType\": \"almuerzo\",\n                \"description\": \"Almuerzo\",\n                \"price\": 30,\n                \"amount\": 3000,\n                \"currency_code\": \"PEN\"\n            }\n        },\n        \"startDate\": \"2020-03-01T00:00:00.000Z\",\n        \"contactName\": \"Nombre\",\n        \"contactPhone\": \"989123555\",\n        \"deliveryAddress\": \"Avenida Direccion 123\",\n        \"culqiPayment\": {\n            \"culqiInfo\": {\n                \"object\": \"card\",\n                \"id\": \"crd_test_nmrzYYYNWl23Ch4g\",\n                \"active\": true,\n                \"creation_date\": 1584500761000,\n                \"customer_id\": \"cus_test_Xn1HYSfMeS9WD4h3\",\n                \"source\": {\n                    \"object\": \"token\",\n                    \"id\": \"tkn_test_mHXlCsMbWEItuOIt\",\n                    \"type\": \"card\",\n                    \"creation_date\": 1584503575000,\n                    \"email\": \"adaddasssssdeer@gmail.com\",\n                    \"card_number\": \"411111******1111\",\n                    \"last_four\": \"1111\",\n                    \"active\": true,\n                    \"iin\": {\n                        \"object\": \"iin\",\n                        \"bin\": \"411111\",\n                        \"card_brand\": \"Visa\",\n                        \"card_type\": \"credito\",\n                        \"card_category\": \"Clásica\",\n                        \"issuer\": {\n                            \"name\": \"BBVA\",\n                            \"country\": \"PERU\",\n                            \"country_code\": \"PE\",\n                            \"website\": null,\n                            \"phone_number\": null\n                        },\n                        \"installments_allowed\": [\n                            2,\n                            4,\n                            6,\n                            8,\n                            10,\n                            12,\n                            3,\n                            5,\n                            7,\n                            9,\n                            24,\n                            48\n                        ]\n                    },\n                    \"client\": {\n                        \"ip\": \"190.237.151.211\",\n                        \"ip_country\": \"Peru\",\n                        \"ip_country_code\": \"PE\",\n                        \"browser\": \"UNKNOWN\",\n                        \"device_fingerprint\": null,\n                        \"device_type\": \"Escritorio\"\n                    },\n                    \"metadata\": {\n                        \"installments\": \"1\"\n                    }\n                },\n                \"metadata\": {\n                    \"ZDA\": true\n                }\n            }\n        },\n        \"endDate\": \"2020-03-13T00:00:00.000Z\",\n        \"__v\": 0\n    },\n    \"status\": 200,\n    \"message\": \"DeliveryOrder created.\"\n}"
+								},
+								{
 									"name": "create delivertOrder with savedCard",
 									"originalRequest": {
 										"method": "POST",
@@ -966,72 +1032,6 @@
 									"body": "{\n    \"data\": {},\n    \"status\": 400,\n    \"message\": \"La operación fue rechazada debido a que superó el tiempo de inactividad (más de 5 min).\"\n}"
 								},
 								{
-									"name": "create delivertOrder with new Card",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json",
-												"type": "text"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n\t\"deliveryPlan\": \"5e7177b16070280bd9f6e3d8\",\n\t\"deliveryPlanType\": \"almuerzo\",\n\t\"startDate\": \"2020-03-01\",\n\t\"contactName\": \"Nombre\",\n\t\"contactPhone\": \"989123555\",\n\t\"deliveryAddress\": \"Avenida Direccion 123\",\n\t\"email\": \"pago123@abc.co\",\n\t\"payment\":{\n\t\t\"clientToken\" : \"cus_test_Xn1HYSfMeS9WD4h3\",\n\t\t\"culqiToken\": \"tkn_test_mHXlCsMbWEItuOIt\"\n\t}\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{url}}/deliveryOrder",
-											"host": [
-												"{{url}}"
-											],
-											"path": [
-												"deliveryOrder"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "X-Powered-By",
-											"value": "Express"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "Content-Length",
-											"value": "1723"
-										},
-										{
-											"key": "ETag",
-											"value": "W/\"6bb-O3D6qmSUPA6WVbHipPVBnZF2/qQ\""
-										},
-										{
-											"key": "Date",
-											"value": "Wed, 18 Mar 2020 03:53:20 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"data\": {\n        \"deliveryInstruction\": \"\",\n        \"_id\": \"5e719b2fc102d92b10a9f90a\",\n        \"user\": \"5e6453bacacfb80a23516e34\",\n        \"deliveryPlan\": {\n            \"_id\": \"5e7177b16070280bd9f6e3d8\",\n            \"name\": \"Plan 10 dias\",\n            \"periodTime\": \"10 dias\",\n            \"discountText\": \"\",\n            \"planDuration\": 10,\n            \"option\": [\n                {\n                    \"_id\": \"5e7177b16070280bd9f6e3d9\",\n                    \"planType\": \"almuerzo\",\n                    \"description\": \"Almuerzo\",\n                    \"price\": 30,\n                    \"amount\": 3000,\n                    \"currency_code\": \"PEN\"\n                },\n                {\n                    \"_id\": \"5e7177b16070280bd9f6e3da\",\n                    \"planType\": \"completo\",\n                    \"description\": \"Almuerzo + Cena\",\n                    \"price\": 50,\n                    \"amount\": 5000,\n                    \"currency_code\": \"PEN\"\n                }\n            ],\n            \"__v\": 0,\n            \"selectedOption\": {\n                \"_id\": \"5e7177b16070280bd9f6e3d9\",\n                \"planType\": \"almuerzo\",\n                \"description\": \"Almuerzo\",\n                \"price\": 30,\n                \"amount\": 3000,\n                \"currency_code\": \"PEN\"\n            }\n        },\n        \"startDate\": \"2020-03-01T00:00:00.000Z\",\n        \"contactName\": \"Nombre\",\n        \"contactPhone\": \"989123555\",\n        \"deliveryAddress\": \"Avenida Direccion 123\",\n        \"culqiPayment\": {\n            \"culqiInfo\": {\n                \"object\": \"card\",\n                \"id\": \"crd_test_nmrzYYYNWl23Ch4g\",\n                \"active\": true,\n                \"creation_date\": 1584500761000,\n                \"customer_id\": \"cus_test_Xn1HYSfMeS9WD4h3\",\n                \"source\": {\n                    \"object\": \"token\",\n                    \"id\": \"tkn_test_mHXlCsMbWEItuOIt\",\n                    \"type\": \"card\",\n                    \"creation_date\": 1584503575000,\n                    \"email\": \"adaddasssssdeer@gmail.com\",\n                    \"card_number\": \"411111******1111\",\n                    \"last_four\": \"1111\",\n                    \"active\": true,\n                    \"iin\": {\n                        \"object\": \"iin\",\n                        \"bin\": \"411111\",\n                        \"card_brand\": \"Visa\",\n                        \"card_type\": \"credito\",\n                        \"card_category\": \"Clásica\",\n                        \"issuer\": {\n                            \"name\": \"BBVA\",\n                            \"country\": \"PERU\",\n                            \"country_code\": \"PE\",\n                            \"website\": null,\n                            \"phone_number\": null\n                        },\n                        \"installments_allowed\": [\n                            2,\n                            4,\n                            6,\n                            8,\n                            10,\n                            12,\n                            3,\n                            5,\n                            7,\n                            9,\n                            24,\n                            48\n                        ]\n                    },\n                    \"client\": {\n                        \"ip\": \"190.237.151.211\",\n                        \"ip_country\": \"Peru\",\n                        \"ip_country_code\": \"PE\",\n                        \"browser\": \"UNKNOWN\",\n                        \"device_fingerprint\": null,\n                        \"device_type\": \"Escritorio\"\n                    },\n                    \"metadata\": {\n                        \"installments\": \"1\"\n                    }\n                },\n                \"metadata\": {\n                    \"ZDA\": true\n                }\n            }\n        },\n        \"endDate\": \"2020-03-13T00:00:00.000Z\",\n        \"__v\": 0\n    },\n    \"status\": 200,\n    \"message\": \"DeliveryOrder created.\"\n}"
-								},
-								{
 									"name": "create delivertOrder Unique Charge",
 									"originalRequest": {
 										"method": "POST",
@@ -1100,89 +1100,6 @@
 							]
 						},
 						{
-							"name": "get menu Copy",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{url}}/menus/5e65d7e54ad3f2074de49c49/",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"menus",
-										"5e65d7e54ad3f2074de49c49",
-										""
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "get menu",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{url}}/menus/5e65d7e54ad3f2074de49c49/",
-											"host": [
-												"{{url}}"
-											],
-											"path": [
-												"menus",
-												"5e65d7e54ad3f2074de49c49",
-												""
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "X-Powered-By",
-											"value": "Express"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "Content-Length",
-											"value": "222"
-										},
-										{
-											"key": "ETag",
-											"value": "W/\"de-pbClsP48F6rcTLOJtL+mzPBzOok\""
-										},
-										{
-											"key": "Date",
-											"value": "Wed, 11 Mar 2020 04:34:49 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"data\": {\n        \"_id\": \"5e65d7e54ad3f2074de49c49\",\n        \"name\": \"Aliqua anim laboris est in laboris culpa excepteur sint eiusmod laborum.\",\n        \"type\": \"Almuerzo\",\n        \"date\": \"2020-03-15T00:00:00.000Z\",\n        \"__v\": 0\n    },\n    \"status\": 200,\n    \"message\": \"Menu found.\"\n}"
-								}
-							]
-						},
-						{
 							"name": "get myDeliveryOrder",
 							"request": {
 								"auth": {
@@ -1205,89 +1122,6 @@
 									"path": [
 										"deliveryOrder",
 										"mydeliveryorder"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "list admin DeliveryOrder",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n\t\"filter\":[{\"field\":\"name\",\"value\":\"a\"}],\n\t\"sort\": [{\"field\":\"lastName\", \"value\":\"asc\"},\n\t\t\t {\"field\":\"email\", \"value\":\"desc\"}]\n}"
-								},
-								"url": {
-									"raw": "{{url}}/deliveryOrder/admin/?page=1&size=50",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"deliveryOrder",
-										"admin",
-										""
-									],
-									"query": [
-										{
-											"key": "page",
-											"value": "1"
-										},
-										{
-											"key": "size",
-											"value": "50"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "get deliveryOrder  By ID",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "GET",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "{{url}}/deliveryOrder/5e9526b3976aa200193d1494",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"deliveryOrder",
-										"5e9526b3976aa200193d1494"
 									]
 								}
 							},
@@ -1336,63 +1170,6 @@
 								}
 							},
 							"response": [
-								{
-									"name": "list menu with startdate",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{url}}/menus?startdate=2020-03-15",
-											"host": [
-												"{{url}}"
-											],
-											"path": [
-												"menus"
-											],
-											"query": [
-												{
-													"key": "startdate",
-													"value": "2020-03-15"
-												}
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "X-Powered-By",
-											"value": "Express"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "Content-Length",
-											"value": "16540"
-										},
-										{
-											"key": "ETag",
-											"value": "W/\"409c-9HMakI4g44aTpOt28jbLWBusNGM\""
-										},
-										{
-											"key": "Date",
-											"value": "Wed, 11 Mar 2020 04:31:13 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"data\": [\n        {\n            \"_id\": \"5e65d7e54ad3f2074de49c49\",\n            \"name\": \"Aliqua anim laboris est in laboris culpa excepteur sint eiusmod laborum.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-15T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e54ad3f2074de49c4a\",\n            \"name\": \"Aute sit minim nisi qui aliqua deserunt.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-15T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb545\",\n            \"name\": \"Aliqua anim laboris est in laboris culpa excepteur sint eiusmod laborum.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-15T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb546\",\n            \"name\": \"Aute sit minim nisi qui aliqua deserunt.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-15T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e54ad3f2074de49c4b\",\n            \"name\": \"Do occaecat sint consectetur deserunt.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-16T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e54ad3f2074de49c4c\",\n            \"name\": \"Ea consectetur magna consectetur magna proident veniam officia enim.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-16T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb547\",\n            \"name\": \"Do occaecat sint consectetur deserunt.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-16T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb548\",\n            \"name\": \"Ea consectetur magna consectetur magna proident veniam officia enim.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-16T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e64ad3f2074de49c4d\",\n            \"name\": \"Mollit consequat aliquip est aliqua elit.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-17T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e64ad3f2074de49c4e\",\n            \"name\": \"Enim elit nisi quis ex eu ipsum fugiat voluptate occaecat.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-17T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb549\",\n            \"name\": \"Mollit consequat aliquip est aliqua elit.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-17T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb54a\",\n            \"name\": \"Enim elit nisi quis ex eu ipsum fugiat voluptate occaecat.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-17T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e64ad3f2074de49c4f\",\n            \"name\": \"Id in quis nisi ullamco.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-18T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e64ad3f2074de49c50\",\n            \"name\": \"Cupidatat esse commodo occaecat enim consectetur pariatur commodo proident occaecat cupidatat deserunt est culpa.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-18T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb54b\",\n            \"name\": \"Id in quis nisi ullamco.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-18T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb54c\",\n            \"name\": \"Cupidatat esse commodo occaecat enim consectetur pariatur commodo proident occaecat cupidatat deserunt est culpa.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-18T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e64ad3f2074de49c51\",\n            \"name\": \"Ullamco commodo id magna officia ipsum culpa est duis labore do reprehenderit minim do.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-19T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e64ad3f2074de49c52\",\n            \"name\": \"Aliqua laboris magna et do qui laboris non irure ex aliquip enim.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-19T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb54d\",\n            \"name\": \"Ullamco commodo id magna officia ipsum culpa est duis labore do reprehenderit minim do.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-19T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb54e\",\n            \"name\": \"Aliqua laboris magna et do qui laboris non irure ex aliquip enim.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-19T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e64ad3f2074de49c53\",\n            \"name\": \"Elit veniam commodo qui esse.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-20T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e64ad3f2074de49c54\",\n            \"name\": \"Culpa cillum velit enim velit officia laborum.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-20T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb54f\",\n            \"name\": \"Elit veniam commodo qui esse.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-20T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb550\",\n            \"name\": \"Culpa cillum velit enim velit officia laborum.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-20T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e64ad3f2074de49c55\",\n            \"name\": \"Aute nostrud mollit incididunt id incididunt amet exercitation ipsum ad proident dolor.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-21T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e64ad3f2074de49c56\",\n            \"name\": \"Reprehenderit esse deserunt et sint ea ipsum non minim labore eiusmod quis.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-21T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb551\",\n            \"name\": \"Aute nostrud mollit incididunt id incididunt amet exercitation ipsum ad proident dolor.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-21T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb552\",\n            \"name\": \"Reprehenderit esse deserunt et sint ea ipsum non minim labore eiusmod quis.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-21T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e64ad3f2074de49c57\",\n            \"name\": \"Enim non et minim proident eiusmod.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-22T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e74ad3f2074de49c58\",\n            \"name\": \"Reprehenderit eu fugiat enim id fugiat dolor laborum anim sit enim est.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-22T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb553\",\n            \"name\": \"Enim non et minim proident eiusmod.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-22T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb554\",\n            \"name\": \"Reprehenderit eu fugiat enim id fugiat dolor laborum anim sit enim est.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-22T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e74ad3f2074de49c59\",\n            \"name\": \"Enim magna nostrud eu aute.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-23T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e74ad3f2074de49c5a\",\n            \"name\": \"Ea veniam proident minim officia sit ullamco.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-23T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb555\",\n            \"name\": \"Enim magna nostrud eu aute.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-23T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb556\",\n            \"name\": \"Ea veniam proident minim officia sit ullamco.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-23T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e74ad3f2074de49c5b\",\n            \"name\": \"Ad anim laborum sint mollit laboris ut.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-24T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e74ad3f2074de49c5c\",\n            \"name\": \"Labore irure ex duis magna est ut magna sit consequat excepteur quis non quis.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-24T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb557\",\n            \"name\": \"Ad anim laborum sint mollit laboris ut.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-24T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb558\",\n            \"name\": \"Labore irure ex duis magna est ut magna sit consequat excepteur quis non quis.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-24T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e74ad3f2074de49c5d\",\n            \"name\": \"Fugiat dolor ut consequat culpa duis amet.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-25T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e74ad3f2074de49c5e\",\n            \"name\": \"Occaecat consequat nisi enim proident aliquip enim cupidatat laboris ea ullamco.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-25T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb559\",\n            \"name\": \"Fugiat dolor ut consequat culpa duis amet.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-25T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb55a\",\n            \"name\": \"Occaecat consequat nisi enim proident aliquip enim cupidatat laboris ea ullamco.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-25T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e74ad3f2074de49c5f\",\n            \"name\": \"Consequat commodo aliqua tempor ullamco ex ut sint pariatur velit.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-26T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e74ad3f2074de49c60\",\n            \"name\": \"Aliquip ea occaecat eu non.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-26T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb55b\",\n            \"name\": \"Consequat commodo aliqua tempor ullamco ex ut sint pariatur velit.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-26T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb55c\",\n            \"name\": \"Aliquip ea occaecat eu non.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-26T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e74ad3f2074de49c61\",\n            \"name\": \"Occaecat magna amet mollit occaecat labore proident nisi minim elit.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-27T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e84ad3f2074de49c62\",\n            \"name\": \"Laborum sit ullamco in duis amet fugiat aliqua nostrud non.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-27T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb55d\",\n            \"name\": \"Occaecat magna amet mollit occaecat labore proident nisi minim elit.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-27T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb55e\",\n            \"name\": \"Laborum sit ullamco in duis amet fugiat aliqua nostrud non.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-27T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e84ad3f2074de49c63\",\n            \"name\": \"Exercitation reprehenderit aliqua non sit nisi et.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-28T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e84ad3f2074de49c64\",\n            \"name\": \"Ad consectetur ipsum aliqua qui sunt quis sint dolore laboris consequat mollit veniam minim.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-28T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb55f\",\n            \"name\": \"Exercitation reprehenderit aliqua non sit nisi et.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-28T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb560\",\n            \"name\": \"Ad consectetur ipsum aliqua qui sunt quis sint dolore laboris consequat mollit veniam minim.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-28T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e84ad3f2074de49c65\",\n            \"name\": \"Dolore quis nostrud sint aute cupidatat voluptate veniam ad commodo anim reprehenderit consequat nostrud.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-29T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e84ad3f2074de49c66\",\n            \"name\": \"Pariatur reprehenderit est magna consectetur fugiat aliqua amet dolore ex nisi eiusmod.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-29T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb561\",\n            \"name\": \"Dolore quis nostrud sint aute cupidatat voluptate veniam ad commodo anim reprehenderit consequat nostrud.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-29T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb562\",\n            \"name\": \"Pariatur reprehenderit est magna consectetur fugiat aliqua amet dolore ex nisi eiusmod.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-29T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e84ad3f2074de49c67\",\n            \"name\": \"Aliqua laborum exercitation id quis.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-30T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e84ad3f2074de49c68\",\n            \"name\": \"Deserunt consectetur ad elit officia tempor sint do adipisicing do Lorem laboris.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-30T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb563\",\n            \"name\": \"Aliqua laborum exercitation id quis.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-30T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb564\",\n            \"name\": \"Deserunt consectetur ad elit officia tempor sint do adipisicing do Lorem laboris.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-30T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e84ad3f2074de49c69\",\n            \"name\": \"Ex excepteur mollit reprehenderit ad laboris sint velit commodo veniam ipsum.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-31T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e84ad3f2074de49c6a\",\n            \"name\": \"Minim ex velit est duis sunt eiusmod ullamco duis deserunt sint veniam.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-31T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb565\",\n            \"name\": \"Ex excepteur mollit reprehenderit ad laboris sint velit commodo veniam ipsum.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-31T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb566\",\n            \"name\": \"Minim ex velit est duis sunt eiusmod ullamco duis deserunt sint veniam.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-31T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e84ad3f2074de49c6b\",\n            \"name\": \"Proident duis mollit ipsum anim amet deserunt laboris quis consectetur sint dolore aute.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-04-01T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e84ad3f2074de49c6c\",\n            \"name\": \"Nostrud mollit nulla ea incididunt esse mollit est aliqua.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-04-01T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb567\",\n            \"name\": \"Proident duis mollit ipsum anim amet deserunt laboris quis consectetur sint dolore aute.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-04-01T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb568\",\n            \"name\": \"Nostrud mollit nulla ea incididunt esse mollit est aliqua.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-04-01T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e94ad3f2074de49c6d\",\n            \"name\": \"Eu cupidatat velit consequat labore elit voluptate non aute esse laboris deserunt ut minim.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-04-02T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e94ad3f2074de49c6e\",\n            \"name\": \"Qui in amet sit non anim commodo.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-04-02T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb569\",\n            \"name\": \"Eu cupidatat velit consequat labore elit voluptate non aute esse laboris deserunt ut minim.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-04-02T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb56a\",\n            \"name\": \"Qui in amet sit non anim commodo.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-04-02T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e94ad3f2074de49c6f\",\n            \"name\": \"Eu in eu irure eu occaecat eiusmod dolore occaecat duis incididunt mollit irure esse tempor.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-04-03T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e94ad3f2074de49c70\",\n            \"name\": \"Quis aliqua do eu duis ut.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-04-03T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb56b\",\n            \"name\": \"Eu in eu irure eu occaecat eiusmod dolore occaecat duis incididunt mollit irure esse tempor.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-04-03T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb56c\",\n            \"name\": \"Quis aliqua do eu duis ut.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-04-03T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e94ad3f2074de49c71\",\n            \"name\": \"Elit do excepteur in nulla.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-04-04T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e94ad3f2074de49c72\",\n            \"name\": \"Exercitation labore esse magna sunt aliquip anim officia qui nulla.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-04-04T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb56d\",\n            \"name\": \"Elit do excepteur in nulla.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-04-04T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb56e\",\n            \"name\": \"Exercitation labore esse magna sunt aliquip anim officia qui nulla.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-04-04T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e94ad3f2074de49c73\",\n            \"name\": \"Officia id ex eiusmod laborum exercitation voluptate.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-04-05T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e94ad3f2074de49c74\",\n            \"name\": \"Est irure ad dolore aliquip irure eiusmod.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-04-05T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb56f\",\n            \"name\": \"Officia id ex eiusmod laborum exercitation voluptate.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-04-05T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb570\",\n            \"name\": \"Est irure ad dolore aliquip irure eiusmod.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-04-05T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e94ad3f2074de49c75\",\n            \"name\": \"Voluptate in ea fugiat eiusmod.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-04-06T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e94ad3f2074de49c76\",\n            \"name\": \"Laborum fugiat velit esse duis enim consectetur non exercitation dolor officia aliquip cupidatat dolor occaecat.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-04-06T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb571\",\n            \"name\": \"Voluptate in ea fugiat eiusmod.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-04-06T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb572\",\n            \"name\": \"Laborum fugiat velit esse duis enim consectetur non exercitation dolor officia aliquip cupidatat dolor occaecat.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-04-06T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7ea4ad3f2074de49c77\",\n            \"name\": \"Sit do magna in aliquip enim id aliquip fugiat veniam.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-04-07T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7ea4ad3f2074de49c78\",\n            \"name\": \"Adipisicing cupidatat consectetur veniam sit nisi esse quis sunt.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-04-07T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb573\",\n            \"name\": \"Sit do magna in aliquip enim id aliquip fugiat veniam.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-04-07T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb574\",\n            \"name\": \"Adipisicing cupidatat consectetur veniam sit nisi esse quis sunt.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-04-07T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7ea4ad3f2074de49c79\",\n            \"name\": \"Est duis proident culpa ea enim esse in qui consectetur laboris irure.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-04-08T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7ea4ad3f2074de49c7a\",\n            \"name\": \"Occaecat cillum consequat occaecat occaecat enim non aliquip cillum excepteur veniam nostrud elit amet aute.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-04-08T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb575\",\n            \"name\": \"Est duis proident culpa ea enim esse in qui consectetur laboris irure.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-04-08T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb576\",\n            \"name\": \"Occaecat cillum consequat occaecat occaecat enim non aliquip cillum excepteur veniam nostrud elit amet aute.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-04-08T00:00:00.000Z\",\n            \"__v\": 0\n        }\n    ],\n    \"status\": 200,\n    \"message\": \"Menus found.\"\n}"
-								},
 								{
 									"name": "list menu with businessdays",
 									"originalRequest": {
@@ -1453,6 +1230,63 @@
 									],
 									"cookie": [],
 									"body": "{\n    \"data\": [\n        {\n            \"_id\": \"5e65d7e44ad3f2074de49c3f\",\n            \"name\": \"Do ea amet aute laborum ullamco esse cupidatat ex.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-10T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e44ad3f2074de49c40\",\n            \"name\": \"Mollit pariatur incididunt est ex labore qui cillum dolore non.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-10T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb53b\",\n            \"name\": \"Do ea amet aute laborum ullamco esse cupidatat ex.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-10T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb53c\",\n            \"name\": \"Mollit pariatur incididunt est ex labore qui cillum dolore non.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-10T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e44ad3f2074de49c41\",\n            \"name\": \"Incididunt velit ea sunt sint veniam in et.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-11T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e44ad3f2074de49c42\",\n            \"name\": \"Fugiat eiusmod ullamco quis irure ullamco incididunt tempor occaecat est deserunt sit in incididunt laboris.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-11T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb53d\",\n            \"name\": \"Incididunt velit ea sunt sint veniam in et.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-11T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb53e\",\n            \"name\": \"Fugiat eiusmod ullamco quis irure ullamco incididunt tempor occaecat est deserunt sit in incididunt laboris.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-11T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e54ad3f2074de49c43\",\n            \"name\": \"Laborum fugiat nisi id id ut velit minim nisi non esse excepteur ex minim dolore.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-12T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e54ad3f2074de49c44\",\n            \"name\": \"Reprehenderit dolor amet dolor duis do occaecat.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-12T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb53f\",\n            \"name\": \"Laborum fugiat nisi id id ut velit minim nisi non esse excepteur ex minim dolore.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-12T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb540\",\n            \"name\": \"Reprehenderit dolor amet dolor duis do occaecat.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-12T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e54ad3f2074de49c45\",\n            \"name\": \"Cillum ipsum veniam sit proident est ipsum exercitation dolore Lorem irure pariatur.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-13T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e54ad3f2074de49c46\",\n            \"name\": \"Cupidatat consectetur ipsum irure excepteur veniam sunt anim do commodo.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-13T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb541\",\n            \"name\": \"Cillum ipsum veniam sit proident est ipsum exercitation dolore Lorem irure pariatur.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-13T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb542\",\n            \"name\": \"Cupidatat consectetur ipsum irure excepteur veniam sunt anim do commodo.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-13T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e54ad3f2074de49c47\",\n            \"name\": \"Eu est velit est proident ullamco.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-14T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e54ad3f2074de49c48\",\n            \"name\": \"Laborum aliqua nostrud sit ipsum do consectetur eiusmod quis id labore.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-14T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb543\",\n            \"name\": \"Eu est velit est proident ullamco.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-14T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb544\",\n            \"name\": \"Laborum aliqua nostrud sit ipsum do consectetur eiusmod quis id labore.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-14T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e54ad3f2074de49c49\",\n            \"name\": \"Aliqua anim laboris est in laboris culpa excepteur sint eiusmod laborum.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-15T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e54ad3f2074de49c4a\",\n            \"name\": \"Aute sit minim nisi qui aliqua deserunt.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-15T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb545\",\n            \"name\": \"Aliqua anim laboris est in laboris culpa excepteur sint eiusmod laborum.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-15T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb546\",\n            \"name\": \"Aute sit minim nisi qui aliqua deserunt.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-15T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e54ad3f2074de49c4b\",\n            \"name\": \"Do occaecat sint consectetur deserunt.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-16T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e54ad3f2074de49c4c\",\n            \"name\": \"Ea consectetur magna consectetur magna proident veniam officia enim.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-16T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb547\",\n            \"name\": \"Do occaecat sint consectetur deserunt.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-16T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb548\",\n            \"name\": \"Ea consectetur magna consectetur magna proident veniam officia enim.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-16T00:00:00.000Z\",\n            \"__v\": 0\n        }\n    ],\n    \"status\": 200,\n    \"message\": \"Menus found.\"\n}"
+								},
+								{
+									"name": "list menu with startdate",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/menus?startdate=2020-03-15",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"menus"
+											],
+											"query": [
+												{
+													"key": "startdate",
+													"value": "2020-03-15"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "16540"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"409c-9HMakI4g44aTpOt28jbLWBusNGM\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 11 Mar 2020 04:31:13 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"_id\": \"5e65d7e54ad3f2074de49c49\",\n            \"name\": \"Aliqua anim laboris est in laboris culpa excepteur sint eiusmod laborum.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-15T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e54ad3f2074de49c4a\",\n            \"name\": \"Aute sit minim nisi qui aliqua deserunt.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-15T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb545\",\n            \"name\": \"Aliqua anim laboris est in laboris culpa excepteur sint eiusmod laborum.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-15T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb546\",\n            \"name\": \"Aute sit minim nisi qui aliqua deserunt.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-15T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e54ad3f2074de49c4b\",\n            \"name\": \"Do occaecat sint consectetur deserunt.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-16T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e54ad3f2074de49c4c\",\n            \"name\": \"Ea consectetur magna consectetur magna proident veniam officia enim.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-16T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb547\",\n            \"name\": \"Do occaecat sint consectetur deserunt.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-16T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb548\",\n            \"name\": \"Ea consectetur magna consectetur magna proident veniam officia enim.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-16T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e64ad3f2074de49c4d\",\n            \"name\": \"Mollit consequat aliquip est aliqua elit.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-17T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e64ad3f2074de49c4e\",\n            \"name\": \"Enim elit nisi quis ex eu ipsum fugiat voluptate occaecat.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-17T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb549\",\n            \"name\": \"Mollit consequat aliquip est aliqua elit.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-17T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb54a\",\n            \"name\": \"Enim elit nisi quis ex eu ipsum fugiat voluptate occaecat.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-17T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e64ad3f2074de49c4f\",\n            \"name\": \"Id in quis nisi ullamco.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-18T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e64ad3f2074de49c50\",\n            \"name\": \"Cupidatat esse commodo occaecat enim consectetur pariatur commodo proident occaecat cupidatat deserunt est culpa.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-18T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb54b\",\n            \"name\": \"Id in quis nisi ullamco.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-18T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb54c\",\n            \"name\": \"Cupidatat esse commodo occaecat enim consectetur pariatur commodo proident occaecat cupidatat deserunt est culpa.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-18T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e64ad3f2074de49c51\",\n            \"name\": \"Ullamco commodo id magna officia ipsum culpa est duis labore do reprehenderit minim do.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-19T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e64ad3f2074de49c52\",\n            \"name\": \"Aliqua laboris magna et do qui laboris non irure ex aliquip enim.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-19T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb54d\",\n            \"name\": \"Ullamco commodo id magna officia ipsum culpa est duis labore do reprehenderit minim do.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-19T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb54e\",\n            \"name\": \"Aliqua laboris magna et do qui laboris non irure ex aliquip enim.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-19T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e64ad3f2074de49c53\",\n            \"name\": \"Elit veniam commodo qui esse.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-20T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e64ad3f2074de49c54\",\n            \"name\": \"Culpa cillum velit enim velit officia laborum.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-20T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb54f\",\n            \"name\": \"Elit veniam commodo qui esse.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-20T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb550\",\n            \"name\": \"Culpa cillum velit enim velit officia laborum.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-20T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e64ad3f2074de49c55\",\n            \"name\": \"Aute nostrud mollit incididunt id incididunt amet exercitation ipsum ad proident dolor.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-21T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e64ad3f2074de49c56\",\n            \"name\": \"Reprehenderit esse deserunt et sint ea ipsum non minim labore eiusmod quis.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-21T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb551\",\n            \"name\": \"Aute nostrud mollit incididunt id incididunt amet exercitation ipsum ad proident dolor.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-21T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb552\",\n            \"name\": \"Reprehenderit esse deserunt et sint ea ipsum non minim labore eiusmod quis.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-21T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e64ad3f2074de49c57\",\n            \"name\": \"Enim non et minim proident eiusmod.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-22T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e74ad3f2074de49c58\",\n            \"name\": \"Reprehenderit eu fugiat enim id fugiat dolor laborum anim sit enim est.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-22T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb553\",\n            \"name\": \"Enim non et minim proident eiusmod.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-22T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb554\",\n            \"name\": \"Reprehenderit eu fugiat enim id fugiat dolor laborum anim sit enim est.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-22T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e74ad3f2074de49c59\",\n            \"name\": \"Enim magna nostrud eu aute.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-23T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e74ad3f2074de49c5a\",\n            \"name\": \"Ea veniam proident minim officia sit ullamco.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-23T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb555\",\n            \"name\": \"Enim magna nostrud eu aute.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-23T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb556\",\n            \"name\": \"Ea veniam proident minim officia sit ullamco.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-23T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e74ad3f2074de49c5b\",\n            \"name\": \"Ad anim laborum sint mollit laboris ut.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-24T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e74ad3f2074de49c5c\",\n            \"name\": \"Labore irure ex duis magna est ut magna sit consequat excepteur quis non quis.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-24T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb557\",\n            \"name\": \"Ad anim laborum sint mollit laboris ut.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-24T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb558\",\n            \"name\": \"Labore irure ex duis magna est ut magna sit consequat excepteur quis non quis.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-24T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e74ad3f2074de49c5d\",\n            \"name\": \"Fugiat dolor ut consequat culpa duis amet.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-25T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e74ad3f2074de49c5e\",\n            \"name\": \"Occaecat consequat nisi enim proident aliquip enim cupidatat laboris ea ullamco.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-25T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb559\",\n            \"name\": \"Fugiat dolor ut consequat culpa duis amet.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-25T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb55a\",\n            \"name\": \"Occaecat consequat nisi enim proident aliquip enim cupidatat laboris ea ullamco.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-25T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e74ad3f2074de49c5f\",\n            \"name\": \"Consequat commodo aliqua tempor ullamco ex ut sint pariatur velit.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-26T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e74ad3f2074de49c60\",\n            \"name\": \"Aliquip ea occaecat eu non.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-26T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb55b\",\n            \"name\": \"Consequat commodo aliqua tempor ullamco ex ut sint pariatur velit.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-26T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb55c\",\n            \"name\": \"Aliquip ea occaecat eu non.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-26T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e74ad3f2074de49c61\",\n            \"name\": \"Occaecat magna amet mollit occaecat labore proident nisi minim elit.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-27T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e84ad3f2074de49c62\",\n            \"name\": \"Laborum sit ullamco in duis amet fugiat aliqua nostrud non.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-27T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb55d\",\n            \"name\": \"Occaecat magna amet mollit occaecat labore proident nisi minim elit.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-27T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb55e\",\n            \"name\": \"Laborum sit ullamco in duis amet fugiat aliqua nostrud non.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-27T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e84ad3f2074de49c63\",\n            \"name\": \"Exercitation reprehenderit aliqua non sit nisi et.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-28T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e84ad3f2074de49c64\",\n            \"name\": \"Ad consectetur ipsum aliqua qui sunt quis sint dolore laboris consequat mollit veniam minim.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-28T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb55f\",\n            \"name\": \"Exercitation reprehenderit aliqua non sit nisi et.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-28T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb560\",\n            \"name\": \"Ad consectetur ipsum aliqua qui sunt quis sint dolore laboris consequat mollit veniam minim.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-28T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e84ad3f2074de49c65\",\n            \"name\": \"Dolore quis nostrud sint aute cupidatat voluptate veniam ad commodo anim reprehenderit consequat nostrud.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-29T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e84ad3f2074de49c66\",\n            \"name\": \"Pariatur reprehenderit est magna consectetur fugiat aliqua amet dolore ex nisi eiusmod.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-29T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb561\",\n            \"name\": \"Dolore quis nostrud sint aute cupidatat voluptate veniam ad commodo anim reprehenderit consequat nostrud.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-29T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb562\",\n            \"name\": \"Pariatur reprehenderit est magna consectetur fugiat aliqua amet dolore ex nisi eiusmod.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-29T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e84ad3f2074de49c67\",\n            \"name\": \"Aliqua laborum exercitation id quis.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-30T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e84ad3f2074de49c68\",\n            \"name\": \"Deserunt consectetur ad elit officia tempor sint do adipisicing do Lorem laboris.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-30T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb563\",\n            \"name\": \"Aliqua laborum exercitation id quis.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-30T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb564\",\n            \"name\": \"Deserunt consectetur ad elit officia tempor sint do adipisicing do Lorem laboris.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-30T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e84ad3f2074de49c69\",\n            \"name\": \"Ex excepteur mollit reprehenderit ad laboris sint velit commodo veniam ipsum.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-31T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e84ad3f2074de49c6a\",\n            \"name\": \"Minim ex velit est duis sunt eiusmod ullamco duis deserunt sint veniam.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-31T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb565\",\n            \"name\": \"Ex excepteur mollit reprehenderit ad laboris sint velit commodo veniam ipsum.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-03-31T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb566\",\n            \"name\": \"Minim ex velit est duis sunt eiusmod ullamco duis deserunt sint veniam.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-03-31T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e84ad3f2074de49c6b\",\n            \"name\": \"Proident duis mollit ipsum anim amet deserunt laboris quis consectetur sint dolore aute.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-04-01T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e84ad3f2074de49c6c\",\n            \"name\": \"Nostrud mollit nulla ea incididunt esse mollit est aliqua.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-04-01T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb567\",\n            \"name\": \"Proident duis mollit ipsum anim amet deserunt laboris quis consectetur sint dolore aute.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-04-01T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb568\",\n            \"name\": \"Nostrud mollit nulla ea incididunt esse mollit est aliqua.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-04-01T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e94ad3f2074de49c6d\",\n            \"name\": \"Eu cupidatat velit consequat labore elit voluptate non aute esse laboris deserunt ut minim.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-04-02T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e94ad3f2074de49c6e\",\n            \"name\": \"Qui in amet sit non anim commodo.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-04-02T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb569\",\n            \"name\": \"Eu cupidatat velit consequat labore elit voluptate non aute esse laboris deserunt ut minim.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-04-02T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb56a\",\n            \"name\": \"Qui in amet sit non anim commodo.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-04-02T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e94ad3f2074de49c6f\",\n            \"name\": \"Eu in eu irure eu occaecat eiusmod dolore occaecat duis incididunt mollit irure esse tempor.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-04-03T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e94ad3f2074de49c70\",\n            \"name\": \"Quis aliqua do eu duis ut.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-04-03T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb56b\",\n            \"name\": \"Eu in eu irure eu occaecat eiusmod dolore occaecat duis incididunt mollit irure esse tempor.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-04-03T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb56c\",\n            \"name\": \"Quis aliqua do eu duis ut.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-04-03T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e94ad3f2074de49c71\",\n            \"name\": \"Elit do excepteur in nulla.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-04-04T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e94ad3f2074de49c72\",\n            \"name\": \"Exercitation labore esse magna sunt aliquip anim officia qui nulla.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-04-04T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb56d\",\n            \"name\": \"Elit do excepteur in nulla.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-04-04T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb56e\",\n            \"name\": \"Exercitation labore esse magna sunt aliquip anim officia qui nulla.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-04-04T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e94ad3f2074de49c73\",\n            \"name\": \"Officia id ex eiusmod laborum exercitation voluptate.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-04-05T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e94ad3f2074de49c74\",\n            \"name\": \"Est irure ad dolore aliquip irure eiusmod.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-04-05T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb56f\",\n            \"name\": \"Officia id ex eiusmod laborum exercitation voluptate.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-04-05T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb570\",\n            \"name\": \"Est irure ad dolore aliquip irure eiusmod.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-04-05T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e94ad3f2074de49c75\",\n            \"name\": \"Voluptate in ea fugiat eiusmod.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-04-06T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7e94ad3f2074de49c76\",\n            \"name\": \"Laborum fugiat velit esse duis enim consectetur non exercitation dolor officia aliquip cupidatat dolor occaecat.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-04-06T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb571\",\n            \"name\": \"Voluptate in ea fugiat eiusmod.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-04-06T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb572\",\n            \"name\": \"Laborum fugiat velit esse duis enim consectetur non exercitation dolor officia aliquip cupidatat dolor occaecat.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-04-06T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7ea4ad3f2074de49c77\",\n            \"name\": \"Sit do magna in aliquip enim id aliquip fugiat veniam.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-04-07T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7ea4ad3f2074de49c78\",\n            \"name\": \"Adipisicing cupidatat consectetur veniam sit nisi esse quis sunt.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-04-07T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb573\",\n            \"name\": \"Sit do magna in aliquip enim id aliquip fugiat veniam.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-04-07T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb574\",\n            \"name\": \"Adipisicing cupidatat consectetur veniam sit nisi esse quis sunt.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-04-07T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7ea4ad3f2074de49c79\",\n            \"name\": \"Est duis proident culpa ea enim esse in qui consectetur laboris irure.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-04-08T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e65d7ea4ad3f2074de49c7a\",\n            \"name\": \"Occaecat cillum consequat occaecat occaecat enim non aliquip cillum excepteur veniam nostrud elit amet aute.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-04-08T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb575\",\n            \"name\": \"Est duis proident culpa ea enim esse in qui consectetur laboris irure.\",\n            \"type\": \"Almuerzo\",\n            \"date\": \"2020-04-08T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5e671297e17a33012b4fb576\",\n            \"name\": \"Occaecat cillum consequat occaecat occaecat enim non aliquip cillum excepteur veniam nostrud elit amet aute.\",\n            \"type\": \"Cena\",\n            \"date\": \"2020-04-08T00:00:00.000Z\",\n            \"__v\": 0\n        }\n    ],\n    \"status\": 200,\n    \"message\": \"Menus found.\"\n}"
 								}
 							]
 						},
@@ -1581,236 +1415,6 @@
 								}
 							},
 							"response": []
-						},
-						{
-							"name": "list admin menu",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{url}}/menus/admin/?page=1&size=5",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"menus",
-										"admin",
-										""
-									],
-									"query": [
-										{
-											"key": "page",
-											"value": "1"
-										},
-										{
-											"key": "size",
-											"value": "5"
-										}
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "list admin menu",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{url}}/menus/admin/?page=1&size=5",
-											"host": [
-												"{{url}}"
-											],
-											"path": [
-												"menus",
-												"admin",
-												""
-											],
-											"query": [
-												{
-													"key": "page",
-													"value": "1"
-												},
-												{
-													"key": "size",
-													"value": "5"
-												}
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "X-Powered-By",
-											"value": "Express"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "Content-Length",
-											"value": "955"
-										},
-										{
-											"key": "ETag",
-											"value": "W/\"3bb-gCimDCleG/K86EJ3HOVCR2/DbY0\""
-										},
-										{
-											"key": "Date",
-											"value": "Wed, 15 Apr 2020 06:40:45 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"data\": {\n        \"total\": 72,\n        \"numPages\": 15,\n        \"page\": 1,\n        \"items\": [\n            {\n                \"_id\": \"5e74124eab303f04405cbc68\",\n                \"name\": \"Nisi reprehenderit excepteur ullamco reprehenderit Lorem dolore sit eu eu ex.\",\n                \"type\": \"almuerzo\",\n                \"date\": \"2020-05-07T00:00:00.000Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"5e74124eab303f04405cbc69\",\n                \"name\": \"Tempor aute ad amet excepteur ea.\",\n                \"type\": \"cena\",\n                \"date\": \"2020-05-07T00:00:00.000Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"5e74124eab303f04405cbc66\",\n                \"name\": \"Magna elit officia adipisicing sint esse dolor pariatur fugiat nulla laborum nisi pariatur qui.\",\n                \"type\": \"almuerzo\",\n                \"date\": \"2020-05-06T00:00:00.000Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"5e74124eab303f04405cbc67\",\n                \"name\": \"Nostrud proident nulla velit anim amet dolore aliqua.\",\n                \"type\": \"cena\",\n                \"date\": \"2020-05-06T00:00:00.000Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"5e74124eab303f04405cbc64\",\n                \"name\": \"Amet cupidatat irure voluptate ut enim ea anim nulla non.\",\n                \"type\": \"almuerzo\",\n                \"date\": \"2020-05-05T00:00:00.000Z\",\n                \"__v\": 0\n            }\n        ]\n    },\n    \"status\": 200,\n    \"message\": \"Menus found.\",\n    \"clientMessage\": \"Menus found.\"\n}"
-								}
-							]
-						},
-						{
-							"name": "create bulk menus",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"name": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n\t\"data\":[{\n\t\t\"name\": \"Arroz con pato\",\n\t\t\"type\": \"almuerzo\",\n\t\t\"date\": \"2020-01-01\"\n\t},{\n\t\t\"name\": \"Arroz con pollo\",\n\t\t\"type\": \"cena\",\n\t\t\"date\": \"2020-01-01\"\n\t}\n\t]\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{url}}/menus/admin",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"menus",
-										"admin"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "delete menu",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "DELETE",
-								"header": [],
-								"url": {
-									"raw": "{{url}}/menus/5e65d7e54ad3f2074de49c49/",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"menus",
-										"5e65d7e54ad3f2074de49c49",
-										""
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "delete menu",
-									"originalRequest": {
-										"method": "DELETE",
-										"header": [],
-										"url": {
-											"raw": "{{url}}/menus/5e65d7e54ad3f2074de49c49/",
-											"host": [
-												"{{url}}"
-											],
-											"path": [
-												"menus",
-												"5e65d7e54ad3f2074de49c49",
-												""
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "X-Powered-By",
-											"value": "Express"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "Content-Length",
-											"value": "82"
-										},
-										{
-											"key": "ETag",
-											"value": "W/\"52-0++ta+jnZ/a6ODknqtCQztOAw0s\""
-										},
-										{
-											"key": "Date",
-											"value": "Tue, 21 Apr 2020 01:41:45 GMT"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"data\": {},\n    \"status\": 200,\n    \"message\": \"Menu deleted.\",\n    \"clientMessage\": \"Menu deleted.\"\n}"
-								}
-							]
 						}
 					],
 					"protocolProfileBehavior": {},
@@ -2657,134 +2261,6 @@
 					"_postman_isSubFolder": true
 				},
 				{
-					"name": "admin",
-					"item": [
-						{
-							"name": "list admin users",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n\t\"match\": [{\"field\":\"activeDiet\", \"value\": false}],\n\t\n\t\"filter\":[{\"field\":\"name\",\"value\":\"a\"}],\n\t\"sort\": [{\"field\":\"lastName\", \"value\":\"asc\"}]\n}"
-								},
-								"url": {
-									"raw": "{{url}}/user/?size=30&page=1",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"user",
-										""
-									],
-									"query": [
-										{
-											"key": "size",
-											"value": "30"
-										},
-										{
-											"key": "page",
-											"value": "1"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "update macros",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n\t\"protein\":100,\n\t\"carbohydrate\":100,\n\t\"fat\": 100,\n\t\"message\":\"Bienvenido a Saphi\"\n}"
-								},
-								"url": {
-									"raw": "{{url}}/user/5e950dabbd8b0c0018503655/updatemacros",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"user",
-										"5e950dabbd8b0c0018503655",
-										"updatemacros"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "get admin user",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "GET",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "{{url}}/user/5e950a98bd8b0c00185035f6",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"user",
-										"5e950a98bd8b0c00185035f6"
-									]
-								}
-							},
-							"response": []
-						}
-					],
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
-				},
-				{
 					"name": "onboarding",
 					"request": {
 						"auth": {
@@ -2996,114 +2472,90 @@
 			"protocolProfileBehavior": {}
 		},
 		{
-			"name": "company",
+			"name": "admin",
 			"item": [
 				{
-					"name": "list companies",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{url}}/company/?size=1&page=1",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"company",
-								""
-							],
-							"query": [
-								{
-									"key": "size",
-									"value": "1"
+					"name": "company",
+					"item": [
+						{
+							"name": "list companies",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
 								},
-								{
-									"key": "page",
-									"value": "1"
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/company/?size=1&page=1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"company",
+										""
+									],
+									"query": [
+										{
+											"key": "size",
+											"value": "1"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
 								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "get company",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{token}}",
-									"type": "string"
+							},
+							"response": []
+						},
+						{
+							"name": "get company",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/company/5e94dabc8c04eb01b5aa6627",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"company",
+										"5e94dabc8c04eb01b5aa6627"
+									]
 								}
-							]
+							},
+							"response": []
 						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{url}}/company/5e94dabc8c04eb01b5aa6627",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"company",
-								"5e94dabc8c04eb01b5aa6627"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "create Company",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"name\": \"newCompany\"\n}"
-						},
-						"url": {
-							"raw": "{{url}}/company/",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"company",
-								""
-							]
-						}
-					},
-					"response": [
 						{
 							"name": "create Company",
-							"originalRequest": {
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
 								"method": "POST",
 								"header": [
 									{
@@ -3127,81 +2579,567 @@
 									]
 								}
 							},
-							"status": "Created",
-							"code": 201,
-							"_postman_previewlanguage": "json",
-							"header": [
+							"response": [
 								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "237"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"ed-m9B22htHf/WQH1opKqrbGTaS2Ko\""
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 21 Apr 2020 01:45:52 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
+									"name": "create Company",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"newCompany\"\n}"
+										},
+										"url": {
+											"raw": "{{url}}/company/",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"company",
+												""
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "237"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"ed-m9B22htHf/WQH1opKqrbGTaS2Ko\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 21 Apr 2020 01:45:52 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"_id\": \"5e9e50506ce9850ddc91191c\",\n        \"name\": \"newCompany\",\n        \"users\": [],\n        \"createdAt\": \"2020-04-21T01:45:52.475Z\",\n        \"updatedAt\": \"2020-04-21T01:45:52.475Z\",\n        \"__v\": 0\n    },\n    \"status\": 201,\n    \"message\": \"Company Created.\",\n    \"clientMessage\": \"Company Created.\"\n}"
 								}
-							],
-							"cookie": [],
-							"body": "{\n    \"data\": {\n        \"_id\": \"5e9e50506ce9850ddc91191c\",\n        \"name\": \"newCompany\",\n        \"users\": [],\n        \"createdAt\": \"2020-04-21T01:45:52.475Z\",\n        \"updatedAt\": \"2020-04-21T01:45:52.475Z\",\n        \"__v\": 0\n    },\n    \"status\": 201,\n    \"message\": \"Company Created.\",\n    \"clientMessage\": \"Company Created.\"\n}"
+							]
+						},
+						{
+							"name": "update Companies",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"data\":[\n\t\t\n\t\t{\n\t\t\t\"companyName\":\"otraEmpresa\",\n\t\t\t\"name\": \"ABC\",\n\t\t\t\"lastName\": \"XYZ\",\n\t\t\t\"email\":\"xyz@gmail.abc\",\n\t\t\t\"endDate\":\"2020-12-05\",\n\t\t\t\"idDocumentType\": \"DNI\",\n\t\t\t\"idDocumentNumber\": \"25342134\"\n\t\t},\n\t\t\n\t\t{\n\t\t\t\"companyName\":\"Company XYZ\",\n\t\t\t\"name\": \"ABC\",\n\t\t\t\"lastName\": \"XYZ\",\n\t\t\t\"email\":\"xyz@gmail.abc\",\n\t\t\t\"endDate\":\"2020-12-05\",\n\t\t\t\"idDocumentType\": \"CE\",\n\t\t\t\"idDocumentNumber\": \"HJK25342134\"\n\t\t}\n\t\t\n\t]\n}"
+								},
+								"url": {
+									"raw": "{{url}}/company/update",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"company",
+										"update"
+									]
+								}
+							},
+							"response": []
 						}
-					]
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
 				},
 				{
-					"name": "update Companies",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
+					"name": "user",
+					"item": [
+						{
+							"name": "list admin users",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"match\": [{\"field\":\"activeDiet\", \"value\": false}],\n\t\n\t\"filter\":[{\"field\":\"name\",\"value\":\"a\"}],\n\t\"sort\": [{\"field\":\"lastName\", \"value\":\"asc\"}]\n}"
+								},
+								"url": {
+									"raw": "{{url}}/user/?size=30&page=1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										""
+									],
+									"query": [
+										{
+											"key": "size",
+											"value": "30"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get admin user",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/user/5e950a98bd8b0c00185035f6",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"5e950a98bd8b0c00185035f6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update macros",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"protein\":100,\n\t\"carbohydrate\":100,\n\t\"fat\": 100,\n\t\"message\":\"Bienvenido a Saphi\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/user/5e950dabbd8b0c0018503655/updatemacros",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"5e950dabbd8b0c0018503655",
+										"updatemacros"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "menu",
+					"item": [
+						{
+							"name": "list admin menu",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/menus/admin/?page=1&size=5",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"menus",
+										"admin",
+										""
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "size",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": [
 								{
-									"key": "token",
-									"value": "{{token}}",
-									"type": "string"
+									"name": "list admin menu",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/menus/admin/?page=1&size=5",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"menus",
+												"admin",
+												""
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "1"
+												},
+												{
+													"key": "size",
+													"value": "5"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "955"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"3bb-gCimDCleG/K86EJ3HOVCR2/DbY0\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 15 Apr 2020 06:40:45 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"total\": 72,\n        \"numPages\": 15,\n        \"page\": 1,\n        \"items\": [\n            {\n                \"_id\": \"5e74124eab303f04405cbc68\",\n                \"name\": \"Nisi reprehenderit excepteur ullamco reprehenderit Lorem dolore sit eu eu ex.\",\n                \"type\": \"almuerzo\",\n                \"date\": \"2020-05-07T00:00:00.000Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"5e74124eab303f04405cbc69\",\n                \"name\": \"Tempor aute ad amet excepteur ea.\",\n                \"type\": \"cena\",\n                \"date\": \"2020-05-07T00:00:00.000Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"5e74124eab303f04405cbc66\",\n                \"name\": \"Magna elit officia adipisicing sint esse dolor pariatur fugiat nulla laborum nisi pariatur qui.\",\n                \"type\": \"almuerzo\",\n                \"date\": \"2020-05-06T00:00:00.000Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"5e74124eab303f04405cbc67\",\n                \"name\": \"Nostrud proident nulla velit anim amet dolore aliqua.\",\n                \"type\": \"cena\",\n                \"date\": \"2020-05-06T00:00:00.000Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"5e74124eab303f04405cbc64\",\n                \"name\": \"Amet cupidatat irure voluptate ut enim ea anim nulla non.\",\n                \"type\": \"almuerzo\",\n                \"date\": \"2020-05-05T00:00:00.000Z\",\n                \"__v\": 0\n            }\n        ]\n    },\n    \"status\": 200,\n    \"message\": \"Menus found.\",\n    \"clientMessage\": \"Menus found.\"\n}"
 								}
 							]
 						},
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"data\":[\n\t\t\n\t\t{\n\t\t\t\"companyName\":\"otraEmpresa\",\n\t\t\t\"name\": \"ABC\",\n\t\t\t\"lastName\": \"XYZ\",\n\t\t\t\"email\":\"xyz@gmail.abc\",\n\t\t\t\"endDate\":\"2020-12-05\",\n\t\t\t\"idDocumentType\": \"DNI\",\n\t\t\t\"idDocumentNumber\": \"25342134\"\n\t\t},\n\t\t\n\t\t{\n\t\t\t\"companyName\":\"Company XYZ\",\n\t\t\t\"name\": \"ABC\",\n\t\t\t\"lastName\": \"XYZ\",\n\t\t\t\"email\":\"xyz@gmail.abc\",\n\t\t\t\"endDate\":\"2020-12-05\",\n\t\t\t\"idDocumentType\": \"CE\",\n\t\t\t\"idDocumentNumber\": \"HJK25342134\"\n\t\t}\n\t\t\n\t]\n}"
+						{
+							"name": "create bulk menus",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"data\":[{\n\t\t\"name\": \"Arroz con pato\",\n\t\t\"type\": \"almuerzo\",\n\t\t\"date\": \"2020-01-01\"\n\t},{\n\t\t\"name\": \"Arroz con pollo\",\n\t\t\"type\": \"cena\",\n\t\t\"date\": \"2020-01-01\"\n\t}\n\t]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/menus/admin",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"menus",
+										"admin"
+									]
+								}
+							},
+							"response": []
 						},
-						"url": {
-							"raw": "{{url}}/company/update",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"company",
-								"update"
+						{
+							"name": "delete menu",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/menus/5e65d7e54ad3f2074de49c49/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"menus",
+										"5e65d7e54ad3f2074de49c49",
+										""
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "delete menu",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/menus/5e65d7e54ad3f2074de49c49/",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"menus",
+												"5e65d7e54ad3f2074de49c49",
+												""
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "82"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"52-0++ta+jnZ/a6ODknqtCQztOAw0s\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 21 Apr 2020 01:41:45 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {},\n    \"status\": 200,\n    \"message\": \"Menu deleted.\",\n    \"clientMessage\": \"Menu deleted.\"\n}"
+								}
 							]
 						}
-					},
-					"response": []
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "deliveryOrder",
+					"item": [
+						{
+							"name": "list admin DeliveryOrder",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"filter\":[{\"field\":\"name\",\"value\":\"a\"}],\n\t\"sort\": [{\"field\":\"lastName\", \"value\":\"asc\"},\n\t\t\t {\"field\":\"email\", \"value\":\"desc\"}]\n}"
+								},
+								"url": {
+									"raw": "{{url}}/deliveryOrder/admin/?page=1&size=50",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"deliveryOrder",
+										"admin",
+										""
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "size",
+											"value": "50"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get deliveryOrder  By ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/deliveryOrder/5e9526b3976aa200193d1494",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"deliveryOrder",
+										"5e9526b3976aa200193d1494"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
 				}
 			],
 			"protocolProfileBehavior": {}

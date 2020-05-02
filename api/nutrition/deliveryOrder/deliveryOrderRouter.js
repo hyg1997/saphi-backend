@@ -5,17 +5,7 @@ const router = express.Router();
 const Controller = require('./deliveryOrderController');
 const Validator = require('./deliveryOrderValidator');
 
-const utils = require('../../utils');
-
 router.post('/', celebrate(Validator.Post), Controller.createDeliveryOrder);
 router.get('/mydeliveryorder', Controller.getUserDeliveryOrder);
-
-// admin
-router.post(
-  '/admin',
-  celebrate(utils.joi.Pagination),
-  Controller.listAdminDeliveryOrder,
-);
-router.get('/:id', Controller.getDeliveryOrder);
 
 module.exports = router;

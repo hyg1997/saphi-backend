@@ -24,16 +24,9 @@ const updateCompanies = async (req, res) => {
   return res.status(response.status).send(response);
 };
 
-const checkDocument = async (req, res) => {
-  const company = await Service.checkDocument(req.body);
-
-  return res.status(company.status).send(company);
-};
-
 module.exports = {
   listCompany,
   getCompany,
   createCompany,
-  checkDocument,
   updateCompanies,
 };

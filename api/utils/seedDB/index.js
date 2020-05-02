@@ -11,7 +11,7 @@ require('../../../startup/logging')();
 const config = require('config');
 const { Menu } = require('../../nutrition/menu/menuModel');
 const { Aliment } = require('../../nutrition/aliment/alimentModel');
-const { Company } = require('../../auth/company/companyModel');
+const { Company } = require('../../business/company/companyModel');
 const { DishRecipe } = require('../../nutrition/dishRecipe/dishRecipeModel');
 const {
   DeliveryPlan,
