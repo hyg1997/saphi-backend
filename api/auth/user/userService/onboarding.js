@@ -3,7 +3,7 @@
 const { User } = require('../userModel');
 const { setResponse } = require('../../../utils');
 const { listAliment } = require('../../../nutrition/aliment/alimentService');
-const { calcDiet } = require('../../../nutrition/diet/dietUtils');
+const { createDiet } = require('../../../nutrition/diet/dietUtils');
 const {
   listPathology,
 } = require('../../../nutrition/pathology/pathologyService');
@@ -63,9 +63,7 @@ const onboarding = async (reqBody, reqUser) => {
   await User.findByIdAndUpdate(reqUser.id, updateUser.data);
 
   const user = await User.findById(reqUser.id);
-  const macroContent = calcDiet(user.toObject());
-  await User.findByIdAndUpdate(reqUser.id, { macroContent });
-
+  await createDiet(user);
   return setResponse(200, 'Finished Onboarding', {});
 };
 

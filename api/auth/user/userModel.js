@@ -90,7 +90,10 @@ const userSchema = new Schema(
       },
     },
 
-    // ! añadir id de la dieta actual
+    diet: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Diet',
+    },
   },
   {
     timestamps: true,

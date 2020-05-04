@@ -42,5 +42,6 @@ router.post(
   Controller.updateUser,
 );
 router.get('/payments', authenticateMiddleware('jwt'), Controller.listPayments);
+router.get('/diets', authenticateMiddleware('jwt'), Controller.listDiets);
 
 module.exports = router;

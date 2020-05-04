@@ -1,6 +1,7 @@
 /* eslint-disable no-param-reassign */
 const _ = require('lodash');
 const { User } = require('../userModel');
+const { Diet } = require('../../../nutrition/diet/dietModel');
 const {
   CulqiPayment,
 } = require('../../../payment/culqiPayment/culqiPaymentModel');
@@ -30,8 +31,16 @@ const listPayments = async userId => {
   return setResponse(200, 'Payments found.', payments);
 };
 
+const listDiets = async userId => {
+  const diets = await Diet.find({ user: userId }, 'macroContent indicators')
+    .sort({ createdAt: -1 })
+    .exec('find');
+  return setResponse(200, 'Diets found.', diets);
+};
+
 module.exports = {
   updateUser,
   validateUpdateUser,
   listPayments,
+  listDiets,
 };

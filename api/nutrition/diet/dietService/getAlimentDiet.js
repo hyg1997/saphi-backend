@@ -4,8 +4,7 @@ const { Diet } = require('../dietModel');
 const { setResponse } = require('../../../utils');
 
 const getAlimentDiet = async (reqParams, reqUser) => {
-  let diet = await Diet.findOne({ user: reqUser.id });
-
+  let diet = await Diet.findById(reqUser.diet);
   if (!diet) return setResponse(404, 'Diet not found.', {});
 
   diet = diet.toObject();

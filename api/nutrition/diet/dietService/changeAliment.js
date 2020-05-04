@@ -26,7 +26,8 @@ const changeAliment = async (reqBody, reqQuery, reqUser) => {
     macroStep === 'fat' ||
     macroStep === 'all'
   ) {
-    const diet = await Diet.findOne({ user: reqUser.id });
+    const diet = await Diet.findById(reqUser.diet);
+    if (!diet) return setResponse(404, 'Diet not found', {});
 
     let { meals } = diet;
     let aliments = past.map(async function(item) {

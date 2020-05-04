@@ -1,4 +1,8 @@
 const Service = require('./userService');
+const { User } = require('../../auth/user/userModel');
+
+const { createDiet } = require('../../nutrition/diet/dietService');
+
 const { validatePagination } = require('../../utils');
 
 const getAdminUser = async (req, res) => {
@@ -39,6 +43,8 @@ const listAdminUsers = async (req, res) => {
 
 const setMacrosOnUser = async (req, res) => {
   const response = await Service.setMacrosOnUser(req.params.id, req.body);
+  const user = User.findById(req.params.id);
+  await createDiet(user);
   return res.status(response.status).send(response);
 };
 

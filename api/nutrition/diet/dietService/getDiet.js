@@ -2,16 +2,15 @@
 const { Diet } = require('../dietModel');
 const { setResponse } = require('../../../utils');
 
-const setMeals = require('./setMeals');
-
 const { calcFormatDiet } = require('../dietUtils');
-const { MEAL_NAME, getDictValues } = require('../../../utils/constants');
+
 // * Servicio para obtener la dieta de un usuario
 
 const getDiet = async reqUser => {
-  let diet = await Diet.findOne({ user: reqUser.id });
+  let diet = await Diet.findById(reqUser.diet);
 
   if (!diet) {
+    /* Past createDiet
     if (reqUser.activeDiet) {
       await Diet.create({
         user: reqUser.id,
@@ -26,10 +25,10 @@ const getDiet = async reqUser => {
       const response = setMeals(dataMeals, reqUser);
       return response;
     }
-
+    */
     return setResponse(
       404,
-      'No Diet',
+      'Diet not found',
       {},
       'Pronto tendrás una dieta asignada.',
     );

@@ -11,8 +11,7 @@ const BASIC_MEALS = ['desayuno', 'almuerzo', 'cena'];
 
 // ? Se crea la dieta default
 const setMeals = async (reqBody, reqUser) => {
-  const diet = await Diet.findOne({ user: reqUser.id }); // ? Macronutrientes
-
+  const diet = await Diet.findById(reqUser.diet); // ? Macronutrientes
   if (!diet) return setResponse(404, 'Diet not found.', {});
 
   // TODO: a cambiar cuando se tengan nuevas combinaciones

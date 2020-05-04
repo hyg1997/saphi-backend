@@ -33,50 +33,19 @@ const dietSchema = new mongoose.Schema(
           {
             type: mongoose.Schema.Types.Mixed,
           },
-          // {
-          //   aliment: {
-          //     type: mongoose.Schema.Types.ObjectId,
-          //     required: true,
-          //     ref: 'Aliment',
-          //   },
-          //   name: {
-          //     type: String,
-          //     required: true,
-          //   },
-          //   thumbnailImagePath: {
-          //     type: String,
-          //   },
-          //   minQuantity: {
-          //     type: Number,
-          //     required: true,
-          //   },
-          //   quantity: {
-          //     type: Number,
-          //     required: true,
-          //   },
-          //   units: {
-          //     type: String,
-          //     required: true,
-          //   },
-          //   macroContent: {
-          //     carbohydrate: {
-          //       type: Number,
-          //       required: true,
-          //     },
-          //     protein: {
-          //       type: Number,
-          //       required: true,
-          //     },
-          //     fat: {
-          //       type: Number,
-          //       required: true,
-          //     },
-          //   },
-          // },
         ],
       },
     ],
-    // ! indicadores_medicos => Que parametros se usan para generan los macros
+    indicators: {
+      age: { type: Number },
+      idObjective: { type: String },
+      sex: { type: String },
+      weight: { type: Number },
+      height: { type: Number },
+      idBodyFat: { type: String },
+      bodyFatPercentage: { type: Number },
+      idPhysicalActivity: { type: String },
+    },
   },
   {
     timestamps: true,

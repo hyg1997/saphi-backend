@@ -46,6 +46,11 @@ const listPayments = async (req, res) => {
   return res.status(payments.status).send(payments);
 };
 
+const listDiets = async (req, res) => {
+  const diets = await Service.listDiets(req.user.id);
+  return res.status(diets.status).send(diets);
+};
+
 module.exports = {
   onboarding,
   forgotPassword,
@@ -53,6 +58,7 @@ module.exports = {
   resetPassword,
   // Profile
   listPayments,
+  listDiets,
   updateUser,
   contactForm,
 };
