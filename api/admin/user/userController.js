@@ -43,7 +43,8 @@ const listAdminUsers = async (req, res) => {
 
 const setMacrosOnUser = async (req, res) => {
   const response = await Service.setMacrosOnUser(req.params.id, req.body);
-  const user = User.findById(req.params.id);
+  if (response.status !== 200) res.status(response.status).send(response);
+  const user = await User.findById(req.params.id);
   await createDiet(user);
   return res.status(response.status).send(response);
 };

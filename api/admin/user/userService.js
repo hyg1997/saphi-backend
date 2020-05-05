@@ -14,7 +14,7 @@ const { setResponse, renderTemplate, sendEmail } = require('../../utils');
 
 const generateQueryUsers = reqBody => {
   const allFields = ['name', 'lastName', 'email', 'companyName', 'id'];
-  const matchFields = ['activeDiet'];
+  const matchFields = ['activeDiet', 'onboardingFinished'];
   const query = [];
 
   if (reqBody.match) {
@@ -106,6 +106,8 @@ const getAdminUser = async userId => {
 
 const setMacrosOnUser = async (userId, reqBody) => {
   const user = await User.findById(userId);
+  if (!user.onboardingFinished)
+    return setResponse(400, "User didn't finished onboarding", {});
   user.macroContent = {
     carbohydrate: reqBody.carbohydrate,
     protein: reqBody.protein,

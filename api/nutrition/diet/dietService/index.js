@@ -4,4 +4,5 @@ module.exports = {
   getAlimentDiet: require('./getAlimentDiet'),
   setMeals: require('./setMeals'),
   changeAliment: require('./changeAliment'),
+  createDiet: require('./createDiet'),
 };

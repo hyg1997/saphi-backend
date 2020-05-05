@@ -3,7 +3,7 @@
 const { User } = require('../userModel');
 const { setResponse } = require('../../../utils');
 const { listAliment } = require('../../../nutrition/aliment/alimentService');
-const { createDiet } = require('../../../nutrition/diet/dietUtils');
+const { createDiet } = require('../../../nutrition/diet/dietService');
 const {
   listPathology,
 } = require('../../../nutrition/pathology/pathologyService');
