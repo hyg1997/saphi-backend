@@ -2,7 +2,7 @@
   authenticateMiddleware('jwt') de manera que se garantice que solo aquellos autenticados pueden realizar las operaciones. Actualmente varios endpoints de admin no tienen esta configuracion
 * Considero necesarios mantener una estructura de db actualizada antes los cambios que se vienen realizando
 
-* Validar proceso de paginación - https://www.hacksparrow.com/databases/mongodb/pagination.html
+* [X] Validar proceso de paginación - https://www.hacksparrow.com/databases/mongodb/pagination.html
 * [X] Los try catch no deberían ser necesario, se tiene configurado un error router que devuelve 500 en caso el servidor no funcione
   * En el caso de errores de servicios externos debería emplearse el http status code 503
 ---
@@ -22,7 +22,7 @@
 * [X} La compañia no es una entidad que tenga que ver con el usuario, no todos los usuarios tienen una compañía. La lógica de compañía tendrá mas componentes a futuro porque habrá un módulo asociado al admin que recibiran las compañías
   * Sería mejor separar en una carpeta distinta, de nombre "business" en donde manejemos los apis asociados a los servicios de empresas
 
-* Los endpoints que no estan asociados a auth podrían moverse a otra carpeta pacient que maneje el crud de los pacientes que son usados en el app. De esta manera también podemos separar las interacciones que estan ligadas a por ejemplo el admin, o usuario empresa que tendremos mas adelante
+* [X] Los endpoints que no estan asociados a auth podrían moverse a otra carpeta pacient que maneje el crud de los pacientes que son usados en el app. De esta manera también podemos separar las interacciones que estan ligadas a por ejemplo el admin, o usuario empresa que tendremos mas adelante
 
 ---
 

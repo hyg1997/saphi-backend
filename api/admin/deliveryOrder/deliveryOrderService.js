@@ -12,9 +12,35 @@ const getDeliveryOrder = async reqParams => {
   return setResponse(200, 'DeliveryOrder found.', deliveryOrder);
 };
 
+const countDeliveryOrder = async reqQuery => {
+  const total = await DeliveryOrder.aggregate([
+    {
+      $lookup: {
+        from: 'users',
+        localField: 'user',
+        foreignField: '_id',
+        as: 'user_data',
+      },
+    },
+    { $unwind: { path: '$user_data', preserveNullAndEmptyArrays: true } },
+    {
+      $project: {
+        startDate: 1,
+        'user_data.name': 1,
+        'user_data.lastName': 1,
+        'user_data.email': 1,
+      },
+    },
+    { $match: reqQuery.filter },
+  ]).count('startDate');
+
+  if (total.length === 0) return 0;
+  return total[0].startDate;
+};
+
 const generateQueryDeliveryOrder = reqBody => {
-  const filterFields = ['id', 'name', 'lastName', 'email', 'id'];
-  const query = [];
+  const filterFields = ['id', 'name', 'lastName', 'email'];
+  const query = { filter: {}, sort: {} };
 
   if (reqBody.filter) {
     if (!reqBody.filter.every(obj => filterFields.includes(obj.field)))
@@ -25,7 +51,7 @@ const generateQueryDeliveryOrder = reqBody => {
       filterItem[`user_data.${obj.field}`] = { $regex: obj.value };
       return filterItem;
     });
-    query.push({ $match: { $and: allFilters } });
+    query.filter.$and = allFilters;
   }
 
   if (reqBody.sort) {
@@ -36,16 +62,14 @@ const generateQueryDeliveryOrder = reqBody => {
     reqBody.sort.forEach(obj => {
       allSorts[`user_data.${obj.field}`] = obj.value === 'asc' ? 1 : -1;
     });
-    query.push({ $sort: allSorts });
+    query.sort = allSorts;
   }
 
   return setResponse(200, 'OK', query);
 };
 
-const listAdminDeliveryOrder = async reqQueryMongoose => {
-  let listDeliveryOrder = [];
-
-  listDeliveryOrder = await DeliveryOrder.aggregate([
+const listAdminDeliveryOrder = async reqQuery => {
+  const listDeliveryOrder = await DeliveryOrder.aggregate([
     {
       $lookup: {
         from: 'users',
@@ -54,6 +78,7 @@ const listAdminDeliveryOrder = async reqQueryMongoose => {
         as: 'user_data',
       },
     },
+    { $unwind: { path: '$user_data', preserveNullAndEmptyArrays: true } },
     {
       $project: {
         contactName: 1,
@@ -68,13 +93,18 @@ const listAdminDeliveryOrder = async reqQueryMongoose => {
         'user_data.email': 1,
       },
     },
-    ...reqQueryMongoose,
-  ]).exec();
+    { $match: reqQuery.filter },
+  ])
+    .sort(reqQuery.sort)
+    .collation({ locale: 'es', strength: 1 })
+    .skip(reqQuery.skip)
+    .limit(reqQuery.limit);
 
   return setResponse(200, 'DeliveryPlans found.', listDeliveryOrder);
 };
 
 module.exports = {
+  countDeliveryOrder,
   listAdminDeliveryOrder,
   getDeliveryOrder,
   generateQueryDeliveryOrder,

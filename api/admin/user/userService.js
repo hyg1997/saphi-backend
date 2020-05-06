@@ -15,7 +15,7 @@ const { setResponse, renderTemplate, sendEmail } = require('../../utils');
 const generateQueryUsers = reqBody => {
   const allFields = ['name', 'lastName', 'email', 'companyName', 'id'];
   const matchFields = ['activeDiet', 'onboardingFinished'];
-  const query = [];
+  const query = { filter: { $and: [] }, sort: {} };
 
   if (reqBody.match) {
     if (!reqBody.match.every(obj => matchFields.includes(obj.field)))
@@ -25,13 +25,12 @@ const generateQueryUsers = reqBody => {
         {},
       );
 
-    const allMatchs = reqBody.match.map(obj => {
+    reqBody.match.forEach(obj => {
       const matchItem = {};
       matchItem[obj.field] = obj.value;
-      return matchItem;
-    });
 
-    query.push({ $match: { $and: allMatchs } });
+      query.filter.$and.push(matchItem);
+    });
   }
 
   if (reqBody.filter) {
@@ -42,13 +41,16 @@ const generateQueryUsers = reqBody => {
         {},
       );
 
-    const allFilters = reqBody.filter.map(obj => {
+    reqBody.filter.forEach(obj => {
       const filterItem = {};
       filterItem[obj.field] = { $regex: obj.value, $options: 'i' };
-      return filterItem;
-    });
 
-    query.push({ $match: { $and: allFilters } });
+      query.filter.$and.push(filterItem);
+    });
+  }
+
+  if (query.filter.$and.length === 0) {
+    delete query.filter.$and;
   }
 
   if (reqBody.sort) {
@@ -63,33 +65,22 @@ const generateQueryUsers = reqBody => {
     reqBody.sort.forEach(obj => {
       allSorts[`${obj.field}`] = obj.value === 'asc' ? 1 : -1;
     });
-    query.push({ $sort: allSorts });
+    query.sort = allSorts;
   }
 
   return setResponse(200, 'OK', query);
 };
 
-const listAdminUsers = async reqQueryMongoose => {
+const listAdminUsers = async reqQuery => {
   let listUsers = [];
-  listUsers = await User.aggregate([
-    {
-      $project: {
-        idDocumentType: 1,
-        idDocumentNumber: 1,
-        phonePrefix: 1,
-        phoneNumber: 1,
-        name: 1,
-        planSubscription: 1,
-        lastName: 1,
-        email: 1,
-        companyName: 1,
-        activeDiet: 1,
-      },
-    },
-    ...reqQueryMongoose,
-  ])
+  listUsers = await User.find(
+    reqQuery.filter,
+    'idDocumentType idDocumentNumber phonePrefix phoneNumber name planSubscription lastName email companyName activeDiet onboardingFinished',
+  )
+    .sort(reqQuery.sort)
     .collation({ locale: 'es', strength: 1 })
-    .exec();
+    .skip(reqQuery.skip)
+    .limit(reqQuery.limit);
 
   return setResponse(200, 'Users found.', listUsers);
 };

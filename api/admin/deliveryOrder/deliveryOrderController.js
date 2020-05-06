@@ -9,28 +9,25 @@ const getDeliveryOrder = async (req, res) => {
 
 const listAdminDeliveryOrder = async (req, res) => {
   const resp = Service.generateQueryDeliveryOrder(req.body);
-  if (resp.status !== 200) {
-    return res.status(resp.status).send(resp);
-  }
+  if (resp.status !== 200) return res.status(resp.status).send(resp);
 
-  const listDeliveryOrder = await Service.listAdminDeliveryOrder(resp.data);
-  const total = listDeliveryOrder.data.length;
+  const deliveryQuery = resp.data;
+  const total = await Service.countDeliveryOrder(deliveryQuery);
 
   const pagination = validatePagination(total, req.query.page, req.query.size);
+  if (pagination.status !== 200)
+    return res.status(pagination.status).send(pagination);
 
-  if (pagination.status !== 200) return pagination;
+  deliveryQuery.limit = req.query.size;
+  deliveryQuery.skip = pagination.data.skip;
 
-  const { page } = req.query;
-  const items = listDeliveryOrder.data.slice(
-    pagination.data.skip,
-    pagination.data.skip + req.query.size,
-  );
+  const listDeliveryOrder = await Service.listAdminDeliveryOrder(deliveryQuery);
 
   listDeliveryOrder.data = {
     numPages: pagination.data.numPages,
     total,
-    page,
-    items,
+    page: req.query.page,
+    items: listDeliveryOrder.data,
   };
   return res.status(listDeliveryOrder.status).send(listDeliveryOrder);
 };

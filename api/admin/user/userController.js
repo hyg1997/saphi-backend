@@ -13,30 +13,25 @@ const getAdminUser = async (req, res) => {
 
 const listAdminUsers = async (req, res) => {
   const resp = Service.generateQueryUsers(req.body);
-  if (resp.status !== 200) {
-    return res.status(resp.status).send(resp);
-  }
+  if (resp.status !== 200) return res.status(resp.status).send(resp);
 
-  const listUsers = await Service.listAdminUsers(resp.data);
-  if (listUsers.status !== 200) return listUsers;
-
-  const total = listUsers.data.length;
+  const userQuery = resp.data;
+  const total = await User.find(userQuery.filter).count();
 
   const pagination = validatePagination(total, req.query.page, req.query.size);
   if (pagination.status !== 200)
     return res.status(pagination.status).send(pagination);
 
-  const { page } = req.query;
-  const items = listUsers.data.slice(
-    pagination.data.skip,
-    pagination.data.skip + req.query.size,
-  );
+  userQuery.limit = req.query.size;
+  userQuery.skip = pagination.data.skip;
+
+  const listUsers = await Service.listAdminUsers(userQuery);
 
   listUsers.data = {
     numPages: pagination.data.numPages,
     total,
-    page,
-    items,
+    page: req.query.page,
+    items: listUsers.data,
   };
   return res.status(listUsers.status).send(listUsers);
 };
