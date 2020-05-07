@@ -1,5 +1,8 @@
 /* eslint-disable no-param-reassign */
 const _ = require('lodash');
+const fs = require('fs');
+const path = require('path');
+const { uploadImage } = require('../../../utils/aws');
 const { User } = require('../userModel');
 const { Diet } = require('../../../nutrition/diet/dietModel');
 const {
@@ -38,9 +41,27 @@ const listDiets = async userId => {
   return setResponse(200, 'Diets found.', diets);
 };
 
+const updatePhoto = async (reqUser, file) => {
+  const ext = path.extname(file.originalname);
+  let type = 'image/jpeg';
+  if (ext === 'png') type = 'image/png';
+  const key = `user-profile/${reqUser.id}/photo${ext}`;
+
+  let photo = '';
+  try {
+    photo = await uploadImage(key, file, type);
+  } catch (e) {
+    //
+  }
+  fs.unlinkSync(file.path);
+  if (!photo) return setResponse(500, 'Error uploading object', {});
+  return setResponse(200, 'Photo updated.', { photo });
+};
+
 module.exports = {
   updateUser,
   validateUpdateUser,
   listPayments,
   listDiets,
+  updatePhoto,
 };

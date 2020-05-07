@@ -43,5 +43,10 @@ router.post(
 );
 router.get('/payments', authenticateMiddleware('jwt'), Controller.listPayments);
 router.get('/diets', authenticateMiddleware('jwt'), Controller.listDiets);
-
+router.put(
+  '/updatephoto',
+  Validator.validatePhoto,
+  authenticateMiddleware('jwt'),
+  Controller.updatePhoto,
+);
 module.exports = router;

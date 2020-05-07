@@ -11,5 +11,8 @@
   "facebookClientId": "FACEBOOK_APP_ID",
   "facebookClientSecret": "FACEBOOK_APP_SECRET",
   "emailSaphi": "SAPHI_EMAIL",
-  "passwordEmailSaphi": "SAPHI_EMAIL_PASSWORD"
+  "passwordEmailSaphi": "SAPHI_EMAIL_PASSWORD",
+  "AWS_ACCESS_KEY_ID":"AWS_ACCESS_KEY_ID",
+  "AWS_SECRET_ACCESS_KEY":"AWS_SECRET_ACCESS_KEY",
+  "BUCKET":"BUCKET"
 }

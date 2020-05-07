@@ -1,3 +1,6 @@
+/* eslint-disable consistent-return */
+const multer = require('multer');
+const path = require('path');
 const { Joi } = require('celebrate');
 
 const { DIET_FACTORS } = require('../../utils/constants');
@@ -148,6 +151,30 @@ const UpdateUser = {
     .with('pastPassword', 'newPassword'),
 };
 
+const upload = multer({
+  fileFilter(req, file, callback) {
+    const ext = path.extname(file.originalname);
+    if (!['.png', '.jpg', '.jpeg'].includes(ext)) {
+      return callback(new Error('Only images are allowed'), false);
+    }
+    return callback(null, true);
+  },
+  limits: {
+    fileSize: 10 * 1024 * 1024,
+  },
+  dest: '_tmp_/',
+});
+
+const validatePhoto = (req, res, next) => {
+  upload.single('photo')(req, res, function(err) {
+    if (err)
+      return res
+        .status('400')
+        .send({ status: 400, message: String(err), data: {} });
+    next();
+  });
+};
+
 module.exports = {
   UpdateOnBoarding,
   ForgotPassword,
@@ -155,4 +182,5 @@ module.exports = {
   ResetPassword,
   ContactForm,
   UpdateUser,
+  validatePhoto,
 };

@@ -1,6 +1,7 @@
 /* eslint-disable global-require */
 /* eslint-disable no-unused-vars */
 const express = require('express');
+const bodyParser = require('body-parser');
 const cors = require('cors');
 const path = require('path');
 const winston = require('winston');
@@ -15,18 +16,13 @@ module.exports = app => {
   app.options('*', cors()); // Update according to project
   app.use(cors());
 
-  app.use(
-    express.urlencoded({
-      extended: false,
-    }),
-  );
   app.use('/static', express.static(path.join(__dirname, '../static')));
 
+  app.use(bodyParser.json());
+
   app.use(
-    express.json({
-      verify(req, res, buf, encoding) {
-        req.rawBody = buf.toString();
-      },
+    bodyParser.urlencoded({
+      extended: true,
     }),
   );
 

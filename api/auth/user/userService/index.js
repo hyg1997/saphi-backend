@@ -6,7 +6,12 @@ const {
   createUser,
 } = require('./authUser');
 const { onboarding, validateOnboarding } = require('./onboarding');
-const { updateUser, validateUpdateUser, listPayments } = require('./profile');
+const {
+  updateUser,
+  validateUpdateUser,
+  listPayments,
+  updatePhoto,
+} = require('./profile');
 const { forgotPassword, checkCode, resetPassword } = require('./password');
 
 module.exports = {
@@ -24,5 +29,6 @@ module.exports = {
   updateUser,
   validateUpdateUser,
   listPayments,
+  updatePhoto,
   ...require('./contactForm'),
 };

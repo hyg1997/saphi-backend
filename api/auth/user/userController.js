@@ -51,6 +51,12 @@ const listDiets = async (req, res) => {
   return res.status(diets.status).send(diets);
 };
 
+const updatePhoto = async (req, res) => {
+  const photo = req.file;
+  const response = await Service.updatePhoto(req.user, photo);
+  return res.status(response.status).send(response);
+};
+
 module.exports = {
   onboarding,
   forgotPassword,
@@ -61,4 +67,5 @@ module.exports = {
   listDiets,
   updateUser,
   contactForm,
+  updatePhoto,
 };
