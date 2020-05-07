@@ -22,7 +22,7 @@ const contactForm = async (reqBody, reqUser) => {
   log.save();
   await sendEmail(content, config.get('emailSaphi'), reqBody.subject);
 
-  return setResponse(200, 'Email sent');
+  return setResponse(200, 'Email sent', { status: 'ok' });
 };
 
 module.exports = {

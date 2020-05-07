@@ -9,6 +9,13 @@ const USER_CONSTANTS = {
 };
 
 module.exports = {
+  PROGESS_STATUS: {
+    locked: 'locked',
+    available: 'available',
+    opened: 'opened',
+    completed: 'completed',
+  },
+
   MENU_TYPE: {
     lunch: 'almuerzo',
     dinner: 'cena',

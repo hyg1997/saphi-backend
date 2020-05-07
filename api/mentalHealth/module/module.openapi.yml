@@ -1,0 +1,13 @@
+paths:
+  "/mentalHealth/modules":
+    get:
+      tags:
+        - mentalHealth-Module
+      summary: Get modules for mental health section
+      security:
+        - bearerAuth: []
+      responses:
+        200:
+          description: Successful Login
+        400:
+          description: Authentication failed
