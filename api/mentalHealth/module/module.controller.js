@@ -5,6 +5,11 @@ const getModule = async (req, res) => {
   return res.status(response.status).send(response);
 };
 
+const getModuleActivity = async (req, res) => {
+  const response = await Service.getModuleActivity(req.params);
+  return res.status(response.status).send(response);
+};
+
 const listModule = async (req, res) => {
   const response = await Service.listModule(req.query);
   return res.status(response.status).send(response);
@@ -12,5 +17,6 @@ const listModule = async (req, res) => {
 
 module.exports = {
   getModule,
+  getModuleActivity,
   listModule,
 };

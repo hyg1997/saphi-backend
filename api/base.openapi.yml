@@ -7,6 +7,13 @@ components:
       required: true
       schema:
         type: string
+    paramSubId:
+      name: subId
+      in: path
+      description: Id del subrecurso requerido.
+      required: true
+      schema:
+        type: string
   securitySchemes:
     bearerAuth: # arbitrary name for the security scheme
       type: http

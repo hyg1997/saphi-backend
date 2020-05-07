@@ -25,3 +25,18 @@ paths:
           description: Successful Login
         400:
           description: Authentication failed
+  "/mentalHealth/modules/{id}/activity/{subId}":
+    get:
+      tags:
+        - mentalHealth-Module
+      summary: Get one module by Id
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: "#/components/parameters/paramId"
+        - $ref: "#/components/parameters/paramSubId"
+      responses:
+        200:
+          description: Successful Login
+        400:
+          description: Authentication failed

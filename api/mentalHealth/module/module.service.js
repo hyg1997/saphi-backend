@@ -8,6 +8,16 @@ const getModule = async reqParams => {
   return setResponse(200, 'Module Found', module);
 };
 
+const getModuleActivity = async reqParams => {
+  const module = await Module.findById(reqParams.id);
+  if (!module) return setResponse(404, 'Module not found');
+  const activity = module.activities.find(obj =>
+    obj._id.equals(reqParams.subId),
+  );
+  if (!module) return setResponse(404, 'Activity not found');
+  return setResponse(200, 'Activity Found', activity);
+};
+
 const listModule = async reqQuery => {
   const modules = await Module.find(reqQuery);
 
@@ -29,4 +39,5 @@ const listModule = async reqQuery => {
 module.exports = {
   getModule,
   listModule,
+  getModuleActivity,
 };
