@@ -37,6 +37,7 @@ const userSchema = new Schema(
     phoneNumber: { type: String },
     companyName: { type: String },
     companyId: { type: mongoose.Schema.Types.ObjectId },
+    photo: { type: String },
 
     endDate: { type: Date },
 

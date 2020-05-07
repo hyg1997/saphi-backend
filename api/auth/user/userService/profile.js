@@ -55,6 +55,8 @@ const updatePhoto = async (reqUser, file) => {
   }
   fs.unlinkSync(file.path);
   if (!photo) return setResponse(500, 'Error uploading object', {});
+  reqUser.photo = photo;
+  await reqUser.save();
   return setResponse(200, 'Photo updated.', { photo });
 };
 
