@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable global-require */
 const winston = require('winston');
 const fs = require('fs');
@@ -18,6 +19,8 @@ const {
 } = require('../../nutrition/deliveryPlan/deliveryPlanModel');
 const { Plan } = require('../../payment/plan/planModel');
 const { Pathology } = require('../../nutrition/pathology/pathologyModel');
+
+const { Quiz } = require('../../mentalHealth/quiz/quiz.model');
 
 const { asyncForEach } = require('../../utils');
 
@@ -70,25 +73,31 @@ mongoose
   .then(async () => {
     // await seedModel(DeliveryPlan, 'deliveryPlan.json');
     // await seedModel(DishRecipe, 'dishRecipe.json');
+
     // await seedModel(Menu, 'menu.json', true, obj => {
     //   return moment(obj.date).isoWeekday() < 6;
     // });
     // await seedModel(Aliment, 'aliments.json');
-    await seedModel(
-      Company,
-      'company.json',
-      true,
-      obj => true,
-      obj => {
-        obj.users = obj.users.map(u => {
-          u.idDocumentNumber = u.idDocumentNumber.toString();
-          return u;
-        });
-        return obj;
-      },
-    );
+    // await seedModel(
+    //   Company,
+    //   'company.json',
+    //   true,
+    //   obj => true,
+    //   obj => {
+    //     obj.users = obj.users.map(u => {
+    //       u.idDocumentNumber = u.idDocumentNumber.toString();
+    //       return u;
+    //     });
+    //     return obj;
+    //   },
+    // );
     // await seedModel(Plan, 'plan.json');
     // await seedModel(Pathology, 'pathologies.json');
+
+    // ? Mental Health
+
+    await seedModel(Quiz, 'quiz.json');
+
     mongoose.connection.close();
   })
   .catch(err => console.log(`Failed to connect to MongoDB...${String(err)}`));

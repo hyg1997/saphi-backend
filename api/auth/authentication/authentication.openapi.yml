@@ -37,8 +37,8 @@ paths:
             examples:
               email:
                 value:
-                  email: correo@gmail.com
-                  password: "1234567890"
+                  email: admin@correo.com
+                  password: "password"
               DNI:
                 value:
                   idDocumentType: DNI
