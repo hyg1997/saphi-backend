@@ -36,6 +36,7 @@ const buyPlan = async (reqParams, reqBody, reqUser) => {
       active: true,
       type: 'User Plan',
       endDate: moment().add(plan.toObject().months, 'months'),
+      startDate: moment(),
     };
     await User.findByIdAndUpdate(reqUser.id, { planSubscription });
   }
