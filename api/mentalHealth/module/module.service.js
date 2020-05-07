@@ -1,5 +1,4 @@
 /* eslint-disable no-param-reassign */
-const _ = require('lodash');
 const { Module } = require('./module.model');
 const { setResponse } = require('../../utils');
 
@@ -28,5 +27,6 @@ const listModule = async reqQuery => {
 };
 
 module.exports = {
+  getModule,
   listModule,
 };

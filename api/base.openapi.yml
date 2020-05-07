@@ -1,4 +1,12 @@
 components:
+  parameters:
+    paramId:
+      name: id
+      in: path
+      description: Id del recurso requerido.
+      required: true
+      schema:
+        type: string
   securitySchemes:
     bearerAuth: # arbitrary name for the security scheme
       type: http
