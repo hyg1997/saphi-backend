@@ -36,10 +36,12 @@ const strategy = () => {
       },
       async (req, email, password, done) => {
         const user = await readUserByFieldIds(req.body);
+        console.log(user, email, password);
         if (user.status !== 200) {
           return done(null, false, user);
         }
         const validate = await user.data.isValidPassword(req.body.password);
+        console.log(validate);
         if (!validate) {
           return done(null, false, {
             status: 400,

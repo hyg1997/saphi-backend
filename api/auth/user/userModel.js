@@ -102,7 +102,7 @@ const userSchema = new Schema(
 );
 
 userSchema.pre('save', async function(next) {
-  if (!this.password) next();
+  if (!this.isNew) next();
   const salt = await bcrypt.genSalt(config.get('saltPow'));
   const hash = await bcrypt.hash(this.password, salt);
   this.password = hash;
@@ -110,8 +110,10 @@ userSchema.pre('save', async function(next) {
 });
 
 userSchema.methods.isValidPassword = async function(password) {
+  console.log(password, this.password);
   if (!this.password || !password) return false;
   const compare = await bcrypt.compare(password, this.password);
+  console.log(compare);
   return compare;
 };
 
