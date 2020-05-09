@@ -1,10 +1,12 @@
 const { Joi } = require('celebrate');
 const {
   idDocumentValidator,
+  emailValidator,
 } = require('../../auth/authentication/authenticationValidator');
 
 const companyUser = {
   ...idDocumentValidator,
+  ...emailValidator,
   name: Joi.string()
     .min(1)
     .max(255)
@@ -12,9 +14,6 @@ const companyUser = {
   lastName: Joi.string()
     .min(1)
     .max(255)
-    .required(),
-  email: Joi.string()
-    .email()
     .required(),
   endDate: Joi.date()
     .iso()

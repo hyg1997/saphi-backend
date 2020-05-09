@@ -1,6 +1,7 @@
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable no-param-reassign */
 const config = require('config');
+const winston = require('winston');
 
 const { User } = require('../../auth/user/userModel');
 const {
@@ -72,8 +73,7 @@ const generateQueryUsers = reqBody => {
 };
 
 const listAdminUsers = async reqQuery => {
-  let listUsers = [];
-  listUsers = await User.find(
+  const listUsers = await User.find(
     reqQuery.filter,
     'idDocumentType idDocumentNumber phonePrefix phoneNumber name planSubscription lastName email companyName activeDiet onboardingFinished',
   )
@@ -117,7 +117,8 @@ const setMacrosOnUser = async (userId, reqBody) => {
   try {
     await sendEmail(content, user.email, 'Tu Nuevo Plan Nutricional');
   } catch (error) {
-    return setResponse(503, 'Ocurrio un error', {});
+    winston.error(`Error al enviar correo de plan nutricional a ${user.email}`);
+    // return setResponse(503, 'Ocurrio un error', {});
   }
 
   return setResponse(200, 'Updated User', {});

@@ -4,14 +4,6 @@ const {
 } = require('../../nutrition/deliveryOrder/deliveryOrderModel');
 const { setResponse } = require('../../utils');
 
-const getDeliveryOrder = async reqParams => {
-  const deliveryOrder = await DeliveryOrder.findById(reqParams.id).populate(
-    'user',
-  );
-
-  return setResponse(200, 'DeliveryOrder found.', deliveryOrder);
-};
-
 const countDeliveryOrder = async reqQuery => {
   const total = await DeliveryOrder.aggregate([
     {
@@ -106,6 +98,5 @@ const listAdminDeliveryOrder = async reqQuery => {
 module.exports = {
   countDeliveryOrder,
   listAdminDeliveryOrder,
-  getDeliveryOrder,
   generateQueryDeliveryOrder,
 };

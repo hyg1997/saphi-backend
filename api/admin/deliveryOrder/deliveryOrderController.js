@@ -1,8 +1,9 @@
 const Service = require('./deliveryOrderService');
+const DeliveryOrderService = require('../../nutrition/deliveryOrder/deliveryOrderService');
 const { validatePagination } = require('../../utils');
 
 const getDeliveryOrder = async (req, res) => {
-  const deliveryOrder = await Service.getDeliveryOrder(req.params);
+  const deliveryOrder = await DeliveryOrderService.getDeliveryOrder(req.params);
 
   return res.status(deliveryOrder.status).send(deliveryOrder);
 };

@@ -24,6 +24,14 @@ const createDeliveryOrder = async (reqBody, reqUser) => {
   return setResponse(200, 'DeliveryOrder created.', deliveryOrder);
 };
 
+const getDeliveryOrder = async reqParams => {
+  const deliveryOrder = await DeliveryOrder.findById(reqParams.id).populate(
+    'user',
+  );
+
+  return setResponse(200, 'DeliveryOrder found.', deliveryOrder);
+};
+
 const getUserDeliveryOrder = async reqUser => {
   const deliveryOrder = await DeliveryOrder.find({
     user: reqUser.id,
@@ -42,4 +50,5 @@ module.exports = {
   getUserDeliveryOrder,
   // * Other
   validateDeliveryOrder,
+  getDeliveryOrder,
 };
