@@ -1,30 +1,21 @@
 const { Joi } = require('celebrate');
 
-const { DOCUMENT_TYPE } = require('../../utils/constants');
+const { DOCUMENT_TYPE, getDictValues } = require('../../utils/constants');
 
-const documentPayload = {
+const idDocumentValidator = {
   idDocumentType: Joi.string()
-    .valid(DOCUMENT_TYPE.DNI, DOCUMENT_TYPE.CE, DOCUMENT_TYPE.PASSPORT)
+    .valid(...getDictValues(DOCUMENT_TYPE))
     .required(),
   idDocumentNumber: Joi.string()
     .trim()
-    .min(5)
     .max(255)
     .when('idDocumentType', {
-      is: 'DNI',
+      is: DOCUMENT_TYPE.DNI,
       then: Joi.string().regex(/^\d{8}$/),
     })
     .required(),
 };
-
-const registerPayload = {
-  idDocumentType: Joi.string()
-    .valid(DOCUMENT_TYPE.DNI, DOCUMENT_TYPE.CE, DOCUMENT_TYPE.PASSPORT)
-    .required(),
-  idDocumentNumber: Joi.string()
-    .trim()
-    .min(1)
-    .required(),
+const emailValidator = {
   email: Joi.string()
     .lowercase()
     .trim()
@@ -32,11 +23,25 @@ const registerPayload = {
     .max(255)
     .email()
     .required(),
+};
+
+const passwordValidator = {
+  password: Joi.string()
+    .min(8)
+    .max(255)
+    .required(),
+};
+
+const registerPayload = {
+  ...idDocumentValidator,
+  ...emailValidator,
   name: Joi.string()
+    .trim()
     .min(1)
     .max(255)
     .required(),
   lastName: Joi.string()
+    .trim()
     .min(1)
     .max(255)
     .required(),
@@ -44,9 +49,11 @@ const registerPayload = {
     .min(1)
     .max(255),
   phoneNumber: Joi.string()
+    .trim()
     .min(1)
     .max(255),
   companyName: Joi.string()
+    .trim()
     .min(1)
     .max(255)
     .allow(''),
@@ -55,51 +62,20 @@ const registerPayload = {
 
 const Register = {
   body: {
-    password: Joi.string()
-      .trim()
-      .min(6)
-      .max(255)
-      .required(),
+    ...passwordValidator,
     ...registerPayload,
   },
 };
 
 const Login = {
-  body: {
-    email: Joi.string()
-      .lowercase()
-      .trim()
-      .min(5)
-      .max(255)
-      .default('-'),
-    idDocumentType: Joi.string().valid(
-      DOCUMENT_TYPE.DNI,
-      DOCUMENT_TYPE.CE,
-      DOCUMENT_TYPE.PASSPORT,
-    ),
-    idDocumentNumber: Joi.string()
-      .trim()
-      .min(5)
-      .max(255),
-    password: Joi.string()
-      .trim()
-      .min(6)
-      .max(255)
-      .required(),
-  },
-};
-
-const CheckDocument = {
-  body: {
-    ...documentPayload,
-    email: Joi.string()
-      .lowercase()
-      .trim()
-      .min(5)
-      .max(255)
-      .email()
-      .required(),
-  },
+  body: Joi.object({
+    email: emailValidator.email.optional(),
+    idDocumentType: idDocumentValidator.idDocumentType.optional(),
+    idDocumentNumber: idDocumentValidator.idDocumentNumber.optional(),
+    ...passwordValidator,
+  })
+    .xor('email', 'idDocumentType')
+    .and('idDocumentType', 'idDocumentNumber'),
 };
 
 const RegisterGoogleFacebook = {
@@ -115,11 +91,21 @@ const LoginGoogleFacebook = {
   },
 };
 
+const CheckDocument = {
+  body: {
+    ...idDocumentValidator,
+    ...emailValidator,
+  },
+};
+
 module.exports = {
   Register,
   Login,
   CheckDocument,
-  documentPayload,
   RegisterGoogleFacebook,
   LoginGoogleFacebook,
+
+  idDocumentValidator,
+  emailValidator,
+  passwordValidator,
 };

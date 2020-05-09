@@ -1,10 +1,10 @@
 const { Joi } = require('celebrate');
 const {
-  documentPayload,
+  idDocumentValidator,
 } = require('../../auth/authentication/authenticationValidator');
 
 const companyUser = {
-  ...documentPayload,
+  ...idDocumentValidator,
   name: Joi.string()
     .min(1)
     .max(255)

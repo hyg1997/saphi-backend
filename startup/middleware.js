@@ -11,6 +11,7 @@ const celebrateError = require('../api/middleware/celebrateError');
 const error = require('../api/middleware/error');
 
 const { initialiseAuthentication } = require('../api/middleware/auth');
+const { ApiLog } = require('../api/utils/apiLogging');
 
 module.exports = app => {
   app.options('*', cors()); // Update according to project
@@ -36,13 +37,13 @@ module.exports = app => {
     const chunks = [];
 
     res.write = (...restArgs) => {
-      chunks.push(new Buffer(restArgs[0]));
+      chunks.push(Buffer.from(restArgs[0]));
       defaultWrite.apply(res, restArgs);
     };
 
     res.end = (...restArgs) => {
       if (restArgs[0]) {
-        chunks.push(new Buffer(restArgs[0]));
+        chunks.push(Buffer.from(restArgs[0]));
       }
       const body = Buffer.concat(chunks).toString('utf8');
 
@@ -53,17 +54,15 @@ module.exports = app => {
         response = body;
       }
 
-      winston.error(
-        JSON.stringify({
-          url: req.baseUrl + req.path,
-          method: req.method,
-          body: req.body,
-          params: req.params,
-          query: req.query,
-          status: res.statusCode,
-          response,
-        }),
-      );
+      ApiLog.create({
+        url: req.baseUrl + req.path,
+        method: req.method,
+        body: req.body,
+        params: req.params,
+        query: req.query,
+        status: res.statusCode,
+        response,
+      });
       defaultEnd.apply(res, restArgs);
     };
     next();

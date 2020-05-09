@@ -35,6 +35,7 @@ const getDiet = async reqUser => {
   }
 
   diet = calcFormatDiet(diet);
+  // TODO: Remove
   const aux = ['protein', 'carbohydrate', 'fat'];
   const tot = {};
   aux.forEach(v => {
@@ -58,6 +59,7 @@ const getDiet = async reqUser => {
   });
   console.log(tot);
   console.log(diet.macroContent);
+  // TODO: Remove
   return setResponse(200, 'Diet found.', diet);
 };
 

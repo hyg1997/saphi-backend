@@ -8,21 +8,6 @@ const Validator = require('./userValidator');
 const { authenticateMiddleware } = require('../../middleware/auth');
 
 router.post(
-  '/onboarding',
-  authenticateMiddleware('jwt'),
-  celebrate(Validator.UpdateOnBoarding),
-  Controller.onboarding,
-);
-
-router.post(
-  '/contact',
-  authenticateMiddleware('jwt'),
-  celebrate(Validator.ContactForm),
-  Controller.contactForm,
-);
-
-// Password recover
-router.post(
   '/forgotpassword',
   celebrate(Validator.ForgotPassword),
   Controller.forgotPassword,
@@ -34,16 +19,16 @@ router.post(
   Controller.resetPassword,
 );
 
-// Profile
 router.post(
+  // TODO: Revisar y agregar a swagger
   '/update',
   authenticateMiddleware('jwt'),
   celebrate(Validator.UpdateUser),
   Controller.updateUser,
 );
-router.get('/payments', authenticateMiddleware('jwt'), Controller.listPayments);
-router.get('/diets', authenticateMiddleware('jwt'), Controller.listDiets);
+
 router.put(
+  // TODO: Revisar y agregar a swagger
   '/updatephoto',
   Validator.validatePhoto,
   authenticateMiddleware('jwt'),

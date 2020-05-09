@@ -1,0 +1,67 @@
+paths:
+  "/user/forgotpassword":
+    post:
+      tags:
+        - auth.user
+      summary: Request code by email to restore password
+      description: ""
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+              required:
+                - email
+      responses:
+        200:
+          description: Successful
+  "/user/checkcode":
+    post:
+      tags:
+        - auth.user
+      summary: Validate provided code
+      description: ""
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                code:
+                  type: string
+              required:
+                - email
+                - code
+      responses:
+        200:
+          description: Successful
+  "/user/resetpassword":
+    post:
+      tags:
+        - auth.user
+      summary: Reset password by provided code
+      description: ""
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                code:
+                  type: string
+                newPassword:
+                  type: string
+              required:
+                - email
+                - code
+                - newPassword
+      responses:
+        200:
+          description: Successful

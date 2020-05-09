@@ -5,6 +5,7 @@ const paymentRouter = require('../api/payment/PaymentRouter');
 const mentalHealthRouter = require('../api/mentalHealth/mentalHealth.router');
 const adminRouter = require('../api/admin/adminRouter');
 const authRouter = require('../api/auth/authRouter');
+const patientRouter = require('../api/patient/patient.router');
 
 module.exports = app => {
   app.get('/culqi', (req, res) => {
@@ -19,4 +20,5 @@ module.exports = app => {
   app.use('/mentalHealth', mentalHealthRouter);
   app.use('/', nutritionRouter);
   app.use('/', adminRouter);
+  app.use('/', patientRouter);
 };

@@ -101,19 +101,21 @@ const userSchema = new Schema(
   },
 );
 
-userSchema.pre('save', async function(next) {
-  if (!this.isNew) next();
+userSchema.statics.hashPassword = async password => {
   const salt = await bcrypt.genSalt(config.get('saltPow'));
-  const hash = await bcrypt.hash(this.password, salt);
-  this.password = hash;
+  const hash = await bcrypt.hash(password, salt);
+  return hash;
+};
+
+userSchema.pre('save', async function(next, currentUser, callback) {
+  if (!this.isNew) next();
+  this.password = await this.constructor.hashPassword(this.password);
   next();
 });
 
 userSchema.methods.isValidPassword = async function(password) {
-  console.log(password, this.password);
   if (!this.password || !password) return false;
   const compare = await bcrypt.compare(password, this.password);
-  console.log(compare);
   return compare;
 };
 

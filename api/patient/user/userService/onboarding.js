@@ -1,6 +1,6 @@
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable no-await-in-loop */
-const { User } = require('../userModel');
+const { User } = require('../../../auth/user/userModel');
 const { setResponse } = require('../../../utils');
 const { listAliment } = require('../../../nutrition/aliment/alimentService');
 const { createDiet } = require('../../../nutrition/diet/dietService');

@@ -1,6 +1,6 @@
 const config = require('config');
 
-const { UserLog } = require('../userModel');
+const { UserLog } = require('../../../auth/user/userModel');
 
 const { setResponse, renderTemplate, sendEmail } = require('../../../utils');
 

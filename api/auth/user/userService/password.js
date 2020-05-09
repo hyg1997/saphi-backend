@@ -3,15 +3,10 @@ const moment = require('moment-timezone');
 
 const { User } = require('../userModel');
 const { setResponse, renderTemplate, sendEmail } = require('../../../utils');
-
-const getUserByEmail = async email => {
-  const user = await User.findOne({ email });
-  if (!user) return setResponse(404, 'User not found.', {});
-  return setResponse(200, 'User found.', user);
-};
+const { readUserByFieldIds } = require('./authUser');
 
 const forgotPassword = async reqBody => {
-  const response = await getUserByEmail(reqBody.email);
+  const response = await readUserByFieldIds(reqBody);
 
   if (response.status !== 200) return response;
 
@@ -37,11 +32,11 @@ const forgotPassword = async reqBody => {
     actionCode: { code, expires },
   });
 
-  return setResponse(200, 'Code Sended.', {});
+  return setResponse(200, 'Code Sended.', { status: 'ok' });
 };
 
 const checkCode = async reqBody => {
-  const response = await getUserByEmail(reqBody.email);
+  const response = await readUserByFieldIds(reqBody);
   if (response.status !== 200) return response;
 
   if (!response.data.actionCode)
@@ -53,17 +48,21 @@ const checkCode = async reqBody => {
   if (response.data.actionCode.code !== reqBody.code)
     return setResponse(400, 'Incorrect code.', {});
 
-  return setResponse(200, 'Correct code.', response.data);
+  return setResponse(200, 'Correct code.', { status: 'ok' });
 };
 
 const resetPassword = async reqBody => {
   const response = await checkCode(reqBody);
   if (response.status !== 200) return response;
 
-  response.data.password = reqBody.newPassword;
-  await response.data.save();
+  const { data: user } = await readUserByFieldIds(reqBody);
 
-  return setResponse(200, 'Password updated.', {});
+  user.password = await User.hashPassword(reqBody.newPassword);
+
+  // response.data.password = reqBody.newPassword;
+  await user.save();
+
+  return setResponse(200, 'Password updated.', { status: 'ok' });
 };
 
 module.exports = {

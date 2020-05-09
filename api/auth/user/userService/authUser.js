@@ -27,6 +27,7 @@ const createUser = async reqBody => {
 
   user = new User(reqBody);
 
+  // ? En caso sea un usuario con una empresa
   if (reqBody.companyId) {
     const company = await Company.findById(reqBody.companyId);
     if (!company) return setResponse(400, 'Company not found.');
@@ -43,6 +44,7 @@ const createUser = async reqBody => {
         type: 'Company Plan',
         endDate: preRegistered.endDate,
       };
+    // TODO: Registrar creacion de usuario en entidad company
   }
 
   await user.save();

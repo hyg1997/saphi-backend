@@ -45,6 +45,7 @@ module.exports = () => {
         level: 'error',
         collection: 'errorLog',
         options: {
+          useNewUrlParser: true,
           useUnifiedTopology: true,
         },
       }),

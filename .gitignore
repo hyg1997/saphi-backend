@@ -63,3 +63,6 @@ typings/
 
 # vscode
 .vscode
+
+# old code
+_*

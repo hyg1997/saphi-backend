@@ -90,6 +90,12 @@ const makePayment = async (reqBody, reqUser, itemToBuy, concept) => {
   return chargeResp;
 };
 
+const listPayments = async reqQuery => {
+  const payments = await CulqiPayment.find(reqQuery);
+  return setResponse(200, 'Payments found.', payments);
+};
+
 module.exports = {
   makePayment,
+  listPayments,
 };

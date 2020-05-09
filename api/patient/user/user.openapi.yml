@@ -1,0 +1,80 @@
+paths:
+  "/user/mypayments":
+    get:
+      tags:
+        - auth.profile
+      summary: Get payment's history of the logged user
+      security:
+        - bearerAuth: []
+      description: ""
+      responses:
+        200:
+          description: Successful
+  "/user/mydiets":
+    get:
+      tags:
+        - auth.profile
+      summary: Get diet's history of the logged user
+      security:
+        - bearerAuth: []
+      description: ""
+      responses:
+        200:
+          description: Successful
+  "/user/contact":
+    post:
+      tags:
+        - auth.profile
+      summary: Send email to admin account
+      security:
+        - bearerAuth: []
+      description: ""
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                name:
+                  type: string
+                lastName:
+                  type: string
+                rating:
+                  type: integer
+                subject:
+                  type: string
+                message:
+                  type: string
+              required:
+                - message
+            examples:
+              contact form:
+                value:
+                  name: Jose
+                  lastName: Mallma
+                  message: Esto es una prueba
+                  email: correo@saphi.pe
+                  subject: Solicitud de contacto recibida <El subject es fijo, debe setearse en front>
+              rating:
+                value:
+                  rating: 5
+                  message: Esto es una prueba
+                  subject: Nueva valoración recibida <El subject es fijo, debe setearse en front>
+  "/user/onboarding":
+    post:
+      tags:
+        - auth.profile
+      summary: Register user onboarding info
+      security:
+        - bearerAuth: []
+      description: ""
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        200:
+          description: Successful
