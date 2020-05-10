@@ -19,7 +19,7 @@ const createPlan = async reqBody => {
 };
 
 const listPlan = async reqQuery => {
-  const plans = await Plan.find(reqQuery);
+  const plans = await Plan.find(reqQuery).sort('displayOrder');
   return setResponse(200, 'Plans Found.', plans);
 };
 

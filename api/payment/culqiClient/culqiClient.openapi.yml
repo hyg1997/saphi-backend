@@ -1,0 +1,63 @@
+paths:
+  "/payment/culqiclient":
+    post:
+      tags:
+        - payments.culqi
+      summary: Guardar al usuario en culqi
+      security:
+        - bearerAuth: []
+      description: |
+        Con el fin de guardar las tarjetas del usuario para transacciones futuras, es necesario guardar el usuario en culqi.
+        El usuario en culqi se identifica por el correo.
+        El servicio funciona como CREATE OR READ, en caso el culqi client ya exista, se trae el existente y no se crea el nuevo
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                first_name:
+                  type: string
+                last_name:
+                  type: string
+                address:
+                  type: string
+                address_city:
+                  type: string
+                country_code:
+                  type: string
+                  description: Codigo de pais en formato 2 caracteres
+                phone_number:
+                  type: string
+                  description: Debe ser caracteres numericos, entre 5 y 15
+              required:
+                - first_name
+                - last_name
+                - address
+                - address_city
+                - country_code
+                - phone_number
+            examples:
+              nuevo usuario:
+                value:
+                  first_name: Jose
+                  last_name: Mallma
+                  address: Calle Avenida 123
+                  address_city: Lima
+                  country_code: PE
+                  phone_number: 987654321
+      responses:
+        200:
+          description: Successful
+  "/payment/culqiclient/mycards":
+    get:
+      tags:
+        - payments.culqi
+      summary: Obtener listado de tarjetas guardadas del cliente
+      security:
+        - bearerAuth: []
+      description: |
+        Se trae el listado de tarjetas que el usuario a guardado para utilizar el token en las transacciones
+      responses:
+        200:
+          description: Successful

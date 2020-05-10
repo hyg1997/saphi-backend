@@ -9,6 +9,7 @@ const Controller = require('./culqiClientController');
 // ! Considerar incluir validadores para servicios
 
 router.post('/', Controller.createCulqiClient);
-router.get('/', Controller.listCulqiClient);
+router.get('/', Controller.listCulqiClientCards); // TODO: Remove url
+router.get('/mycards', Controller.listCulqiClientCards);
 
 module.exports = router;

@@ -35,7 +35,7 @@ const culqiClientSchema = new Schema(
   },
 );
 
-culqiClientSchema.statics.findByCardToken = function(token) {
+culqiClientSchema.statics.findByCardToken = async token => {
   return this.findOne({ 'cards.token': token });
 };
 

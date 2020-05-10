@@ -41,12 +41,11 @@ const formatCard = card => {
   };
 };
 
-const listCulqiClient = async reqUser => {
+const listCulqiClientCards = async reqUser => {
   const clients = await CulqiClient.find({ user: reqUser.id });
 
   const cards = [];
   clients.forEach(function(client) {
-    CulqiClient.updateOne(); // ! ¿Que hace esta linea?
     client.cards.forEach(function(card) {
       cards.push(formatCard(card));
     });
@@ -81,6 +80,6 @@ const createCard = async reqBody => {
 
 module.exports = {
   createCard,
-  listCulqiClient,
+  listCulqiClientCards,
   createCulqiClient,
 };

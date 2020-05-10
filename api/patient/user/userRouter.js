@@ -18,8 +18,8 @@ router.post(
 );
 
 // Profile
-router.get('/payments', Controller.listPayments); //TODO: Remove
-router.get('/diets', Controller.listDiets); //TODO: Remove
+router.get('/payments', Controller.listPayments); // TODO: Remove url
+router.get('/diets', Controller.listDiets); // TODO: Remove url
 router.get('/mypayments', Controller.listPayments);
 router.get('/mydiets', Controller.listDiets);
 module.exports = router;

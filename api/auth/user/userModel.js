@@ -4,20 +4,68 @@ const config = require('config');
 const _ = require('lodash');
 const bcrypt = require('bcrypt');
 
-const { DOCUMENT_TYPE } = require('../../utils/constants');
+const { DOCUMENT_TYPE, getDictValues } = require('../../utils/constants');
+
+const JWT_FIELDS = [
+  // ? Identificadores
+  'id',
+  'idDocumentType',
+  'idDocumentNumber',
+  'email',
+  'googleId',
+  'facebookId',
+  // ? Informacion general
+  'name',
+  'lastName',
+  'birthDate',
+  'photo',
+  'permissions',
+  // ? bools
+  'onboardingFinished',
+  'activeDiet',
+  'specialDiet',
+];
 
 const { Schema } = mongoose;
 const userSchema = new Schema(
   {
+    // ? Identification properties
     idDocumentType: {
       type: String,
-      enum: [DOCUMENT_TYPE.DNI, DOCUMENT_TYPE.CE, DOCUMENT_TYPE.PASSPORT],
+      enum: getDictValues(DOCUMENT_TYPE),
     },
     idDocumentNumber: { type: String },
     email: { type: String, required: true, unique: true },
     googleId: { type: String },
     facebookId: { type: String },
     password: { type: String },
+
+    actionCode: {
+      // ? Codigo para renovacion de contraseña
+      type: {
+        code: { type: String },
+        expires: { type: Date },
+      },
+    },
+
+    // ? General properties
+    name: { type: String },
+    lastName: { type: String },
+    birthDate: { type: Date },
+    phonePrefix: { type: String },
+    phoneNumber: { type: String },
+    companyName: { type: String },
+    photo: { type: String },
+
+    // ? properties
+    onboardingFinished: { type: Boolean, default: false }, // ? Indica si se ha completado el onboarding
+    activeDiet: { type: Boolean, default: false }, // ? Indica si existe una dieta activa
+    specialDiet: { type: Boolean, default: false }, // ? Indica que tiene una dieta asignada manualmente
+
+    // ? Business properties
+    companyId: { type: mongoose.Schema.Types.ObjectId },
+
+    // ? Role properties
     permissions: {
       type: {
         isAdmin: { type: Boolean, default: false },
@@ -30,35 +78,18 @@ const userSchema = new Schema(
         isCompany: false,
       },
     },
-    name: { type: String },
-    lastName: { type: String },
-    birthDate: { type: Date },
-    phonePrefix: { type: String },
-    phoneNumber: { type: String },
-    companyName: { type: String },
-    companyId: { type: mongoose.Schema.Types.ObjectId },
-    photo: { type: String },
 
-    endDate: { type: Date },
-
-    planSubscription: {
-      active: { type: Boolean, default: false },
-      type: { type: String },
-      startDate: { type: Date },
-      endDate: { type: Date },
+    // ? Nutrition properties
+    diet: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Diet',
     },
-
     macroContent: {
       type: {
         carbohydrate: { type: Number },
         protein: { type: Number },
         fat: { type: Number },
       },
-    },
-
-    plan: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'Plan',
     },
     indicators: {
       type: {
@@ -80,20 +111,17 @@ const userSchema = new Schema(
         fat: [{ type: String }],
       },
     },
-    onboardingFinished: { type: Boolean, default: false },
-    activeDiet: { type: Boolean, default: false },
-    specialDiet: { type: Boolean, default: false },
 
-    actionCode: {
-      type: {
-        code: { type: String },
-        expires: { type: Date },
-      },
+    // ? Subscription properties
+    planSubscription: {
+      active: { type: Boolean, default: false },
+      type: { type: String },
+      startDate: { type: Date },
+      endDate: { type: Date },
     },
-
-    diet: {
+    plan: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'Diet',
+      ref: 'Plan',
     },
   },
   {
@@ -120,7 +148,7 @@ userSchema.methods.isValidPassword = async function(password) {
 };
 
 userSchema.methods.generateAuthToken = function() {
-  const payload = _.omit(this.toObject(), ['password']);
+  const payload = _.pick(this.toObject(), JWT_FIELDS);
   return jwt.sign(payload, config.get('jwtSecret'));
 };
 

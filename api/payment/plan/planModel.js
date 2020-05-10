@@ -35,6 +35,10 @@ const planSchema = new Schema(
     tag: {
       type: String,
     },
+    displayOrder: {
+      type: Number,
+      default: 0,
+    },
   },
   {
     timestamps: true,
