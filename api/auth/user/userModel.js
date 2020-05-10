@@ -8,7 +8,7 @@ const { DOCUMENT_TYPE, getDictValues } = require('../../utils/constants');
 
 const JWT_FIELDS = [
   // ? Identificadores
-  'id',
+  '_id',
   'idDocumentType',
   'idDocumentNumber',
   'email',

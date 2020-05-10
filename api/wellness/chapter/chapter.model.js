@@ -1,13 +1,14 @@
 const mongoose = require('mongoose');
+const { PROGESS_STATUS, getDictValues } = require('../../utils/constants');
 
 const { Schema } = mongoose;
-const moduleSchema = new Schema(
+const chapterSchema = new Schema(
   {
     name: {
       type: String,
       required: true,
     },
-    category: {
+    module: {
       name: {
         type: String,
         required: true,
@@ -51,6 +52,11 @@ const moduleSchema = new Schema(
           content: {
             type: mongoose.Mixed,
           },
+          initialState: {
+            type: String,
+            enum: getDictValues(PROGESS_STATUS),
+            default: PROGESS_STATUS.locked,
+          },
         }),
       },
       {
@@ -63,9 +69,9 @@ const moduleSchema = new Schema(
   },
 );
 
-const Module = mongoose.model('Module', moduleSchema);
+const Chapter = mongoose.model('Chapter', chapterSchema);
 
 module.exports = {
-  moduleSchema,
-  Module,
+  chapterSchema,
+  Chapter,
 };

@@ -1,0 +1,31 @@
+paths:
+  "/wellness/quizzes/wheeloflife":
+    get:
+      tags:
+        - wellness.Quiz
+      summary: Get wheel of life quiz
+      security:
+        - bearerAuth: []
+      responses:
+        200:
+          description: Success
+  "/wellness/quizzes/objectives":
+    get:
+      tags:
+        - wellness.Quiz
+      summary: Get wheel of life quiz
+      security:
+        - bearerAuth: []
+      responses:
+        200:
+          description: Success
+  "/wellness/quizzes/daytime":
+    get:
+      tags:
+        - wellness.Quiz
+      summary: Get wheel of life quiz
+      security:
+        - bearerAuth: []
+      responses:
+        200:
+          description: Success
