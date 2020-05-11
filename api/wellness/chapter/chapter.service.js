@@ -43,6 +43,7 @@ const getInitModules = async reqUser => {
   // Se puede filtrar los modulos segun se requiera
   const { data: modules } = await listChapterByModule();
   const initModules = modules.map(mod => ({
+    module: mod[0].module.id,
     name: mod[0].module.name,
     chapters: mod.map(cha => ({
       chapter: cha.id,
@@ -50,7 +51,7 @@ const getInitModules = async reqUser => {
       activities: cha.activities.map(act => ({
         activity: act.id,
         name: act.name,
-        state: act.initialState,
+        status: act.initialState,
       })),
     })),
   }));

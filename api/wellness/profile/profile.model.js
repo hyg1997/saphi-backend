@@ -21,6 +21,11 @@ const profileSchema = new Schema(
     },
     modules: [
       {
+        module: {
+          type: mongoose.ObjectId,
+          required: true,
+          ref: 'Module',
+        },
         name: { type: String },
         chapters: [
           {
@@ -36,7 +41,7 @@ const profileSchema = new Schema(
                   type: mongoose.ObjectId,
                 },
                 name: { type: String },
-                state: {
+                status: {
                   type: String,
                   enum: getDictValues(PROGESS_STATUS),
                 },

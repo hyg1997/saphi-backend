@@ -2,22 +2,25 @@ const mongoose = require('mongoose');
 const { PROGESS_STATUS, getDictValues } = require('../../utils/constants');
 
 const { Schema } = mongoose;
+
+const moduleSchema = new Schema(
+  {
+    name: { type: String, required: true },
+    type: { type: String, required: true, default: 'general' },
+    displayOrder: { type: Number, required: true },
+  },
+  { timestamps: true },
+);
+
+const Module = mongoose.model('Module', moduleSchema);
+
 const chapterSchema = new Schema(
   {
     name: {
       type: String,
       required: true,
     },
-    module: {
-      name: {
-        type: String,
-        required: true,
-      },
-      displayOrder: {
-        type: Number,
-        required: true,
-      },
-    },
+    module: moduleSchema,
     mediumImage: {
       type: String,
       required: true,
@@ -74,4 +77,5 @@ const Chapter = mongoose.model('Chapter', chapterSchema);
 module.exports = {
   chapterSchema,
   Chapter,
+  Module,
 };

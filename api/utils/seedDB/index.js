@@ -21,7 +21,7 @@ const { Plan } = require('../../payment/plan/planModel');
 const { Pathology } = require('../../nutrition/pathology/pathologyModel');
 
 const { Quiz } = require('../../wellness/quiz/quiz.model');
-const { Chapter } = require('../../wellness/chapter/chapter.model');
+const { Chapter, Module } = require('../../wellness/chapter/chapter.model');
 
 const { asyncForEach } = require('../../utils');
 
@@ -100,6 +100,7 @@ mongoose
     // ? Mental Health
 
     // await seedModel(Quiz, 'quiz.json');
+    // await seedModel(Module, 'modules.json');
     await seedModel(Chapter, 'chapters.json');
 
     mongoose.connection.close();
