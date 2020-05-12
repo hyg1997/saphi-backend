@@ -3,18 +3,18 @@ const { Joi } = require('celebrate');
 const setMacrosOnUser = {
   body: {
     carbohydrate: Joi.number()
-      .integer()
+      .min(0)
       .required(),
     protein: Joi.number()
-      .integer()
+      .min(0)
       .required(),
     fat: Joi.number()
-      .integer()
+      .min(0)
       .required(),
     message: Joi.string()
       .min(1)
       .max(1000)
-      .required(),
+      .default(''),
   },
 };
 

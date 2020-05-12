@@ -7,6 +7,7 @@ const {
   MEAL_NAME,
   ALIMENT_TYPE,
   ALIMENT_TAG_TITLE,
+  AVENA_SPECIAL_CASE,
 } = require('../../../utils/constants');
 
 const { calcFormatDiet, allowFat } = require('../dietUtils');
@@ -21,10 +22,12 @@ const changeAliment = async (reqBody, reqQuery, reqUser) => {
   const { macroStep, past } = reqBody;
   const { meal } = reqQuery;
 
+  let needFruitNext = null;
   if (
     macroStep === 'carbohydrate' ||
     macroStep === 'fat' ||
-    macroStep === 'all'
+    macroStep === 'fruit' || // * Caso avena + fruta
+    macroStep === 'all' // * Caso media mañana o media tarde
   ) {
     const diet = await Diet.findById(reqUser.diet);
     if (!diet) return setResponse(404, 'Diet not found', {});
@@ -38,9 +41,22 @@ const changeAliment = async (reqBody, reqQuery, reqUser) => {
     });
     aliments = await Promise.all(aliments);
 
+    needFruitNext = aliments.some(val => {
+      return val.name === AVENA_SPECIAL_CASE;
+    });
+
+    aliments = aliments.map(item => {
+      if (item.specialConfig) {
+        item.name = item.specialConfig.name;
+        item.quantity = item.specialConfig.quantity;
+      }
+      return item;
+    });
+
     if (
-      (macroStep === 'carbohydrate' &&
-        allowFat(meal, aliments, diet.macroContent, diet.meals)) ||
+      (((macroStep === 'carbohydrate' && !needFruitNext) ||
+        macroStep === 'fruit') &&
+        !allowFat(meal, aliments, diet.macroContent, diet.meals)) ||
       macroStep === 'fat' ||
       macroStep === 'all'
     ) {
@@ -65,23 +81,42 @@ const changeAliment = async (reqBody, reqQuery, reqUser) => {
 
   let nextStep = stepList[pos + 1];
   let typeAllow = [nextStep];
+  let tagAllow = null;
 
-  if (
-    meal === MEAL_NAME.beforeLunch.toLowerCase() ||
-    meal === MEAL_NAME.afterLunch.toLowerCase()
-  ) {
+  // * Caso media mañana o media tarde
+  if (meal === MEAL_NAME.beforeLunch || meal === MEAL_NAME.afterLunch) {
     nextStep = 'all';
     typeAllow = ['protein', 'carbohydrate', 'fat'];
   }
+
+  // * Caso avena + fruta
+  // * 1 Caso eligio avena especial (sigue)=> fruit
+  if (
+    meal === MEAL_NAME.breakfast &&
+    macroStep === 'carbohydrate' &&
+    needFruitNext
+  ) {
+    nextStep = 'fruit';
+    typeAllow = ['protein', 'carbohydrate', 'fat'];
+    tagAllow = ['fruit'];
+  }
+  // * 1 Caso ya eligio la fruta de avena especial (sigue)=> fat
+  if (meal === MEAL_NAME.breakfast && macroStep === 'fruit' && needFruitNext) {
+    nextStep = 'fat';
+    typeAllow = ['fat'];
+  }
+
   const title = ALIMENT_TAG_TITLE[nextStep];
   typeAllow = typeAllow.map(val => ALIMENT_TYPE[val]);
 
-  const aliments = await Aliment.find({
-    $and: [
-      { type: { $in: typeAllow } },
-      { meals: { $elemMatch: { name: meal, active: true } } },
-    ],
-  });
+  const filterAliments = [
+    { category: { $nin: reqUser.getAvoidedAliments() } },
+    { type: { $in: typeAllow } },
+    { meals: { $elemMatch: { name: meal, active: true } } },
+  ];
+  if (tagAllow) filterAliments.push({ tag: { $in: tagAllow } });
+
+  const aliments = await Aliment.find({ $and: filterAliments });
 
   const data = {
     nextStep,

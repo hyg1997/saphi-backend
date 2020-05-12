@@ -147,6 +147,14 @@ userSchema.methods.isValidPassword = async function(password) {
   return compare;
 };
 
+userSchema.methods.getAvoidedAliments = function() {
+  const protein = _.get(this, 'avoidedAliments.protein', []);
+  const carbohydrate = _.get(this, 'avoidedAliments.fat', []);
+  const fat = _.get(this, 'avoidedAliments.carbohydrate', []);
+
+  return protein.concat(carbohydrate, fat);
+};
+
 userSchema.methods.generateAuthToken = function() {
   const payload = _.pick(this.toObject(), JWT_FIELDS);
   return jwt.sign(payload, config.get('jwtSecret'));

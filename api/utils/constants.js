@@ -45,6 +45,7 @@ module.exports = {
     protein: 'Proteínas',
     fat: 'Grasas',
     all: 'Alimentos',
+    fruit: 'Frutas',
     end: '',
   },
   MACROCONTENT_CAL: {
@@ -54,6 +55,8 @@ module.exports = {
   },
   FAT_LIMIT: 1,
   MACRO_ERROR_LIMIT: 20,
+
+  AVENA_SPECIAL_CASE: 'Avena de grano entero (40g) + fruta + canela',
 
   DIET_FACTORS: {
     exerciseFactor: { 0: 1.2, 1: 1.5, 2: 1.7, 3: 1.9 },

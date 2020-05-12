@@ -1,4 +1,5 @@
 /* eslint-disable no-param-reassign */
+const _ = require('lodash');
 const { Diet } = require('../dietModel');
 const { Aliment } = require('../../aliment/alimentModel');
 const { setResponse } = require('../../../utils');
@@ -7,24 +8,20 @@ const { calcFormatDiet } = require('../dietUtils');
 
 const { MEAL_NAME } = require('../../../utils/constants');
 
-const BASIC_MEALS = ['desayuno', 'almuerzo', 'cena'];
-
 // ? Se crea la dieta default
 const setMeals = async (reqBody, reqUser) => {
   const diet = await Diet.findById(reqUser.diet); // ? Macronutrientes
   if (!diet) return setResponse(404, 'Diet not found.', {});
 
-  // TODO: a cambiar cuando se tengan nuevas combinaciones
+  // * Debe existir el almuerzo , y la cena o desayuno
   if (
-    BASIC_MEALS.some(function(mealName) {
-      return !(mealName in reqBody && reqBody[mealName]);
-    })
+    !_.get(reqBody, MEAL_NAME.lunch, false) ||
+    !(
+      _.get(reqBody, MEAL_NAME.dinner, false) ||
+      _.get(reqBody, MEAL_NAME.breakfast, false)
+    )
   ) {
-    return setResponse(
-      400,
-      'Desayuno, Almuerzo y Cena deben estar seleccionados',
-      {},
-    );
+    return setResponse(400, 'Combinación no posible', {});
   }
 
   let tmpAliments = [];
@@ -44,7 +41,6 @@ const setMeals = async (reqBody, reqUser) => {
   const dinner = { name: MEAL_NAME.dinner, aliments: tmpAliments };
 
   tmpAliments = ['Pechuga de pollo sin piel', 'Pan de molde', 'Linaza'].map(
-    // TODO: Cambiar para q grasas tenga sentido
     async function(name) {
       const aliment = await Aliment.findOne({ name });
       const data = { ...aliment.toObject(), aliment: aliment.id };
@@ -63,14 +59,13 @@ const setMeals = async (reqBody, reqUser) => {
   const beforeLunch = { name: MEAL_NAME.beforeLunch, aliments: tmpAliments };
   const afterLunch = { name: MEAL_NAME.afterLunch, aliments: tmpAliments };
 
-  const meals = [breakfast, lunch, dinner]; //* Init with base meals
+  const meals = [];
+  const mealsObject = { breakfast, beforeLunch, lunch, afterLunch, dinner };
 
-  if (MEAL_NAME.beforeLunch in reqBody && reqBody[MEAL_NAME.beforeLunch]) {
-    meals.push(beforeLunch);
-  }
-  if (MEAL_NAME.afterLunch in reqBody && reqBody[MEAL_NAME.afterLunch]) {
-    meals.push(afterLunch);
-  }
+  Object.keys(MEAL_NAME).forEach(mealName => {
+    if (_.get(reqBody, MEAL_NAME[mealName], false))
+      meals.push(mealsObject[mealName]);
+  });
 
   diet.meals = meals;
   const auxDiet = calcFormatDiet(diet);

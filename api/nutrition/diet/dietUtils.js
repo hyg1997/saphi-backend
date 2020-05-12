@@ -1,3 +1,4 @@
+/* eslint-disable no-loop-func */
 /* eslint-disable no-param-reassign */
 const _ = require('lodash');
 const moment = require('moment');
@@ -76,6 +77,7 @@ const adjustOneAliment = (aliments, macroContent) => {
     //* Is considered there is at most one of each type
     aliments.forEach(function(aliment) {
       if (
+        !aliment.specialConfig && // * Para evitar alimentos con cantidades fijas
         Object.keys(aliment.macroContent).every(
           val => aliment.macroContent[refMacro] >= aliment.macroContent[val],
         )
@@ -114,11 +116,13 @@ const adjustMeal = (meal, contentRef, macroContent) => {
   }
 
   aliments = aliments.map(function(aliment) {
-    const quantity = calcInitQuantity(contentRef, aliment);
+    const quantity = aliment.specialConfig
+      ? aliment.quantity
+      : calcInitQuantity(contentRef, aliment);
     return { ...aliment, quantity };
   });
 
-  const actRest = calcRestMacro(contentRef, aliments);
+  let actRest = calcRestMacro(contentRef, aliments);
   let actError = macroError(actRest);
   while (true) {
     //* Little change on quantities for aliments
@@ -133,6 +137,7 @@ const adjustMeal = (meal, contentRef, macroContent) => {
     if (actError > newError) {
       aliments = newAliments;
       actError = newError;
+      actRest = newRest;
     } else {
       break;
     }
@@ -143,23 +148,101 @@ const adjustMeal = (meal, contentRef, macroContent) => {
   return { newRestMacroContent, newMeal };
 };
 
-// TODO: A cambiar con nuevas combinaciones
-const mealReference = [
-  {
-    mealName: MEAL_NAME.breakfast,
-    content: { protein: 30, carbohydrate: 40, fat: 15 },
-  },
-  {
-    mealName: MEAL_NAME.beforeLunch,
-    content: { protein: 20, carbohydrate: 20, fat: 10 },
-  },
-  {
-    mealName: MEAL_NAME.afterLunch,
-    content: { protein: 20, carbohydrate: 20, fat: 10 },
-  },
-  { mealName: MEAL_NAME.lunch, content: { func: val => val / 2 } },
-  { mealName: MEAL_NAME.dinner, content: { func: val => val } },
-];
+const allMealRules = {
+  rule0: [
+    // * desayuno + almuerzo + cena + (mm <=> mt)
+    {
+      mealName: MEAL_NAME.breakfast,
+      content: { protein: 30, carbohydrate: 40, fat: 15 },
+    },
+    {
+      mealName: MEAL_NAME.beforeLunch,
+      content: { protein: 20, carbohydrate: 20, fat: 10 },
+    },
+    {
+      mealName: MEAL_NAME.afterLunch,
+      content: { protein: 20, carbohydrate: 20, fat: 10 },
+    },
+    { mealName: MEAL_NAME.lunch, content: { func: val => val / 2 } },
+    { mealName: MEAL_NAME.dinner, content: { func: val => val } },
+  ],
+  rule1: [
+    // * almuerzo + cena + (desayuno)? ~(mm & mt)
+    {
+      mealName: MEAL_NAME.breakfast,
+      content: { protein: 30, carbohydrate: 40, fat: 15 },
+    },
+    { mealName: MEAL_NAME.lunch, content: { func: val => val / 2 } },
+    {
+      mealName: MEAL_NAME.beforeLunch,
+      content: { protein: 20, carbohydrate: 20, fat: 10 },
+    },
+    {
+      mealName: MEAL_NAME.afterLunch,
+      content: { protein: 20, carbohydrate: 20, fat: 10 },
+    },
+    { mealName: MEAL_NAME.dinner, content: { func: val => val } },
+  ],
+  rule2: [
+    // * almuerzo + (desayuno ^ cena) + mm + mt
+    {
+      mealName: MEAL_NAME.breakfast,
+      content: { protein: 30, carbohydrate: 40, fat: 15 },
+    },
+    {
+      mealName: MEAL_NAME.afterLunch,
+      content: { protein: 20, carbohydrate: 20, fat: 10 },
+    },
+    {
+      mealName: MEAL_NAME.dinner,
+      content: { func: val => val / 2, halfMealConsider: true },
+    },
+    {
+      mealName: MEAL_NAME.beforeLunch,
+      content: { protein: 20, carbohydrate: 20, fat: 10 },
+    },
+    { mealName: MEAL_NAME.lunch, content: { func: val => val } },
+  ],
+  rule3: [
+    // * desayuno + almuerzo + ~(mm & mt)
+    {
+      mealName: MEAL_NAME.breakfast,
+      content: { func: val => val * 0.4 },
+    },
+    {
+      mealName: MEAL_NAME.beforeLunch,
+      content: { protein: 20, carbohydrate: 20, fat: 10 },
+    },
+    {
+      mealName: MEAL_NAME.afterLunch,
+      content: { protein: 20, carbohydrate: 20, fat: 10 },
+    },
+    { mealName: MEAL_NAME.lunch, content: { func: val => val } },
+  ],
+};
+
+const getMealRule = dietMeals => {
+  const dietMealNames = dietMeals.map(meal => meal.name);
+
+  const hasBreakfast = dietMealNames.includes(MEAL_NAME.breakfast);
+  const hasLunch = dietMealNames.includes(MEAL_NAME.lunch);
+  const hasDinner = dietMealNames.includes(MEAL_NAME.dinner);
+  const hasBeforeLunch = dietMealNames.includes(MEAL_NAME.beforeLunch);
+  const hasAfterLunch = dietMealNames.includes(MEAL_NAME.afterLunch);
+
+  if (hasBreakfast && hasDinner && hasLunch && hasBeforeLunch === hasAfterLunch)
+    return 'rule0';
+  if (hasLunch && hasDinner && !(hasBeforeLunch && hasAfterLunch))
+    return 'rule1';
+  if (
+    hasLunch &&
+    (hasDinner || hasBreakfast) &&
+    hasAfterLunch &&
+    hasBeforeLunch
+  )
+    return 'rule2';
+  return 'rule3';
+};
 
 const allowFat = (mealName, aliments, macroContent, meals) => {
   let restMacroContent = { ...macroContent };
@@ -201,6 +284,10 @@ const calcFormatDiet = diet => {
   const meals = [];
 
   let restMacroContent = newDiet.macroContent;
+  const mealRuleTag = getMealRule(diet.meals);
+
+  const mealReference = allMealRules[mealRuleTag];
+  let pastMacroContent = {};
 
   for (let i = 0; i < mealReference.length; i += 1) {
     const { mealName, content } = mealReference[i];
@@ -208,23 +295,31 @@ const calcFormatDiet = diet => {
 
     if (meal) {
       let reference = { ...restMacroContent }; // ? Los macronutrientes
+      let halfMealConsider = false;
 
       if ('func' in content) {
+        halfMealConsider = 'halfMealConsider' in content;
         Object.keys(reference).forEach(key => {
-          reference[key] = content.func(reference[key]);
+          reference[key] =
+            content.func(reference[key]) -
+            (halfMealConsider ? content.func(pastMacroContent[key]) : 0);
         });
       } else {
         reference = { ...content };
       }
 
-      const { newRestMacroContent, newMeal } = adjustMeal(
-        meal.toObject(),
-        reference,
-        restMacroContent,
-      );
+      const result = adjustMeal(meal.toObject(), reference, restMacroContent);
 
-      restMacroContent = newRestMacroContent;
-      meals.push(newMeal);
+      pastMacroContent = {
+        protein: restMacroContent.protein - result.newRestMacroContent.protein,
+        carbohydrate:
+          restMacroContent.carbohydrate -
+          result.newRestMacroContent.carbohydrate,
+        fat: restMacroContent.fat - result.newRestMacroContent.fat,
+      };
+      restMacroContent = result.newRestMacroContent;
+
+      meals.push(result.newMeal);
     }
   }
 

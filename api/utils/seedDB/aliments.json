@@ -828,6 +828,46 @@
     "imagePath": "https://i.picsum.photos/id/24/480/480.jpg"
   },
   {
+    "name": "Avena de grano entero (40g) + fruta + canela",
+    "category": "Avena",
+    "minQuantity": 10,
+    "specialConfig": {
+      "name": "Avena de grano entero + canela(Opcional)",
+      "quantity": 40
+    },
+    "type": "carbohidrato",
+    "units": "gr",
+    "macroContent": {
+      "protein": 1.25,
+      "carbohydrate": 6.75,
+      "fat": 0.75
+    },
+    "meals": [
+      {
+        "name": "desayuno",
+        "active": true
+      },
+      {
+        "name": "media mañana",
+        "active": false
+      },
+      {
+        "name": "almuerzo",
+        "active": false
+      },
+      {
+        "name": "media tarde",
+        "active": false
+      },
+      {
+        "name": "cena",
+        "active": false
+      }
+    ],
+    "thumbnailImagePath": "https://i.picsum.photos/id/124/240/240.jpg",
+    "imagePath": "https://i.picsum.photos/id/124/480/480.jpg"
+  },
+  {
     "name": "Papa",
     "category": "Papa",
     "minQuantity": 10,
@@ -1270,6 +1310,7 @@
       "carbohydrate": 0.768,
       "fat": 0.03
     },
+    "tag": ["fruit"],
     "meals": [
       {
         "name": "desayuno",
@@ -1306,6 +1347,7 @@
       "carbohydrate": 1.449,
       "fat": 0.033
     },
+    "tag": ["fruit"],
     "meals": [
       {
         "name": "desayuno",
@@ -1342,6 +1384,7 @@
       "carbohydrate": 0.755,
       "fat": 0.015
     },
+    "tag": ["fruit"],
     "meals": [
       {
         "name": "desayuno",
@@ -1378,6 +1421,7 @@
       "carbohydrate": 0.816,
       "fat": 0.019
     },
+    "tag": ["fruit"],
     "meals": [
       {
         "name": "desayuno",
@@ -1414,6 +1458,7 @@
       "carbohydrate": 4.21,
       "fat": 0.13
     },
+    "tag": ["fruit"],
     "meals": [
       {
         "name": "desayuno",
@@ -1450,6 +1495,7 @@
       "carbohydrate": 15.46,
       "fat": 0.12
     },
+    "tag": ["fruit"],
     "meals": [
       {
         "name": "desayuno",
@@ -1486,6 +1532,7 @@
       "carbohydrate": 14.48,
       "fat": 0.25
     },
+    "tag": ["fruit"],
     "meals": [
       {
         "name": "desayuno",
@@ -1522,6 +1569,7 @@
       "carbohydrate": 1.263,
       "fat": 0.012
     },
+    "tag": ["fruit"],
     "meals": [
       {
         "name": "desayuno",
@@ -1558,6 +1606,7 @@
       "carbohydrate": 0.981,
       "fat": 0.014
     },
+    "tag": ["fruit"],
     "meals": [
       {
         "name": "desayuno",
@@ -1594,6 +1643,7 @@
       "carbohydrate": 22.84,
       "fat": 0.33
     },
+    "tag": ["fruit"],
     "meals": [
       {
         "name": "desayuno",

@@ -3,9 +3,12 @@ const { Diet } = require('../dietModel');
 const { setResponse } = require('../../../utils');
 
 const listDiets = async reqParams => {
-  const diets = await Diet.find(reqParams, 'macroContent indicators')
-    .sort({ createdAt: -1 })
-    .exec('find'); // TODO: Revisar si se puede retirar
+  const diets = await Diet.find(
+    reqParams,
+    'macroContent indicators createdAt',
+  ).sort({
+    createdAt: -1,
+  });
 
   return setResponse(200, 'Diets found.', diets);
 };

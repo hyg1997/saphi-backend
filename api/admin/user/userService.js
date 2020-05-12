@@ -4,6 +4,7 @@ const config = require('config');
 const winston = require('winston');
 
 const { User } = require('../../auth/user/userModel');
+const { listDiets } = require('../../nutrition/diet/dietService');
 const {
   DeliveryOrder,
 } = require('../../nutrition/deliveryOrder/deliveryOrderModel');
@@ -90,9 +91,23 @@ const getAdminUser = async userId => {
     .populate('pathologies')
     .populate('plan');
 
-  const deliveryOrders = await DeliveryOrder.find({ user: user.id });
-  const payments = await CulqiPayment.find({ user: user.id });
-  return setResponse(200, 'User found.', { user, deliveryOrders, payments });
+  const deliveryOrders = await DeliveryOrder.find({ user: user.id }).sort({
+    createdAt: -1,
+  });
+
+  const payments = await CulqiPayment.find({ user: user.id }).sort({
+    createdAt: -1,
+  });
+
+  const dietResp = await listDiets({ user: userId });
+  const dietHistory = dietResp.status === 200 ? dietResp.data : [];
+
+  return setResponse(200, 'User found.', {
+    user,
+    deliveryOrders,
+    payments,
+    dietHistory,
+  });
 };
 
 const setMacrosOnUser = async (userId, reqBody) => {
@@ -111,7 +126,7 @@ const setMacrosOnUser = async (userId, reqBody) => {
   const domain = config.get('hostname');
   const content = await renderTemplate('email_new_diet.html', {
     domain,
-    message: reqBody.message,
+    message: reqBody.message.split('\n'),
   });
 
   try {

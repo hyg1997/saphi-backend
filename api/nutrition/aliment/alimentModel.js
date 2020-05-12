@@ -53,6 +53,11 @@ const alimentSchema = new Schema(
         required: true,
       },
     },
+    tag: [{ type: String }],
+    specialConfig: {
+      name: { type: String },
+      quantity: { type: Number },
+    },
     meals: [
       {
         name: {

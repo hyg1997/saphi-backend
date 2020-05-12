@@ -19,7 +19,9 @@
         <div class="row h-100 align-items-center">
 			<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 col-centered">
     			<div class="center-text">
-          <p>{{message}}</p>
+          {{#each message}}
+            <p>{{this}}</p>
+          {{/each}}
           <br/>
           <p> Tu plan nutricional ha sido actualizado acorde a tu informacion.</p>
 				</div>
