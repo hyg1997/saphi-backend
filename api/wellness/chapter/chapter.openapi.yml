@@ -1,0 +1,36 @@
+paths:
+  "/wellness/chapters/modules":
+    get:
+      tags:
+        - wellness.Chapter
+      summary: Get chapters for wellness section
+      security:
+        - bearerAuth: []
+      responses:
+        200:
+          description: Success
+  "/wellness/chapters/{id}":
+    get:
+      tags:
+        - wellness.Chapter
+      summary: Get one chapter by Id
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: "#/components/parameters/paramId"
+      responses:
+        200:
+          description: Success
+  "/wellness/chapters/{id}/activity/{subId}":
+    get:
+      tags:
+        - wellness.Chapter
+      summary: Get one activity by Id of chapter and activity
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: "#/components/parameters/paramId"
+        - $ref: "#/components/parameters/paramSubId"
+      responses:
+        200:
+          description: Success

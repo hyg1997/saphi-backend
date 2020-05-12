@@ -17,28 +17,29 @@ const quizAnswerSchema = new Schema(
       type: String,
       required: true,
     },
-    categories: [
+    content: [
       {
-        name: {
-          type: String,
-          required: true,
-        },
-        questions: [
-          {
-            name: {
-              type: String,
-              required: true,
-            },
-            description: {
-              type: String,
-              required: true,
-            },
-            answer: {
-              type: mongoose.Mixed,
-              required: true,
-            },
-          },
-        ],
+        type: mongoose.Mixed,
+        // name: {
+        //   type: String,
+        //   required: true,
+        // },
+        // questions: [
+        //   {
+        //     name: {
+        //       type: String,
+        //       required: true,
+        //     },
+        //     description: {
+        //       type: String,
+        //       required: true,
+        //     },
+        //     answer: {
+        //       type: mongoose.Mixed,
+        //       required: true,
+        //     },
+        //   },
+        // ],
       },
     ],
   },

@@ -12,7 +12,6 @@ module.exports = {
   PROGESS_STATUS: {
     locked: 'locked',
     available: 'available',
-    opened: 'opened',
     completed: 'completed',
   },
 

@@ -2,7 +2,7 @@
   {
     "name": "Rueda de la vida",
     "identifier": "wheeloflife",
-    "categories": [
+    "content": [
       {
         "name": "Categoria 1",
         "questions": [
@@ -18,6 +18,26 @@
           },
           {
             "name": "Question 2",
+            "description": "Esta es la descripcion de la pregunta.",
+            "answerFormat": {
+              "type": "Integer",
+              "minValue": 1,
+              "maxValue": 5,
+              "defaultValue": 0
+            }
+          },
+          {
+            "name": "Question 3",
+            "description": "Esta es la descripcion de la pregunta.",
+            "answerFormat": {
+              "type": "Integer",
+              "minValue": 1,
+              "maxValue": 5,
+              "defaultValue": 0
+            }
+          },
+          {
+            "name": "Question 4",
             "description": "Esta es la descripcion de la pregunta.",
             "answerFormat": {
               "type": "Integer",
@@ -60,16 +80,6 @@
               "maxValue": 5,
               "defaultValue": 0
             }
-          },
-          {
-            "name": "Question 4",
-            "description": "Esta es la descripcion de la pregunta.",
-            "answerFormat": {
-              "type": "Integer",
-              "minValue": 1,
-              "maxValue": 5,
-              "defaultValue": 0
-            }
           }
         ]
       },
@@ -88,6 +98,26 @@
           },
           {
             "name": "Question 2",
+            "description": "Esta es la descripcion de la pregunta.",
+            "answerFormat": {
+              "type": "Integer",
+              "minValue": 1,
+              "maxValue": 5,
+              "defaultValue": 0
+            }
+          },
+          {
+            "name": "Question 3",
+            "description": "Esta es la descripcion de la pregunta.",
+            "answerFormat": {
+              "type": "Integer",
+              "minValue": 1,
+              "maxValue": 5,
+              "defaultValue": 0
+            }
+          },
+          {
+            "name": "Question 4",
             "description": "Esta es la descripcion de la pregunta.",
             "answerFormat": {
               "type": "Integer",
@@ -123,16 +153,6 @@
           },
           {
             "name": "Question 3",
-            "description": "Esta es la descripcion de la pregunta.",
-            "answerFormat": {
-              "type": "Integer",
-              "minValue": 1,
-              "maxValue": 5,
-              "defaultValue": 0
-            }
-          },
-          {
-            "name": "Question 4",
             "description": "Esta es la descripcion de la pregunta.",
             "answerFormat": {
               "type": "Integer",
@@ -220,34 +240,9 @@
               "maxValue": 5,
               "defaultValue": 0
             }
-          }
-        ]
-      },
-      {
-        "name": "Categoria 7",
-        "questions": [
-          {
-            "name": "Question 1",
-            "description": "Esta es la descripcion de la pregunta.",
-            "answerFormat": {
-              "type": "Integer",
-              "minValue": 1,
-              "maxValue": 5,
-              "defaultValue": 0
-            }
           },
           {
-            "name": "Question 2",
-            "description": "Esta es la descripcion de la pregunta.",
-            "answerFormat": {
-              "type": "Integer",
-              "minValue": 1,
-              "maxValue": 5,
-              "defaultValue": 0
-            }
-          },
-          {
-            "name": "Question 3",
+            "name": "Question 4",
             "description": "Esta es la descripcion de la pregunta.",
             "answerFormat": {
               "type": "Integer",
@@ -259,7 +254,7 @@
         ]
       },
       {
-        "name": "Categoria 8",
+        "name": "Categoria 7",
         "questions": [
           {
             "name": "Question 1",
@@ -302,6 +297,100 @@
             }
           }
         ]
+      },
+      {
+        "name": "Categoria 8",
+        "questions": [
+          {
+            "name": "Question 1",
+            "description": "Esta es la descripcion de la pregunta.",
+            "answerFormat": {
+              "type": "Integer",
+              "minValue": 1,
+              "maxValue": 5,
+              "defaultValue": 0
+            }
+          },
+          {
+            "name": "Question 2",
+            "description": "Esta es la descripcion de la pregunta.",
+            "answerFormat": {
+              "type": "Integer",
+              "minValue": 1,
+              "maxValue": 5,
+              "defaultValue": 0
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Objetivos",
+    "identifier": "objectives",
+    "content": [
+      {
+        "alternatives": [
+          {
+            "name": "Sentirme más feliz"
+          },
+          {
+            "name": "Reducir ansiedad"
+          },
+          {
+            "name": "Construir autoconfianza"
+          },
+          {
+            "name": "Pensar positivamente"
+          },
+          {
+            "name": "Mejorar habilidades sociales"
+          }
+        ],
+        "answerFormat": {
+          "type": "Array",
+          "defaultValue": []
+        }
+      }
+    ]
+  },
+  {
+    "name": "Tiempo del dia",
+    "identifier": "daytime",
+    "content": [
+      {
+        "alternatives": [
+          {
+            "name": "Después de despertarme"
+          },
+          {
+            "name": "Después de cepillarme los dientes"
+          },
+          {
+            "name": "Antes de salir al trabajo"
+          }
+        ],
+        "answerFormat": {
+          "type": "text",
+          "defaultValue": ""
+        }
+      },
+      {
+        "alternatives": [
+          {
+            "name": "Al llegar al trabajo"
+          },
+          {
+            "name": "Después de cepillarme los dientes"
+          },
+          {
+            "name": "Antes de irme a dormir"
+          }
+        ],
+        "answerFormat": {
+          "type": "text",
+          "defaultValue": ""
+        }
       }
     ]
   }

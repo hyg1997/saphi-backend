@@ -1,0 +1,61 @@
+paths:
+  "/wellness/quizanswers/wheeloflife":
+    post:
+      tags:
+        - wellness.QuizAnswer
+      summary: Create new quiz of wheel of life answer
+      description: |
+        La idea es usar como body el objeto content que se obtiene del endpoint /quiz/<identifier>
+        y junto al objeto answerFormat incluir la respuesta en el campo answer.
+
+        Revisar ejemplo de body en [ejemplo](https://pastebin.com/f0mKCVVq)
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        200:
+          description: Success
+  "/wellness/quizanswers/objectives":
+    post:
+      tags:
+        - wellness.QuizAnswer
+      summary: Create new objective quiz's answer
+      description: |
+        La idea es usar como body el objeto content que se obtiene del endpoint /quiz/<identifier>
+        y junto al objeto answerFormat incluir la respuesta en el campo answer.
+
+        Revisar ejemplo de body en [ejemplo](https://pastebin.com/u5SHB3qD)
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        200:
+          description: Success
+  "/wellness/quizanswers/daytime":
+    post:
+      tags:
+        - wellness.QuizAnswer
+      summary: Create new quiz of wheel of life answer
+      description: |
+        La idea es usar como body el objeto content que se obtiene del endpoint /quiz/<identifier>
+        y junto al objeto answerFormat incluir la respuesta en el campo answer.
+
+        Revisar ejemplo de body en [ejemplo](https://pastebin.com/bKymWdS0)
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        200:
+          description: Success

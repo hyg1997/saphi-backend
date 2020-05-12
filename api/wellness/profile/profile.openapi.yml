@@ -1,0 +1,39 @@
+paths:
+  "/wellness/myprofile":
+    get:
+      tags:
+        - wellness.Profile
+      summary: Get user's profile
+      security:
+        - bearerAuth: []
+      responses:
+        200:
+          description: Success
+  "/wellness/myprofile/activityStatus":
+    put:
+      tags:
+        - wellness.Profile
+      summary: Update status of an activity
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                moduleId:
+                  type: string
+                chapterId:
+                  type: string
+                activityId:
+                  type: string
+                status:
+                  type: string
+                  enum:
+                    - locked
+                    - available
+                    - completed
+      responses:
+        200:
+          description: Success

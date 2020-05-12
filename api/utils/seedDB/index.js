@@ -20,8 +20,8 @@ const {
 const { Plan } = require('../../payment/plan/planModel');
 const { Pathology } = require('../../nutrition/pathology/pathologyModel');
 
-const { Quiz } = require('../../mentalHealth/quiz/quiz.model');
-const { Module } = require('../../mentalHealth/module/module.model');
+const { Quiz } = require('../../wellness/quiz/quiz.model');
+const { Chapter, Module } = require('../../wellness/chapter/chapter.model');
 
 const { asyncForEach } = require('../../utils');
 
@@ -36,7 +36,9 @@ const seedModel = async (
 ) => {
   const rawdata = fs.readFileSync(path.join(__dirname, filename));
   if (clearCollection) {
-    await model.collection.drop();
+    try {
+      await model.collection.drop();
+    } catch (error) {}
   }
   await model.insertMany(
     JSON.parse(rawdata)
@@ -98,7 +100,8 @@ mongoose
     // ? Mental Health
 
     // await seedModel(Quiz, 'quiz.json');
-    await seedModel(Module, 'modules.json', false);
+    // await seedModel(Module, 'modules.json');
+    await seedModel(Chapter, 'chapters.json');
 
     mongoose.connection.close();
   })
