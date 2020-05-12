@@ -55,12 +55,29 @@ const userSchema = new Schema(
     phonePrefix: { type: String },
     phoneNumber: { type: String },
     companyName: { type: String },
-    photo: { type: String },
+    photo: {
+      type: String,
+      default: 'https://saphi.s3.amazonaws.com/user-profile/defaultProfile.png',
+    },
 
     // ? properties
     onboardingFinished: { type: Boolean, default: false }, // ? Indica si se ha completado el onboarding
     activeDiet: { type: Boolean, default: false }, // ? Indica si existe una dieta activa
     specialDiet: { type: Boolean, default: false }, // ? Indica que tiene una dieta asignada manualmente
+
+    // ? Notification properties
+    notifications: {
+      type: {
+        payment: { type: Boolean, default: true },
+        advertising: { type: Boolean, default: true },
+        appUpdate: { type: Boolean, default: true },
+      },
+      default: {
+        payment: true,
+        advertising: true,
+        appUpdate: true,
+      },
+    },
 
     // ? Business properties
     companyId: { type: mongoose.Schema.Types.ObjectId },
@@ -136,7 +153,7 @@ userSchema.statics.hashPassword = async password => {
 };
 
 userSchema.pre('save', async function(next, currentUser, callback) {
-  if (!this.isNew) next();
+  if (!this.isNew) return next();
   this.password = await this.constructor.hashPassword(this.password);
   next();
 });

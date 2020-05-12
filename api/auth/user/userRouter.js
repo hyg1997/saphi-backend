@@ -7,6 +7,24 @@ const Validator = require('./userValidator');
 
 const { authenticateMiddleware } = require('../../middleware/auth');
 
+router.get('/me', authenticateMiddleware('jwt'), Controller.getUserMe);
+
+router.put(
+  // TODO: Revisar y agregar a swagger
+  '/me',
+  authenticateMiddleware('jwt'),
+  celebrate(Validator.UpdateUser),
+  Controller.updateUser,
+);
+
+router.put(
+  // TODO: Revisar y agregar a swagger
+  '/updatephoto',
+  authenticateMiddleware('jwt'),
+  Validator.validatePhoto,
+  Controller.updatePhoto,
+);
+
 router.post(
   '/forgotpassword',
   celebrate(Validator.ForgotPassword),
@@ -17,21 +35,5 @@ router.post(
   '/resetpassword',
   celebrate(Validator.ResetPassword),
   Controller.resetPassword,
-);
-
-router.post(
-  // TODO: Revisar y agregar a swagger
-  '/update',
-  authenticateMiddleware('jwt'),
-  celebrate(Validator.UpdateUser),
-  Controller.updateUser,
-);
-
-router.put(
-  // TODO: Revisar y agregar a swagger
-  '/updatephoto',
-  Validator.validatePhoto,
-  authenticateMiddleware('jwt'),
-  Controller.updatePhoto,
 );
 module.exports = router;

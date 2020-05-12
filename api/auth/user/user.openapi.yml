@@ -1,4 +1,61 @@
 paths:
+  "/user/me":
+    get:
+      tags:
+        - auth.user
+      summary: Get user detailed info
+      security:
+        - bearerAuth: []
+      description: ""
+      responses:
+        200:
+          description: Successful
+    put:
+      tags:
+        - auth.user
+      summary: Update user information
+      security:
+        - bearerAuth: []
+      description: |
+        El servicio debe llamarse segun los ejemplos previstos
+        Se tienen 4 casos:
+          * Actualizar informacion general
+          * Actualizar contraseña (puede incluir información general)
+          * Actualizar alimentos no deseados
+          * Actualizar preferencias de notificaciones
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            examples:
+              Informacion general:
+                value:
+                  name: Nuevo nombre
+                  lastName: Nuevo apellido
+                  phonePrefix: "+51"
+                  phoneNumber: "987654321"
+              Nueva contraseña:
+                value:
+                  pastPassword: password
+                  newPassword: password
+              Alimentos no deseados:
+                value:
+                  avoidedAliments:
+                    carbohydrate: []
+                    protein: ["Conejo"]
+                    fat: []
+              Notificaciones:
+                value:
+                  notifications:
+                    payment: true
+                    advertising: true
+                    appUpdate: true
+
+      responses:
+        200:
+          description: Successful
+
   "/user/forgotpassword":
     post:
       tags:

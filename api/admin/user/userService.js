@@ -87,7 +87,7 @@ const listAdminUsers = async reqQuery => {
 };
 
 const getAdminUser = async userId => {
-  const user = await User.findById(userId)
+  const user = await User.findById(userId, { password: 0 })
     .populate('pathologies')
     .populate('plan');
 

@@ -2,7 +2,7 @@ paths:
   "/user/mypayments":
     get:
       tags:
-        - auth.profile
+        - patient.profile
       summary: Get payment's history of the logged user
       security:
         - bearerAuth: []
@@ -13,7 +13,7 @@ paths:
   "/user/mydiets":
     get:
       tags:
-        - auth.profile
+        - patient.profile
       summary: Get diet's history of the logged user
       security:
         - bearerAuth: []
@@ -24,7 +24,7 @@ paths:
   "/user/contact":
     post:
       tags:
-        - auth.profile
+        - patient.profile
       summary: Send email to admin account
       security:
         - bearerAuth: []
@@ -65,7 +65,7 @@ paths:
   "/user/onboarding":
     post:
       tags:
-        - auth.profile
+        - patient.profile
       summary: Register user onboarding info
       security:
         - bearerAuth: []

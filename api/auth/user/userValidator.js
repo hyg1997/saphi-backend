@@ -36,16 +36,23 @@ const UpdateUser = {
           .required(),
       }),
 
-      pastPassword: Joi.string()
-        .trim()
-        .min(6)
-        .max(255),
-      newPassword: Joi.string()
-        .trim()
-        .min(6)
-        .max(255),
+      notifications: Joi.object({
+        payment: Joi.boolean()
+          .strict()
+          .required(),
+        advertising: Joi.boolean()
+          .strict()
+          .required(),
+        appUpdate: Joi.boolean()
+          .strict()
+          .required(),
+      }),
+      // .and('payment', 'advertising', 'appUpdate')
+      pastPassword: passwordValidator.password.optional(),
+      newPassword: passwordValidator.password.optional(),
     })
     .without('avoidedAliments', [
+      'notifications',
       'name',
       'lastName',
       'phonePrefix',
@@ -53,7 +60,16 @@ const UpdateUser = {
       'pastPassword',
       'newPassword',
     ])
-    .with('pastPassword', 'newPassword'),
+    .without('notifications', [
+      'avoidedAliments',
+      'name',
+      'lastName',
+      'phonePrefix',
+      'phoneNumber',
+      'pastPassword',
+      'newPassword',
+    ])
+    .and('pastPassword', 'newPassword'),
 };
 
 const upload = multer({

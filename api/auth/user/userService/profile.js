@@ -13,8 +13,8 @@ const { setResponse } = require('../../../utils');
 const validateUpdateUser = async (reqBody, reqUser) => {
   const user = await User.findById(reqUser.id);
   if (reqBody.pastPassword && reqBody.newPassword) {
-    if (!user.isValidPassword(reqBody.pastPassword))
-      return setResponse(400, 'Incorrect password', {});
+    const validation = await user.isValidPassword(reqBody.pastPassword);
+    if (!validation) return setResponse(400, 'Incorrect password', {});
     reqBody.password = reqBody.newPassword;
     delete reqBody.newPassword;
     delete reqBody.pastPassword;
@@ -24,7 +24,16 @@ const validateUpdateUser = async (reqBody, reqUser) => {
 };
 
 const updateUser = async (reqBody, user) => {
-  _.merge(user, reqBody);
+  _.mergeWith(user, reqBody, (objValue, srcValue) => {
+    if (_.isArray(objValue)) {
+      return srcValue;
+    }
+  });
+  user.markModified('avoidedAliments');
+  user.markModified('notifications');
+
+  if (reqBody.password)
+    user.password = await User.hashPassword(reqBody.password);
   await user.save();
   return setResponse(200, 'User updated.', user);
 };

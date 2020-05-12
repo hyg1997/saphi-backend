@@ -1,4 +1,10 @@
 const Service = require('./userService');
+const AdminService = require('../../admin/user/userService');
+
+const getUserMe = async (req, res) => {
+  const response = await AdminService.getAdminUser(req.user.id);
+  return res.status(response.status).send(response);
+};
 
 const forgotPassword = async (req, res) => {
   const response = await Service.forgotPassword(req.body);
@@ -37,6 +43,7 @@ const updatePhoto = async (req, res) => {
 };
 
 module.exports = {
+  getUserMe,
   forgotPassword,
   checkCode,
   resetPassword,
