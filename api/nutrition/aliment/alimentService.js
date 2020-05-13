@@ -10,9 +10,6 @@ const getAliment = async reqParams => {
 const createAliment = async reqBody => {
   const aliment = new Aliment(reqBody);
   await aliment.save();
-  // ! Que ocurre si el body no es correcto?
-  // ! Se puede solicionar al incluir un validator y garantizar que el
-  // ! body del request tiene el formato deseado
   return setResponse(201, 'Aliment Created.', aliment);
 };
 

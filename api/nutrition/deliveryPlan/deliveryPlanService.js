@@ -2,7 +2,7 @@ const { DeliveryPlan } = require('./deliveryPlanModel');
 const { setResponse } = require('../../utils');
 
 const listDeliveryPlan = async reqQuery => {
-  const deliveryPlans = await DeliveryPlan.find(reqQuery);
+  const deliveryPlans = await DeliveryPlan.find(reqQuery).sort('displayOrder');
   return setResponse(200, 'DeliveryPlans found.', deliveryPlans);
 };
 

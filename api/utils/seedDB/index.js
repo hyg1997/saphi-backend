@@ -75,12 +75,12 @@ mongoose
   })
   .then(async () => {
     // await seedModel(DeliveryPlan, 'deliveryPlan.json');
-    // await seedModel(DishRecipe, 'dishRecipe.json');
+    await seedModel(DishRecipe, 'dishRecipe.json');
 
     // await seedModel(Menu, 'menu.json', true, obj => {
     //   return moment(obj.date).isoWeekday() < 6;
     // });
-    // await seedModel(Aliment, 'aliments.json');
+    await seedModel(Aliment, 'aliments.json');
     // await seedModel(
     //   Company,
     //   'company.json',
@@ -101,7 +101,7 @@ mongoose
 
     // await seedModel(Quiz, 'quiz.json');
     // await seedModel(Module, 'modules.json');
-    await seedModel(Chapter, 'chapters.json');
+    // await seedModel(Chapter, 'chapters.json');
 
     mongoose.connection.close();
   })

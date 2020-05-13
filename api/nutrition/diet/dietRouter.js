@@ -9,9 +9,9 @@ const Validator = require('./dietValidator');
 
 // ! Considerar incluir validadores para servicios
 
+router.get('/myplan', Controller.getDiet);
 router.get('/meals/:meal/aliments/:aliment', Controller.getAlimentDiet);
 router.post('/meals/:meal', Controller.changeAliment);
-router.get('/myplan', Controller.getDiet);
 router.put('/meals', celebrate(Validator.SetMeals), Controller.setMeals);
 
 module.exports = router;

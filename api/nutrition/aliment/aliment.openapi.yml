@@ -1,0 +1,33 @@
+paths:
+  "/aliments/category":
+    get:
+      tags:
+        - nutrition.Aliments
+      summary: Get categories of aliments
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: query
+          name: type
+          schema:
+            type: string
+            enum:
+              - carbohidrato
+              - proteína
+              - grasa
+          description: Filtro para alimentos a mostrar segun macronutriente
+      responses:
+        200:
+          description: Success
+  "/aliments/{id}":
+    get:
+      tags:
+        - nutrition.Aliments
+      summary: Get aliment by id
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: "#/components/parameters/paramId"
+      responses:
+        200:
+          description: Success

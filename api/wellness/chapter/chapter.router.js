@@ -10,9 +10,13 @@ router.get(
   celebrate(Validator.List),
   Controller.listChapterByModule,
 );
-router.get('/:id', celebrate(Validator.Get), Controller.getChapter);
 router.get(
-  '/:id/activity/:subId',
+  '/:id([a-fA-F0-9]{24})',
+  celebrate(Validator.Get),
+  Controller.getChapter,
+);
+router.get(
+  '/:id([a-fA-F0-9]{24})/activity/:subId([a-fA-F0-9]{24})',
   celebrate(Validator.GetSub),
   Controller.getChapterActivity,
 );

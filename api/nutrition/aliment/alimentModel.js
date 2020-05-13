@@ -39,6 +39,10 @@ const alimentSchema = new Schema(
       type: String,
       required: true,
     },
+    displayOrder: {
+      type: Number,
+      default: 0,
+    },
     macroContent: {
       carbohydrate: {
         type: Number,

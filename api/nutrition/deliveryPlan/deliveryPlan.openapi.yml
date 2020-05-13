@@ -1,0 +1,11 @@
+paths:
+  "/deliveryplan":
+    get:
+      tags:
+        - nutrition.Delivery
+      summary: Get list of deliveryplans
+      security:
+        - bearerAuth: []
+      responses:
+        200:
+          description: Success

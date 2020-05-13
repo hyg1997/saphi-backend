@@ -21,6 +21,10 @@ const deliveryPlanSchema = new Schema(
       type: Number,
       required: true,
     },
+    displayOrder: {
+      type: Number,
+      default: 0,
+    },
     option: [
       {
         planType: {

@@ -1,27 +1,27 @@
 const Service = require('./alimentService');
 
 const getAliment = async (req, res) => {
-  const aliment = await Service.getAliment(req.params);
+  const response = await Service.getAliment(req.params);
 
-  return res.status(aliment.status).send(aliment);
+  return res.status(response.status).send(response);
 };
 
 const listAliment = async (req, res) => {
-  const aliments = await Service.listAliment(req.query);
+  const response = await Service.listAliment(req.query);
 
-  return res.status(aliments.status).send(aliments);
+  return res.status(response.status).send(response);
 };
 
 const listCategories = async (req, res) => {
-  const aliments = await Service.listCategories(req.query);
+  const response = await Service.listCategories(req.query);
 
-  return res.status(aliments.status).send(aliments);
+  return res.status(response.status).send(response);
 };
 
 const createAliment = async (req, res) => {
-  const aliment = await Service.createAliment(req.body);
+  const response = await Service.createAliment(req.body);
 
-  return res.status(aliment.status).send(aliment);
+  return res.status(response.status).send(response);
 };
 
 module.exports = {

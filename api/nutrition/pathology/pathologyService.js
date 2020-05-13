@@ -14,8 +14,8 @@ const createPathology = async reqBody => {
 };
 
 const listPathology = async reqQuery => {
-  const pathologys = await Pathology.find(reqQuery);
-  return setResponse(200, 'Pathologys Found.', pathologys);
+  const pathologys = await Pathology.find(reqQuery).sort('displayOrder');
+  return setResponse(200, 'Pathologies Found.', pathologys);
 };
 
 module.exports = {

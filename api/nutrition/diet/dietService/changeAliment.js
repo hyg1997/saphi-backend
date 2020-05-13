@@ -116,7 +116,9 @@ const changeAliment = async (reqBody, reqQuery, reqUser) => {
   ];
   if (tagAllow) filterAliments.push({ tag: { $in: tagAllow } });
 
-  const aliments = await Aliment.find({ $and: filterAliments });
+  const aliments = await Aliment.find({ $and: filterAliments }).sort(
+    'displayOrder',
+  );
 
   const data = {
     nextStep,

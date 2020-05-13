@@ -2,7 +2,7 @@ const { DishRecipe } = require('./dishRecipeModel');
 const { setResponse } = require('../../utils');
 
 const listDishRecipe = async reqQuery => {
-  const DishRecipes = await DishRecipe.find(reqQuery);
+  const DishRecipes = await DishRecipe.find(reqQuery).sort('displayOrder');
   return setResponse(200, 'DishRecipe list.', DishRecipes);
 };
 

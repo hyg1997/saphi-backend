@@ -27,6 +27,10 @@ const dishRecipeSchema = new Schema(
       required: true,
       default: false, // TODO: Remove
     },
+    displayOrder: {
+      type: Number,
+      default: 0,
+    },
     detail: {
       difficulty: {
         type: String,
