@@ -25,6 +25,7 @@ const authenticateMiddleware = (strategyName, options = {}) => (
     (err, user, info) => {
       if (err) return next(err);
       if (!user) {
+        console.log(info);
         if (!info.status)
           info = {
             status: 401,

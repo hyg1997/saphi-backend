@@ -69,12 +69,12 @@ const Register = {
 
 const Login = {
   body: Joi.object({
-    email: emailValidator.email.optional(),
+    email: emailValidator.email.optional().default('empty@email.com'),
     idDocumentType: idDocumentValidator.idDocumentType.optional(),
     idDocumentNumber: idDocumentValidator.idDocumentNumber.optional(),
     ...passwordValidator,
   })
-    .xor('email', 'idDocumentType')
+    // .xor('email', 'idDocumentType')
     .and('idDocumentType', 'idDocumentNumber'),
 };
 

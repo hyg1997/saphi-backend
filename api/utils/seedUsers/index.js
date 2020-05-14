@@ -10,14 +10,15 @@ require('../../../startup/config')();
 require('../../../startup/logging')();
 
 const config = require('config');
-const userService = require('../../auth/user/userService');
-const dietService = require('../../nutrition/diet/dietUtils');
+const userService = require('../../patient/user/userService');
+const dietService = require('../../nutrition/diet/dietService');
+const dietUtils = require('../../nutrition/diet/dietUtils');
 const { User } = require('../../../api/auth/user/userModel');
 
 const data = [
   {
     email: 'saphi_user1@gmail.com',
-    password: 'pass123',
+    password: 'password',
     birthDate: '2000-01-01',
     indicators: {
       idObjective: 0,
@@ -30,7 +31,7 @@ const data = [
   },
   {
     email: 'saphi_user2@gmail.com',
-    password: 'pass123',
+    password: 'password',
     birthDate: '1995-01-01',
     indicators: {
       idObjective: 1,
@@ -43,7 +44,7 @@ const data = [
   },
   {
     email: 'saphi_user3@gmail.com',
-    password: 'pass123',
+    password: 'password',
     birthDate: '1990-01-01',
     indicators: {
       idObjective: 2,
@@ -56,7 +57,7 @@ const data = [
   },
   {
     email: 'saphi_user4@gmail.com',
-    password: 'pass123',
+    password: 'password',
     birthDate: '1980-01-01',
     indicators: {
       idObjective: 3,
@@ -69,7 +70,7 @@ const data = [
   },
   {
     email: 'saphi_user5@gmail.com',
-    password: 'pass123',
+    password: 'password',
     birthDate: '1975-01-01',
     indicators: {
       idObjective: 0,
@@ -82,7 +83,7 @@ const data = [
   },
   {
     email: 'saphi_user6@gmail.com',
-    password: 'pass123',
+    password: 'password',
     birthDate: '1970-01-01',
     indicators: {
       idObjective: 1,
@@ -95,7 +96,7 @@ const data = [
   },
   {
     email: 'saphi_user7@gmail.com',
-    password: 'pass123',
+    password: 'password',
     birthDate: '1980-01-01',
     indicators: {
       idObjective: 2,
@@ -108,7 +109,7 @@ const data = [
   },
   {
     email: 'saphi_user8@gmail.com',
-    password: 'pass123',
+    password: 'password',
     birthDate: '2000-01-01',
     indicators: {
       idObjective: 0,
@@ -121,7 +122,7 @@ const data = [
   },
   {
     email: 'saphi_user9@gmail.com',
-    password: 'pass123',
+    password: 'password',
     birthDate: '1995-01-01',
     indicators: {
       idObjective: 1,
@@ -134,7 +135,7 @@ const data = [
   },
   {
     email: 'saphi_user10@gmail.com',
-    password: 'pass123',
+    password: 'password',
     birthDate: '1990-01-01',
     indicators: {
       idObjective: 2,
@@ -147,7 +148,7 @@ const data = [
   },
   {
     email: 'saphi_user11@gmail.com',
-    password: 'pass123',
+    password: 'password',
     birthDate: '1980-01-01',
     indicators: {
       idObjective: 3,
@@ -160,7 +161,7 @@ const data = [
   },
   {
     email: 'saphi_user12@gmail.com',
-    password: 'pass123',
+    password: 'password',
     birthDate: '1975-01-01',
     indicators: {
       idObjective: 0,
@@ -173,7 +174,7 @@ const data = [
   },
   {
     email: 'saphi_user13@gmail.com',
-    password: 'pass123',
+    password: 'password',
     birthDate: '1970-01-01',
     indicators: {
       idObjective: 1,
@@ -186,7 +187,7 @@ const data = [
   },
   {
     email: 'saphi_user14@gmail.com',
-    password: 'pass123',
+    password: 'password',
     birthDate: '1980-01-01',
     indicators: {
       idObjective: 2,
@@ -205,15 +206,18 @@ mongoose
     useNewUrlParser: true,
   })
   .then(async () => {
-    const dataPromise = data.map(async item => {
+    const dataPromise = data.map(async (item, index) => {
+      console.log(index);
       item.pathologies = [];
       item.otherPathology = '';
       item.avoidedAliments = { carbohydrate: [], protein: [], fat: [] };
       item.onboardingFinished = true;
+      item.idDocumentType = 'DNI';
+      item.idDocumentNumber = ('00000000' + (index + 1).toString()).slice(-8);
 
       item.planSubscription = {
         active: true,
-        type: 'Company Plan',
+        type: 'Simple Plan',
         endDate: moment().add(1, 'months'),
       };
       item.name = item.email;
@@ -225,9 +229,7 @@ mongoose
       const user = new User(updateUser.data);
       await user.save();
       console.log('Created', item.email);
-
-      const macroContent = await dietService.calcDiet(user.toObject());
-      await User.findByIdAndUpdate(user.id, { macroContent });
+      await dietService.createDiet(user);
       console.log('Diet added', item.email);
     });
 
