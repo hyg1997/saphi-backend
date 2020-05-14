@@ -1,4 +1,6 @@
+/* eslint-disable no-param-reassign */
 const mongoose = require('mongoose');
+const _ = require('lodash');
 const { PROGESS_STATUS, getDictValues } = require('../../utils/constants');
 
 const { Schema } = mongoose;
@@ -58,7 +60,22 @@ const profileSchema = new Schema(
   },
 );
 
-const Profile = mongoose.model('Profile', profileSchema);
+profileSchema.statics.findByUserIdAndUpdateWheel = async function(
+  userId,
+  wheelAnswer,
+) {
+  const profile = await this.findOne({ user: userId });
+  profile.wheelOfLife.pastAnswer = { ...profile.wheelOfLife.answer };
+  profile.wheelOfLife.answer = {
+    completed: true,
+    content: _.pick(wheelAnswer, ['_id', 'content', 'createdAt', 'updatedAt']),
+  };
+  await profile.save();
+
+  return profile;
+};
+
+const Profile = mongoose.model('WellnessProfile', profileSchema);
 
 module.exports = {
   profileSchema,

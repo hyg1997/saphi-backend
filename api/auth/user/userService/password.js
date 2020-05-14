@@ -58,6 +58,7 @@ const resetPassword = async reqBody => {
   const { data: user } = await readUserByFieldIds(reqBody);
 
   user.password = await User.hashPassword(reqBody.newPassword);
+  user.hashPassword = true;
 
   // response.data.password = reqBody.newPassword;
   await user.save();

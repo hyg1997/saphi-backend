@@ -24,6 +24,7 @@ const JWT_FIELDS = [
   'onboardingFinished',
   'activeDiet',
   'specialDiet',
+  'hasPassword',
 ];
 
 const { Schema } = mongoose;
@@ -64,6 +65,9 @@ const userSchema = new Schema(
     onboardingFinished: { type: Boolean, default: false }, // ? Indica si se ha completado el onboarding
     activeDiet: { type: Boolean, default: false }, // ? Indica si existe una dieta activa
     specialDiet: { type: Boolean, default: false }, // ? Indica que tiene una dieta asignada manualmente
+    hasPassword: { type: Boolean, default: false }, // ? Indica si usuario tiene seteada una contraseña
+    hasCompanyRegistration: { type: Boolean, default: false }, // ? Indica si usuario ha sido creado como parte de una compañia
+    wellnessOnboardingFinished: { type: Boolean, default: false }, // ? Indica si usuario ha completado el onboarding, se marca al crear el test de rueda de la vida
 
     // ? Notification properties
     notifications: {
@@ -129,6 +133,12 @@ const userSchema = new Schema(
       },
     },
 
+    // ? Wellness properties
+    wellnessProfile: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Profile',
+    },
+
     // ? Subscription properties
     planSubscription: {
       active: { type: Boolean, default: false },
@@ -146,17 +156,35 @@ const userSchema = new Schema(
   },
 );
 
+userSchema.pre('save', async function(next, currentUser, callback) {
+  if (!this.isNew) return next();
+  if (this.password) {
+    this.password = await this.constructor.hashPassword(this.password);
+    this.hasPassword = true;
+  }
+  next();
+});
+
 userSchema.statics.hashPassword = async password => {
   const salt = await bcrypt.genSalt(config.get('saltPow'));
   const hash = await bcrypt.hash(password, salt);
   return hash;
 };
 
-userSchema.pre('save', async function(next, currentUser, callback) {
-  if (!this.isNew) return next();
-  this.password = await this.constructor.hashPassword(this.password);
-  next();
-});
+userSchema.statics.findByIds = function(ids) {
+  const idIdentifiers = [
+    ['email'],
+    ['idDocumentType', 'idDocumentNumber'],
+    ['googleId'],
+    ['facebookId'],
+  ];
+
+  return this.findOne({
+    $or: idIdentifiers
+      .filter(fields => _.every(fields, _.partial(_.has, ids)))
+      .map(fields => _.pick(ids, fields)),
+  });
+};
 
 userSchema.methods.isValidPassword = async function(password) {
   if (!this.password || !password) return false;
@@ -175,21 +203,6 @@ userSchema.methods.getAvoidedAliments = function() {
 userSchema.methods.generateAuthToken = function() {
   const payload = _.pick(this.toObject(), JWT_FIELDS);
   return jwt.sign(payload, config.get('jwtSecret'));
-};
-
-userSchema.statics.findByIds = function(ids) {
-  const idIdentifiers = [
-    ['email'],
-    ['idDocumentType', 'idDocumentNumber'],
-    ['googleId'],
-    ['facebookId'],
-  ];
-
-  return this.findOne({
-    $or: idIdentifiers
-      .filter(fields => _.every(fields, _.partial(_.has, ids)))
-      .map(fields => _.pick(ids, fields)),
-  });
 };
 
 const User = mongoose.model('User', userSchema);

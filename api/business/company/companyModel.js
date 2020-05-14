@@ -20,6 +20,7 @@ const companySchema = new Schema(
 
         endDate: { type: Date },
         deleted: { type: Boolean, default: false },
+        registrationDate: { type: Date },
       },
     ],
   },

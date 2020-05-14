@@ -1,5 +1,6 @@
 /* eslint-disable no-param-reassign */
 const { Profile } = require('./profile.model');
+const { User } = require('../../auth/user/userModel');
 const { setResponse } = require('../../utils');
 const { PROGESS_STATUS } = require('../../utils/constants');
 
@@ -18,6 +19,9 @@ const createBaseProfile = async (reqUser, modules) => {
     wheelOfLife: {},
     modules,
   });
+
+  // ? Save wellnessProfile in user
+  await User.findByIdAndUpdate(reqUser.id, { wellnessProfile: profile.id });
 
   return setResponse(201, 'Profile created', profile);
 };

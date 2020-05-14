@@ -38,13 +38,14 @@ const createUser = async reqBody => {
       );
     });
     if (!preRegistered) return setResponse(400, 'User not found on company.');
-    if (preRegistered)
-      user.planSubscription = {
-        active: true,
-        type: 'Company Plan',
-        endDate: preRegistered.endDate,
-      };
-    // TODO: Registrar creacion de usuario en entidad company
+    user.planSubscription = {
+      active: true,
+      type: 'Company Plan',
+      endDate: preRegistered.endDate,
+    };
+    user.hasCompanyRegistration = true;
+    preRegistered.registrationDate = new Date();
+    await company.save();
   }
 
   await user.save();

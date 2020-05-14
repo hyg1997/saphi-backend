@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
@@ -49,6 +50,20 @@ const quizAnswerSchema = new Schema(
 );
 
 const QuizAnswer = mongoose.model('QuizAnswer', quizAnswerSchema);
+
+quizAnswerSchema.pre('save', async function(next, current, callback) {
+  if (this.identifier === 'wheeloflife') {
+    this.content = this.content.map(category => {
+      category.total = category.questions.reduce(
+        (acc, cur) => acc + cur.answer,
+        0,
+      );
+      category.mean = category.total / category.questions.length;
+      return category;
+    });
+  }
+  next();
+});
 
 module.exports = {
   quizAnswerSchema,
