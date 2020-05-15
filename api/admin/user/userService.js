@@ -17,8 +17,10 @@ const { setResponse, renderTemplate, sendEmail } = require('../../utils');
 const generateQueryUsers = reqBody => {
   const allFields = ['name', 'lastName', 'email', 'companyName', 'id'];
   const matchFields = ['activeDiet', 'onboardingFinished'];
-  const query = { filter: { $and: [] }, sort: {} };
-
+  const query = {
+    filter: { $and: [{ 'permissions.isPatient': true }] },
+    sort: {},
+  };
   if (reqBody.match) {
     if (!reqBody.match.every(obj => matchFields.includes(obj.field)))
       return setResponse(

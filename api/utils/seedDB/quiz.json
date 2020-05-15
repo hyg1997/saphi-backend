@@ -4,11 +4,12 @@
     "identifier": "wheeloflife",
     "content": [
       {
-        "name": "Categoria 1",
+        "displayOrder": 1,
+        "name": "FAMILIA",
         "questions": [
           {
             "name": "Question 1",
-            "description": "Esta es la descripcion de la pregunta.",
+            "description": "¿Cuán buena consideras que es la relación con los miembros de tu familia?",
             "answerFormat": {
               "type": "Integer",
               "minValue": 1,
@@ -18,7 +19,7 @@
           },
           {
             "name": "Question 2",
-            "description": "Esta es la descripcion de la pregunta.",
+            "description": "¿Pasas tiempo suficiente con tu familia?",
             "answerFormat": {
               "type": "Integer",
               "minValue": 1,
@@ -28,7 +29,43 @@
           },
           {
             "name": "Question 3",
-            "description": "Esta es la descripcion de la pregunta.",
+            "description": "¿Te sientes satisfecho con tu vida familiar?",
+            "answerFormat": {
+              "type": "Integer",
+              "minValue": 1,
+              "maxValue": 5,
+              "defaultValue": 0
+            }
+          }
+        ]
+      },
+      {
+        "displayOrder": 2,
+        "name": "PAREJA",
+        "questions": [
+          {
+            "name": "Question 1",
+            "description": "¿Te sientes amado/a?, Si tienes pareja, ¿estás a gusto con ella/él?",
+            "answerFormat": {
+              "type": "Integer",
+              "minValue": 1,
+              "maxValue": 5,
+              "defaultValue": 0
+            }
+          },
+          {
+            "name": "Question 2",
+            "description": "¿Estás en búsqueda de una pareja?",
+            "answerFormat": {
+              "type": "Integer",
+              "minValue": 1,
+              "maxValue": 5,
+              "defaultValue": 0
+            }
+          },
+          {
+            "name": "Question 3",
+            "description": "¿Compartes los mismos valores e intimidad con tu pareja actual?",
             "answerFormat": {
               "type": "Integer",
               "minValue": 1,
@@ -38,7 +75,7 @@
           },
           {
             "name": "Question 4",
-            "description": "Esta es la descripcion de la pregunta.",
+            "description": "¿Estás alimentando adecuadamente la relación que tienes en este momento?",
             "answerFormat": {
               "type": "Integer",
               "minValue": 1,
@@ -49,11 +86,12 @@
         ]
       },
       {
-        "name": "Categoria 2",
+        "displayOrder": 3,
+        "name": "AMIGOS",
         "questions": [
           {
             "name": "Question 1",
-            "description": "Esta es la descripcion de la pregunta.",
+            "description": "¿Compartes y le dedicas tiempo a tus amigos?",
             "answerFormat": {
               "type": "Integer",
               "minValue": 1,
@@ -63,7 +101,7 @@
           },
           {
             "name": "Question 2",
-            "description": "Esta es la descripcion de la pregunta.",
+            "description": "¿Disfrutas el tiempo que pasas con tus amigos?",
             "answerFormat": {
               "type": "Integer",
               "minValue": 1,
@@ -73,7 +111,7 @@
           },
           {
             "name": "Question 3",
-            "description": "Esta es la descripcion de la pregunta.",
+            "description": "¿Consideras que la relación con tus amigos es de calidad?",
             "answerFormat": {
               "type": "Integer",
               "minValue": 1,
@@ -84,11 +122,12 @@
         ]
       },
       {
-        "name": "Categoria 3",
+        "displayOrder": 4,
+        "name": "ESTUDIO/CARRERA",
         "questions": [
           {
             "name": "Question 1",
-            "description": "Esta es la descripcion de la pregunta.",
+            "description": "¿Le dedicas suficiente tiempo a los estudios?",
             "answerFormat": {
               "type": "Integer",
               "minValue": 1,
@@ -98,7 +137,7 @@
           },
           {
             "name": "Question 2",
-            "description": "Esta es la descripcion de la pregunta.",
+            "description": "¿Son los estudios un aspecto importante en tu vida?",
             "answerFormat": {
               "type": "Integer",
               "minValue": 1,
@@ -108,7 +147,43 @@
           },
           {
             "name": "Question 3",
-            "description": "Esta es la descripcion de la pregunta.",
+            "description": "¿Te gusta lo que estás estudiando?",
+            "answerFormat": {
+              "type": "Integer",
+              "minValue": 1,
+              "maxValue": 5,
+              "defaultValue": 0
+            }
+          }
+        ]
+      },
+      {
+        "displayOrder": 5,
+        "name": "TRABAJO",
+        "questions": [
+          {
+            "name": "Question 1",
+            "description": "¿Disfrutas tu trabajo?",
+            "answerFormat": {
+              "type": "Integer",
+              "minValue": 1,
+              "maxValue": 5,
+              "defaultValue": 0
+            }
+          },
+          {
+            "name": "Question 2",
+            "description": "¿Te sientes satisfecho?",
+            "answerFormat": {
+              "type": "Integer",
+              "minValue": 1,
+              "maxValue": 5,
+              "defaultValue": 0
+            }
+          },
+          {
+            "name": "Question 3",
+            "description": "¿Tienes oportunidad de crecer?",
             "answerFormat": {
               "type": "Integer",
               "minValue": 1,
@@ -118,7 +193,7 @@
           },
           {
             "name": "Question 4",
-            "description": "Esta es la descripcion de la pregunta.",
+            "description": "¿Estás en una empresa que refleja lo que piensas y que comparte tus valores?",
             "answerFormat": {
               "type": "Integer",
               "minValue": 1,
@@ -129,11 +204,12 @@
         ]
       },
       {
-        "name": "Categoria 4",
+        "displayOrder": 6,
+        "name": "ÉXITO",
         "questions": [
           {
             "name": "Question 1",
-            "description": "Esta es la descripcion de la pregunta.",
+            "description": "¿Te sientes una persona de éxito en lo que emprendes?",
             "answerFormat": {
               "type": "Integer",
               "minValue": 1,
@@ -143,17 +219,7 @@
           },
           {
             "name": "Question 2",
-            "description": "Esta es la descripcion de la pregunta.",
-            "answerFormat": {
-              "type": "Integer",
-              "minValue": 1,
-              "maxValue": 5,
-              "defaultValue": 0
-            }
-          },
-          {
-            "name": "Question 3",
-            "description": "Esta es la descripcion de la pregunta.",
+            "description": "¿Consideras que tu vida tiene experiencias exitosas?",
             "answerFormat": {
               "type": "Integer",
               "minValue": 1,
@@ -164,11 +230,12 @@
         ]
       },
       {
-        "name": "Categoria 5",
+        "displayOrder": 7,
+        "name": "FINANZAS/DINERO",
         "questions": [
           {
             "name": "Question 1",
-            "description": "Esta es la descripcion de la pregunta.",
+            "description": "¿Ganas lo suficiente para vivir como deseas?",
             "answerFormat": {
               "type": "Integer",
               "minValue": 1,
@@ -178,7 +245,7 @@
           },
           {
             "name": "Question 2",
-            "description": "Esta es la descripcion de la pregunta.",
+            "description": "¿Ahorras lo suficiente?",
             "answerFormat": {
               "type": "Integer",
               "minValue": 1,
@@ -188,7 +255,7 @@
           },
           {
             "name": "Question 3",
-            "description": "Esta es la descripcion de la pregunta.",
+            "description": "¿Estás planeando y ahorrando para tu retiro?",
             "answerFormat": {
               "type": "Integer",
               "minValue": 1,
@@ -198,7 +265,17 @@
           },
           {
             "name": "Question 4",
-            "description": "Esta es la descripcion de la pregunta.",
+            "description": "¿Gastas más de la cuenta?",
+            "answerFormat": {
+              "type": "Integer",
+              "minValue": 1,
+              "maxValue": 5,
+              "defaultValue": 0
+            }
+          },
+          {
+            "name": "Question 5",
+            "description": "¿Crees que deberías aprender más sobre finanzas?",
             "answerFormat": {
               "type": "Integer",
               "minValue": 1,
@@ -209,11 +286,12 @@
         ]
       },
       {
-        "name": "Categoria 6",
+        "displayOrder": 8,
+        "name": "SALUD",
         "questions": [
           {
             "name": "Question 1",
-            "description": "Esta es la descripcion de la pregunta.",
+            "description": "¿Te alimentas saludablemente?",
             "answerFormat": {
               "type": "Integer",
               "minValue": 1,
@@ -223,7 +301,7 @@
           },
           {
             "name": "Question 2",
-            "description": "Esta es la descripcion de la pregunta.",
+            "description": "¿Practicas ejercicio regularmente?",
             "answerFormat": {
               "type": "Integer",
               "minValue": 1,
@@ -233,7 +311,7 @@
           },
           {
             "name": "Question 3",
-            "description": "Esta es la descripcion de la pregunta.",
+            "description": "¿Estás satisfecho con tu salud y tu estado físico?",
             "answerFormat": {
               "type": "Integer",
               "minValue": 1,
@@ -243,7 +321,7 @@
           },
           {
             "name": "Question 4",
-            "description": "Esta es la descripcion de la pregunta.",
+            "description": "¿En términos generales, te sientes bien?",
             "answerFormat": {
               "type": "Integer",
               "minValue": 1,
@@ -254,11 +332,12 @@
         ]
       },
       {
-        "name": "Categoria 7",
+        "displayOrder": 9,
+        "name": "DIVERSIÓN/RECREACIÓN",
         "questions": [
           {
             "name": "Question 1",
-            "description": "Esta es la descripcion de la pregunta.",
+            "description": "¿Te diviertes con frecuencia?",
             "answerFormat": {
               "type": "Integer",
               "minValue": 1,
@@ -268,7 +347,7 @@
           },
           {
             "name": "Question 2",
-            "description": "Esta es la descripcion de la pregunta.",
+            "description": "¿Sabes cómo relajarte?",
             "answerFormat": {
               "type": "Integer",
               "minValue": 1,
@@ -278,7 +357,7 @@
           },
           {
             "name": "Question 3",
-            "description": "Esta es la descripcion de la pregunta.",
+            "description": "¿Disfrutas de los deportes o de algún pasatiempo?",
             "answerFormat": {
               "type": "Integer",
               "minValue": 1,
@@ -288,32 +367,7 @@
           },
           {
             "name": "Question 4",
-            "description": "Esta es la descripcion de la pregunta.",
-            "answerFormat": {
-              "type": "Integer",
-              "minValue": 1,
-              "maxValue": 5,
-              "defaultValue": 0
-            }
-          }
-        ]
-      },
-      {
-        "name": "Categoria 8",
-        "questions": [
-          {
-            "name": "Question 1",
-            "description": "Esta es la descripcion de la pregunta.",
-            "answerFormat": {
-              "type": "Integer",
-              "minValue": 1,
-              "maxValue": 5,
-              "defaultValue": 0
-            }
-          },
-          {
-            "name": "Question 2",
-            "description": "Esta es la descripcion de la pregunta.",
+            "description": "¿Disfrutas plenamente de la vida?",
             "answerFormat": {
               "type": "Integer",
               "minValue": 1,

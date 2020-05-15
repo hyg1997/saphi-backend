@@ -1,14 +1,15 @@
 [
   {
-    "name": "Capitulo 1",
+    "value": "Actividad 1",
+    "displayOrder": 1,
+    "name": "Mitos sobre la felicidad",
     "module": {
       "displayOrder": 1,
-      "name": "Modulo 1",
+      "name": "BIENESTAR",
       "_id": "5eb894a649d72e00d91a16ff"
     },
     "mediumImage": "url de la imagen",
     "largeImage": "url de la imagen",
-    "displayOrder": 1,
     "activities": [
       {
         "name": "Actividad 1",
@@ -28,9 +29,9 @@
         "displayOrder": 2,
         "initialState": "locked",
         "content": {
-          "title": "Nulla est sit dolore est tempor consectetur.",
-          "date": "2020-02-16T02:02:23.542Z",
-          "text": "Lorem labore deserunt fugiat aute qui. Elit qui sit magna duis sint laborum labore ut exercitation pariatur commodo excepteur mollit. Commodo eu irure est commodo incididunt aliqua."
+          "title": "Magna anim irure mollit ex consequat aliquip ipsum dolore elit qui aliqua aliqua proident.",
+          "date": "2020-02-13T20:20:36.358Z",
+          "text": "Eiusmod voluptate sit enim laboris et culpa non excepteur occaecat deserunt exercitation. Elit proident voluptate veniam fugiat duis ullamco. Cupidatat laborum fugiat dolor nostrud nostrud nostrud est sint ea culpa eiusmod do sint ipsum."
         }
       },
       {
@@ -40,23 +41,24 @@
         "displayOrder": 3,
         "initialState": "locked",
         "content": {
-          "title": "Adipisicing elit velit enim exercitation.",
-          "date": "2020-02-04T14:32:09.198Z",
-          "text": "Exercitation elit deserunt commodo dolore adipisicing eiusmod labore adipisicing. Dolore deserunt quis et exercitation velit quis. Sit duis tempor sint qui elit laboris incididunt sint nulla commodo dolor. Do eu cillum enim labore pariatur minim dolore ad. Esse occaecat irure non anim."
+          "title": "Tempor fugiat officia do ea minim sit nulla anim cillum dolore cillum.",
+          "date": "2020-04-24T12:04:43.692Z",
+          "text": "Elit irure anim laborum sunt exercitation ut adipisicing proident. Minim labore fugiat irure eu amet do commodo deserunt consectetur id. Sit magna laborum nulla ullamco velit ad duis nostrud non nisi ut deserunt fugiat mollit. Deserunt Lorem proident quis veniam eiusmod adipisicing adipisicing fugiat mollit. Exercitation eu et irure minim commodo excepteur nulla exercitation."
         }
       }
     ]
   },
   {
-    "name": "Capitulo 2",
+    "value": "Actividad 2",
+    "displayOrder": 2,
+    "name": "Felicidad=Bienestar",
     "module": {
       "displayOrder": 1,
-      "name": "Modulo 1",
+      "name": "BIENESTAR",
       "_id": "5eb894a649d72e00d91a16ff"
     },
     "mediumImage": "url de la imagen",
     "largeImage": "url de la imagen",
-    "displayOrder": 2,
     "activities": [
       {
         "name": "Actividad 1",
@@ -76,35 +78,36 @@
         "displayOrder": 2,
         "initialState": "locked",
         "content": {
-          "title": "Ad nostrud eiusmod cupidatat ut ex ipsum labore nostrud ipsum.",
-          "date": "2020-02-08T13:09:01.042Z",
-          "text": "Et cupidatat quis ea dolor sit do. Aliqua consequat anim exercitation elit. Irure velit commodo pariatur Lorem ullamco laboris velit consectetur nulla minim elit. Et culpa veniam labore voluptate adipisicing officia est nisi sunt in ad minim eiusmod. Consequat nostrud laborum sint ullamco est Lorem ullamco. Quis ut sunt ut eiusmod veniam commodo do ad reprehenderit."
+          "title": "Et fugiat excepteur eiusmod eiusmod laborum commodo ex sunt non aliqua eu ullamco.",
+          "date": "2020-04-28T21:29:29.861Z",
+          "text": "Ad nisi labore labore culpa et sit dolor officia ipsum sunt. Laboris consectetur pariatur consectetur aute est commodo sit. Aute velit esse cupidatat eiusmod do tempor cupidatat incididunt pariatur aute sunt. In proident incididunt minim ullamco qui sint fugiat elit aliqua irure deserunt dolor esse ut. Tempor sint mollit ut in culpa. Magna dolore sit proident sint ipsum ex deserunt. Nostrud consequat aliquip fugiat laboris aliqua laboris nostrud ad adipisicing nostrud labore tempor sint."
         }
       },
       {
         "name": "Actividad 3",
         "type": "task",
-        "duration": "25 min",
+        "duration": "5 min",
         "displayOrder": 3,
         "initialState": "locked",
         "content": {
-          "title": "Adipisicing anim eiusmod est consequat eu Lorem ut cillum exercitation sint adipisicing proident ullamco.",
-          "date": "2020-04-25T13:13:19.507Z",
-          "text": "Reprehenderit in est veniam aliqua in ea do aute. Lorem laborum ex fugiat nulla veniam adipisicing sint consequat tempor quis velit esse consectetur magna. Sit ullamco enim ipsum ullamco proident eu minim reprehenderit."
+          "title": "Consectetur eiusmod sunt incididunt dolor labore elit quis non irure qui voluptate Lorem minim.",
+          "date": "2020-02-11T19:45:45.613Z",
+          "text": "Consequat velit reprehenderit aliqua nisi Lorem occaecat mollit fugiat amet anim. Sunt aute laborum irure mollit duis et. Laboris eu dolor fugiat exercitation qui."
         }
       }
     ]
   },
   {
-    "name": "Capitulo 3",
+    "value": "Actividad 3",
+    "displayOrder": 3,
+    "name": "¿Cómo aumentar el bienestar?",
     "module": {
       "displayOrder": 1,
-      "name": "Modulo 1",
+      "name": "BIENESTAR",
       "_id": "5eb894a649d72e00d91a16ff"
     },
     "mediumImage": "url de la imagen",
     "largeImage": "url de la imagen",
-    "displayOrder": 3,
     "activities": [
       {
         "name": "Actividad 1",
@@ -124,40 +127,41 @@
         "displayOrder": 2,
         "initialState": "locked",
         "content": {
-          "title": "Deserunt amet culpa minim non sunt elit proident exercitation proident nisi aliquip ipsum consectetur consequat.",
-          "date": "2020-04-12T21:21:18.096Z",
-          "text": "Ullamco esse velit laboris sint minim est do eiusmod. Tempor aute consectetur sint reprehenderit do aute ut esse eiusmod ex nostrud cillum. Id voluptate id aliqua tempor proident quis nostrud mollit adipisicing."
+          "title": "Labore sit laboris amet eu elit.",
+          "date": "2020-03-19T07:09:33.385Z",
+          "text": "Eiusmod occaecat aliqua sint non nulla magna amet sunt culpa laboris aliquip incididunt labore. Tempor do velit aliqua officia eiusmod laborum cupidatat labore. Velit amet nulla minim consectetur ut eiusmod anim. Occaecat Lorem aliquip laboris nisi veniam enim proident laboris eu irure adipisicing cupidatat eu reprehenderit. In esse cupidatat veniam mollit aute et. Aliqua ad tempor ea sit adipisicing proident ad. Culpa ut amet amet Lorem nisi proident duis cupidatat dolore sit in exercitation."
         }
       },
       {
         "name": "Actividad 3",
         "type": "task",
-        "duration": "5 min",
+        "duration": "25 min",
         "displayOrder": 3,
         "initialState": "locked",
         "content": {
-          "title": "Laborum occaecat irure et amet proident pariatur cupidatat do aliqua tempor tempor veniam occaecat aliquip.",
-          "date": "2020-04-24T09:31:45.734Z",
-          "text": "Enim duis excepteur adipisicing nulla duis deserunt ullamco excepteur et laboris. Sint ipsum est ex do pariatur consectetur. Ipsum laboris excepteur cillum eiusmod proident aute."
+          "title": "Culpa excepteur non nostrud amet proident officia fugiat.",
+          "date": "2020-02-23T12:21:35.702Z",
+          "text": "Duis officia enim sunt et adipisicing excepteur pariatur. Eiusmod ea commodo pariatur ea fugiat nisi incididunt et commodo qui velit incididunt voluptate qui. Culpa id consequat ad sunt nisi. Velit dolor aliquip aliquip nisi eiusmod ad Lorem id incididunt reprehenderit voluptate. Id est culpa quis commodo tempor sint ad ea ipsum exercitation."
         }
       }
     ]
   },
   {
-    "name": "Capitulo 4",
-    "module": {
-      "displayOrder": 2,
-      "name": "Modulo 2",
-      "_id": "5eb894a649d72e00d91a1700"
-    },
-    "mediumImage": "url de la imagen",
-    "largeImage": "url de la imagen",
+    "value": "Actividad 4",
     "displayOrder": 1,
+    "name": "Entendiendo las emociones",
+    "module": {
+      "displayOrder": 2,
+      "name": "EMOCIONES",
+      "_id": "5eb894a649d72e00d91a1700"
+    },
+    "mediumImage": "url de la imagen",
+    "largeImage": "url de la imagen",
     "activities": [
       {
         "name": "Actividad 1",
         "type": "video",
-        "duration": "25 min",
+        "duration": "5 min",
         "displayOrder": 1,
         "initialState": "available",
         "content": {
@@ -168,13 +172,13 @@
       {
         "name": "Actividad 2",
         "type": "lecture",
-        "duration": "25 min",
+        "duration": "5 min",
         "displayOrder": 2,
         "initialState": "locked",
         "content": {
-          "title": "Nisi excepteur esse ad adipisicing aliquip quis fugiat.",
-          "date": "2020-04-28T15:54:54.680Z",
-          "text": "Cillum nisi occaecat occaecat ut quis ullamco fugiat nisi aliquip. Eu tempor quis excepteur ad. Id sint aliqua enim quis mollit non aliqua fugiat. Eiusmod velit nostrud quis reprehenderit mollit nulla est. Laboris sunt elit magna aliqua non dolore ad officia nisi. Anim occaecat eiusmod commodo exercitation eiusmod in ullamco exercitation aliqua ea minim veniam."
+          "title": "Et cupidatat excepteur ut ullamco pariatur adipisicing laboris incididunt.",
+          "date": "2020-05-05T14:25:03.075Z",
+          "text": "Reprehenderit dolore ad ut est ad. Sit velit excepteur eu sit aliquip nulla ipsum qui reprehenderit quis. Mollit labore dolor exercitation adipisicing anim."
         }
       },
       {
@@ -184,76 +188,78 @@
         "displayOrder": 3,
         "initialState": "locked",
         "content": {
-          "title": "Aliqua anim laborum aliquip consequat ipsum Lorem adipisicing.",
-          "date": "2020-03-07T09:41:46.955Z",
-          "text": "Ipsum amet nostrud culpa irure excepteur est laborum aliqua. Commodo et esse sint ex laboris consequat quis aute cillum reprehenderit. Nisi commodo sint aliqua anim reprehenderit tempor."
+          "title": "Lorem ex sint consectetur fugiat dolor ullamco et fugiat minim consequat.",
+          "date": "2020-03-17T07:31:16.497Z",
+          "text": "Ex non deserunt ex ullamco labore pariatur nulla reprehenderit. Aute aliquip est cupidatat nostrud sunt velit eiusmod exercitation magna qui consectetur fugiat esse enim. Cupidatat proident pariatur labore qui deserunt nisi mollit quis ad elit quis. Adipisicing sint minim labore fugiat dolor proident culpa tempor. Tempor cillum fugiat officia quis ea consectetur proident sint mollit. Commodo ex Lorem pariatur consectetur aliquip voluptate. Mollit mollit labore veniam quis aliquip nostrud."
         }
       }
     ]
   },
   {
-    "name": "Capitulo 5",
-    "module": {
-      "displayOrder": 2,
-      "name": "Modulo 2",
-      "_id": "5eb894a649d72e00d91a1700"
-    },
-    "mediumImage": "url de la imagen",
-    "largeImage": "url de la imagen",
+    "value": "Actividad 5",
     "displayOrder": 2,
-    "activities": [
-      {
-        "name": "Actividad 1",
-        "type": "video",
-        "duration": "5 min",
-        "displayOrder": 1,
-        "initialState": "available",
-        "content": {
-          "title": "Titulo del video",
-          "url": "url al video"
-        }
-      },
-      {
-        "name": "Actividad 2",
-        "type": "lecture",
-        "duration": "5 min",
-        "displayOrder": 2,
-        "initialState": "locked",
-        "content": {
-          "title": "Proident commodo ex do tempor voluptate ipsum ad ea.",
-          "date": "2020-03-06T08:24:01.367Z",
-          "text": "Dolor labore elit fugiat voluptate sint consequat ullamco eu ipsum dolore nisi aliqua nostrud. Cillum ut fugiat qui enim consectetur laborum. Nulla velit quis dolor reprehenderit exercitation cupidatat est dolore enim minim do. Sit labore voluptate incididunt aute adipisicing duis."
-        }
-      },
-      {
-        "name": "Actividad 3",
-        "type": "task",
-        "duration": "25 min",
-        "displayOrder": 3,
-        "initialState": "locked",
-        "content": {
-          "title": "Esse id commodo mollit aliqua anim aliqua fugiat in enim deserunt laborum ad quis.",
-          "date": "2020-02-24T16:30:32.269Z",
-          "text": "Sint elit commodo tempor culpa magna est qui do fugiat. Anim reprehenderit do esse amet labore adipisicing dolore in voluptate elit. Excepteur nostrud incididunt excepteur anim ea ex reprehenderit non ullamco occaecat velit cupidatat."
-        }
-      }
-    ]
-  },
-  {
-    "name": "Capitulo 6",
+    "name": "Emociones Negativas",
     "module": {
       "displayOrder": 2,
-      "name": "Modulo 2",
+      "name": "EMOCIONES",
       "_id": "5eb894a649d72e00d91a1700"
     },
     "mediumImage": "url de la imagen",
     "largeImage": "url de la imagen",
-    "displayOrder": 3,
     "activities": [
       {
         "name": "Actividad 1",
         "type": "video",
+        "duration": "25 min",
+        "displayOrder": 1,
+        "initialState": "available",
+        "content": {
+          "title": "Titulo del video",
+          "url": "url al video"
+        }
+      },
+      {
+        "name": "Actividad 2",
+        "type": "lecture",
         "duration": "5 min",
+        "displayOrder": 2,
+        "initialState": "locked",
+        "content": {
+          "title": "Cupidatat laboris excepteur officia sunt ex est ipsum dolor exercitation sunt excepteur.",
+          "date": "2020-02-13T07:08:30.459Z",
+          "text": "Quis ad magna sint ut ut. Qui amet reprehenderit elit nisi tempor. Amet voluptate Lorem reprehenderit minim nostrud. Pariatur dolor velit tempor labore veniam id sunt labore deserunt ad laborum."
+        }
+      },
+      {
+        "name": "Actividad 3",
+        "type": "task",
+        "duration": "5 min",
+        "displayOrder": 3,
+        "initialState": "locked",
+        "content": {
+          "title": "Nisi commodo fugiat ullamco ullamco deserunt tempor dolor.",
+          "date": "2020-04-26T20:00:10.122Z",
+          "text": "Aliquip ex minim fugiat pariatur reprehenderit fugiat. Reprehenderit id Lorem id aliquip Lorem proident do labore cillum dolor deserunt duis. Nulla ad officia velit ullamco non. Consectetur dolore aliqua sunt laborum anim elit excepteur est laborum laborum ipsum culpa tempor. Ad nulla velit magna ad eu nulla est adipisicing laboris voluptate ea nulla proident. Commodo magna veniam laborum reprehenderit nostrud in deserunt. Minim nisi sunt et in ipsum consequat et in minim."
+        }
+      }
+    ]
+  },
+  {
+    "value": "Actividad 6",
+    "displayOrder": 3,
+    "name": "Emociones Positivas y Optimismo Inteligente",
+    "module": {
+      "displayOrder": 2,
+      "name": "EMOCIONES",
+      "_id": "5eb894a649d72e00d91a1700"
+    },
+    "mediumImage": "url de la imagen",
+    "largeImage": "url de la imagen",
+    "activities": [
+      {
+        "name": "Actividad 1",
+        "type": "video",
+        "duration": "25 min",
         "displayOrder": 1,
         "initialState": "available",
         "content": {
@@ -268,9 +274,9 @@
         "displayOrder": 2,
         "initialState": "locked",
         "content": {
-          "title": "Anim exercitation mollit aliqua consectetur tempor eu consequat ea ad proident sunt fugiat tempor ut.",
-          "date": "2020-02-15T00:26:16.504Z",
-          "text": "Ullamco est irure ullamco laborum. Id eiusmod occaecat officia est reprehenderit nostrud. Aliquip consequat ea qui aute nulla amet."
+          "title": "Lorem est nostrud minim amet in pariatur adipisicing ad.",
+          "date": "2020-02-04T19:53:29.636Z",
+          "text": "Deserunt nulla incididunt officia adipisicing irure excepteur. Dolore in quis laborum culpa nisi magna non tempor adipisicing elit est dolor eiusmod. Incididunt ea enim Lorem proident occaecat aliquip laborum cupidatat sint dolore est ea. Veniam nisi deserunt dolore et dolore minim nostrud consequat adipisicing tempor voluptate exercitation sint."
         }
       },
       {
@@ -280,23 +286,24 @@
         "displayOrder": 3,
         "initialState": "locked",
         "content": {
-          "title": "Deserunt sit laborum aliqua Lorem ex culpa ex amet pariatur cupidatat voluptate.",
-          "date": "2020-03-24T03:26:53.392Z",
-          "text": "In ex dolore sunt ullamco exercitation enim aute duis. Cupidatat sint magna laborum quis laborum nostrud consectetur veniam ex consequat laboris. Esse ullamco proident magna veniam laboris esse cillum sint cupidatat commodo dolor ad. Voluptate amet elit tempor minim nisi commodo. Eiusmod ut nisi officia sunt reprehenderit id proident aliquip aliqua occaecat laboris adipisicing nisi. Commodo culpa in laborum reprehenderit nulla ea Lorem consectetur laboris anim nulla. Occaecat commodo cupidatat qui veniam anim qui tempor quis dolor mollit aute officia."
+          "title": "Tempor et sit dolor dolor consequat in Lorem velit.",
+          "date": "2020-03-19T04:36:19.847Z",
+          "text": "Eu cupidatat quis anim laboris. Minim eiusmod laboris proident laboris ex Lorem dolor consectetur ea qui enim. Velit cillum reprehenderit laboris deserunt id adipisicing ullamco et nulla. Laboris eu in mollit irure. Pariatur excepteur cupidatat qui irure velit velit deserunt reprehenderit nulla adipisicing aliquip commodo."
         }
       }
     ]
   },
   {
-    "name": "Capitulo 7",
-    "module": {
-      "displayOrder": 3,
-      "name": "Modulo 3",
-      "_id": "5eb894a649d72e00d91a1701"
-    },
-    "mediumImage": "url de la imagen",
-    "largeImage": "url de la imagen",
+    "value": "Actividad 7",
     "displayOrder": 1,
+    "name": "¿Qué son las relaciones positivas? Ventajas",
+    "module": {
+      "displayOrder": 3,
+      "name": "RELACIONES POSITIVAS",
+      "_id": "5eb894a649d72e00d91a1701"
+    },
+    "mediumImage": "url de la imagen",
+    "largeImage": "url de la imagen",
     "activities": [
       {
         "name": "Actividad 1",
@@ -316,83 +323,36 @@
         "displayOrder": 2,
         "initialState": "locked",
         "content": {
-          "title": "Consequat pariatur minim minim sint ipsum sunt velit elit veniam commodo.",
-          "date": "2020-02-07T20:47:47.535Z",
-          "text": "Et cillum dolor irure aliqua commodo exercitation eiusmod aute eu. Qui cillum fugiat tempor ea sint. Eu reprehenderit sit cupidatat adipisicing aliqua. Ipsum est magna ipsum aute exercitation irure proident enim nostrud. Nulla ad fugiat eiusmod mollit eiusmod elit nisi in ullamco consequat incididunt irure commodo. Culpa proident sunt incididunt est adipisicing elit esse sunt laborum enim veniam magna. Labore occaecat ea pariatur adipisicing anim aliquip nulla culpa."
+          "title": "Non et esse cillum deserunt consectetur sint eiusmod occaecat ullamco aute culpa ad.",
+          "date": "2020-02-25T11:15:30.849Z",
+          "text": "Ea non ad officia fugiat do voluptate adipisicing dolor culpa laboris et. Nisi eu non ea ex ipsum voluptate fugiat magna occaecat aliqua ullamco velit incididunt. Aliqua in nulla commodo Lorem id ex fugiat amet deserunt. Cupidatat Lorem consequat eiusmod voluptate non nostrud esse irure excepteur. Est eiusmod nulla quis magna qui ad magna nostrud quis minim veniam nulla sint tempor. Do sunt anim nostrud deserunt in culpa nisi aliqua commodo aute ipsum. Labore voluptate minim ullamco officia."
         }
       },
       {
         "name": "Actividad 3",
         "type": "task",
-        "duration": "25 min",
+        "duration": "5 min",
         "displayOrder": 3,
         "initialState": "locked",
         "content": {
-          "title": "Aliquip sint esse mollit reprehenderit eu consequat excepteur nulla incididunt officia nisi veniam non qui.",
-          "date": "2020-04-08T03:27:34.145Z",
-          "text": "Dolore eiusmod laborum labore sit consectetur enim enim mollit. Reprehenderit duis excepteur eu excepteur adipisicing et ut Lorem veniam. Cupidatat magna proident ullamco in dolore sint pariatur sint tempor."
+          "title": "Mollit laboris nulla incididunt cillum eu excepteur amet mollit voluptate aliqua dolore eu.",
+          "date": "2020-02-21T01:13:01.740Z",
+          "text": "Duis minim et commodo fugiat occaecat commodo laboris consectetur. Anim laboris consectetur anim tempor eiusmod officia. Ad duis culpa commodo dolore culpa proident veniam esse veniam. Consequat ea labore ad ex commodo pariatur magna adipisicing ut qui laborum consectetur labore. Cupidatat eiusmod eu dolore exercitation quis id veniam labore. Magna proident exercitation deserunt proident ad aliqua ipsum."
         }
       }
     ]
   },
   {
-    "name": "Capitulo 8",
-    "module": {
-      "displayOrder": 3,
-      "name": "Modulo 3",
-      "_id": "5eb894a649d72e00d91a1701"
-    },
-    "mediumImage": "url de la imagen",
-    "largeImage": "url de la imagen",
+    "value": "Actividad 8",
     "displayOrder": 2,
-    "activities": [
-      {
-        "name": "Actividad 1",
-        "type": "video",
-        "duration": "5 min",
-        "displayOrder": 1,
-        "initialState": "available",
-        "content": {
-          "title": "Titulo del video",
-          "url": "url al video"
-        }
-      },
-      {
-        "name": "Actividad 2",
-        "type": "lecture",
-        "duration": "5 min",
-        "displayOrder": 2,
-        "initialState": "locked",
-        "content": {
-          "title": "Veniam ullamco laboris id irure.",
-          "date": "2020-02-11T17:07:54.590Z",
-          "text": "Commodo dolor eiusmod occaecat eiusmod aliqua consectetur commodo aute deserunt duis nulla sint. Aute irure nulla consectetur enim elit culpa aliqua reprehenderit aliquip irure ea ea. Tempor cillum nulla esse sint occaecat in id minim nisi. Culpa ad labore labore est excepteur."
-        }
-      },
-      {
-        "name": "Actividad 3",
-        "type": "task",
-        "duration": "5 min",
-        "displayOrder": 3,
-        "initialState": "locked",
-        "content": {
-          "title": "Mollit eu irure occaecat officia occaecat laboris occaecat ad.",
-          "date": "2020-04-15T01:13:23.710Z",
-          "text": "Nisi ad elit aliqua irure quis duis deserunt consequat aute. Sunt adipisicing do qui veniam consequat. Sunt voluptate anim velit fugiat anim ex consequat do labore eiusmod duis ipsum mollit. Labore nostrud consequat sunt nisi commodo elit consequat pariatur anim Lorem irure sint. Consectetur excepteur eiusmod adipisicing sunt labore labore officia in dolore aliquip."
-        }
-      }
-    ]
-  },
-  {
-    "name": "Capitulo 9",
+    "name": "Comunicación Responsable=Comunicación efectiva y escucha activa",
     "module": {
       "displayOrder": 3,
-      "name": "Modulo 3",
+      "name": "RELACIONES POSITIVAS",
       "_id": "5eb894a649d72e00d91a1701"
     },
     "mediumImage": "url de la imagen",
     "largeImage": "url de la imagen",
-    "displayOrder": 3,
     "activities": [
       {
         "name": "Actividad 1",
@@ -408,25 +368,74 @@
       {
         "name": "Actividad 2",
         "type": "lecture",
-        "duration": "5 min",
+        "duration": "25 min",
         "displayOrder": 2,
         "initialState": "locked",
         "content": {
-          "title": "Ad voluptate sint consequat ut ad exercitation.",
-          "date": "2020-04-21T21:12:59.911Z",
-          "text": "Cupidatat dolor reprehenderit deserunt consequat elit dolore commodo. Qui occaecat nostrud labore laboris consequat excepteur qui sunt. Sit in commodo velit ut consectetur Lorem aute nostrud sunt duis enim. Aliquip in non officia dolore ad reprehenderit aliquip id eiusmod ea."
+          "title": "Ad sunt voluptate ad id veniam labore.",
+          "date": "2020-03-06T00:48:48.719Z",
+          "text": "Eu excepteur cillum sit ea quis reprehenderit proident enim mollit reprehenderit ipsum quis adipisicing. Consectetur mollit ex laborum quis aliqua ipsum ex pariatur sit sunt amet. Tempor incididunt elit occaecat est ipsum labore voluptate velit ullamco eiusmod. Est est aute duis dolor Lorem cupidatat Lorem. Nostrud proident proident exercitation aute deserunt magna Lorem consequat."
         }
       },
       {
         "name": "Actividad 3",
         "type": "task",
-        "duration": "5 min",
+        "duration": "25 min",
         "displayOrder": 3,
         "initialState": "locked",
         "content": {
-          "title": "Duis enim laborum consectetur eiusmod dolor adipisicing eu cillum velit.",
-          "date": "2020-02-17T11:01:41.641Z",
-          "text": "Cillum ullamco tempor duis velit. Reprehenderit ut veniam laborum mollit laboris. Ullamco Lorem cupidatat ipsum elit ipsum pariatur sint pariatur Lorem enim adipisicing deserunt. Proident tempor tempor duis velit sunt do. Ad irure enim eu ut in ut ullamco nulla consequat labore in ipsum aliquip consequat."
+          "title": "Magna et magna ut incididunt exercitation consequat esse enim anim est aute.",
+          "date": "2020-04-14T17:20:10.651Z",
+          "text": "Id nisi est consequat ut. Lorem labore aute culpa irure enim veniam ex officia veniam culpa officia aliquip. Deserunt quis in sunt ut dolor ipsum. Dolor duis magna laboris in adipisicing duis laboris. In consectetur quis non commodo adipisicing consectetur laborum aliqua occaecat excepteur. Laboris veniam ex et deserunt anim quis excepteur reprehenderit minim ad aliquip. Aute irure labore occaecat minim reprehenderit nostrud cupidatat aute pariatur culpa deserunt."
+        }
+      }
+    ]
+  },
+  {
+    "value": "Actividad 9",
+    "displayOrder": 3,
+    "name": "Crisis vitales. Pareja. Hijos. Familia",
+    "module": {
+      "displayOrder": 3,
+      "name": "RELACIONES POSITIVAS",
+      "_id": "5eb894a649d72e00d91a1701"
+    },
+    "mediumImage": "url de la imagen",
+    "largeImage": "url de la imagen",
+    "activities": [
+      {
+        "name": "Actividad 1",
+        "type": "video",
+        "duration": "5 min",
+        "displayOrder": 1,
+        "initialState": "available",
+        "content": {
+          "title": "Titulo del video",
+          "url": "url al video"
+        }
+      },
+      {
+        "name": "Actividad 2",
+        "type": "lecture",
+        "duration": "5 min",
+        "displayOrder": 2,
+        "initialState": "locked",
+        "content": {
+          "title": "Ea velit ad commodo Lorem qui proident laborum consequat occaecat reprehenderit commodo in nostrud.",
+          "date": "2020-05-11T05:23:02.114Z",
+          "text": "Adipisicing anim et ut occaecat ad laborum eiusmod id. Ullamco reprehenderit ut enim ea Lorem officia eu proident et ea. Occaecat commodo deserunt sit ullamco anim. Proident duis labore adipisicing do eiusmod. Magna incididunt sint ea duis ipsum ut dolor aute anim do laboris labore esse adipisicing. Laborum id incididunt ipsum do non sint tempor ea aliquip sit Lorem proident nulla nostrud."
+        }
+      },
+      {
+        "name": "Actividad 3",
+        "type": "task",
+        "duration": "25 min",
+        "displayOrder": 3,
+        "initialState": "locked",
+        "content": {
+          "title": "Labore anim amet magna occaecat laboris adipisicing.",
+          "date": "2020-03-01T18:46:59.941Z",
+          "text": "Id occaecat do nulla fugiat officia magna voluptate qui commodo mollit mollit excepteur non. Laborum aliquip et veniam anim incididunt deserunt sunt proident occaecat proident aute. Sunt deserunt commodo consequat fugiat sit qui. Tempor officia aute sunt culpa culpa magna cupidatat do esse. Adipisicing proident minim laborum est aute magna eiusmod commodo. In est eu labore aliqua tempor labore pariatur occaecat elit anim. Irure duis veniam ex duis sint ea consectetur."
         }
       }
     ]
